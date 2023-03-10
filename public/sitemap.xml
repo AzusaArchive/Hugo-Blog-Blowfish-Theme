@@ -3,13 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
-  
-    
       <url>
             <loc>https://AzusaArchive.io/</loc>
+            <lastmod>2023-03-10T19:01:26+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
+    
+  
+    
+      <url>
+            <loc>https://AzusaArchive.io/posts/hello-world/</loc>
+            <lastmod>2023-03-10T19:01:26+08:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://AzusaArchive.io/posts/</loc>
+            <lastmod>2023-03-10T19:01:26+08:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
     
   
     

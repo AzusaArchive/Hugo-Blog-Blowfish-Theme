@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on AzusaArchive</title>
+    <link>https://AzusaArchive.io/posts/</link>
+    <description>Recent content in Posts on AzusaArchive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Fri, 10 Mar 2023 19:01:26 +0800</lastBuildDate><atom:link href="https://AzusaArchive.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://AzusaArchive.io/posts/hello-world/</link>
+      <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
+      
+      <guid>https://AzusaArchive.io/posts/hello-world/</guid>
+      <description>测试帖子&gt;测试帖子 # 使用Hugo超快速建站</description>
+    </item>
+    
+  </channel>
+</rss>
