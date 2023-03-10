@@ -4,7 +4,7 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push: https://github.com/AzusaArchive/Hugo-Blog-Blowfish-Theme.git
-    branches:
+    branches: deploy
       - deploy
 
   # Allows you to run this workflow manually from the Actions tab
