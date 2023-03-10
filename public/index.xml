@@ -6,6 +6,17 @@
     <description>Recent content on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copy, _right?_ :thinking_face:</copyright><atom:link href="https://AzusaArchive.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Fri, 10 Mar 2023 19:01:26 +0800</lastBuildDate><atom:link href="https://AzusaArchive.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://AzusaArchive.io/posts/hello-world/</link>
+      <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
+      
+      <guid>https://AzusaArchive.io/posts/hello-world/</guid>
+      <description>测试帖子&gt;测试帖子 # 使用Hugo超快速建站</description>
+      
+    </item>
+    
   </channel>
 </rss>
