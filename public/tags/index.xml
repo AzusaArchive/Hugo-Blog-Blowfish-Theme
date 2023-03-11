@@ -1,1 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on AzusaArchive</title><link>https://azusaarchive.github.io/tags/</link><description>Recent content in Tags on AzusaArchive</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Copy, _right?_ :thinking_face:</copyright><lastBuildDate>Sat, 11 Mar 2023 02:47:26 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>.NET</title><link>https://azusaarchive.github.io/tags/.net/</link><pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate><guid>https://azusaarchive.github.io/tags/.net/</guid><description/></item><item><title>Javascript</title><link>https://azusaarchive.github.io/tags/javascript/</link><pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate><guid>https://azusaarchive.github.io/tags/javascript/</guid><description/></item><item><title>SignalR</title><link>https://azusaarchive.github.io/tags/signalr/</link><pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate><guid>https://azusaarchive.github.io/tags/signalr/</guid><description/></item><item><title>Websocket</title><link>https://azusaarchive.github.io/tags/websocket/</link><pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate><guid>https://azusaarchive.github.io/tags/websocket/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/tags/</link>
+    <description>Recent content in Tags on AzusaArchive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Sat, 11 Mar 2023 02:47:26 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET</title>
+      <link>https://azusaarchive.github.io/tags/.net/</link>
+      <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://azusaarchive.github.io/tags/javascript/</link>
+      <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SignalR</title>
+      <link>https://azusaarchive.github.io/tags/signalr/</link>
+      <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/tags/signalr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Websocket</title>
+      <link>https://azusaarchive.github.io/tags/websocket/</link>
+      <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
