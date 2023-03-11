@@ -156,3 +156,7 @@ services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 ...
 ```
+<br>
+
+参考文章
+> https://stackoverflow.com/questions/21260384/signalr-authenticating-with-access-token#comment32085907_21260384
