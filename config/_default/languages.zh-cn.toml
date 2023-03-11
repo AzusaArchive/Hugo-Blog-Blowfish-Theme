@@ -6,11 +6,11 @@ weight = 1
 rtl = false
 
 title = "AzusaArchive"
-logo = "custom/logo.png"
+logo = "icons/logo.png"
 description = "梓的个人档案"
 copyright = "Copy, _right?_ :thinking_face:"
 
-dateFormat = "2006/1/_2 15:04:05 MST"
+dateFormat = "2006年1月_2日"
 
 [author]
    name = "梓"
