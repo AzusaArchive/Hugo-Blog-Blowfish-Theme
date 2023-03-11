@@ -14,7 +14,7 @@ dateFormat = "2006年1月_2日"
 
 [author]
    name = "梓"
-   image = "custom/author.jpg"
+   image = "icons/author.jpg"
    headline = "梓的个人档案" #可使用markDown
    bio = "沉舟侧畔千帆过，病树前头万木春" #可使用markDown
    links = [
