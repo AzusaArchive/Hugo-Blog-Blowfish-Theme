@@ -9,34 +9,22 @@
 # By default the menu is ordered alphabetically. This can be
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
+# https://gohugo.io/content-management/menus/
 
 [[main]]
   name = "文章"
   pageRef = "posts"
   weight = 10
-#[[main]]
-#  name = "Parent"
-#  pageRef = ""
-#  weight = 20
 [[main]]
   name = "GitHub"
-  parent = "关于"
-  pageRef = "github"
+  parent = "其他"
+  url = "https://github.com/AzusaArchive"
   weight = 20
 [[main]]
-  name = "个人信息"
-  parent = "关于"
-  pageRef = "info"
+  name = "关于"
+  parent = "其他"
+  pageRef = "about"
   weight = 20
-#[[subnavigation]]
-#  name = "An interesting topic"
-#  pageRef = "tags/interesting-topic"
-#  weight = 10
-#[[subnavigation]]
-#  name = "My Awesome Category"
-#  pre = "github"
-#  pageRef = "categories/awesome"
-#  weight = 20
 [[main]]
   name = "分类"
   pageRef = "categories"
