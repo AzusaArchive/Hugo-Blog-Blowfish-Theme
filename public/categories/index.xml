@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AzusaArchive</title>
-    <link>https://azusaarchive.github.io/categories/</link>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/</link>
     <description>Recent content in Categories on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Sat, 11 Mar 2023 02:47:26 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Mar 2023 02:47:26 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ASP .NET Core</title>
-      <link>https://azusaarchive.github.io/categories/asp-.net-core/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/asp-.net-core/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/categories/asp-.net-core/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/asp-.net-core/</guid>
       <description></description>
     </item>
     
