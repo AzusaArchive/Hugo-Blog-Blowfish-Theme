@@ -100,7 +100,7 @@
     "keywords": [".NET","SignalR","Javascript","Websocket"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "164"
+    "wordCount": "261"
   }]
   </script>
 
@@ -577,7 +577,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-03-11 02:47:26 &#43;0800 CST">2023年3月11日</time><span class="px-2 text-primary-500">&middot;</span><span>164 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+  <time datetime="2023-03-11 02:47:26 &#43;0800 CST">2023年3月11日</time><span class="px-2 text-primary-500">&middot;</span><span>261 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
   
 
   
@@ -692,6 +692,10 @@
     <li><a href="#c客户端">C#客户端</a></li>
     <li><a href="#javascript客户端">Javascript客户端</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#解决方法">解决方法：</a></li>
+  </ul>
 </nav>
   </div>
 </details>
@@ -715,6 +719,10 @@
   <ul>
     <li><a href="#c客户端">C#客户端</a></li>
     <li><a href="#javascript客户端">Javascript客户端</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#解决方法">解决方法：</a></li>
   </ul>
 </nav>
   </div>
@@ -785,7 +793,7 @@
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%9c%a8-aspnet-core-%e4%b8%ad%e6%b7%bb%e5%8a%a0%e6%8e%88%e6%9d%83%e6%9c%ba%e5%88%b6" aria-label="锚点">#</a></span>        
     
-</h2><pre tabindex="0"><code>Program.cs:
+</h2><pre tabindex="0"><code>Program.cs
 
 ...
 
@@ -911,8 +919,86 @@ await this.hubConnection.start();
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e8%b8%a9%e5%9d%91%e6%b3%a8%e6%84%8f" aria-label="锚点">#</a></span>        
     
-</h1><p>在Javascript客户端，即使配置了访问令牌，在对后端SignalR集线器进行访问时服务器仍然会响应 <strong>401 Unauthorized</strong> 或是客户端抛出 <strong>SignalR Error: Failed to complete negotiation with the server</strong> 异常，若排除了Javascript客户端配置问题或是CORS跨域访问问题，则有可能是因为Javascript websocket API不支持设置请求头的原因。</p>
+</h1><p>在Javascript客户端，即使配置了访问令牌，在对后端SignalR集线器进行访问时服务器仍然会响应 <strong>401 Unauthorized</strong> 或是客户端抛出 <strong>SignalR Error: Failed to complete negotiation with the server</strong> 异常，若排除了Javascript客户端配置问题或是CORS跨域访问问题，则有可能是因为Javascript websocket API不支持设置请求报文头的原因。</p>
+<p>客户端使用HTTP协议向服务器进行访问令牌验证常用的方式是在报文头中添加 <em>Authorization</em> 标头，并提供访问令牌字符串。
 
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./httpAuthorization.png" alt="Authorization" />
+      <figcaption>请求标头中的Authorization项</figcaption>
+    </figure>
+  
+
+</p>
+<p>在SignalR进行Websocket连接前会进行协商(negotiation)，若客户端在建立SignalR连接时配置了访问令牌，则会在请求时附带上访问令牌。</p>
+<p>但在SignalR Javascript客户端进行协商时，访问令牌并不是添加在报文头中，而是以查询字符串的形式发送请求。
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./JSSignalRRequst.png" alt="JSAuthorization" />
+      <figcaption>访问令牌放在了查询字符串中</figcaption>
+    </figure>
+  
+
+</p>
+<p>ASP.NET Core并不会自动对查询字符串中的访问令牌进行授权，所以此时服务器将会返回 <strong>401 Unauthorized</strong> ，而Javascript客户端会抛出 <strong>SignalR Error: Failed to complete negotiation with the server (无法完成与服务器的协商）</strong> 异常。</p>
+<div id="解决方法" class="anchor">解决方法：></div>
+<h2 class="relative group">解决方法： 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" aria-label="锚点">#</a></span>        
+    
+</h2><p>在服务器端配置授权机制，在收到请求消息时手动进行授权处理。配置的方式有多种，较为简单的方式是直接在Authorization服务中添加事件：</p>
+<pre tabindex="0"><code>program.cs
+
+...
+
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    //使用JwtBearer作为认证令牌
+    .AddJwtBearer(options =&gt;
+    {
+        var secretKey = configurations.GetRequiredSection(&#34;Jwt&#34;).Get&lt;JwtOption&gt;().SecretKey??throw new ConfigurationErrorsException(&#34;Jwt密钥未配置&#34;);
+        options.TokenValidationParameters = new()
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+        };
+        //添加授权事件，在收到请求消息时进行处理
+        options.Events = new JwtBearerEvents()
+        {
+            OnMessageReceived =  context =&gt;
+            {
+                //从请求查询字符串中取出访问令牌
+                var accessToken = context.Request.Query[&#34;access_token&#34;];
+                //请求条件不符合则返回
+                if (!string.IsNullOrEmpty(accessToken) &amp;&amp; context.Request.Headers[&#34;Upgrade&#34;] == &#34;websocket&#34;)
+                {
+                    //手动对上下文中的令牌属性赋值，剩下的授权由.NET自动完成
+                    context.Token = accessToken;
+                }
+                return Task.CompletedTask;
+            }
+        };
+    });
+
+...
+</code></pre>
         </br></br>
         
 
