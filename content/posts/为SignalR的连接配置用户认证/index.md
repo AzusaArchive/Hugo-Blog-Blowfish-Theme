@@ -2,7 +2,7 @@
 title: "为SignalR的连接配置用户认证"
 date: 2023-03-11T02:47:26+08:00
 tags: [".NET","SignalR","Javascript","Websocket"]
-categories: ["ASP .NET Core"]
+categories: ["ASP .NET Core","SignalR"]
 ---
 
 在使用SignalR向.NET后端进行实时通信时，时常会使用 AccessToken 进行用户授权。提供用户认证可以提高后端接口的安全性，并且可以利用SignalR的用户认证机制来向指定用户的所有SignalR连接发送消息。
@@ -16,7 +16,7 @@ categories: ["ASP .NET Core"]
     ...
 
     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        //使用JwtBearer作为认证令牌
+        //此处使用JWTBearer进行授权验证
         .AddJwtBearer(options =>
         {
             var secretKey = configurations.GetRequiredSection("Jwt").Get<JwtOption>().SecretKey??throw new ConfigurationErrorsException("Jwt密钥未配置");
