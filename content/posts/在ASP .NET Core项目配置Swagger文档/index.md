@@ -1,8 +1,8 @@
 ---
 title: "在ASP .NET Core项目配置Swagger文档"
 date: 2023-03-15T10:15:26+08:00
-tags: ["ASP .NET Core","Web API","Swagger"]
-categories: [".NET"]
+tags: ["ASP .NET Core","Web API","Swagger","C#"]
+categories: [".NET","C#"]
 ---
 
 ## Swagger文档

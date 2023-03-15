@@ -1,0 +1,8 @@
+@font-face{
+    font-family:MSYaHei;
+    src:url("/fonts/msyhl.ttc");
+}
+
+html{
+    font-family: MSYaHei;
+}

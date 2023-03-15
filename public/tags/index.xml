@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 10:15:26 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linq</title>
+      <link>https://azusaarchive.github.io/tags/linq/</link>
+      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/tags/linq/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ASP .NET Core</title>
       <link>https://azusaarchive.github.io/tags/asp-.net-core/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/tags/asp-.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://azusaarchive.github.io/tags/c#/</link>
+      <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/tags/c#/</guid>
       <description></description>
     </item>
     

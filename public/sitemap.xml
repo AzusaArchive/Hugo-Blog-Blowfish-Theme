@@ -5,14 +5,25 @@
     
   
     
+      <url>
+            <loc>https://azusaarchive.github.io/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</loc>
+            <lastmod>2023-03-15T15:44:03+08:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
   
     
       <url>
             <loc>https://azusaarchive.github.io/</loc>
-            <lastmod>2023-03-15T10:15:26+08:00</lastmod>
+            <lastmod>2023-03-15T15:44:03+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
+    
+  
+    
+  
     
   
     
@@ -20,10 +31,14 @@
     
       <url>
             <loc>https://azusaarchive.github.io/posts/</loc>
-            <lastmod>2023-03-15T10:15:26+08:00</lastmod>
+            <lastmod>2023-03-15T15:44:03+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
+    
+  
+    
+  
     
   
     
