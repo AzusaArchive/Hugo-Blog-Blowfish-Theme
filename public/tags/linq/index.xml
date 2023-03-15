@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linq on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/tags/linq/</link>
+    <description>Recent content in Linq on AzusaArchive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/tags/linq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET 表达式树入门</title>
+      <link>https://azusaarchive.github.io/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</guid>
+      <description>.NET 表达式树&gt;.</description>
+    </item>
+    
+  </channel>
+</rss>
