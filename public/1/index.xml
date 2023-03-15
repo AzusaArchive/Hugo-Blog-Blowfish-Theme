@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C# on AzusaArchive</title>
-    <link>https://azusaarchive.github.io/categories/c#/</link>
-    <description>Recent content in C# on AzusaArchive</description>
+    <title>1s on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/1/</link>
+    <description>Recent content in 1s on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/categories/c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.NET 表达式树入门</title>
       <link>https://azusaarchive.github.io/1/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</link>
@@ -33,6 +33,15 @@
       
       <guid>https://azusaarchive.github.io/1/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</guid>
       <description>在使用SignalR向.NET后端进行实时通信时，时常会使用 AccessToken 进行用户授权。提供用户认证可以提高后端接口的安全性，并且可以利用SignalR的用户认证机制来向指定用户的所有SignalR连接发送消息。</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://azusaarchive.github.io/1/hellow-world/hello-world/</link>
+      <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/1/hellow-world/hello-world/</guid>
+      <description>测试帖子&gt;测试帖子 # 使用Hugo超快速建站</description>
     </item>
     
   </channel>
