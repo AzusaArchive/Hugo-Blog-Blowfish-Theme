@@ -9,10 +9,23 @@
     
       <url>
             <loc>https://azusaarchive.github.io/</loc>
-            <lastmod>2023-03-11T02:47:26+08:00</lastmod>
+            <lastmod>2023-03-15T10:15:26+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
+    
+  
+    
+  
+    
+      <url>
+            <loc>https://azusaarchive.github.io/posts/</loc>
+            <lastmod>2023-03-15T10:15:26+08:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
     
   
     
@@ -21,13 +34,11 @@
   
     
       <url>
-            <loc>https://azusaarchive.github.io/posts/</loc>
-            <lastmod>2023-03-11T02:47:26+08:00</lastmod>
+            <loc>https://azusaarchive.github.io/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</loc>
+            <lastmod>2023-03-15T10:15:26+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
-    
-  
     
   
     
