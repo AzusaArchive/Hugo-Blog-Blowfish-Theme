@@ -6,25 +6,6 @@
     <description>Recent content in Categories on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>.NET</title>
-      <link>https://azusaarchive.github.io/categories/.net/</link>
-      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/categories/.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C#</title>
-      <link>https://azusaarchive.github.io/categories/c#/</link>
-      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/categories/c#/</guid>
-      <description></description>
-    </item>
-    
+    <copyright>Copy, _right?_ :thinking_face:</copyright><atom:link href="https://azusaarchive.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
