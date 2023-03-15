@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on AzusaArchive</title>
-    <link>https://azusaarchive.github.io/posts/</link>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/</link>
     <description>Recent content in Posts on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.NET 表达式树入门</title>
-      <link>https://azusaarchive.github.io/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</guid>
       <description>.NET 表达式树&gt;.</description>
     </item>
     
     <item>
       <title>在ASP .NET Core项目配置Swagger文档</title>
-      <link>https://azusaarchive.github.io/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</guid>
       <description>Swagger文档&gt;Swagger文档 # 在ASP .</description>
     </item>
     
     <item>
       <title>为SignalR的连接配置用户认证</title>
-      <link>https://azusaarchive.github.io/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</guid>
       <description>在使用SignalR向.NET后端进行实时通信时，时常会使用 AccessToken 进行用户授权。提供用户认证可以提高后端接口的安全性，并且可以利用SignalR的用户认证机制来向指定用户的所有SignalR连接发送消息。</description>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>https://azusaarchive.github.io/posts/hellow-world/hello-world/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</link>
       <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/posts/hellow-world/hello-world/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</guid>
       <description>测试帖子&gt;测试帖子 # 使用Hugo超快速建站</description>
     </item>
     

@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AzusaArchive</title>
-    <link>https://azusaarchive.github.io/categories/</link>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/</link>
     <description>Recent content in Categories on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.NET</title>
-      <link>https://azusaarchive.github.io/categories/.net/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/categories/.net/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C#</title>
-      <link>https://azusaarchive.github.io/categories/c#/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/c#/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/categories/c#/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/c#/</guid>
       <description></description>
     </item>
     
