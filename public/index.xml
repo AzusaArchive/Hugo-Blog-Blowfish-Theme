@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 20:10:48 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>科目一关键词记录</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 19 Mar 2023 20:10:48 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</guid>
+      <description>驾驶证&gt;驾驶证 # 常规&gt;常规 # 年龄要求： c1,c2: 18+无上限 c6:20-60 货车：20+ 有效期： 6年-&amp;gt;10年-&amp;gt;长期 体检： 中大型公交牵引车每年体检 任何限时题目： 有90日选择90日，否则选择30日 驾驶证周期： 12月 驾驶证实习期： 12月 有效期： 准考证3年内，实习期需要3年驾龄司机陪同，延期审验3年 证件相关：&gt;证件相关： # 车“登记”，证随意</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>面向对象的编程（C#）</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</link>
+      <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</guid>
+      <description>面向对象的编程&gt;面向对象的编程 # 概念&gt;概念 # 顾名思义面向对象编程即是将真实事物在代码中抽象地表达出来，以现实世界中解决问题的思路来解决程序上的问题。在C#中，事物的类型即为类(class)，类中定义了该事物的数据和操作数据的方法，每个事物对应着一个对象(object)。面向着对象编程即为OOP(Object-Oriented Programing)。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/featured.png" />
+    </item>
+    
     <item>
       <title>.NET 表达式树入门</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</link>

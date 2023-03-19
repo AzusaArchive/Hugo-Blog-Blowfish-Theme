@@ -7,22 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 20:10:48 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>.NET</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/</link>
-      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
+      <title>其他</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Sun, 19 Mar 2023 20:10:48 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/%E5%85%B6%E4%BB%96/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C#</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/c#/</link>
-      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
+      <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/</link>
+      <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/</guid>
       <description></description>
     </item>
     

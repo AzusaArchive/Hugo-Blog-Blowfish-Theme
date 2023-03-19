@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 15:44:03 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 15:31:41 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#基础</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/oop/</link>
+      <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/oop/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linq</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/linq/</link>
