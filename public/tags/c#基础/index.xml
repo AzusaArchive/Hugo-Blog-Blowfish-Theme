@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C#基础 on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in C#基础 on AzusaArchive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Fri, 17 Mar 2023 15:31:41 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面向对象的编程（C#）</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</link>
+      <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</guid>
+      <description>面向对象的编程&gt;面向对象的编程 # 概念&gt;概念 # 顾名思义面向对象编程即是将真实事物在代码中抽象地表达出来，以现实世界中解决问题的思路来解决程序上的问题。在C#中，事物的类型即为类(class)，类中定义了该事物的数据和操作数据的方法，每个事物对应着一个对象(object)。面向着对象编程即为OOP(Object-Oriented Programing)。</description>
+    </item>
+    
+  </channel>
+</rss>
