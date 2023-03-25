@@ -13,7 +13,7 @@ description: "主页内容配置"
     <!-- <span>欢迎，我</span> -->
     {{< typeit 
     tag=span
-    speed=100
+    speed=75
     breakLines=false
     loop=true
     lifeLike=false
