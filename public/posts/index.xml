@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Sun, 19 Mar 2023 20:10:48 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 16:55:10 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#10新增功能</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#10%E6%96%B0%E7%89%B9%E6%80%A7/</link>
+      <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#10%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
+      <description>本文章将举例介绍绝大多数C# 10的新特性，在.</description>
+    </item>
+    
+    <item>
+      <title>C#10新增功能</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</link>
+      <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
+      <description>本文章将举例介绍绝大多数C# 10的新特性，在.</description>
+    </item>
+    
     <item>
       <title>科目一关键词记录</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</link>

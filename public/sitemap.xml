@@ -6,8 +6,30 @@
   
     
       <url>
+            <loc>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#10%E6%96%B0%E7%89%B9%E6%80%A7/</loc>
+            <lastmod>2023-04-12T16:55:10+08:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</loc>
+            <lastmod>2023-04-12T16:55:10+08:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+  
+    
+  
+    
+      <url>
             <loc>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/</loc>
-            <lastmod>2023-03-19T20:10:48+08:00</lastmod>
+            <lastmod>2023-04-12T16:55:10+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -16,10 +38,12 @@
     
       <url>
             <loc>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/</loc>
-            <lastmod>2023-03-19T20:10:48+08:00</lastmod>
+            <lastmod>2023-04-12T16:55:10+08:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
+    
+  
     
   
     
@@ -29,12 +53,6 @@
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
-    
-  
-    
-  
-    
-  
     
   
     
