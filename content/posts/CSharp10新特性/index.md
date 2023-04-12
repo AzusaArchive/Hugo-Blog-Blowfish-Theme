@@ -10,6 +10,8 @@ series: []
 有些预览特性需要在项目配置文件(.csproj)中配置`<LangVersion>preview<LangVersion/>`才可生效  
 [C#10新增功能](https://learn.microsoft.com/zh-cn/dotnet/csharp/whats-new/csharp-10)  
 
+---
+
 - ## 全局Using
 在任何一个C#类中使用global关键字修饰using指令，该using指令将会应用于整个项目
 
@@ -20,6 +22,8 @@ global using System.Collection.Generic;
 global using Newtonsoft.Json;
 ...
 ```
+
+---
 
 - ## 文件范围的命名空间
 在C#文件中指定命名空间时可以不用花括号{}了，该命名空间将会应用于整个文件范围。但相反的，你无法在一个cs中定义多个命名空间中的内容（一般来说也不会这样做）。
@@ -37,6 +41,8 @@ public static class JwtTokenGenerator
 }
 ```
 
+---
+
 - ## 常量内插字符串
 你可以在const string中使用内插字符串了，你可以将用在某些只接受常量字符串的地方。
 ```
@@ -49,6 +55,8 @@ public const string SignInUrl = $"{BaseUrl}/SignIn";//你可以使用$内插常�
 
 ```
 
+---
+
 - ## 泛型特性（注解）
 C#特性也支持泛型了，传递类型参数更加方便，不需要typeof了。
 ```
@@ -57,6 +65,8 @@ public class UnitOfWorkAttribute<TDbContext> : Attribute where TDbContext : DbCo
     ...
 }
 ```
+
+---
 
 - ## Lambda表达式改进
 `var`关键字可以推断lambda表达式的返回值了
@@ -71,6 +81,8 @@ var func2 = string? () => null;//但是可以显式指定一下
 ```
 var func3 = [UnitOfWorkAttribute<MyDbContext>()](long id) => myDbCtx.Books.Find(id);
 ```
+
+---
 
 - ## 模式匹配属性扩展
 在模式匹配的时候可以匹配对象的属性，并且用成员运算符`.`来匹配属性对象的属性
@@ -87,11 +99,15 @@ if (book is Book { PubTime: { Month: 12 } })
 }
 ```
 
+---
+
 - ## 记录(record)结构体
 `record`类型也可以声明为结构体了，也是值类型。
 ```
 public record struct Color(short Red, short Green, short Blue);
 ```
+
+---
 
 - ## 结构体的优化
 在C#10以前，结构体的显式构造函数必须得给所有字段和自动属性赋值
@@ -130,6 +146,8 @@ public Color(short red, short green)
 var color = new Color(122, 255, 255);
 var color1 = color with { Green = 12 };
 ```
+
+---
 
 - ## 在同一析构中进行赋值和声明
 可以通过析构对象来给变量赋值，或是

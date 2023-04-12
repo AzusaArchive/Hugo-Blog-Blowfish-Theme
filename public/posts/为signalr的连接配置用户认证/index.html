@@ -14,7 +14,7 @@
   <meta name="title" content="为SignalR的连接配置用户认证 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  
+  <meta name="keywords" content="ASP .NET Core, SignalR, Javascript, Websocket, " />
   
   
   <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" />
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/css/main.bundle.min.817efa3e78414f75f9be7db09d6ea34f7038af25adf4f6777a61205e14d98063d2b3dae39574b9845ba15a0f95a8d12389dff2d97cf9f684e00c29de94156cd3.css"
-    integrity="sha512-gX76PnhBT3X5vn2wnW6jT3A4ryWt9PZ3emEgXhTZgGPSs9rjlXS5hFuhWg&#43;VqNEjid/y2Xz59oTgDCnelBVs0w==" />
+  <link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/css/main.bundle.min.6ac677f550cbf2779c4e1ab7629aabc0397d14f7d8f2344f4c4b864c5f6f25eaaa9354140aa5af2bac1b86fc1772e2cdbfc2bee3ef1dc1cb9594ee68b300ac97.css"
+    integrity="sha512-asZ39VDL8necThq3YpqrwDl9FPfY8jRPTEuGTF9vJeqqk1QUCqWvK6wbhvwXcuLNv8K&#43;4&#43;8dwcuVlO5oswCslw==" />
   
   
   <script type="text/javascript" src="/Hugo-Blog-Blowfish-Theme/js/appearance.min.a75d508cf75a202afc48fe649516720f8036bda3657897f6cc07dab21f94fa9c3933edbbfc2936f8d3a426f45ac6153237a48aec9115147c5e03db1c5b62b8bc.js"
@@ -102,7 +102,7 @@
     "keywords": ["ASP .NET Core","SignalR","Javascript","Websocket"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "259"
+    "wordCount": "248"
   }]
   </script>
 
@@ -671,7 +671,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-03-11 02:47:26 &#43;0800 CST">2023年3月11日</time><span class="px-2 text-primary-500">&middot;</span><span>259 字</span>
+  <time datetime="2023-03-11 02:47:26 &#43;0800 CST">2023年3月11日</time><span class="px-2 text-primary-500">&middot;</span><span>248 字</span>
   
 
   
@@ -886,23 +886,25 @@
         
 
         <p>在使用SignalR向.NET后端进行实时通信时，时常会使用 AccessToken 进行用户授权。提供用户认证可以提高后端接口的安全性，并且可以利用SignalR的用户认证机制来向指定用户的所有SignalR连接发送消息。</p>
-<div id="后端用户授权服务" class="anchor">后端用户授权服务></div>
+<div id="后端用户授权服务" class="anchor"></div>
 <h2 class="relative group">后端用户授权服务 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%90%8e%e7%ab%af%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%e6%9c%8d%e5%8a%a1" aria-label="锚点">#</a></span>        
     
-</h2><ul>
+</h2>
+<ul>
 <li>
-<div id="在-aspnet-core-中添加授权机制" class="anchor">在 ASP.NET Core 中添加授权机制：></div>
+<div id="在-aspnet-core-中添加授权机制" class="anchor"></div>
 <h3 class="relative group">在 ASP.NET Core 中添加授权机制： 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%9c%a8-aspnet-core-%e4%b8%ad%e6%b7%bb%e5%8a%a0%e6%8e%88%e6%9d%83%e6%9c%ba%e5%88%b6" aria-label="锚点">#</a></span>        
     
-</h3><pre tabindex="0"><code>Program.cs
+</h3>
+<pre tabindex="0"><code>Program.cs
 
 ...
 
@@ -930,14 +932,15 @@ app.UseAuthorization();
 ...
 </code></pre></li>
 <li>
-<div id="在signalr集线器类上添加authorize特性" class="anchor">在SignalR集线器类上添加Authorize特性></div>
+<div id="在signalr集线器类上添加authorize特性" class="anchor"></div>
 <h3 class="relative group">在SignalR集线器类上添加Authorize特性 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%9c%a8signalr%e9%9b%86%e7%ba%bf%e5%99%a8%e7%b1%bb%e4%b8%8a%e6%b7%bb%e5%8a%a0authorize%e7%89%b9%e6%80%a7" aria-label="锚点">#</a></span>        
     
-</h3><p>详细的授权信息与不同的授权规则参考<a href="https://learn.microsoft.com/zh-cn/aspnet/core/security/authorization/introduction?view=aspnetcore-6.0"   target="_blank">
+</h3>
+<p>详细的授权信息与不同的授权规则参考<a href="https://learn.microsoft.com/zh-cn/aspnet/core/security/authorization/introduction?view=aspnetcore-6.0"   target="_blank">
     ASP.NET Core授权</a></p>
 <pre tabindex="0"><code>//添加授权
 [Authorize]
@@ -957,23 +960,25 @@ public class ChatHub : Hub
 </li>
 </ul>
 <br>
-<div id="在客户端配置signalr连接的访问令牌" class="anchor">在客户端配置SignalR连接的访问令牌></div>
+<div id="在客户端配置signalr连接的访问令牌" class="anchor"></div>
 <h2 class="relative group">在客户端配置SignalR连接的访问令牌 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%9c%a8%e5%ae%a2%e6%88%b7%e7%ab%af%e9%85%8d%e7%bd%aesignalr%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%ae%bf%e9%97%ae%e4%bb%a4%e7%89%8c" aria-label="锚点">#</a></span>        
     
-</h2><ul>
+</h2>
+<ul>
 <li>
-<div id="c客户端" class="anchor">C#客户端></div>
+<div id="c客户端" class="anchor"></div>
 <h3 class="relative group">C#客户端 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#c%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="锚点">#</a></span>        
     
-</h3><pre tabindex="0"><code>...
+</h3>
+<pre tabindex="0"><code>...
 
 _connection = new HubConnectionBuilder()
     .WithAutomaticReconnect()
@@ -992,14 +997,15 @@ await _connection.StartAsync();
 ...
 </code></pre></li>
 <li>
-<div id="javascript客户端" class="anchor">Javascript客户端></div>
+<div id="javascript客户端" class="anchor"></div>
 <h3 class="relative group">Javascript客户端 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#javascript%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="锚点">#</a></span>        
     
-</h3><pre tabindex="0"><code>...
+</h3>
+<pre tabindex="0"><code>...
 
 this.hubConnection = new signalR.HubConnectionBuilder()
     .withUrl(&#34;this.hubUrl&#34;,{ //为withUrl方法参数2的accessTokenFactory属性提供获取访问令牌的方法
@@ -1014,14 +1020,15 @@ await this.hubConnection.start();
 </code></pre></li>
 </ul>
 <br>
-<div id="踩坑注意" class="anchor">踩坑注意></div>
+<div id="踩坑注意" class="anchor"></div>
 <h2 class="relative group">踩坑注意 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e8%b8%a9%e5%9d%91%e6%b3%a8%e6%84%8f" aria-label="锚点">#</a></span>        
     
-</h2><p>在Javascript客户端，即使配置了访问令牌，在对后端SignalR集线器进行访问时服务器仍然会响应 <strong>401 Unauthorized</strong> 或是客户端抛出 <strong>SignalR Error: Failed to complete negotiation with the server</strong> 异常，若排除了Javascript客户端配置问题或是CORS跨域访问问题，则有可能是因为Javascript websocket API不支持设置请求报文头的原因。</p>
+</h2>
+<p>在Javascript客户端，即使配置了访问令牌，在对后端SignalR集线器进行访问时服务器仍然会响应 <strong>401 Unauthorized</strong> 或是客户端抛出 <strong>SignalR Error: Failed to complete negotiation with the server</strong> 异常，若排除了Javascript客户端配置问题或是CORS跨域访问问题，则有可能是因为Javascript websocket API不支持设置请求报文头的原因。</p>
 <p>客户端使用HTTP协议向服务器进行访问令牌验证常用的方式是在报文头中添加 <em>Authorization</em> 标头，并提供访问令牌字符串。
 
 
@@ -1056,14 +1063,15 @@ await this.hubConnection.start();
 
 </p>
 <p>ASP.NET Core并不会自动对查询字符串中的访问令牌进行授权，所以此时服务器将会返回 <strong>401 Unauthorized</strong> ，而Javascript客户端会抛出 <strong>SignalR Error: Failed to complete negotiation with the server (无法完成与服务器的协商）</strong> 异常。</p>
-<div id="解决方法" class="anchor">解决方法：></div>
+<div id="解决方法" class="anchor"></div>
 <h3 class="relative group">解决方法： 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" aria-label="锚点">#</a></span>        
     
-</h3><p>在服务器端配置授权机制，在收到请求消息时手动进行授权处理。配置的方式有多种，较为简单的方式是直接在Authorization服务中添加事件：</p>
+</h3>
+<p>在服务器端配置授权机制，在收到请求消息时手动进行授权处理。配置的方式有多种，较为简单的方式是直接在Authorization服务中添加事件：</p>
 <pre tabindex="0"><code>program.cs
 
 ...
