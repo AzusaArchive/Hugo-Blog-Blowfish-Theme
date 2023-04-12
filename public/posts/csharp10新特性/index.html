@@ -14,7 +14,7 @@
   <meta name="title" content="C#10新增功能 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  
+  <meta name="keywords" content="C#基础, " />
   
   
   <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/" />
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/css/main.bundle.min.817efa3e78414f75f9be7db09d6ea34f7038af25adf4f6777a61205e14d98063d2b3dae39574b9845ba15a0f95a8d12389dff2d97cf9f684e00c29de94156cd3.css"
-    integrity="sha512-gX76PnhBT3X5vn2wnW6jT3A4ryWt9PZ3emEgXhTZgGPSs9rjlXS5hFuhWg&#43;VqNEjid/y2Xz59oTgDCnelBVs0w==" />
+  <link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/css/main.bundle.min.6ac677f550cbf2779c4e1ab7629aabc0397d14f7d8f2344f4c4b864c5f6f25eaaa9354140aa5af2bac1b86fc1772e2cdbfc2bee3ef1dc1cb9594ee68b300ac97.css"
+    integrity="sha512-asZ39VDL8necThq3YpqrwDl9FPfY8jRPTEuGTF9vJeqqk1QUCqWvK6wbhvwXcuLNv8K&#43;4&#43;8dwcuVlO5oswCslw==" />
   
   
   <script type="text/javascript" src="/Hugo-Blog-Blowfish-Theme/js/appearance.min.a75d508cf75a202afc48fe649516720f8036bda3657897f6cc07dab21f94fa9c3933edbbfc2936f8d3a426f45ac6153237a48aec9115147c5e03db1c5b62b8bc.js"
@@ -102,7 +102,7 @@
     "keywords": ["C#基础"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "261"
+    "wordCount": "252"
   }]
   </script>
 
@@ -671,7 +671,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-12 16:55:10 &#43;0800 CST">2023年4月12日</time><span class="px-2 text-primary-500">&middot;</span><span>261 字</span>
+  <time datetime="2023-04-12 16:55:10 &#43;0800 CST">2023年4月12日</time><span class="px-2 text-primary-500">&middot;</span><span>252 字</span>
   
 
   
@@ -831,16 +831,18 @@
 <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/whats-new/csharp-10"   target="_blank">
     C#10新增功能</a></p>
 </blockquote>
+<hr>
 <ul>
 <li>
-<div id="全局using" class="anchor">全局Using></div>
+<div id="全局using" class="anchor"></div>
 <h2 class="relative group">全局Using 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%85%a8%e5%b1%80using" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>在任何一个C#类中使用global关键字修饰using指令，该using指令将会应用于整个项目</p>
 <p>globalUsing.cs</p>
@@ -848,16 +850,18 @@
 global using System.Collection.Generic;
 global using Newtonsoft.Json;
 ...
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="文件范围的命名空间" class="anchor">文件范围的命名空间></div>
+<div id="文件范围的命名空间" class="anchor"></div>
 <h2 class="relative group">文件范围的命名空间 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e6%96%87%e4%bb%b6%e8%8c%83%e5%9b%b4%e7%9a%84%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>在C#文件中指定命名空间时可以不用花括号{}了，该命名空间将会应用于整个文件范围。但相反的，你无法在一个cs中定义多个命名空间中的内容（一般来说也不会这样做）。</p>
 <pre tabindex="0"><code>using System.IdentityModel.Tokens.Jwt;
@@ -870,16 +874,18 @@ public static class JwtTokenGenerator
 {
     ...
 }
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="常量内插字符串" class="anchor">常量内插字符串></div>
+<div id="常量内插字符串" class="anchor"></div>
 <h2 class="relative group">常量内插字符串 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%b8%b8%e9%87%8f%e5%86%85%e6%8f%92%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>你可以在const string中使用内插字符串了，你可以将用在某些只接受常量字符串的地方。</p>
 <pre tabindex="0"><code>...
@@ -888,32 +894,36 @@ public const string SignInUrl = $&#34;{BaseUrl}/SignIn&#34;;//你可以使用$�
 ...
 
 [HttpGet(SignInUrl)]//在这种地方适合使用常量字符串！
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="泛型特性注解" class="anchor">泛型特性（注解）></div>
+<div id="泛型特性注解" class="anchor"></div>
 <h2 class="relative group">泛型特性（注解） 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e6%b3%9b%e5%9e%8b%e7%89%b9%e6%80%a7%e6%b3%a8%e8%a7%a3" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>C#特性也支持泛型了，传递类型参数更加方便，不需要typeof了。</p>
 <pre tabindex="0"><code>public class UnitOfWorkAttribute&lt;TDbContext&gt; : Attribute where TDbContext : DbContext
 {
     ...
 }
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="lambda表达式改进" class="anchor">Lambda表达式改进></div>
+<div id="lambda表达式改进" class="anchor"></div>
 <h2 class="relative group">Lambda表达式改进 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#lambda%e8%a1%a8%e8%be%be%e5%bc%8f%e6%94%b9%e8%bf%9b" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p><code>var</code>关键字可以推断lambda表达式的返回值了</p>
 <pre tabindex="0"><code>var func = () =&gt; &#34;Nice&#34;;//现在编译器可以推断出这个lambda是Func&lt;string&gt;了
@@ -922,16 +932,18 @@ var func1 = () =&gt; null;//不过这样是不行的，因为null没有类型
 var func2 = string? () =&gt; null;//但是可以显式指定一下
 </code></pre><p><strong>特性</strong>也可以支持在lambda上标注了</p>
 <pre tabindex="0"><code>var func3 = [UnitOfWorkAttribute&lt;MyDbContext&gt;()](long id) =&gt; myDbCtx.Books.Find(id);
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="模式匹配属性扩展" class="anchor">模式匹配属性扩展></div>
+<div id="模式匹配属性扩展" class="anchor"></div>
 <h2 class="relative group">模式匹配属性扩展 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e6%a8%a1%e5%bc%8f%e5%8c%b9%e9%85%8d%e5%b1%9e%e6%80%a7%e6%89%a9%e5%b1%95" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>在模式匹配的时候可以匹配对象的属性，并且用成员运算符<code>.</code>来匹配属性对象的属性</p>
 <pre tabindex="0"><code>if (book is Book{PubTime.Month:12})//用成员运算符来读取对象属性的属性
@@ -944,29 +956,33 @@ if (book is Book { PubTime: { Month: 12 } })
 {
     
 }
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="记录record结构体" class="anchor">记录(record)结构体></div>
+<div id="记录record结构体" class="anchor"></div>
 <h2 class="relative group">记录(record)结构体 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e8%ae%b0%e5%bd%95record%e7%bb%93%e6%9e%84%e4%bd%93" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p><code>record</code>类型也可以声明为结构体了，也是值类型。</p>
 <pre tabindex="0"><code>public record struct Color(short Red, short Green, short Blue);
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="结构体的优化" class="anchor">结构体的优化></div>
+<div id="结构体的优化" class="anchor"></div>
 <h2 class="relative group">结构体的优化 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e4%bc%98%e5%8c%96" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>在C#10以前，结构体的显式构造函数必须得给所有字段和自动属性赋值
 比如这样一个结构体</p>
@@ -996,16 +1012,18 @@ public Color(short red, short green, short blue)//字段和自动属性都得赋
 </code></pre><p>并且，C#10的结构体也支持with关键字</p>
 <pre tabindex="0"><code>var color = new Color(122, 255, 255);
 var color1 = color with { Green = 12 };
-</code></pre><ul>
+</code></pre><hr>
+<ul>
 <li>
-<div id="在同一析构中进行赋值和声明" class="anchor">在同一析构中进行赋值和声明></div>
+<div id="在同一析构中进行赋值和声明" class="anchor"></div>
 <h2 class="relative group">在同一析构中进行赋值和声明 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%e5%9c%a8%e5%90%8c%e4%b8%80%e6%9e%90%e6%9e%84%e4%b8%ad%e8%bf%9b%e8%a1%8c%e8%b5%8b%e5%80%bc%e5%92%8c%e5%a3%b0%e6%98%8e" aria-label="锚点">#</a></span>        
     
-</h2></li>
+</h2>
+</li>
 </ul>
 <p>可以通过析构对象来给变量赋值，或是</p>
 <pre tabindex="0"><code>(int x, int y) = point;//析构对象来初始化两个变量，注意这不是元组
@@ -1150,28 +1168,6 @@ int y1 = 0;
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/Hugo-Blog-Blowfish-Theme/posts/c#10%E6%96%B0%E7%89%B9%E6%80%A7/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >C#10新增功能</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-04-12 16:55:10 &#43;0800 CST">2023年4月12日</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

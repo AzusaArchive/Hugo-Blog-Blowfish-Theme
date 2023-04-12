@@ -10,15 +10,6 @@
     <lastBuildDate>Wed, 12 Apr 2023 16:55:10 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C#10新增功能</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#10%E6%96%B0%E7%89%B9%E6%80%A7/</link>
-      <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#10%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
-      <description>本文章将举例介绍绝大多数C# 10的新特性，在.</description>
-    </item>
-    
-    <item>
-      <title>C#10新增功能</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</link>
       <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
       
@@ -32,7 +23,7 @@
       <pubDate>Sun, 19 Mar 2023 20:10:48 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</guid>
-      <description>驾驶证&gt;驾驶证 # 常规&gt;常规 # 年龄要求： c1,c2: 18+无上限 c6:20-60 货车：20+ 有效期： 6年-&amp;gt;10年-&amp;gt;长期 体检： 中大型公交牵引车每年体检 任何限时题目： 有90日选择90日，否则选择30日 驾驶证周期： 12月 驾驶证实习期： 12月 有效期： 准考证3年内，实习期需要3年驾龄司机陪同，延期审验3年 证件相关：&gt;证件相关： # 车“登记”，证随意</description>
+      <description>驾驶证 # 常规 # 年龄要求： c1,c2: 18+无上限 c6:20-60 货车：20+ 有效期： 6年-&amp;gt;10年-&amp;gt;长期 体检： 中大型公交牵引车每年体检 任何限时题目： 有90日选择90日，否则选择30日 驾驶证周期： 12月 驾驶证实习期： 12月 有效期： 准考证3年内，实习期需要3年驾龄司机陪同，延期审验3年 证件相关： # 车“登记”，证随意</description>
     </item>
     
     <item>
@@ -50,7 +41,7 @@
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</guid>
-      <description>.NET 表达式树&gt;.</description>
+      <description>.</description>
     </item>
     
     <item>
@@ -59,7 +50,7 @@
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</guid>
-      <description>Swagger文档&gt;Swagger文档 # 在ASP .</description>
+      <description>Swagger文档 # 在ASP .</description>
     </item>
     
     <item>
@@ -77,7 +68,7 @@
       <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</guid>
-      <description>测试帖子&gt;测试帖子 # 使用Hugo超快速建站</description>
+      <description>测试帖子 # 使用Hugo超快速建站</description>
     </item>
     
   </channel>
