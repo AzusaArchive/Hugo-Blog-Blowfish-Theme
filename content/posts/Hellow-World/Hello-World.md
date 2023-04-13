@@ -1,6 +1,7 @@
 ---
 title: "Hello World"
 date: 2023-03-10T19:01:26+08:00
+categories: [其他]
 ---
 ## 测试帖子
 ---

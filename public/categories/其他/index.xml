@@ -17,5 +17,14 @@
       <description>驾驶证 # 常规 # 年龄要求： c1,c2: 18+无上限 c6:20-60 货车：20+ 有效期： 6年-&amp;gt;10年-&amp;gt;长期 体检： 中大型公交牵引车每年体检 任何限时题目： 有90日选择90日，否则选择30日 驾驶证周期： 12月 驾驶证实习期： 12月 有效期： 准考证3年内，实习期需要3年驾龄司机陪同，延期审验3年 证件相关： # 车“登记”，证随意</description>
     </item>
     
+    <item>
+      <title>Hello World</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</link>
+      <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</guid>
+      <description>测试帖子 # 使用Hugo超快速建站</description>
+    </item>
+    
   </channel>
 </rss>
