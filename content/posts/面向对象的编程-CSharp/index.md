@@ -1,8 +1,8 @@
 ﻿---
 title: "面向对象的编程（C#）"
 date: 2023-03-17T15:31:41+08:00
-tags: ["OOP","C#基础"]
-categories: ["C#"]
+tags: ["OOP","CSharp基础"]
+categories: [".NET"]
 ---
 
 > 在阅读前你需要先掌握C#类的语法并了解类与对象的基本概念。
