@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/sitemap.xml
+Sitemap: Hugo-Blog-Blowfish-Theme/sitemap.xml

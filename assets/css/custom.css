@@ -1,9 +1,10 @@
 @font-face{
     font-family:MSYaHei;
     src:url("/fonts/msyhl.ttc");
+    font-display: swap;
 }
 
 html{
-    font-family: MSYaHei;
+    font-family: 'Trebuchet MS', MSYaHei, Arial, sans-serif;
 }
 
