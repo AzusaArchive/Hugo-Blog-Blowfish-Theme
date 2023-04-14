@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AzusaArchive</title>
-    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/</link>
+    <link>Hugo-Blog-Blowfish-Theme/tags/</link>
     <description>Recent content in Tags on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="Hugo-Blog-Blowfish-Theme/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Abp框架</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/abp%E6%A1%86%E6%9E%B6/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/abp%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Thu, 13 Apr 2023 18:24:04 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/abp%E6%A1%86%E6%9E%B6/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/abp%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp基础</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OOP</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/oop/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/oop/</link>
       <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/oop/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/oop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/csharp/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/csharp/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/csharp/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/csharp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linq</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/linq/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/linq/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/linq/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/linq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ASP .NET Core</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swagger</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/swagger/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/swagger/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/swagger/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/swagger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web API</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/web-api/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/web-api/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/web-api/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/web-api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/javascript/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/javascript/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/javascript/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SignalR</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/signalr/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/signalr/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/signalr/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/signalr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Websocket</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/websocket/</link>
+      <link>Hugo-Blog-Blowfish-Theme/tags/websocket/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/websocket/</guid>
+      <guid>Hugo-Blog-Blowfish-Theme/tags/websocket/</guid>
       <description></description>
     </item>
     
