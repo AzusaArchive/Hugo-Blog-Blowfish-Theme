@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/css/main.bundle.min.ea6b76e7998325ad14c50e2160e774cde18ff6d5fa2a183bb5cd45fc991cdc8f648b770e4a20eed701f7f76d5a0042205055fe3712a14eceb9cc26e4c8fe1332.css"
-    integrity="sha512-6mt255mDJa0UxQ4hYOd0zeGP9tX6Khg7tc1F/Jkc3I9ki3cOSiDu1wH3921aAEIgUFX&#43;NxKhTs65zCbkyP4TMg==" />
+  <link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/css/main.bundle.min.8c7d5c1489d8d05b8a55aa15bd8f3283a927e281e2c0bfd20c1bffeeef63fd25b9fd787dab18caabae535055c2d3f174923c52ba3595d69fa1e7828e272b0aac.css"
+    integrity="sha512-jH1cFInY0FuKVaoVvY8yg6kn4oHiwL/SDBv/7u9j/SW5/Xh9qxjKq65TUFXC0/F0kjxSujWV1p&#43;h54KOJysKrA==" />
   
   
   <script type="text/javascript" src="/Hugo-Blog-Blowfish-Theme/js/appearance.min.a75d508cf75a202afc48fe649516720f8036bda3657897f6cc07dab21f94fa9c3933edbbfc2936f8d3a426f45ac6153237a48aec9115147c5e03db1c5b62b8bc.js"
@@ -103,7 +103,7 @@
     "keywords": ["OOP","CSharp基础"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "7744"
+    "wordCount": "7854"
   }]
   </script>
 
@@ -674,7 +674,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-03-17 15:31:41 &#43;0800 CST">2023年3月17日</time><span class="px-2 text-primary-500">&middot;</span><span>7744 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">16 分钟</span>
+  <time datetime="2023-03-17 15:31:41 &#43;0800 CST">2023年3月17日</time><span class="px-2 text-primary-500">&middot;</span><span>7854 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">16 分钟</span>
   
 
   
@@ -758,10 +758,40 @@
     <li><a href="#概念">概念</a></li>
     <li><a href="#面向对象的特征">面向对象的特征</a>
       <ul>
-        <li><a href="#抽象">抽象</a></li>
-        <li><a href="#封装">封装</a></li>
-        <li><a href="#继承">继承</a></li>
-        <li><a href="#多态">多态</a></li>
+        <li><a href="#抽象">抽象</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#例子">例子</a></li>
+            <li><a href="#抽象的好处">抽象的好处</a></li>
+          </ul>
+        </li>
+        <li><a href="#封装">封装</a>
+          <ul>
+            <li><a href="#定义-1">定义</a></li>
+            <li><a href="#例子-1">例子</a></li>
+            <li><a href="#封装的好处">封装的好处</a></li>
+          </ul>
+        </li>
+        <li><a href="#继承">继承</a>
+          <ul>
+            <li><a href="#定义-2">定义</a></li>
+            <li><a href="#例子-2">例子</a></li>
+            <li><a href="#base关键字"><code>base</code>关键字</a></li>
+            <li><a href="#sealed关键字"><code>sealed</code>关键字</a></li>
+            <li><a href="#继承的好处">继承的好处</a></li>
+          </ul>
+        </li>
+        <li><a href="#多态">多态</a>
+          <ul>
+            <li><a href="#定义-3">定义</a></li>
+            <li><a href="#抽象类"><em><strong>抽象类</strong></em></a></li>
+            <li><a href="#虚方法"><em><strong>虚方法</strong></em></a></li>
+            <li><a href="#抽象方法"><em><strong>抽象方法</strong></em></a></li>
+            <li><a href="#接口"><em><strong>接口</strong></em></a></li>
+            <li><a href="#替换">替换</a></li>
+            <li><a href="#多态性的好处">多态性的好处</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#面向对象五大原则solid原则">面向对象五大原则（SOLID原则）</a>
@@ -790,10 +820,40 @@
     <li><a href="#概念">概念</a></li>
     <li><a href="#面向对象的特征">面向对象的特征</a>
       <ul>
-        <li><a href="#抽象">抽象</a></li>
-        <li><a href="#封装">封装</a></li>
-        <li><a href="#继承">继承</a></li>
-        <li><a href="#多态">多态</a></li>
+        <li><a href="#抽象">抽象</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#例子">例子</a></li>
+            <li><a href="#抽象的好处">抽象的好处</a></li>
+          </ul>
+        </li>
+        <li><a href="#封装">封装</a>
+          <ul>
+            <li><a href="#定义-1">定义</a></li>
+            <li><a href="#例子-1">例子</a></li>
+            <li><a href="#封装的好处">封装的好处</a></li>
+          </ul>
+        </li>
+        <li><a href="#继承">继承</a>
+          <ul>
+            <li><a href="#定义-2">定义</a></li>
+            <li><a href="#例子-2">例子</a></li>
+            <li><a href="#base关键字"><code>base</code>关键字</a></li>
+            <li><a href="#sealed关键字"><code>sealed</code>关键字</a></li>
+            <li><a href="#继承的好处">继承的好处</a></li>
+          </ul>
+        </li>
+        <li><a href="#多态">多态</a>
+          <ul>
+            <li><a href="#定义-3">定义</a></li>
+            <li><a href="#抽象类"><em><strong>抽象类</strong></em></a></li>
+            <li><a href="#虚方法"><em><strong>虚方法</strong></em></a></li>
+            <li><a href="#抽象方法"><em><strong>抽象方法</strong></em></a></li>
+            <li><a href="#接口"><em><strong>接口</strong></em></a></li>
+            <li><a href="#替换">替换</a></li>
+            <li><a href="#多态性的好处">多态性的好处</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#面向对象五大原则solid原则">面向对象五大原则（SOLID原则）</a>
@@ -923,9 +983,25 @@
             style="text-decoration-line: none !important;" href="#%e6%8a%bd%e8%b1%a1" aria-label="锚点">#</a></span>        
     
 </h3>
+<div id="定义" class="anchor"></div>
+<h4 class="relative group">定义 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%ae%9a%e4%b9%89" aria-label="锚点">#</a></span>        
+    
+</h4>
 <p>抽象指将同类对象中提取出共性的特性，然后形成一个<strong>类(class)</strong><br>
-在C#中，类与类直接只能单一继承，不能继承多个类。<br>
-下面的代码提供了一个<strong>类</strong>的示例，将一个姓名属性和更改姓名的方法封装到一个<code>Person</code>类中：</p>
+在C#中，类与类直接只能单一继承，不能继承多个类。</p>
+<div id="例子" class="anchor"></div>
+<h4 class="relative group">例子 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%be%8b%e5%ad%90" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>下面的代码提供了一个<strong>类</strong>的示例，将一个姓名属性和更改姓名的方法封装到一个<code>Person</code>类中：</p>
 <pre tabindex="0"><code>public class Person
 {
     //姓名属性
@@ -938,7 +1014,14 @@
     }
 }
 </code></pre><p>在编程时，可以使用该类作为一个<code>Person</code>对象，并可以读取和更改其姓名</p>
-<p><em>抽象的好处</em>：</p>
+<div id="抽象的好处" class="anchor"></div>
+<h4 class="relative group">抽象的好处 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%8a%bd%e8%b1%a1%e7%9a%84%e5%a5%bd%e5%a4%84" aria-label="锚点">#</a></span>        
+    
+</h4>
 <blockquote>
 <ul>
 <li>抽象化模拟了现实世界的事物和行为，提高了代码可读性。</li>
@@ -955,6 +1038,14 @@
             style="text-decoration-line: none !important;" href="#%e5%b0%81%e8%a3%85" aria-label="锚点">#</a></span>        
     
 </h3>
+<div id="定义-1" class="anchor"></div>
+<h4 class="relative group">定义 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%ae%9a%e4%b9%89-1" aria-label="锚点">#</a></span>        
+    
+</h4>
 <p>封装指隐藏类/对象内部的状态和功能，仅通过一组公共的成员来进行访问<br>
 对类中的成员添加访问修饰符以指定成员的访问级别。<br>
 C#中访问修饰符有四种:<br>
@@ -963,8 +1054,16 @@ C#中访问修饰符有四种:<br>
 <code>protected</code>:保护，只有<strong>继承</strong>自该类的类可以访问<br>
 <code>internal</code>:内部，类的内外都可以访问，但仅限当前程序集<br>
 其中，internal修饰符可以与其他三个叠加使用，如internal public即是在当前程序集中的类内外都可以访问。<br>
-不指定访问修饰符的
-下面的代码举出了访问修饰符的例子：</p>
+不指定访问修饰符的类默认为<code>private</code></p>
+<div id="例子-1" class="anchor"></div>
+<h4 class="relative group">例子 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%be%8b%e5%ad%90-1" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>下面的代码举出了访问修饰符的例子：</p>
 <pre tabindex="0"><code>public class Person
 {
     //私有修饰符
@@ -986,7 +1085,14 @@ public class Program
     }
 }
 </code></pre><p>使用访问修饰符限制了类中成员的访问级别，实现隐藏成员的效果，达到封装的目的。</p>
-<p><em>封装的好处</em>:</p>
+<div id="封装的好处" class="anchor"></div>
+<h4 class="relative group">封装的好处 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%b0%81%e8%a3%85%e7%9a%84%e5%a5%bd%e5%a4%84" aria-label="锚点">#</a></span>        
+    
+</h4>
 <blockquote>
 <ul>
 <li>类的封装可以保护类内部的数据和代码不被外部访问，提高代码的安全性</li>
@@ -1003,9 +1109,25 @@ public class Program
             style="text-decoration-line: none !important;" href="#%e7%bb%a7%e6%89%bf" aria-label="锚点">#</a></span>        
     
 </h3>
+<div id="定义-2" class="anchor"></div>
+<h4 class="relative group">定义 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%ae%9a%e4%b9%89-2" aria-label="锚点">#</a></span>        
+    
+</h4>
 <p>根据现有抽象创建新的抽象，说人话就是在原有类的基础上进行拓展，保留原有类的所有能力，在新的一个类上创建新的功能，此操作被称为 <strong>“继承”</strong>，原有的类被称为 <strong>“父类”</strong> 或 <strong>“基类”</strong> ，继承父类的新类被称为 <strong>“子类”</strong> 或 <strong>“派生类”</strong> ，子类继承父类的行为被称为 <strong>“派生”</strong>，可以说 <strong>“子类”继承自“父类”，而“父类”派生出“子类”</strong>。</p>
 <p>一般，定义复杂且多种类对象时，会把它们共性的特征集成到一个父类中，将它们独有的特征划分到子类。</p>
 <p>在C#中，类只能有一个基类，不能多重继承。</p>
+<div id="例子-2" class="anchor"></div>
+<h4 class="relative group">例子 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%be%8b%e5%ad%90-2" aria-label="锚点">#</a></span>        
+    
+</h4>
 <p>下面的代码展示了类的继承关系：</p>
 <pre tabindex="0"><code>//基类
 public class Person
@@ -1035,8 +1157,15 @@ public class Student : Person
     public string School { get; set; }
 }
 </code></pre><p>上述代码的<code>Employee</code>类继承自<code>Person</code>类，<code>Studnet</code>类也继承自了<code>Person</code>类，它们都会继承<code>Person</code>类的<code>Name</code>属性和<code>ChangeName</code>方法，但它们也有自己独有的属性和方法。</p>
-<p><em><strong>base关键字</strong></em><br>
-在子类中使用base关键字可以访问到父类的公开或保护内容</p>
+<div id="base关键字" class="anchor"></div>
+<h4 class="relative group"><code>base</code>关键字 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#base%e5%85%b3%e9%94%ae%e5%ad%97" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>在子类中使用base关键字可以访问到父类的公开或保护内容</p>
 <pre tabindex="0"><code>public class Employee : Person
 {
     ...
@@ -1050,14 +1179,28 @@ public class Student : Person
     public Employee() : base()
     {}
 }
-</code></pre><p><em><strong>sealed关键字</strong></em><br>
-如果不想让某个类被继承，在声明类时添加sealed关键字，它阻止其他类继承该类。</p>
+</code></pre><div id="sealed关键字" class="anchor"></div>
+<h4 class="relative group"><code>sealed</code>关键字 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#sealed%e5%85%b3%e9%94%ae%e5%ad%97" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>如果不想让某个类被继承，在声明类时添加sealed关键字，它阻止其他类继承该类。</p>
 <pre tabindex="0"><code>//其他类若尝试继承Boss类将会有编译错误
 public sealed class Boss : Person
 {
     ...
 }
-</code></pre><p><em>继承的好处</em>:</p>
+</code></pre><div id="继承的好处" class="anchor"></div>
+<h4 class="relative group">继承的好处 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bb%a7%e6%89%bf%e7%9a%84%e5%a5%bd%e5%a4%84" aria-label="锚点">#</a></span>        
+    
+</h4>
 <blockquote>
 <ul>
 <li>优化类之间的关系，减少冗余，提高代码的复用性，减少错误的可能。</li>
@@ -1073,19 +1216,37 @@ public sealed class Boss : Person
             style="text-decoration-line: none !important;" href="#%e5%a4%9a%e6%80%81" aria-label="锚点">#</a></span>        
     
 </h3>
+<div id="定义-3" class="anchor"></div>
+<h4 class="relative group">定义 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%ae%9a%e4%b9%89-3" aria-label="锚点">#</a></span>        
+    
+</h4>
 <p>多态也是面向对象的核心，它指跨多个抽象以不同方式实现继承属性或方法的能力。多态的实现依赖于<strong>继承</strong>，所以必须要定义多个类并有继承关系，派生类可以各自对父类的方法实现进行修改，在调用时表现出不同的行为，大大增加编程的灵活度。在使用类时，使用多个派生类实例化出多个对象，对这些对象调用同样的基类方法，但却表现出不同的行为，这便是多态。</p>
 <p>下面是实现多态必要的一些概念：</p>
-<ul>
-<li>
-<p><em><strong>抽象类</strong></em><br>
-将对象或已有的类<strong>更加抽象化</strong>成为一个新的类，以至于无法具体化（无法创建出该类的对象，因为过于抽象而缺少某些创建类所必要的数据或方法）。这样的类被称为抽象类，在类修饰符<code>class</code>前加上<code>abstract</code>修饰符将定义的类转换为抽象类，抽象类无法被实例化，只能称为其他类的<strong>基类</strong>。</p>
+<div id="抽象类" class="anchor"></div>
+<h4 class="relative group"><em><strong>抽象类</strong></em> 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%8a%bd%e8%b1%a1%e7%b1%bb" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>将对象或已有的类<strong>更加抽象化</strong>成为一个新的类，以至于无法具体化（无法创建出该类的对象，因为过于抽象而缺少某些创建类所必要的数据或方法）。这样的类被称为抽象类，在类修饰符<code>class</code>前加上<code>abstract</code>修饰符将定义的类转换为抽象类，抽象类无法被实例化，只能称为其他类的<strong>基类</strong>。</p>
 <ul>
 <li>抽象类可以有构造函数，但是不能够使用new实例化，构造函数仅供子类使用。</li>
 </ul>
-</li>
-<li>
-<p><em><strong>虚方法</strong></em><br>
-有时将已有类的提取成基类后，会遇到部分子类对与某些方法的实现方式不一致。在类中定义方法时加上<code>virtual</code>关键字，可让子类使用<code>override</code>关键字重写基类方法的实现。</p>
+<div id="虚方法" class="anchor"></div>
+<h4 class="relative group"><em><strong>虚方法</strong></em> 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e8%99%9a%e6%96%b9%e6%b3%95" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>有时将已有类的提取成基类后，会遇到部分子类对与某些方法的实现方式不一致。在类中定义方法时加上<code>virtual</code>关键字，可让子类使用<code>override</code>关键字重写基类方法的实现。</p>
 <p>举一个现实中的例子：以前的所有轿车都是由燃油驱动的，它们有着“移动”行为，并且该都是以&quot;燃油驱动&quot;。但随着时代变化，出现了电力驱动的轿车，即使驱动原理不一样了，但它们还是有着“移动”行为。</p>
 <p>从编程方面来看，轿车类<code>Car</code>有着<code>Move</code>方法，该方法是“由燃油驱动的”，但出现了新的类<code>ElectricCar</code>电动车类，它继承自<code>Car</code>类，但是它对<code>Move</code>方法的实现却不一样，它是“电力驱动的”。此时，可以将<code>Car</code>类中的<code>Move</code>方法标记为虚方法<code>virtual</code>，然后在派生类中重写该方法。</p>
 <p>下面的类定义了一个轿车类，有着用燃油驱动的<code>Move</code>方法：</p>
@@ -1123,14 +1284,18 @@ ec.Move();
 <li>如果不想完全重写虚方法，只是想要在父类的方法基础上添加代码，可以在重写时用<code>base</code>关键字调用父类方法。</li>
 <li><code>sealed</code>关键字也适用于虚方法，它阻止派生类重写方法。</li>
 </ul>
-</li>
-<li>
-<p><em><strong>抽象方法</strong></em><br>
-抽象方法类似于<strong>虚方法</strong>，子类可以<strong>重写</strong>方法的实现。但是有时子类对方法的实现各不相同，无法统一出一个父类的实现方法，这个方法便被抽象化成为一个<strong>抽象方法</strong>。</p>
+<div id="抽象方法" class="anchor"></div>
+<h4 class="relative group"><em><strong>抽象方法</strong></em> 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%8a%bd%e8%b1%a1%e6%96%b9%e6%b3%95" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>抽象方法类似于<strong>虚方法</strong>，子类可以<strong>重写</strong>方法的实现。但是有时子类对方法的实现各不相同，无法统一出一个父类的实现方法，这个方法便被抽象化成为一个<strong>抽象方法</strong>。</p>
 <p>抽象方法在类的方法前使用<code>abstract</code>关键字定义，抽象方法没有方法体，仅定义了方法名，返回值和参数。在子类同样使用<code>override</code>对父类的抽象方法进行重写。</p>
 <p>定义了抽象方法的类必须为<strong>抽象类</strong>，因为这个类有方法没有被实现，无法实例化。</p>
 <p>若一个类的基类是带有抽象方法的抽象类，除非该派生类也是一个抽象类，不然就必须重写所有的抽象方法。</p>
-  <br/>
 <p>再举一个例子：三角形和矩形都属于“形状”，都可以求出其面积，但它们计算面积的公式是不一样的。</p>
 <p>从编程方面来看，三角形和矩形可以提取出一个父类<code>Shape</code>（形状）类，<code>Shape</code>类中有一<strong>虚方法</strong><code>Area</code>用于计算形状的面积。三角形<code>Triangle</code>类和矩形<code>Rectangle</code>类都继承自<code>Shape</code>，并且重写了<code>Area</code>方法。</p>
 <p>但这样设计的问题是，<code>Shape</code>类过于抽象，创建成对象是没有意义的，而且无法实现<code>Area</code>方法，只能留空。<br>
@@ -1162,15 +1327,24 @@ public class Rectangle : Shape
 <li>抽象方法的访问修饰符不能为<code>private</code>，因为抽象方法需要子类的实现。</li>
 <li>若一个类拥有抽象方法，它就必须被修饰为<strong>抽象类</strong>，因为抽象方法需要一个子类提供实现。</li>
 </ul>
-</li>
-<li>
-<p><em><strong>接口</strong></em><br>
-类抽象的极限是只包含方法，类中没有任何数据，只定义了该类的行为，这样抽象到极限的类被称为 <strong>“接口”</strong>。而<strong>继承</strong>了该类的类也不叫<strong>派生类</strong>了，它们被称为 <strong>“实现类”</strong>，而继承这一操作名也变为了 <strong>“实现”</strong>，即某类<strong>实现了</strong>某接口，定义接口的关键字不是<code>class</code>，变为了<code>interface</code>。</p>
+<div id="接口" class="anchor"></div>
+<h4 class="relative group"><em><strong>接口</strong></em> 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%8e%a5%e5%8f%a3" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>类抽象的极限是只包含方法，类中没有任何数据，只定义了该类的行为，这样抽象到极限的类被称为 <strong>“接口”</strong>。而<strong>继承</strong>了该类的类也不叫<strong>派生类</strong>了，它们被称为 <strong>“实现类”</strong>，而继承这一操作名也变为了 <strong>“实现”</strong>，即某类<strong>实现了</strong>某接口，定义接口的关键字不是<code>class</code>，变为了<code>interface</code>。</p>
 <p>接口类似于抽象类，但比抽象类更加抽象，无法定义数据，只能定义行为，而且实现接口的类都必须实现接口中定义的<strong>所有成员</strong>。</p>
-<p>接口一般用来定义</p>
-<p>在C#中，接口只能定义<em>方法，属性，索引器和事件</em>。</p>
-<p>在C#中，类只能继承一个类，但允许实现多个接口，在程序中可以让类实现多个接口，以表现出各类不同的行为。在对类的功能进行拓展时，也可以添加实现的接口来让类实现相应的方法。</p>
-<p>在C#中，接口的命名应当以字母I开头。</p>
+<p>接口一般用来定义某些行为，而不是一类事物，比如C#中的<code>IEnumerable</code>（可枚举）接口。某个类实现了接口，就代表它能够实现这些行为。</p>
+<blockquote>
+<ul>
+<li>在C#中，接口只能定义<em>方法，属性，索引器和事件</em>。</li>
+<li>在C#中，类只能继承一个类，但允许实现多个接口，在程序中可以让类实现多个接口，以表现出各类不同的行为。在对类的功能进行拓展时，也可以添加实现的接口来让类实现相应的方法。</li>
+<li>在C#中，接口的命名应当以字母I开头。</li>
+</ul>
+</blockquote>
 <p>下面的代码展示了接口和实现类的定义：</p>
 <pre tabindex="0"><code>//使用interface关键字定义接口
 public interface IMoveable
@@ -1198,12 +1372,17 @@ public class Car : IMoveable
 <p><strong>新版本特性</strong><br>
 在高版本的C#，接口中的方法可以有方法体，接口中也可以定义静态抽象成员和虚拟成员，具体参考官方文档：<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/interface"   target="_blank">
     接口</a></p>
-</li>
-<li>
-<p><em><strong>替换</strong></em></p>
+<div id="替换" class="anchor"></div>
+<h4 class="relative group">替换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%9b%bf%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
 <ul>
 <li>
-<p><em><strong>向上转换</strong></em><br>
+<p><em><strong>向上转换(upcasting)</strong></em><br>
 在对对象进行操作时，派生类对象的引用可以替换基类的引用：</p>
 <pre tabindex="0"><code>Person p1 = new Person();//实例化Person对象
 Employee e1 = new Employee();//实例化Employee对象
@@ -1262,9 +1441,14 @@ foreach (var obj in data)
 </code></pre><p>上述代码使用了多个不同类型的对象初始化一个<code>object</code>类型的数组，在循环中，<code>Console.WriteLine</code>方法接收一个<code>object</code>类型对象，并调用对象的<code>ToString</code>方法，因为数组中对象的类型都各自重写了<code>ToString</code>方法，它们的输出将会表现出不同的效果。</p>
 </li>
 </ul>
-</li>
-</ul>
-<p><em>多态性的好处</em>：</p>
+<div id="多态性的好处" class="anchor"></div>
+<h4 class="relative group">多态性的好处 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%a4%9a%e6%80%81%e6%80%a7%e7%9a%84%e5%a5%bd%e5%a4%84" aria-label="锚点">#</a></span>        
+    
+</h4>
 <blockquote>
 <ul>
 <li>增强了代码的通用性和简洁性，因为多态允许不同的对象执行相同的操作，但调用的方法却是同一个，这意味着程序员不需要写多个专门针对不同对象类型的方法。</li>

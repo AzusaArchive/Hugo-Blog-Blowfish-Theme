@@ -16,7 +16,8 @@ logo = "icons/logo.png"
 # mainSections = ["section1", "section2"]
 # robots = ""
 
-disableImageOptimization = true
+disableImageZoom = false # 禁用图片缩放
+disableImageOptimization = true # 图像优化 在card.html调整
 
 defaultBackgroundImage = "img/background.jpg" # used as default for background images 
 
@@ -69,7 +70,8 @@ smartTOCHideUnfocusedChildren = true
   showTaxonomies = true
   showAuthorsBadges = false
   showWordCount = true
-  showSummary = true
+  showSummary = true # 文章简述
+  showComments = false # 评论
   sharingLinks = [ "twitter", "reddit", "facebook", "email"]
 
 [list]
