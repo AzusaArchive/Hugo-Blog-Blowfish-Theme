@@ -895,20 +895,20 @@
     
 </h3>
 <p><code>x =&gt; x + 1</code></p>
-<pre tabindex="0"><code>public static void Example1()
-{
-    var param1 = Expression.Variable(typeof(int), &#34;x&#34;);//声明变量表达式，类型为int，参数名为&#34;x&#34;
-    var const1 = Expression.Constant(1);//常量表达式
-    var biExpr = Expression.Add(param1, const1);//声明进行加法运算的二叉表达式，左节点为x,右节点为1
-    //x =&gt; x + 1表达式树就构成了
-    //使用Expression.Lambda方法可以将表达式树转换为lambda表达式树，在类型参数中可以指定转换的委托类型
-    var lambdaExpr = Expression.Lambda&lt;Func&lt;int, int&gt;&gt;(biExpr, param1);//lambda输入参数为x变量
-    //使用LambdaExpression.Compile方法将转换好的lambda表达式树编译成委托
-    Func&lt;int,int&gt; func = lambdaExpr.Compile();
-    //调用编译出的委托
-    Console.WriteLine(func(5));
-}
-</code></pre><div id="更复杂一些的表达式树" class="anchor"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Example1</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="s">&#34;x&#34;</span><span class="p">);</span><span class="c1">//声明变量表达式，类型为int，参数名为&#34;x&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">const1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Constant</span><span class="p">(</span><span class="m">1</span><span class="p">);</span><span class="c1">//常量表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">biExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">const1</span><span class="p">);</span><span class="c1">//声明进行加法运算的二叉表达式，左节点为x,右节点为1</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//x =&gt; x + 1表达式树就构成了</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用Expression.Lambda方法可以将表达式树转换为lambda表达式树，在类型参数中可以指定转换的委托类型</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">lambdaExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Lambda</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;&gt;(</span><span class="n">biExpr</span><span class="p">,</span> <span class="n">param1</span><span class="p">);</span><span class="c1">//lambda输入参数为x变量</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用LambdaExpression.Compile方法将转换好的lambda表达式树编译成委托</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">func</span> <span class="p">=</span> <span class="n">lambdaExpr</span><span class="p">.</span><span class="n">Compile</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//调用编译出的委托</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="m">5</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div id="更复杂一些的表达式树" class="anchor"></div>
 <h3 class="relative group">更复杂一些的表达式树 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -917,21 +917,21 @@
     
 </h3>
 <p><code>(a,b,c) =&gt; (a + b + c) / 3</code></p>
-<pre tabindex="0"><code>public static void Example2()
-{
-    var param1 = Expression.Variable(typeof(int), &#34;a&#34;);
-    var param2 = Expression.Variable(typeof(int), &#34;b&#34;);
-    var param3 = Expression.Variable(typeof(int), &#34;c&#34;);
-    var const1 = Expression.Constant(3.0f,typeof(float));
-    var biExpr1 = Expression.Add(param1, param2);//构造参数1，2，生成加法表达式树1
-    var biExpr2 = Expression.Add(biExpr1, param3);//构造加法表达式树1和参数3，生成加法表达式树2
-    var biExpr3 = Expression.Convert(biExpr2, typeof(float));//两整形相除不会保留小数，转化为浮点型
-    var biExpr4 = Expression.Divide(biExpr3, const1);//构造加法表达式树2和常量表达式1，生成除法表达式树3
-    var lambdaExpr = Expression.Lambda&lt;Func&lt;int,int,int,float&gt;&gt;(biExpr4, param1,param2,param3);//根据表达式树3和三个参数，将表达式树转换为lambda表达式树
-    var func = lambdaExpr.Compile();
-    Console.WriteLine(func(2, 3, 3));
-}
-</code></pre><div id="方法调用表达式" class="anchor"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Example2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="s">&#34;a&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param2</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="s">&#34;b&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param3</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="s">&#34;c&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">const1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Constant</span><span class="p">(</span><span class="m">3.0f</span><span class="p">,</span><span class="k">typeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">biExpr1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">);</span><span class="c1">//构造参数1，2，生成加法表达式树1</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">biExpr2</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">biExpr1</span><span class="p">,</span> <span class="n">param3</span><span class="p">);</span><span class="c1">//构造加法表达式树1和参数3，生成加法表达式树2</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">biExpr3</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Convert</span><span class="p">(</span><span class="n">biExpr2</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span><span class="c1">//两整形相除不会保留小数，转化为浮点型</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">biExpr4</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Divide</span><span class="p">(</span><span class="n">biExpr3</span><span class="p">,</span> <span class="n">const1</span><span class="p">);</span><span class="c1">//构造加法表达式树2和常量表达式1，生成除法表达式树3</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">lambdaExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Lambda</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">,</span><span class="kt">float</span><span class="p">&gt;&gt;(</span><span class="n">biExpr4</span><span class="p">,</span> <span class="n">param1</span><span class="p">,</span><span class="n">param2</span><span class="p">,</span><span class="n">param3</span><span class="p">);</span><span class="c1">//根据表达式树3和三个参数，将表达式树转换为lambda表达式树</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">func</span> <span class="p">=</span> <span class="n">lambdaExpr</span><span class="p">.</span><span class="n">Compile</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div id="方法调用表达式" class="anchor"></div>
 <h3 class="relative group">方法调用表达式 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -940,20 +940,20 @@
     
 </h3>
 <p><code>(str,value) =&gt; !str.IsNullOrWhiteSpace(str) &amp;&amp; str.Contains(value)</code></p>
-<pre tabindex="0"><code>public static void Example3()
-{
-    var param1 = Expression.Variable(typeof(string), &#34;str&#34;);
-    var param2 = Expression.Variable(typeof(string), &#34;value&#34;);
-    //使用反射获取静态方法，并与参数表达式构造成方法调用表达式
-    var callExpr1 = Expression.Not(Expression.Call(typeof(string).GetMethod(nameof(string.IsNullOrWhiteSpace), new Type[]{typeof(string)})!, param2));
-    //使用反射获取实例方法，实例方法需要指定调用实例的表达式
-    var callExpr2 = Expression.Call(param1, typeof(string).GetMethod(nameof(string.Contains), new[] {typeof(string)} )!, param2);
-    var biExpr1 = Expression.AndAlso(callExpr1, callExpr2);//与运算
-    var lambdaExpr = Expression.Lambda&lt;Func&lt;string,string,bool&gt;&gt;(biExpr1, param1,param2);
-    var func = lambdaExpr.Compile();
-    Console.WriteLine(func(&#34;Azusa&#34;, &#34;s&#34;));
-}
-</code></pre><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Example3</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span> <span class="s">&#34;str&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param2</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span> <span class="s">&#34;value&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用反射获取静态方法，并与参数表达式构造成方法调用表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">callExpr1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Not</span><span class="p">(</span><span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">).</span><span class="n">GetMethod</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">),</span> <span class="k">new</span> <span class="n">Type</span><span class="p">[]{</span><span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">)})!,</span> <span class="n">param2</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用反射获取实例方法，实例方法需要指定调用实例的表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">callExpr2</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">).</span><span class="n">GetMethod</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Contains</span><span class="p">),</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span><span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">)}</span> <span class="p">)!,</span> <span class="n">param2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">biExpr1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">AndAlso</span><span class="p">(</span><span class="n">callExpr1</span><span class="p">,</span> <span class="n">callExpr2</span><span class="p">);</span><span class="c1">//与运算</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">lambdaExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Lambda</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="kt">string</span><span class="p">,</span><span class="kt">bool</span><span class="p">&gt;&gt;(</span><span class="n">biExpr1</span><span class="p">,</span> <span class="n">param1</span><span class="p">,</span><span class="n">param2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">func</span> <span class="p">=</span> <span class="n">lambdaExpr</span><span class="p">.</span><span class="n">Compile</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="s">&#34;Azusa&#34;</span><span class="p">,</span> <span class="s">&#34;s&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
 <p>未完待续。。。</p>
 </blockquote>
 

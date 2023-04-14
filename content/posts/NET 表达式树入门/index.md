@@ -50,7 +50,7 @@ https://cloud.tencent.com/developer/article/1817790
 
 ### 使用C#代码构造简单的表达式树
 `x => x + 1`
-```
+```cs
 public static void Example1()
 {
     var param1 = Expression.Variable(typeof(int), "x");//声明变量表达式，类型为int，参数名为"x"
@@ -68,7 +68,7 @@ public static void Example1()
 
 ### 更复杂一些的表达式树
 `(a,b,c) => (a + b + c) / 3`
-```
+```cs
 public static void Example2()
 {
     var param1 = Expression.Variable(typeof(int), "a");
@@ -87,7 +87,7 @@ public static void Example2()
 
 ### 方法调用表达式
 `(str,value) => !str.IsNullOrWhiteSpace(str) && str.Contains(value)`
-```
+```cs
 public static void Example3()
 {
     var param1 = Expression.Variable(typeof(string), "str");

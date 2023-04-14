@@ -849,11 +849,11 @@
 </ul>
 <p>在任何一个C#类中使用global关键字修饰using指令，该using指令将会应用于整个项目</p>
 <p>globalUsing.cs</p>
-<pre tabindex="0"><code>//这些using将会应用到整个项目
-global using System.Collection.Generic;
-global using Newtonsoft.Json;
-...
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">//这些using将会应用到整个项目</span>
+</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="k">using</span> <span class="nn">System.Collection.Generic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="k">using</span> <span class="nn">Newtonsoft.Json</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="文件范围的命名空间" class="anchor"></div>
@@ -867,17 +867,17 @@ global using Newtonsoft.Json;
 </li>
 </ul>
 <p>在C#文件中指定命名空间时可以不用花括号{}了，该命名空间将会应用于整个文件范围。但相反的，你无法在一个cs中定义多个命名空间中的内容（一般来说也不会这样做）。</p>
-<pre tabindex="0"><code>using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-
-namespace Azusa.Shared.Security;//不使用{}指定范围，整个文件都将被定义到该命名空间中。
-
-public static class JwtTokenGenerator
-{
-    ...
-}
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.IdentityModel.Tokens.Jwt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Security.Claims</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.IdentityModel.Tokens</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.Shared.Security</span><span class="p">;</span><span class="c1">//不使用{}指定范围，整个文件都将被定义到该命名空间中。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">JwtTokenGenerator</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="常量内插字符串" class="anchor"></div>
@@ -891,13 +891,13 @@ public static class JwtTokenGenerator
 </li>
 </ul>
 <p>你可以在const string中使用内插字符串了，你可以将用在某些只接受常量字符串的地方。</p>
-<pre tabindex="0"><code>...
-private const string BaseUrl = &#34;localhost:7890&#34;;
-public const string SignInUrl = $&#34;{BaseUrl}/SignIn&#34;;//你可以使用$内插常量字符串了
-...
-
-[HttpGet(SignInUrl)]//在这种地方适合使用常量字符串！
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">BaseUrl</span> <span class="p">=</span> <span class="s">&#34;localhost:7890&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">SignInUrl</span> <span class="p">=</span> <span class="s">$&#34;{BaseUrl}/SignIn&#34;</span><span class="p">;</span><span class="c1">//你可以使用$内插常量字符串了</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[HttpGet(SignInUrl)]</span><span class="c1">//在这种地方适合使用常量字符串！</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="泛型特性注解" class="anchor"></div>
@@ -911,11 +911,11 @@ public const string SignInUrl = $&#34;{BaseUrl}/SignIn&#34;;//你可以使用$�
 </li>
 </ul>
 <p>C#特性也支持泛型了，传递类型参数更加方便，不需要typeof了。</p>
-<pre tabindex="0"><code>public class UnitOfWorkAttribute&lt;TDbContext&gt; : Attribute where TDbContext : DbContext
-{
-    ...
-}
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">UnitOfWorkAttribute</span><span class="p">&lt;</span><span class="n">TDbContext</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">Attribute</span> <span class="k">where</span> <span class="n">TDbContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="lambda表达式改进" class="anchor"></div>
@@ -929,13 +929,13 @@ public const string SignInUrl = $&#34;{BaseUrl}/SignIn&#34;;//你可以使用$�
 </li>
 </ul>
 <p><code>var</code>关键字可以推断lambda表达式的返回值了</p>
-<pre tabindex="0"><code>var func = () =&gt; &#34;Nice&#34;;//现在编译器可以推断出这个lambda是Func&lt;string&gt;了
-
-var func1 = () =&gt; null;//不过这样是不行的，因为null没有类型
-var func2 = string? () =&gt; null;//但是可以显式指定一下
-</code></pre><p><strong>特性</strong>也可以支持在lambda上标注了</p>
-<pre tabindex="0"><code>var func3 = [UnitOfWorkAttribute&lt;MyDbContext&gt;()](long id) =&gt; myDbCtx.Books.Find(id);
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="s">&#34;Nice&#34;</span><span class="p">;</span><span class="c1">//现在编译器可以推断出这个lambda是Func&lt;string&gt;了</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func1</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span><span class="c1">//不过这样是不行的，因为null没有类型</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func2</span> <span class="p">=</span> <span class="kt">string?</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span><span class="c1">//但是可以显式指定一下</span>
+</span></span></code></pre></div><p><strong>特性</strong>也可以支持在lambda上标注了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func3</span> <span class="p">=</span> <span class="p">[</span><span class="n">UnitOfWorkAttribute</span><span class="p">&lt;</span><span class="n">MyDbContext</span><span class="p">&gt;()](</span><span class="kt">long</span> <span class="n">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">myDbCtx</span><span class="p">.</span><span class="n">Books</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="模式匹配属性扩展" class="anchor"></div>
@@ -949,17 +949,17 @@ var func2 = string? () =&gt; null;//但是可以显式指定一下
 </li>
 </ul>
 <p>在模式匹配的时候可以匹配对象的属性，并且用成员运算符<code>.</code>来匹配属性对象的属性</p>
-<pre tabindex="0"><code>if (book is Book{PubTime.Month:12})//用成员运算符来读取对象属性的属性
-{
-    ...
-}
-
-//以前得这样
-if (book is Book { PubTime: { Month: 12 } })
-{
-    
-}
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">book</span> <span class="k">is</span> <span class="n">Book</span><span class="p">{</span><span class="n">PubTime</span><span class="p">.</span><span class="n">Month</span><span class="p">:</span><span class="m">12</span><span class="p">})</span><span class="c1">//用成员运算符来读取对象属性的属性</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//以前得这样</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">book</span> <span class="k">is</span> <span class="n">Book</span> <span class="p">{</span> <span class="n">PubTime</span><span class="p">:</span> <span class="p">{</span> <span class="n">Month</span><span class="p">:</span> <span class="m">12</span> <span class="p">}</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="记录record结构体" class="anchor"></div>
@@ -973,8 +973,8 @@ if (book is Book { PubTime: { Month: 12 } })
 </li>
 </ul>
 <p><code>record</code>类型也可以声明为结构体了，也是值类型。</p>
-<pre tabindex="0"><code>public record struct Color(short Red, short Green, short Blue);
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">record</span> <span class="nc">struct</span> <span class="n">Color</span><span class="p">(</span><span class="kt">short</span> <span class="n">Red</span><span class="p">,</span> <span class="kt">short</span> <span class="n">Green</span><span class="p">,</span> <span class="kt">short</span> <span class="n">Blue</span><span class="p">);</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="结构体的优化" class="anchor"></div>
@@ -989,33 +989,33 @@ if (book is Book { PubTime: { Month: 12 } })
 </ul>
 <p>在C#10以前，结构体的显式构造函数必须得给所有字段和自动属性赋值
 比如这样一个结构体</p>
-<pre tabindex="0"><code>public struct Color
-{
-    public short Red { get; set; }
-    public short Green { get; set; }
-    public short Blue { get; set; }
-    ...
-}
-</code></pre><p>构造函数要么不写（隐式无参），要么写全（显式，并且所有自动属性和字段都得赋值）<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">struct</span> <span class="nc">Color</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">short</span> <span class="n">Red</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">short</span> <span class="n">Green</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">short</span> <span class="n">Blue</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>构造函数要么不写（隐式无参），要么写全（显式，并且所有自动属性和字段都得赋值）<br>
 （很迷惑的操作，不知为何要这样设定）</p>
-<pre tabindex="0"><code>...
-public Color(short red, short green, short blue)//字段和自动属性都得赋值
-{
-    Red = red;
-    Green = green;
-    Blue = blue;
-}
-...
-</code></pre><p>C#10以后，将接受赋值不完全的显式构造函数</p>
-<pre tabindex="0"><code>public Color(short red, short green)
-{
-    Red = red;
-    Green = green;
-}
-</code></pre><p>并且，C#10的结构体也支持with关键字</p>
-<pre tabindex="0"><code>var color = new Color(122, 255, 255);
-var color1 = color with { Green = 12 };
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="n">Color</span><span class="p">(</span><span class="kt">short</span> <span class="n">red</span><span class="p">,</span> <span class="kt">short</span> <span class="n">green</span><span class="p">,</span> <span class="kt">short</span> <span class="n">blue</span><span class="p">)</span><span class="c1">//字段和自动属性都得赋值</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Red</span> <span class="p">=</span> <span class="n">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Green</span> <span class="p">=</span> <span class="n">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Blue</span> <span class="p">=</span> <span class="n">blue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div><p>C#10以后，将接受赋值不完全的显式构造函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="n">Color</span><span class="p">(</span><span class="kt">short</span> <span class="n">red</span><span class="p">,</span> <span class="kt">short</span> <span class="n">green</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Red</span> <span class="p">=</span> <span class="n">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Green</span> <span class="p">=</span> <span class="n">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>并且，C#10的结构体也支持with关键字</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">color</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="m">122</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">color1</span> <span class="p">=</span> <span class="n">color</span> <span class="n">with</span> <span class="p">{</span> <span class="n">Green</span> <span class="p">=</span> <span class="m">12</span> <span class="p">};</span>
+</span></span></code></pre></div><hr>
 <ul>
 <li>
 <div id="在同一析构中进行赋值和声明" class="anchor"></div>
@@ -1029,15 +1029,15 @@ var color1 = color with { Green = 12 };
 </li>
 </ul>
 <p>可以通过析构对象来给变量赋值，或是</p>
-<pre tabindex="0"><code>(int x, int y) = point;//析构对象来初始化两个变量，注意这不是元组
-
-int x1 = 0;
-int y1 = 0;
-(x1, y1) = point;//析构对象给现有变量赋值
-</code></pre><p>在C#10以前初始化和赋值不能同时进行</p>
-<pre tabindex="0"><code>int x = 0;
-(x, int y) = point;//C#10以前会错误
-</code></pre><p>但现在不会</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span><span class="c1">//析构对象来初始化两个变量，注意这不是元组</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span><span class="c1">//析构对象给现有变量赋值</span>
+</span></span></code></pre></div><p>在C#10以前初始化和赋值不能同时进行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span><span class="c1">//C#10以前会错误</span>
+</span></span></code></pre></div><p>但现在不会</p>
 
         </br></br>
         

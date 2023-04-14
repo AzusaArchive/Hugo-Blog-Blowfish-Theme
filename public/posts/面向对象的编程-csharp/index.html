@@ -1002,18 +1002,18 @@
     
 </h4>
 <p>下面的代码提供了一个<strong>类</strong>的示例，将一个姓名属性和更改姓名的方法封装到一个<code>Person</code>类中：</p>
-<pre tabindex="0"><code>public class Person
-{
-    //姓名属性
-    public string Name { get; }
-
-    //方法
-    public void ChangeName(string name)
-    {
-        Name = name;
-    }
-}
-</code></pre><p>在编程时，可以使用该类作为一个<code>Person</code>对象，并可以读取和更改其姓名</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//姓名属性</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">ChangeName</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>在编程时，可以使用该类作为一个<code>Person</code>对象，并可以读取和更改其姓名</p>
 <div id="抽象的好处" class="anchor"></div>
 <h4 class="relative group">抽象的好处 
     <span
@@ -1064,27 +1064,27 @@ C#中访问修饰符有四种:<br>
     
 </h4>
 <p>下面的代码举出了访问修饰符的例子：</p>
-<pre tabindex="0"><code>public class Person
-{
-    //私有修饰符
-    private string name;
-
-    public string GetName()
-    {
-        //在类的内部可以访问
-        return name;
-    }
-}
-
-public class Program
-{
-    static void Main(string[] args)
-    {
-        Person p = new Person();
-        p.name;
-    }
-}
-</code></pre><p>使用访问修饰符限制了类中成员的访问级别，实现隐藏成员的效果，达到封装的目的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//私有修饰符</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">GetName</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//在类的内部可以访问</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Person</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>使用访问修饰符限制了类中成员的访问级别，实现隐藏成员的效果，达到封装的目的。</p>
 <div id="封装的好处" class="anchor"></div>
 <h4 class="relative group">封装的好处 
     <span
@@ -1129,34 +1129,34 @@ public class Program
     
 </h4>
 <p>下面的代码展示了类的继承关系：</p>
-<pre tabindex="0"><code>//基类
-public class Person
-{
-    public string Name { get; }
-
-    public void ChangeName(string name)
-    {
-        Name = name;
-    }
-}
-
-//派生类，继承了Person类
-public class Employee : Person
-{
-    public string Company { get; }
-    
-    public void ChangeCompany(string company)
-    {
-        Company = company;
-    }
-}
-
-//派生类，继承了Person类
-public class Student : Person
-{
-    public string School { get; set; }
-}
-</code></pre><p>上述代码的<code>Employee</code>类继承自<code>Person</code>类，<code>Studnet</code>类也继承自了<code>Person</code>类，它们都会继承<code>Person</code>类的<code>Name</code>属性和<code>ChangeName</code>方法，但它们也有自己独有的属性和方法。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">//基类</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">ChangeName</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//派生类，继承了Person类</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Employee</span> <span class="p">:</span> <span class="n">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Company</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">ChangeCompany</span><span class="p">(</span><span class="kt">string</span> <span class="n">company</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Company</span> <span class="p">=</span> <span class="n">company</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//派生类，继承了Person类</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Student</span> <span class="p">:</span> <span class="n">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">School</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>上述代码的<code>Employee</code>类继承自<code>Person</code>类，<code>Studnet</code>类也继承自了<code>Person</code>类，它们都会继承<code>Person</code>类的<code>Name</code>属性和<code>ChangeName</code>方法，但它们也有自己独有的属性和方法。</p>
 <div id="base关键字" class="anchor"></div>
 <h4 class="relative group"><code>base</code>关键字 
     <span
@@ -1166,20 +1166,20 @@ public class Student : Person
     
 </h4>
 <p>在子类中使用base关键字可以访问到父类的公开或保护内容</p>
-<pre tabindex="0"><code>public class Employee : Person
-{
-    ...
-    public string GetName()
-    {
-        //使用base关键字访问父类的公开属性
-        return base.Name;
-    }
-
-    //使用base关键字访问父类的构造函数，如果父类的构造函数有参数，可以在这里传递
-    public Employee() : base()
-    {}
-}
-</code></pre><div id="sealed关键字" class="anchor"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Employee</span> <span class="p">:</span> <span class="n">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">GetName</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//使用base关键字访问父类的公开属性</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用base关键字访问父类的构造函数，如果父类的构造函数有参数，可以在这里传递</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Employee</span><span class="p">()</span> <span class="p">:</span> <span class="k">base</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div id="sealed关键字" class="anchor"></div>
 <h4 class="relative group"><code>sealed</code>关键字 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -1188,12 +1188,12 @@ public class Student : Person
     
 </h4>
 <p>如果不想让某个类被继承，在声明类时添加sealed关键字，它阻止其他类继承该类。</p>
-<pre tabindex="0"><code>//其他类若尝试继承Boss类将会有编译错误
-public sealed class Boss : Person
-{
-    ...
-}
-</code></pre><div id="继承的好处" class="anchor"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">//其他类若尝试继承Boss类将会有编译错误</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">Boss</span> <span class="p">:</span> <span class="n">Person</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div id="继承的好处" class="anchor"></div>
 <h4 class="relative group">继承的好处 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -1250,35 +1250,35 @@ public sealed class Boss : Person
 <p>举一个现实中的例子：以前的所有轿车都是由燃油驱动的，它们有着“移动”行为，并且该都是以&quot;燃油驱动&quot;。但随着时代变化，出现了电力驱动的轿车，即使驱动原理不一样了，但它们还是有着“移动”行为。</p>
 <p>从编程方面来看，轿车类<code>Car</code>有着<code>Move</code>方法，该方法是“由燃油驱动的”，但出现了新的类<code>ElectricCar</code>电动车类，它继承自<code>Car</code>类，但是它对<code>Move</code>方法的实现却不一样，它是“电力驱动的”。此时，可以将<code>Car</code>类中的<code>Move</code>方法标记为虚方法<code>virtual</code>，然后在派生类中重写该方法。</p>
 <p>下面的类定义了一个轿车类，有着用燃油驱动的<code>Move</code>方法：</p>
-<pre tabindex="0"><code>public class Car
-{
-    //使用virtual关键字定义虚方法
-    public virtual void Move()
-    {
-        //用燃油驱动
-        ...
-    }
-}
-</code></pre><p>有一个类<code>ElectricCar</code>继承了<code>Car</code>类，并重写了父类的<code>Move</code>方法：</p>
-<pre tabindex="0"><code>public class ElectricCar : Car
-{
-    //使用override关键字重写父类的虚方法
-    public override void Move()
-    {
-        //用电力驱动
-        ...
-    }
-}
-</code></pre><p>此时使用<code>Car</code>类和<code>ElectricCar</code>类分别实例化出对象，调用<code>Move</code>方法，它们表现出的行为将不一致。</p>
-<pre tabindex="0"><code>...
-Car c = new Car();
-//燃油驱动
-c.Move();
-ElectricCar ec = new ElectricCar();
-//电力驱动，该派生类重写了Move方法
-ec.Move();
-...
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Car</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用virtual关键字定义虚方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">Move</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//用燃油驱动</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>有一个类<code>ElectricCar</code>继承了<code>Car</code>类，并重写了父类的<code>Move</code>方法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">ElectricCar</span> <span class="p">:</span> <span class="n">Car</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用override关键字重写父类的虚方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="n">Move</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//用电力驱动</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>此时使用<code>Car</code>类和<code>ElectricCar</code>类分别实例化出对象，调用<code>Move</code>方法，它们表现出的行为将不一致。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Car</span> <span class="n">c</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//燃油驱动</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">.</span><span class="n">Move</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">ElectricCar</span> <span class="n">ec</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ElectricCar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//电力驱动，该派生类重写了Move方法</span>
+</span></span><span class="line"><span class="cl"><span class="n">ec</span><span class="p">.</span><span class="n">Move</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div><ul>
 <li>在类中使用<code>virtual</code>关键字在方法前标注，来声明一个虚方法。</li>
 <li>在派生类中使用<code>override</code>关键字对父类中的虚方法进行重写，修改方法的实现过程。</li>
 <li>如果不想完全重写虚方法，只是想要在父类的方法基础上添加代码，可以在重写时用<code>base</code>关键字调用父类方法。</li>
@@ -1301,28 +1301,28 @@ ec.Move();
 <p>但这样设计的问题是，<code>Shape</code>类过于抽象，创建成对象是没有意义的，而且无法实现<code>Area</code>方法，只能留空。<br>
 此时就可以将<code>Shape</code>类的<code>Area</code>方法标记为<strong>抽象方法</strong>，并且将<code>Shape</code>类标记为抽象类。抽象类无法实例化，只能用来继承，抽象方法也不需要实现，只能用来重写。</p>
 <p>下面的代码对抽象方法进行了示例：</p>
-<pre tabindex="0"><code>//带有抽象方法的类必须为抽象类
-public abstract class Shape
-{
-    //使用abstract关键字声明了一个抽象方法，没有方法体。
-    public abstract float Area();
-}
-public class Triangle : Shape
-{
-    //使用override关键字重写了父类的抽象方法，如果没有重写该方法，将会有编译错误
-    public override float Area()
-    {
-        ...
-    }
-}
-public class Rectangle : Shape
-{
-    public override float Area()
-    {
-        ...
-    }
-}
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">//带有抽象方法的类必须为抽象类</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Shape</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用abstract关键字声明了一个抽象方法，没有方法体。</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">abstract</span> <span class="kt">float</span> <span class="n">Area</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Triangle</span> <span class="p">:</span> <span class="n">Shape</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用override关键字重写了父类的抽象方法，如果没有重写该方法，将会有编译错误</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="kt">float</span> <span class="n">Area</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">Shape</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="kt">float</span> <span class="n">Area</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
 <li>抽象方法不需要方法实现，只需要定义名称，参数和返回值即可，但该类的派生类必须提供<strong>重写</strong>该抽象方法。</li>
 <li>抽象方法的访问修饰符不能为<code>private</code>，因为抽象方法需要子类的实现。</li>
 <li>若一个类拥有抽象方法，它就必须被修饰为<strong>抽象类</strong>，因为抽象方法需要一个子类提供实现。</li>
@@ -1346,26 +1346,26 @@ public class Rectangle : Shape
 </ul>
 </blockquote>
 <p>下面的代码展示了接口和实现类的定义：</p>
-<pre tabindex="0"><code>//使用interface关键字定义接口
-public interface IMoveable
-{
-    //定义接口属性
-    Vector2 Position { get; }
-    //定义接口方法，无需方法体
-    void Move(int x, int y);
-} 
-
-public class Car : IMoveable
-{
-    //实现接口中的属性和方法
-    public Vector2 Position { get;  }
-    public void Move(int x, int y)
-    {
-        Position.x = x;
-        Position.y = y;
-    }
-}
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">//使用interface关键字定义接口</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">interface</span> <span class="nc">IMoveable</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//定义接口属性</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">Position</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//定义接口方法，无需方法体</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Move</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Car</span> <span class="p">:</span> <span class="n">IMoveable</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//实现接口中的属性和方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Vector2</span> <span class="n">Position</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Move</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Position</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Position</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
 <li>接口定义的成员都不需要实现，实现类必须实现接口的所有成员。</li>
 <li>接口成员可以不加访问修饰符，默认会赋予<code>public</code>，接口成员的访问修饰符不能为<code>private</code>，因为私有的接口方法没有意义。</li>
 </ul>
@@ -1384,61 +1384,61 @@ public class Car : IMoveable
 <li>
 <p><em><strong>向上转换(upcasting)</strong></em><br>
 在对对象进行操作时，派生类对象的引用可以替换基类的引用：</p>
-<pre tabindex="0"><code>Person p1 = new Person();//实例化Person对象
-Employee e1 = new Employee();//实例化Employee对象
-p1 = e1;//替换
-</code></pre><p>上述代码演示了替换的过程，<code>Employee</code>类是<code>Person</code>类的派生，将其分别实例化出<code>p1</code>对象和<code>e1</code>对象，并将<code>p1</code>对象的引用替换成了<code>e1</code>对象。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">();</span><span class="c1">//实例化Person对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">Employee</span> <span class="n">e1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">();</span><span class="c1">//实例化Employee对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="p">=</span> <span class="n">e1</span><span class="p">;</span><span class="c1">//替换</span>
+</span></span></code></pre></div><p>上述代码演示了替换的过程，<code>Employee</code>类是<code>Person</code>类的派生，将其分别实例化出<code>p1</code>对象和<code>e1</code>对象，并将<code>p1</code>对象的引用替换成了<code>e1</code>对象。</p>
 <p>虽然两对象是不同类型的，但这样的替换操作是合法的，并不会有错误或警告，像这样使用派生类引用替换成基类引用的操作称为<em><strong>向上转换(Upcasting)</strong></em>。因为<code>Employee</code>类继承了<code>Person</code>类的所有数据，所以对<code>p1</code>对象进行的任何操作，都适用于<code>e1</code>对象，而不会导致任何问题。向上转换是可传递的，也就是说如果有一个类继承了<code>Employee</code>类，该类的对象也可以替换<code>p1</code>对象，因为该类也间接地继承了<code>Person</code>类。</p>
 </li>
 <li>
 <p><em><strong>向下转换</strong></em>
 ***向下转换(Downcasting)***和向上转换相反，即基类的引用替换派生类的引用：</p>
-<pre tabindex="0"><code>Person p2 = new Person();
-Employee e2 = new Employee();
-e2 = (Employee)p2;//向下转换
-</code></pre><p>上述代码演示了向下转换，向下转换是强制转换，代码中使用括号来进行强制转换，这个操作通常来说是不允许的。一个派生类可以在基类的基础上派生出新的数据成员，但这些成员并不能适用于基类对象，例如Employee类有一属性为<code>Company</code>，而使用<code>Person</code>类实例化的对象是访问不到该属性的，所以向下转换是不安全的，上述代码在运行时会报运行时错误。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">p2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Employee</span> <span class="n">e2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">e2</span> <span class="p">=</span> <span class="p">(</span><span class="n">Employee</span><span class="p">)</span><span class="n">p2</span><span class="p">;</span><span class="c1">//向下转换</span>
+</span></span></code></pre></div><p>上述代码演示了向下转换，向下转换是强制转换，代码中使用括号来进行强制转换，这个操作通常来说是不允许的。一个派生类可以在基类的基础上派生出新的数据成员，但这些成员并不能适用于基类对象，例如Employee类有一属性为<code>Company</code>，而使用<code>Person</code>类实例化的对象是访问不到该属性的，所以向下转换是不安全的，上述代码在运行时会报运行时错误。</p>
 <p>但有一种情况例外，如果转换对象是向上转换过来的，那么就不会报运行错误，例如：</p>
-<pre tabindex="0"><code>Person e3 = new Employee();//在实例化时进行向上转换
-Employee e4 = (Employee)e3;//向下转换
-</code></pre><p>代码中的<code>e3</code>对象本身是<code>Employee</code>类型，但通过向上转换成了<code>Person</code>类型的引用，向上转换并不会清除派生类中的数据成员，所以向下转换回<code>Employee</code>类型时并不会报错。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">Person</span> <span class="n">e3</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">();</span><span class="c1">//在实例化时进行向上转换</span>
+</span></span><span class="line"><span class="cl"><span class="n">Employee</span> <span class="n">e4</span> <span class="p">=</span> <span class="p">(</span><span class="n">Employee</span><span class="p">)</span><span class="n">e3</span><span class="p">;</span><span class="c1">//向下转换</span>
+</span></span></code></pre></div><p>代码中的<code>e3</code>对象本身是<code>Employee</code>类型，但通过向上转换成了<code>Person</code>类型的引用，向上转换并不会清除派生类中的数据成员，所以向下转换回<code>Employee</code>类型时并不会报错。</p>
 <p>向上和向下转换也适用于抽象类和接口。</p>
 </li>
 <li>
 <p><em><strong>is和as关键字</strong></em><br>
 在有些情况，向下转换操作是不可避免的。若要进行向下强制转换，可以使用C语言风格的<code>()</code>来强制转换，如<code>e2 = (Employee)p2;</code>，要是p2无法转换成e2，则会抛出异常。所以在向下转换前，通常要进行检查。</p>
 <p>C#提供<code>is</code>关键字判断对象类型，并返回<code>true</code>或<code>false</code>，在转换前使用<code>is</code>进行判断：</p>
-<pre tabindex="0"><code>//检查p2的类型是否是`Employee`
-if(p2 is Employee)
-{
-    e2 = (Employee)p2;
-    ...
-}
-</code></pre><p>C#还提供了<code>as</code>关键字来进行向下转换，和<code>()</code>的不同是，使用<code>as</code>转换失败并不会报错，而是返回<code>null</code>：</p>
-<pre tabindex="0"><code>e2 = p2 as Employee;//使用as关键字进行转换，如果失败则会返回null
-if(e2 == null)
-    ...//转换失败
-else
-    ...转换成功
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">//检查p2的类型是否是`Employee`</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">p2</span> <span class="k">is</span> <span class="n">Employee</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">e2</span> <span class="p">=</span> <span class="p">(</span><span class="n">Employee</span><span class="p">)</span><span class="n">p2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>C#还提供了<code>as</code>关键字来进行向下转换，和<code>()</code>的不同是，使用<code>as</code>转换失败并不会报错，而是返回<code>null</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">e2</span> <span class="p">=</span> <span class="n">p2</span> <span class="k">as</span> <span class="n">Employee</span><span class="p">;</span><span class="c1">//使用as关键字进行转换，如果失败则会返回null</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">e2</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span><span class="c1">//转换失败</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span><span class="err">转换成功</span>
+</span></span></code></pre></div></li>
 <li>
 <p><em><strong>替换带来的多态性</strong></em><br>
 在对象向上转换过后，如果调用的方法被转换前的类型重写过，则会调用重写后的方法：</p>
-<pre tabindex="0"><code>Shape t1 = new Triangle();
-Shape r1 = new Rectangle();
-Console.WriteLine(t1.Area());
-Console.WriteLine(r1.Area());
-</code></pre><p>代码中使用<code>Triangle</code>类型和<code>Rectangle</code>类型实例化出<code>s1</code>和<code>r1</code>对象，并上转型成<code>Shape</code>类型，因为两个类型都重写了基类的<code>Area</code>方法，在调用两个对象的<code>Area</code>方法时，将会各自调用转换前类型调用重写后的方法，即使它们转换成了<code>Shape</code>类型。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">Shape</span> <span class="n">t1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Triangle</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Shape</span> <span class="n">r1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">Area</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="n">Area</span><span class="p">());</span>
+</span></span></code></pre></div><p>代码中使用<code>Triangle</code>类型和<code>Rectangle</code>类型实例化出<code>s1</code>和<code>r1</code>对象，并上转型成<code>Shape</code>类型，因为两个类型都重写了基类的<code>Area</code>方法，在调用两个对象的<code>Area</code>方法时，将会各自调用转换前类型调用重写后的方法，即使它们转换成了<code>Shape</code>类型。</p>
 <p>替换操作看起来会导致方法调用的混乱，但这样其实很好地运用了类的多态性。里氏替换原则提到：</p>
 <blockquote>
 <p>&ldquo;如果S是T的子类型，对于S类型的任意对象，如果将他们看作是T类型的对象，则对象的行为也理应与期望的行为一致。&rdquo;</p>
 </blockquote>
 <p>替换操作对类的通用性提升是巨大的。例如，你可以对一组继承自同一个类型的对象进行操作，它们将表现出不同的行为：</p>
-<pre tabindex="0"><code>object[] data = { 100, &#34;Alice&#34;, 0.98f, Math.PI, DateTime.Now };
-foreach (var obj in data)
-{
-    Console.WriteLine(obj);
-}
-</code></pre><p>上述代码使用了多个不同类型的对象初始化一个<code>object</code>类型的数组，在循环中，<code>Console.WriteLine</code>方法接收一个<code>object</code>类型对象，并调用对象的<code>ToString</code>方法，因为数组中对象的类型都各自重写了<code>ToString</code>方法，它们的输出将会表现出不同的效果。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kt">object</span><span class="p">[]</span> <span class="n">data</span> <span class="p">=</span> <span class="p">{</span> <span class="m">100</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">,</span> <span class="m">0.98f</span><span class="p">,</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">obj</span> <span class="k">in</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>上述代码使用了多个不同类型的对象初始化一个<code>object</code>类型的数组，在循环中，<code>Console.WriteLine</code>方法接收一个<code>object</code>类型对象，并调用对象的<code>ToString</code>方法，因为数组中对象的类型都各自重写了<code>ToString</code>方法，它们的输出将会表现出不同的效果。</p>
 </li>
 </ul>
 <div id="多态性的好处" class="anchor"></div>

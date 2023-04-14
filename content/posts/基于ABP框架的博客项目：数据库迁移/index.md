@@ -24,7 +24,7 @@ series_order: 2
 
 ### Abp框架中的实体
 以 `文章(Post)` 为例，创建一个Abp框架实体：
-```
+``` cs
 using System;
 using System.Collections.Generic;
 using Azusa.AbpBlog.Identity;

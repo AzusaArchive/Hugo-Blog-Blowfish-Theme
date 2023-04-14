@@ -47,7 +47,7 @@ OOP的优点：
 
 #### 例子
 下面的代码提供了一个**类**的示例，将一个姓名属性和更改姓名的方法封装到一个`Person`类中：
-```
+``` C#
 public class Person
 {
     //姓名属性
@@ -83,7 +83,7 @@ C#中访问修饰符有四种:
 
 #### 例子
 下面的代码举出了访问修饰符的例子：
-```
+``` C#
 public class Person
 {
     //私有修饰符
@@ -124,7 +124,7 @@ public class Program
 
 #### 例子
 下面的代码展示了类的继承关系：
-```
+``` C#
 //基类
 public class Person
 {
@@ -158,7 +158,7 @@ public class Student : Person
 
 #### `base`关键字
 在子类中使用base关键字可以访问到父类的公开或保护内容
-```
+``` C#
 public class Employee : Person
 {
     ...
@@ -177,7 +177,7 @@ public class Employee : Person
 #### `sealed`关键字
 如果不想让某个类被继承，在声明类时添加sealed关键字，它阻止其他类继承该类。
 
-```
+``` C#
 //其他类若尝试继承Boss类将会有编译错误
 public sealed class Boss : Person
 {
@@ -211,7 +211,7 @@ public sealed class Boss : Person
 从编程方面来看，轿车类`Car`有着`Move`方法，该方法是“由燃油驱动的”，但出现了新的类`ElectricCar`电动车类，它继承自`Car`类，但是它对`Move`方法的实现却不一样，它是“电力驱动的”。此时，可以将`Car`类中的`Move`方法标记为虚方法`virtual`，然后在派生类中重写该方法。
 
 下面的类定义了一个轿车类，有着用燃油驱动的`Move`方法：
-```
+``` C#
 public class Car
 {
     //使用virtual关键字定义虚方法
@@ -223,7 +223,7 @@ public class Car
 }
 ```
 有一个类`ElectricCar`继承了`Car`类，并重写了父类的`Move`方法：
-```
+``` C#
 public class ElectricCar : Car
 {
     //使用override关键字重写父类的虚方法
@@ -236,7 +236,7 @@ public class ElectricCar : Car
 ```
 
 此时使用`Car`类和`ElectricCar`类分别实例化出对象，调用`Move`方法，它们表现出的行为将不一致。
-```
+``` C#
 ...
 Car c = new Car();
 //燃油驱动
@@ -271,7 +271,7 @@ ec.Move();
 
 下面的代码对抽象方法进行了示例：
 
-```
+``` C#
 //带有抽象方法的类必须为抽象类
 public abstract class Shape
 {
@@ -312,7 +312,7 @@ public class Rectangle : Shape
 > - 在C#中，接口的命名应当以字母I开头。  
 
 下面的代码展示了接口和实现类的定义：
-```
+``` C#
 //使用interface关键字定义接口
 public interface IMoveable
 {
@@ -343,7 +343,7 @@ public class Car : IMoveable
 #### 替换  
 - ***向上转换(upcasting)***   
     在对对象进行操作时，派生类对象的引用可以替换基类的引用：  
-    ```
+    ``` C#
     Person p1 = new Person();//实例化Person对象
     Employee e1 = new Employee();//实例化Employee对象
     p1 = e1;//替换
@@ -354,7 +354,7 @@ public class Car : IMoveable
 
 - ***向下转换***
     ***向下转换(Downcasting)***和向上转换相反，即基类的引用替换派生类的引用：
-    ```
+    ``` C#
     Person p2 = new Person();
     Employee e2 = new Employee();
     e2 = (Employee)p2;//向下转换
@@ -362,7 +362,7 @@ public class Car : IMoveable
     上述代码演示了向下转换，向下转换是强制转换，代码中使用括号来进行强制转换，这个操作通常来说是不允许的。一个派生类可以在基类的基础上派生出新的数据成员，但这些成员并不能适用于基类对象，例如Employee类有一属性为`Company`，而使用`Person`类实例化的对象是访问不到该属性的，所以向下转换是不安全的，上述代码在运行时会报运行时错误。
 
     但有一种情况例外，如果转换对象是向上转换过来的，那么就不会报运行错误，例如：
-    ```
+    ``` C#
     Person e3 = new Employee();//在实例化时进行向上转换
     Employee e4 = (Employee)e3;//向下转换
     ```
@@ -374,7 +374,7 @@ public class Car : IMoveable
     在有些情况，向下转换操作是不可避免的。若要进行向下强制转换，可以使用C语言风格的`()`来强制转换，如`e2 = (Employee)p2;`，要是p2无法转换成e2，则会抛出异常。所以在向下转换前，通常要进行检查。  
 
     C#提供`is`关键字判断对象类型，并返回`true`或`false`，在转换前使用`is`进行判断：
-    ```
+    ``` C#
     //检查p2的类型是否是`Employee`
     if(p2 is Employee)
     {
@@ -384,7 +384,7 @@ public class Car : IMoveable
     ```
 
     C#还提供了`as`关键字来进行向下转换，和`()`的不同是，使用`as`转换失败并不会报错，而是返回`null`：
-    ```
+    ``` C#
     e2 = p2 as Employee;//使用as关键字进行转换，如果失败则会返回null
     if(e2 == null)
         ...//转换失败
@@ -394,7 +394,7 @@ public class Car : IMoveable
 
 - ***替换带来的多态性***  
     在对象向上转换过后，如果调用的方法被转换前的类型重写过，则会调用重写后的方法：
-    ```
+    ``` C#
     Shape t1 = new Triangle();
     Shape r1 = new Rectangle();
     Console.WriteLine(t1.Area());
@@ -407,7 +407,7 @@ public class Car : IMoveable
     > "如果S是T的子类型，对于S类型的任意对象，如果将他们看作是T类型的对象，则对象的行为也理应与期望的行为一致。"   
 
     替换操作对类的通用性提升是巨大的。例如，你可以对一组继承自同一个类型的对象进行操作，它们将表现出不同的行为：
-    ```
+    ``` C#
     object[] data = { 100, "Alice", 0.98f, Math.PI, DateTime.Now };
     foreach (var obj in data)
     {
