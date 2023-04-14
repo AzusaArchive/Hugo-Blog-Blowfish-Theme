@@ -4,7 +4,9 @@
 
 theme = "blowfish"
 baseURL = "https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/"
-defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "zh-cn" # 语言配置
+languageCode = "zh-Hans" # 语言代码
+hasCJKLanguage = true #象形文字
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
