@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on AzusaArchive</title>
-    <link>/series/</link>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/series/</link>
     <description>Recent content in Series on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Abp博客项目</title>
-      <link>/series/abp%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/series/abp%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Thu, 13 Apr 2023 18:24:04 +0800</pubDate>
       
-      <guid>/series/abp%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/series/abp%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</guid>
       <description></description>
     </item>
     
