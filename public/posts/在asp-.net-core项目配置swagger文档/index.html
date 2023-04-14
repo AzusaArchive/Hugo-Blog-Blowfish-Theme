@@ -937,25 +937,25 @@
     
 </h2>
 <p>在ASP .NET Core入口函数中配置服务</p>
-<pre tabindex="0"><code>program.cs
-
-//安装Nuget包后即可使用AddSwaggerGen方法添加Swagger服务
-services.AddSwaggerGen(options =&gt;
-{
-    //定义Swagger文档，可多次定义以区分版本
-    //此时定义的文档名为v1
-    options.SwaggerDoc(&#34;v1&#34;, new OpenApiInfo()
-    {
-        //添加一些API信息，将会呈现在Swagger页面上
-        Version = &#34;v1&#34;,
-        Title = &#34;用户信息控制器&#34;,
-    });
-    //指定XML文档的目录
-    options.IncludeXmlComments($&#34;{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;, true);
-
-    ...
-});
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">program</span><span class="p">.</span><span class="n">cs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//安装Nuget包后即可使用AddSwaggerGen方法添加Swagger服务</span>
+</span></span><span class="line"><span class="cl"><span class="n">services</span><span class="p">.</span><span class="n">AddSwaggerGen</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//定义Swagger文档，可多次定义以区分版本</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//此时定义的文档名为v1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="p">.</span><span class="n">SwaggerDoc</span><span class="p">(</span><span class="s">&#34;v1&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="n">OpenApiInfo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//添加一些API信息，将会呈现在Swagger页面上</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Version</span> <span class="p">=</span> <span class="s">&#34;v1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Title</span> <span class="p">=</span> <span class="s">&#34;用户信息控制器&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//指定XML文档的目录</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="p">.</span><span class="n">IncludeXmlComments</span><span class="p">(</span><span class="s">$&#34;{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div></li>
 <li>
 <div id="配置swagger中间件" class="anchor"></div>
 <h2 class="relative group">配置Swagger中间件 
@@ -966,22 +966,22 @@ services.AddSwaggerGen(options =&gt;
     
 </h2>
 <p>在ASP .NET Core入口函数中配置中间件</p>
-<pre tabindex="0"><code>program.cs 
-
-...
-
-var app = builder.Build();
-
-//此时在开发环境下才会添加Swagger中间件
-if (app.Environment.IsDevelopment())
-{
-    //添加Swagger中间件
-    app.UseSwagger();
-    //添加SwaggerUI中间件，在参数中指定Swagger终结点，终结点错误将会导致接口无法正常显示
-    //此时使用终结点是步骤2中声明的名为&#34;v1&#34;文档，如果定义了多个文档版本，则需要指定多个终结点
-    app.UseSwaggerUI(c =&gt; c.SwaggerEndpoint(&#34;/swagger/v1/swagger.json&#34;, &#34;Gehenna.WebAPI v1&#34;));
-}
-</code></pre><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">program</span><span class="p">.</span><span class="n">cs</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">app</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//此时在开发环境下才会添加Swagger中间件</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//添加Swagger中间件</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="p">.</span><span class="n">UseSwagger</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//添加SwaggerUI中间件，在参数中指定Swagger终结点，终结点错误将会导致接口无法正常显示</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//此时使用终结点是步骤2中声明的名为&#34;v1&#34;文档，如果定义了多个文档版本，则需要指定多个终结点</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="p">.</span><span class="n">UseSwaggerUI</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">SwaggerEndpoint</span><span class="p">(</span><span class="s">&#34;/swagger/v1/swagger.json&#34;</span><span class="p">,</span> <span class="s">&#34;Gehenna.WebAPI v1&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
 <p>如果使用目录及 IIS 或反向代理，请使用 <code>./</code> 前缀将 Swagger 终结点设置为相对路径。 例如 <code>./swagger/v1/swagger.json</code>。<br>
 使用 <code>/swagger/v1/swagger.json</code> 指示应用在 URL 的真实根目录中查找 JSON 文件（如果使用，加上路由前缀）。例如，请使用 <code>https://localhost:&lt;port&gt;/&lt;route_prefix&gt;/swagger/v1/swagger.json</code> 而不是 <code>https://localhost:&lt;port&gt;/&lt;virtual_directory&gt;/&lt;route_prefix&gt;/swagger/v1/swagger.json</code>。</p>
 </blockquote>

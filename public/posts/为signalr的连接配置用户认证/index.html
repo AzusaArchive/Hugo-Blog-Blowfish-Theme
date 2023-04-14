@@ -907,33 +907,33 @@
             style="text-decoration-line: none !important;" href="#%e5%9c%a8-aspnet-core-%e4%b8%ad%e6%b7%bb%e5%8a%a0%e6%8e%88%e6%9d%83%e6%9c%ba%e5%88%b6" aria-label="锚点">#</a></span>        
     
 </h3>
-<pre tabindex="0"><code>Program.cs
-
-...
-
-services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    //此处使用JWTBearer进行授权验证
-    .AddJwtBearer(options =&gt;
-    {
-        var secretKey = configurations.GetRequiredSection(&#34;Jwt&#34;).Get&lt;JwtOption&gt;().SecretKey??throw new ConfigurationErrorsException(&#34;Jwt密钥未配置&#34;);
-        options.TokenValidationParameters = new()
-        {
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
-        };
-    });
-
-...
-
-//添加认证机制需要引用Authentication与Authorization两个中间件
-app.UseAuthentication();
-app.UseAuthorization();
-
-...
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">Program</span><span class="p">.</span><span class="n">cs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//此处使用JWTBearer进行授权验证</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">secretKey</span> <span class="p">=</span> <span class="n">configurations</span><span class="p">.</span><span class="n">GetRequiredSection</span><span class="p">(</span><span class="s">&#34;Jwt&#34;</span><span class="p">).</span><span class="n">Get</span><span class="p">&lt;</span><span class="n">JwtOption</span><span class="p">&gt;().</span><span class="n">SecretKey</span><span class="p">??</span><span class="k">throw</span> <span class="k">new</span> <span class="n">ConfigurationErrorsException</span><span class="p">(</span><span class="s">&#34;Jwt密钥未配置&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuer</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateAudience</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateLifetime</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuerSigningKey</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">IssuerSigningKey</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SymmetricSecurityKey</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">secretKey</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//添加认证机制需要引用Authentication与Authorization两个中间件</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">UseAuthentication</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">UseAuthorization</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div></li>
 <li>
 <div id="在signalr集线器类上添加authorize特性" class="anchor"></div>
 <h3 class="relative group">在SignalR集线器类上添加Authorize特性 
@@ -945,21 +945,21 @@ app.UseAuthorization();
 </h3>
 <p>详细的授权信息与不同的授权规则参考<a href="https://learn.microsoft.com/zh-cn/aspnet/core/security/authorization/introduction?view=aspnetcore-6.0"   target="_blank">
     ASP.NET Core授权</a></p>
-<pre tabindex="0"><code>//添加授权
-[Authorize]
-public class ChatHub : Hub
-{
-    public override async Task OnConnectedAsync()
-    {
-        await base.OnConnectedAsync();
-
-        //在Hub类的Context.User属性中可以获取到SignalR通过websocket握手获取到的用户授权信息
-        await Console.Out.WriteLineAsync(Context.User.Identity.Name);
-    }
-
-    ...
-}
-</code></pre><p>这样就为ASP .NET Core提供了基本的用户授权机制，在应用的终结点(endPoints)上添加[Autorize]特性来对此终结点进行用户授权。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">//添加授权</span>
+</span></span><span class="line"><span class="cl"><span class="na">[Authorize]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">ChatHub</span> <span class="p">:</span> <span class="n">Hub</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">OnConnectedAsync</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">await</span> <span class="k">base</span><span class="p">.</span><span class="n">OnConnectedAsync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//在Hub类的Context.User属性中可以获取到SignalR通过websocket握手获取到的用户授权信息</span>
+</span></span><span class="line"><span class="cl">        <span class="k">await</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">.</span><span class="n">WriteLineAsync</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Identity</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这样就为ASP .NET Core提供了基本的用户授权机制，在应用的终结点(endPoints)上添加[Autorize]特性来对此终结点进行用户授权。</p>
 </li>
 </ul>
 <br>
@@ -981,24 +981,24 @@ public class ChatHub : Hub
             style="text-decoration-line: none !important;" href="#c%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="锚点">#</a></span>        
     
 </h3>
-<pre tabindex="0"><code>...
-
-_connection = new HubConnectionBuilder()
-    .WithAutomaticReconnect()
-    //在WithUrl方法的configureHttpConnection参数中配置
-    .WithUrl(HubUrl, options =&gt;
-    {
-        //为AccessTokenProvider提供获取访问令牌的委托
-        //此处为应当查找并获取用户访问令牌的逻辑
-        options.AccessTokenProvider = () =&gt; Task.FromResult(authorizationToken);
-    });
-    .ConfigureLogging(builder =&gt; builder.AddConsole())
-    .Build();
-
-await _connection.StartAsync();
-
-...
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">_connection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HubConnectionBuilder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">WithAutomaticReconnect</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//在WithUrl方法的configureHttpConnection参数中配置</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">WithUrl</span><span class="p">(</span><span class="n">HubUrl</span><span class="p">,</span> <span class="n">options</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//为AccessTokenProvider提供获取访问令牌的委托</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//此处为应当查找并获取用户访问令牌的逻辑</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">AccessTokenProvider</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="n">authorizationToken</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">ConfigureLogging</span><span class="p">(</span><span class="n">builder</span> <span class="p">=&gt;</span> <span class="n">builder</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">await</span> <span class="n">_connection</span><span class="p">.</span><span class="n">StartAsync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div></li>
 <li>
 <div id="javascript客户端" class="anchor"></div>
 <h3 class="relative group">Javascript客户端 
@@ -1008,19 +1008,19 @@ await _connection.StartAsync();
             style="text-decoration-line: none !important;" href="#javascript%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="锚点">#</a></span>        
     
 </h3>
-<pre tabindex="0"><code>...
-
-this.hubConnection = new signalR.HubConnectionBuilder()
-    .withUrl(&#34;this.hubUrl&#34;,{ //为withUrl方法参数2的accessTokenFactory属性提供获取访问令牌的方法
-        accessTokenFactory: () =&gt; this.getAccessToken(),
-        skipNegotiation: true,
-        transport: signalR.HttpTransportType.WebSockets
-    })
-    .build();
-await this.hubConnection.start();
-
-...
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">hubConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">signalR</span><span class="p">.</span><span class="nx">HubConnectionBuilder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">withUrl</span><span class="p">(</span><span class="s2">&#34;this.hubUrl&#34;</span><span class="p">,{</span> <span class="c1">//为withUrl方法参数2的accessTokenFactory属性提供获取访问令牌的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">accessTokenFactory</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAccessToken</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">skipNegotiation</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">transport</span><span class="o">:</span> <span class="nx">signalR</span><span class="p">.</span><span class="nx">HttpTransportType</span><span class="p">.</span><span class="nx">WebSockets</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">hubConnection</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div></li>
 </ul>
 <br>
 <div id="踩坑注意" class="anchor"></div>
@@ -1075,43 +1075,43 @@ await this.hubConnection.start();
     
 </h3>
 <p>在服务器端配置授权机制，在收到请求消息时手动进行授权处理。配置的方式有多种，较为简单的方式是直接在Authorization服务中添加事件：</p>
-<pre tabindex="0"><code>program.cs
-
-...
-
-services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    //使用JwtBearer作为认证令牌
-    .AddJwtBearer(options =&gt;
-    {
-        var secretKey = configurations.GetRequiredSection(&#34;Jwt&#34;).Get&lt;JwtOption&gt;().SecretKey??throw new ConfigurationErrorsException(&#34;Jwt密钥未配置&#34;);
-        options.TokenValidationParameters = new()
-        {
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
-        };
-        //添加授权事件，在收到请求消息时进行处理
-        options.Events = new JwtBearerEvents()
-        {
-            OnMessageReceived =  context =&gt;
-            {
-                //从请求查询字符串中取出访问令牌
-                var accessToken = context.Request.Query[&#34;access_token&#34;];
-                //请求条件不符合则返回
-                if (!string.IsNullOrEmpty(accessToken) &amp;&amp; context.Request.Headers[&#34;Upgrade&#34;] == &#34;websocket&#34;)
-                {
-                    //手动对上下文中的令牌属性赋值，剩下的授权由.NET自动完成
-                    context.Token = accessToken;
-                }
-                return Task.CompletedTask;
-            }
-        };
-    });
-
-...
-</code></pre><br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">program</span><span class="p">.</span><span class="n">cs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//使用JwtBearer作为认证令牌</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">secretKey</span> <span class="p">=</span> <span class="n">configurations</span><span class="p">.</span><span class="n">GetRequiredSection</span><span class="p">(</span><span class="s">&#34;Jwt&#34;</span><span class="p">).</span><span class="n">Get</span><span class="p">&lt;</span><span class="n">JwtOption</span><span class="p">&gt;().</span><span class="n">SecretKey</span><span class="p">??</span><span class="k">throw</span> <span class="k">new</span> <span class="n">ConfigurationErrorsException</span><span class="p">(</span><span class="s">&#34;Jwt密钥未配置&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuer</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateAudience</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateLifetime</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuerSigningKey</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">IssuerSigningKey</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SymmetricSecurityKey</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">secretKey</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//添加授权事件，在收到请求消息时进行处理</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">Events</span> <span class="p">=</span> <span class="k">new</span> <span class="n">JwtBearerEvents</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">OnMessageReceived</span> <span class="p">=</span>  <span class="n">context</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//从请求查询字符串中取出访问令牌</span>
+</span></span><span class="line"><span class="cl">                <span class="kt">var</span> <span class="n">accessToken</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Query</span><span class="p">[</span><span class="s">&#34;access_token&#34;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//请求条件不符合则返回</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">accessToken</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Headers</span><span class="p">[</span><span class="s">&#34;Upgrade&#34;</span><span class="p">]</span> <span class="p">==</span> <span class="s">&#34;websocket&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//手动对上下文中的令牌属性赋值，剩下的授权由.NET自动完成</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">context</span><span class="p">.</span><span class="n">Token</span> <span class="p">=</span> <span class="n">accessToken</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div><br>
 <p>参考文章</p>
 <blockquote>
 <p><a href="https://stackoverflow.com/questions/21260384/signalr-authenticating-with-access-token#comment32085907_21260384"   target="_blank">

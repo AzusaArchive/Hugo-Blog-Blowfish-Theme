@@ -23,7 +23,7 @@ categories: [".NET"]
 
 2. ## 配置Swagger服务
     在ASP .NET Core入口函数中配置服务
-    ```
+    ```cs
     program.cs
 
     //安装Nuget包后即可使用AddSwaggerGen方法添加Swagger服务
@@ -46,7 +46,7 @@ categories: [".NET"]
 
 3. ## 配置Swagger中间件
     在ASP .NET Core入口函数中配置中间件
-    ```
+    ```cs
     program.cs 
 
     ...

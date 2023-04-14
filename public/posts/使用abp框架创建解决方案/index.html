@@ -887,8 +887,8 @@
     
 </h2>
 <p>首先使用.NET CLI安装ABP框架：</p>
-<pre tabindex="0"><code>dotnet tool install -g Volo.Abp.Cli
-</code></pre><div id="安装redis" class="anchor"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dotnet tool install -g Volo.Abp.Cli
+</span></span></code></pre></div><div id="安装redis" class="anchor"></div>
 <h2 class="relative group">安装Redis 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -921,8 +921,8 @@
     
 </h2>
 <p>切换到终端到项目文件夹，然后用ABP CLI创建项目：</p>
-<pre tabindex="0"><code>abp new Azusa.AbpBlog -u blazor --separate-auth-server
-</code></pre><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">abp new Azusa.AbpBlog -u blazor --separate-auth-server
+</span></span></code></pre></div><blockquote>
 <ul>
 <li>项目名为 <em>Azusa.AbpBlog</em></li>
 <li>-u 指定前端框架，该项目使用 Blazor WASM</li>
@@ -1024,17 +1024,17 @@ EFCore的项目，定义了<code>DbContext</code>类，并对领域层中声明�
 <code>Azusa.AbpBlog.HttpApi.Host</code>的连接字符串，主要的数据库。<br>
 <code>Azusa.AbpBlog.DbMigrator</code>的连接字符串，该项目用于生成数据库迁移。<br>
 项目使用的是SQL Server数据库。</p>
-<pre tabindex="0"><code>&#34;ConnectionStrings&#34;: {
-    &#34;Default&#34;: &#34;Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True&#34;
-},
-</code></pre><p>分层项目使用 Redis 作为缓存服务器，首先需要安装Redis客户端。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;ConnectionStrings&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Default&#34;</span><span class="p">:</span> <span class="s2">&#34;Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
+</span></span></code></pre></div><p>分层项目使用 Redis 作为缓存服务器，首先需要安装Redis客户端。</p>
 <p>在<code>Azusa.AbpBlog.HttpApi.Host</code>项目<br>
 以及<code>Azusa.AbpBlog.AuthServer</code>项目中的<code>appsettings.json</code>文件进行配置，<br>
 默认情况下，ABP框架使用本机地址：</p>
-<pre tabindex="0"><code>&#34;Redis&#34;: {
-&#34;Configuration&#34;: &#34;127.0.0.1&#34;
-},
-</code></pre><p><em><strong>如果使用远程服务器，需要修改该配置。</strong></em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;Redis&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&#34;Configuration&#34;</span><span class="p">:</span> <span class="s2">&#34;127.0.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
+</span></span></code></pre></div><p><em><strong>如果使用远程服务器，需要修改该配置。</strong></em></p>
 <div id="数据库迁移" class="anchor"></div>
 <h3 class="relative group">数据库迁移 
     <span
@@ -1049,8 +1049,8 @@ EFCore的项目，定义了<code>DbContext</code>类，并对领域层中声明�
 <p>如果你使用的是 Visual Studio, 你可以跳到 运行 dbMigrator 部分。<br>
 但是, 其他 IDE (例如 Rider) 在首次运行时可能会遇到问题, 因为它会添加初始迁移并编译项目。<br>
 在这种情况下, 请在 .dbMigration 项目的文件夹中打开命令行终端, 然后运行以下命令:</p>
-<pre tabindex="0"><code> dotnet run
-</code></pre><p>下次, 你可以像往常一样在 IDE 中运行它.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> dotnet run
+</span></span></code></pre></div><p>下次, 你可以像往常一样在 IDE 中运行它.</p>
 </blockquote>
 <p><strong>执行迁移</strong><br>
 运行Azusa.AbpBlog.DbMigrator项目，它会自动执行迁移。<br>
@@ -1183,8 +1183,8 @@ EFCore的项目，定义了<code>DbContext</code>类，并对领域层中声明�
 <p>运行.AuthServer项目时抛出<code>AbpException:Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!</code>异常：</p>
 <p>项目缺少 <a href="https://nodejs.org"   target="_blank">
     Node.js</a> 依赖，先检查Node.js是否正常安装并添加至环境变量，确认安装后，在解决方案目录使用打开命令提示符输入:</p>
-<pre tabindex="0"><code>abp install-libs
-</code></pre><p>他将自动调用 Node.js 下载项目依赖的 NPM 包，下载完毕后重新运行项目即可。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">abp install-libs
+</span></span></code></pre></div><p>他将自动调用 Node.js 下载项目依赖的 NPM 包，下载完毕后重新运行项目即可。</p>
 </li>
 </ul>
 <hr>

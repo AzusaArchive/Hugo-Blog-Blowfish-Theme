@@ -8,4 +8,4 @@ categories: [其他]
 **使用Hugo超快速建站**
 
 [Hugo首页](https://gohugo.io/)
->hugo new site Azusa's Archive
+> hugo new site Azusa's Archive

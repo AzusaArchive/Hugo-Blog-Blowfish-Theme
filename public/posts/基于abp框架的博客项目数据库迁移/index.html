@@ -898,36 +898,36 @@
     
 </h3>
 <p>以 <code>文章(Post)</code> 为例，创建一个Abp框架实体：</p>
-<pre tabindex="0"><code>using System;
-using System.Collections.Generic;
-using Azusa.AbpBlog.Identity;
-using Volo.Abp.Auditing;
-using Volo.Abp.Domain.Entities;
-
-namespace Azusa.AbpBlog.Entities.Blog;
-
-public class Post : IEntity&lt;Guid&gt;,IHasCreationTime,IMustHaveCreator&lt;BlogUser&gt;,IHasModificationTime,IHasDeletionTime
-{
-    public Guid Id { get; }
-    
-    public string Title { get; set; }
-    public string Markdown { get; set; }
-    public Category Category { get; set; }
-    public ICollection&lt;Tag&gt; Type { get; set; }
-    
-    public DateTime CreationTime { get; }
-    public Guid CreatorId { get; }
-    public BlogUser Creator { get; }
-    public DateTime? LastModificationTime { get; }
-    public bool IsDeleted { get; }
-    public DateTime? DeletionTime { get; }
-    
-    public object[] GetKeys()
-    {
-        return new object[]{Id};
-    }
-}
-</code></pre><p>Abp框架提供了许多实体基类和接口，这里实现了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Identity</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Auditing</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Domain.Entities</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Post</span> <span class="p">:</span> <span class="n">IEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;,</span><span class="n">IHasCreationTime</span><span class="p">,</span><span class="n">IMustHaveCreator</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">&gt;,</span><span class="n">IHasModificationTime</span><span class="p">,</span><span class="n">IHasDeletionTime</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Markdown</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Category</span> <span class="n">Category</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span> <span class="n">Type</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">CreatorId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUser</span> <span class="n">Creator</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">LastModificationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDeleted</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">DeletionTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">object</span><span class="p">[]</span> <span class="n">GetKeys</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]{</span><span class="n">Id</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Abp框架提供了许多实体基类和接口，这里实现了：</p>
 <ul>
 <li><code>IEntity</code>: 实现<code>Id</code>属性和<code>GetKeys</code>方法并使用<code>Guid</code>作为主键类型，<code>GetKeys</code>方法返回一个主键数组用于排列（Abp考虑到复合主键所以返回数组）。</li>
 <li><code>IHasCreationTime</code>: 实现<code>创建时间(CreationTime)</code>属性。</li>

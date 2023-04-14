@@ -20,7 +20,7 @@ series_order: 1
 
 ## 安装ABP框架
 首先使用.NET CLI安装ABP框架：
-```
+``` shell
 dotnet tool install -g Volo.Abp.Cli
 ```
 
@@ -38,7 +38,7 @@ dotnet tool install -g Volo.Abp.Cli
 ## 创建ABP解决方案
 
 切换到终端到项目文件夹，然后用ABP CLI创建项目：
-```
+```shell
 abp new Azusa.AbpBlog -u blazor --separate-auth-server
 ```
 
@@ -113,7 +113,7 @@ EFCore的项目，定义了`DbContext`类，并对领域层中声明的仓储类
 `Azusa.AbpBlog.HttpApi.Host`的连接字符串，主要的数据库。  
 `Azusa.AbpBlog.DbMigrator`的连接字符串，该项目用于生成数据库迁移。  
 项目使用的是SQL Server数据库。  
-```
+``` json
 "ConnectionStrings": {
     "Default": "Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True"
 },
@@ -124,7 +124,7 @@ EFCore的项目，定义了`DbContext`类，并对领域层中声明的仓储类
 在`Azusa.AbpBlog.HttpApi.Host`项目  
 以及`Azusa.AbpBlog.AuthServer`项目中的`appsettings.json`文件进行配置，  
 默认情况下，ABP框架使用本机地址：
-```
+``` json
 "Redis": {
 "Configuration": "127.0.0.1"
 },
@@ -140,7 +140,7 @@ EFCore的项目，定义了`DbContext`类，并对领域层中声明的仓储类
 但是, 其他 IDE (例如 Rider) 在首次运行时可能会遇到问题, 因为它会添加初始迁移并编译项目。  
 在这种情况下, 请在 .dbMigration 项目的文件夹中打开命令行终端, 然后运行以下命令:
 >
->   ```
+>   ``` shell
 >    dotnet run
 >    ```
 > 下次, 你可以像往常一样在 IDE 中运行它.
@@ -177,7 +177,7 @@ EFCore的项目，定义了`DbContext`类，并对领域层中声明的仓储类
 - 运行.AuthServer项目时抛出`AbpException:Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!`异常：  
 
     项目缺少 [Node.js](https://nodejs.org) 依赖，先检查Node.js是否正常安装并添加至环境变量，确认安装后，在解决方案目录使用打开命令提示符输入:  
-    ```
+    ``` shell
     abp install-libs
     ```
     他将自动调用 Node.js 下载项目依赖的 NPM 包，下载完毕后重新运行项目即可。

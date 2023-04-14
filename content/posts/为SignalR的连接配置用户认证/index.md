@@ -10,7 +10,7 @@ categories: [".NET"]
 ## 后端用户授权服务
 - ### 在 ASP.NET Core 中添加授权机制：
 
-    ```
+    ```cs
     Program.cs
 
     ...
@@ -41,7 +41,7 @@ categories: [".NET"]
 
 - ### 在SignalR集线器类上添加Authorize特性  
     详细的授权信息与不同的授权规则参考[ASP.NET Core授权](https://learn.microsoft.com/zh-cn/aspnet/core/security/authorization/introduction?view=aspnetcore-6.0)
-    ```
+    ```cs
     //添加授权
     [Authorize]
     public class ChatHub : Hub
@@ -64,7 +64,7 @@ categories: [".NET"]
 
 ## 在客户端配置SignalR连接的访问令牌  
 - ### C#客户端
-    ```
+    ```cs
     ...
 
     _connection = new HubConnectionBuilder()
@@ -86,7 +86,7 @@ categories: [".NET"]
     ```
 
 - ### Javascript客户端
-    ```
+    ```js
     ...
 
     this.hubConnection = new signalR.HubConnectionBuilder()
@@ -118,7 +118,7 @@ ASP.NET Core并不会自动对查询字符串中的访问令牌进行授权，�
 
 ### 解决方法：
 在服务器端配置授权机制，在收到请求消息时手动进行授权处理。配置的方式有多种，较为简单的方式是直接在Authorization服务中添加事件：
-```
+```cs
 program.cs
 
 ...
