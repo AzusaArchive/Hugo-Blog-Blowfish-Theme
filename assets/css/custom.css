@@ -8,3 +8,6 @@ html{
     font-family: 'Trebuchet MS', MSYaHei, Arial, sans-serif;
 }
 
+.max-w-prose {
+    max-width: 80ch;
+}
