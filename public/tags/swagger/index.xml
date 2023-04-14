@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Swagger on AzusaArchive</title>
-    <link>Hugo-Blog-Blowfish-Theme/tags/swagger/</link>
+    <link>/tags/swagger/</link>
     <description>Recent content in Swagger on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 15 Mar 2023 10:15:26 +0800</lastBuildDate><atom:link href="Hugo-Blog-Blowfish-Theme/tags/swagger/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 10:15:26 +0800</lastBuildDate><atom:link href="/tags/swagger/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在ASP .NET Core项目配置Swagger文档</title>
-      <link>Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</link>
+      <link>/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</guid>
+      <guid>/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</guid>
       <description>Swagger文档 # 在ASP .</description>
     </item>
     
