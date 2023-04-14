@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: Hugo-Blog-Blowfish-Theme/sitemap.xml
+Sitemap: sitemap.xml

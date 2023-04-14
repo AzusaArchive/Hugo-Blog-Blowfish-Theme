@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AzusaArchive</title>
-    <link>Hugo-Blog-Blowfish-Theme/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="Hugo-Blog-Blowfish-Theme/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Abp框架</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/abp%E6%A1%86%E6%9E%B6/</link>
+      <link>/tags/abp%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Thu, 13 Apr 2023 18:24:04 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/abp%E6%A1%86%E6%9E%B6/</guid>
+      <guid>/tags/abp%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp基础</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/</link>
+      <link>/tags/csharp%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/</guid>
+      <guid>/tags/csharp%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OOP</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/oop/</link>
+      <link>/tags/oop/</link>
       <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/oop/</guid>
+      <guid>/tags/oop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/csharp/</link>
+      <link>/tags/csharp/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/csharp/</guid>
+      <guid>/tags/csharp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linq</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/linq/</link>
+      <link>/tags/linq/</link>
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/linq/</guid>
+      <guid>/tags/linq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ASP .NET Core</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/</link>
+      <link>/tags/asp-.net-core/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/</guid>
+      <guid>/tags/asp-.net-core/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swagger</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/swagger/</link>
+      <link>/tags/swagger/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/swagger/</guid>
+      <guid>/tags/swagger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web API</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/web-api/</link>
+      <link>/tags/web-api/</link>
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/web-api/</guid>
+      <guid>/tags/web-api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/javascript/</link>
+      <link>/tags/javascript/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/javascript/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SignalR</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/signalr/</link>
+      <link>/tags/signalr/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/signalr/</guid>
+      <guid>/tags/signalr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Websocket</title>
-      <link>Hugo-Blog-Blowfish-Theme/tags/websocket/</link>
+      <link>/tags/websocket/</link>
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
-      <guid>Hugo-Blog-Blowfish-Theme/tags/websocket/</guid>
+      <guid>/tags/websocket/</guid>
       <description></description>
     </item>
     
