@@ -5,16 +5,25 @@
     <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/</link>
     <description>Recent content in Posts on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Thu, 13 Apr 2023 18:24:04 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Apr 2023 20:56:41 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用Abp框架创建解决方案</title>
+      <title>基于Abp框架的博客项目：实体和数据库迁移</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Fri, 14 Apr 2023 20:56:41 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>基于Abp框架的博客项目：使用Abp框架创建解决方案</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
       <pubDate>Thu, 13 Apr 2023 18:24:04 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
-      <description>开始 # 该系列文章记录ABP框架的学习过程，将使用ASP .</description>
+      <description></description>
     </item>
     
     <item>
@@ -23,7 +32,7 @@
       <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
-      <description>本文章将举例介绍绝大多数C# 10的新特性，在.</description>
+      <description></description>
     </item>
     
     <item>
@@ -32,7 +41,7 @@
       <pubDate>Sun, 19 Mar 2023 20:10:48 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</guid>
-      <description>驾驶证 # 常规 # 年龄要求： c1,c2: 18+无上限 c6:20-60 货车：20+ 有效期： 6年-&amp;gt;10年-&amp;gt;长期 体检： 中大型公交牵引车每年体检 任何限时题目： 有90日选择90日，否则选择30日 驾驶证周期： 12月 驾驶证实习期： 12月 有效期： 准考证3年内，实习期需要3年驾龄司机陪同，延期审验3年 证件相关： # 车“登记”，证随意</description>
+      <description></description>
     </item>
     
     <item>
@@ -41,7 +50,7 @@
       <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</guid>
-      <description>在阅读前你需要先掌握C#类的语法并了解类与对象的基本概念。</description>
+      <description></description>
     </item>
     
     <item>
@@ -50,7 +59,7 @@
       <pubDate>Wed, 15 Mar 2023 15:44:03 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/net-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E5%85%A5%E9%97%A8/</guid>
-      <description>.</description>
+      <description></description>
     </item>
     
     <item>
@@ -59,7 +68,7 @@
       <pubDate>Wed, 15 Mar 2023 10:15:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/</guid>
-      <description>Swagger文档 # 在ASP .</description>
+      <description></description>
     </item>
     
     <item>
@@ -68,7 +77,7 @@
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</guid>
-      <description>在使用SignalR向.NET后端进行实时通信时，时常会使用 AccessToken 进行用户授权。提供用户认证可以提高后端接口的安全性，并且可以利用SignalR的用户认证机制来向指定用户的所有SignalR连接发送消息。</description>
+      <description></description>
     </item>
     
     <item>
@@ -77,7 +86,7 @@
       <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</guid>
-      <description>测试帖子 # 使用Hugo超快速建站</description>
+      <description></description>
     </item>
     
   </channel>
