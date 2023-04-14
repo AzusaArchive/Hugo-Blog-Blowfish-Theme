@@ -104,7 +104,7 @@
     "keywords": ["Abp框架"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "208"
+    "wordCount": "270"
   }]
   </script>
 
@@ -673,7 +673,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-13 18:24:04 &#43;0800 CST">2023年4月13日</time><span class="px-2 text-primary-500">&middot;</span><span>208 字</span>
+  <time datetime="2023-04-13 18:24:04 &#43;0800 CST">2023年4月13日</time><span class="px-2 text-primary-500">&middot;</span><span>270 字</span>
   
 
   
@@ -912,47 +912,49 @@
 <p>切换到终端到项目文件夹，然后用ABP CLI创建项目：</p>
 <pre tabindex="0"><code>abp new Azusa.AbpBlog -u blazor --separate-auth-server
 </code></pre><blockquote>
-<p>项目名为 <em>Azusa.AbpBlog</em><br>
--u 指定前端框架，该项目使用 Blazor WASM<br>
-&ndash;separate-auth-server 参数用于将Identity Server应用程序与API主机应用程序分隔开. 如果未指定, 则服务器上将只有一个端点.
-<a href="https://docs.abp.io/zh-Hans/abp/latest/CLI"   target="_blank">
-    ABP CLI 文档</a></p>
+<ul>
+<li>项目名为 <em>Azusa.AbpBlog</em></li>
+<li>-u 指定前端框架，该项目使用 Blazor WASM</li>
+<li>&ndash;separate-auth-server 参数用于将Identity Server应用程序与API主机应用程序分隔开. 如果未指定, 则服务器上将只有一个端点.</li>
+<li>详细的命令见<a href="https://docs.abp.io/zh-Hans/abp/latest/CLI"   target="_blank">
+    ABP CLI 文档</a></li>
+</ul>
 </blockquote>
 <p>执行完后目录下将会出现项目解决方案，解决方案结构为：</p>
 <ul>
 <li>
 <p><code>Azusa.AbpBlog.Application</code><br>
 应用层，包含应用服务的接口实现。<br>
-依赖于.Application.Contracts项目，因为接口在那里。
-依赖于.Domain项目，它需要使用领域对象。</p>
+引用 <code>.Application.Contracts</code> 项目，因为接口在那里。<br>
+引用.Domain项目，它需要使用领域对象。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.Application.Contracts</code><br>
 应用层契约(Contract)，主要包含应用服务的抽象接口，以及应用层的数据传输对象DTO，它用于分离应用层的接口和实现. 这种方式可以将接口项目做为约定包共享给客户端。<br>
-依赖于.Domain.Shared项目。</p>
+引用 <code>.Domain.Shared</code> 项目。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.AuthServer</code><br>
-独立的身份验证服务器项目，该项目有独立的配置文件，前端项目调用该服务器进行用户认证和登录，获取到Bearer Token以后再访问API服务器。该项目使用ASP .NET Core MVC 以及 IdentityServer，还提供了用户界面。
-引用.Domain项目
-引用.EntityFrameworkCore项目</p>
+独立的身份验证服务器项目，该项目有独立的配置文件以及用户界面，前端项目调用该服务器进行用户认证和登录，获取到 Bearer Token 以后再访问API服务器。该项目使用 IdentityServer ，还提供了独立的用户界面 (ASP .NET Core MVC)。<br>
+引用 <code>.Domain</code> 项目<br>
+引用 <code>.EntityFrameworkCore</code> 项目</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.Blazor</code><br>
-前端项目，提供用户界面。
-引用.Application.Contracts项目，获取DTO<br>
-引用.HttpApi.Client项目</p>
+前端项目，提供用户界面。<br>
+引用 <code>.Application.Contracts</code> 项目，获取DTO<br>
+引用 <code>.HttpApi.Client</code> 项目</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.DbMigrator</code><br>
 控制台应用程序，可以使用它创建数据库，应用数据库迁移，初始化种子数据。<br>
-依赖于.Application.Contracts项目，因为它需要访问权限定义在初始化种子数据时为管理员用户赋予所有权限。<br>
-依赖于.EntityFrameworkCore.DbMigrations项目，因为它要进行迁移。</p>
+引用 <code>.Application.Contracts</code> 项目，因为它需要访问权限定义在初始化种子数据时为管理员用户赋予所有权限。<br>
+引用 <code>.EntityFrameworkCore.DbMigrations</code> 项目，因为它要进行迁移。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.Domain</code><br>
 领域层，它主要包含实体,聚合根,领域服务,值对象,仓储接口和解决方案的其他领域对象。<br>
-依赖于.Domain.Shared项目。</p>
+引用 <code>.Domain.Shared</code> 项目。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.Domain.Shared</code><br>
@@ -961,26 +963,28 @@
 </li>
 <li>
 <p><code>Azusa.AbpBlog.EntityFrameworkCore</code><br>
-EFCore的项目，定义了DbContext类，并对领域层中声明的仓储类接口进行实现。<br>
+EFCore的项目，定义了<code>DbContext</code>类，并对领域层中声明的仓储类接口进行实现。<br>
 因为EFCore已经实现了仓储模式，在这里重新封装一次其实没有好处，在应用层直接引用EFCore项目会更加简洁，不过既然要符合ABP框架的领域驱动设计，再次封装也无妨。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.EntityFrameworkCore.DbMigrations</code><br>
 这个项目不会自动创建，之后的文章会提到，该项目专门用于整合DbContext类的迁移。<br>
-它依赖于.EntityFrameworkCore项目。</p>
+引用 <code>.EntityFrameworkCore</code> 项目。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.HttpApi</code><br>
 用于定义API控制器，不过通常ABP框架可以根据应用层自动创建API控制器。<br>
-依赖于.Application.Contracts，因为它需要应用服务的接口(interface)。</p>
+引用 <code>.Application.Contracts</code> ，因为它需要应用服务的接口(interface)。</p>
 </li>
 <li>
 <p><code>Azusa.AbpBlog.HttpApi.Client</code><br>
 定义C#客户端代理使用解决方案的HTTP API项目。<br>
-依赖 .Application.Contracts 项目,因为它需要使用应用服务接口和DTO。</p>
+引用 <code>.Application.Contracts</code> 项目，因为它需要使用应用服务接口和DTO。</p>
 </li>
 <li>
-<p><code>Azusa.AbpBlog.HttpApi.Host</code></p>
+<p><code>Azusa.AbpBlog.HttpApi.Host</code><br>
+后端 Web API 启动项目，它有独立的配置文件。<br>
+依赖于大部分项目。</p>
 </li>
 </ul>
 <blockquote>
@@ -1010,16 +1014,16 @@ EFCore的项目，定义了DbContext类，并对领域层中声明的仓储类�
 <code>Azusa.AbpBlog.DbMigrator</code>的连接字符串，该项目用于生成数据库迁移。<br>
 项目使用的是SQL Server数据库。</p>
 <pre tabindex="0"><code>&#34;ConnectionStrings&#34;: {
-    &#34;Default&#34;: &#34;Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=20020816;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True&#34;
+    &#34;Default&#34;: &#34;Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True&#34;
 },
-</code></pre><p>分层项目使用 Redis 作为缓存服务器，首先需要安装Redis客户端。<br>
-在<code>Azusa.AbpBlog.HttpApi.Host</code>项目<br>
+</code></pre><p>分层项目使用 Redis 作为缓存服务器，首先需要安装Redis客户端。</p>
+<p>在<code>Azusa.AbpBlog.HttpApi.Host</code>项目<br>
 以及<code>Azusa.AbpBlog.AuthServer</code>项目中的<code>appsettings.json</code>文件进行配置，<br>
 默认情况下，ABP框架使用本机地址：</p>
 <pre tabindex="0"><code>&#34;Redis&#34;: {
 &#34;Configuration&#34;: &#34;127.0.0.1&#34;
 },
-</code></pre><p>如果使用远程服务器，需要修改该配置。</p>
+</code></pre><p><em><strong>如果使用远程服务器，需要修改该配置。</strong></em></p>
 <div id="数据库迁移" class="anchor"></div>
 <h3 class="relative group">数据库迁移 
     <span
@@ -1083,8 +1087,23 @@ EFCore的项目，定义了DbContext类，并对领域层中声明的仓储类�
 </p>
 <p><strong>运行<code>Azusa.AbpBlog.AuthServer</code>项目</strong><br>
 启动用户认证服务，默认访问 <a href="https://localhost:44326"   target="_blank">
-    https://localhost:44326</a> 查看用户认证页面。</p>
-<p><strong>运行<code>Azusa.AbpBlog.Blazor</code>项目</strong>
+    https://localhost:44326</a> 查看用户认证页面。
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-14%20083427.png" alt="运行效果" />
+      
+    </figure>
+  
+
+</p>
+<p><strong>运行<code>Azusa.AbpBlog.Blazor</code>项目</strong><br>
 启动Blazor客户端，默认访问 <a href="https://localhost:44373/"   target="_blank">
     https://localhost:44373/</a> 查看客户端页面。
 
@@ -1102,6 +1121,39 @@ EFCore的项目，定义了DbContext类，并对领域层中声明的仓储类�
   
 
 </p>
+<p>点击页面右上角的 <em>login</em> 按钮进行登录，该操作将会访问 <code>.AuthServer</code> 项目的 API。<br>
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-14%20085758.png" alt="登录" />
+      
+    </figure>
+  
+
+
+此页面是 <code>AuthServer</code> 项目提供的，可以看到页面的URL并不是Blazor项目的：
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-14%20093028.png" alt="URL" />
+      
+    </figure>
+  
+
+<br>
+默认的用户名和密码为<code>admin</code>和<code>1q2w3E*</code>。</p>
 <div id="异常和解决方案" class="anchor"></div>
 <h3 class="relative group">异常和解决方案 
     <span
@@ -1110,13 +1162,20 @@ EFCore的项目，定义了DbContext类，并对领域层中声明的仓储类�
             style="text-decoration-line: none !important;" href="#%e5%bc%82%e5%b8%b8%e5%92%8c%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" aria-label="锚点">#</a></span>        
     
 </h3>
-<blockquote>
 <ul>
-<li>运行AuthServer项目时抛出 <code>AbpException: Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!</code> 异常：<br>
-查看这篇文章可解决： <a href="https://stackoverflow.com/questions/70236519/invalidoperationexception-cannot-find-compilation-library-location-for-package"   target="_blank">
-    https://stackoverflow.com/questions/70236519/invalidoperationexception-cannot-find-compilation-library-location-for-package</a></li>
+<li>
+<p>运行.AuthServer项目时抛出 <code>AbpException: Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!</code> 异常：</p>
+<p>查看这篇文章可解决： <a href="https://stackoverflow.com/questions/70236519/invalidoperationexception-cannot-find-compilation-library-location-for-package"   target="_blank">
+    https://stackoverflow.com/questions/70236519/invalidoperationexception-cannot-find-compilation-library-location-for-package</a></p>
+</li>
+<li>
+<p>运行.AuthServer项目时抛出<code>AbpException:Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!</code>异常：</p>
+<p>项目缺少 <a href="https://nodejs.org"   target="_blank">
+    Node.js</a> 依赖，先检查Node.js是否正常安装并添加至环境变量，确认安装后，在解决方案目录使用打开命令提示符输入:</p>
+<pre tabindex="0"><code>abp install-libs
+</code></pre><p>他将自动调用 Node.js 下载项目依赖的 NPM 包，下载完毕后重新运行项目即可。</p>
+</li>
 </ul>
-</blockquote>
 <hr>
 <p>至此，项目的创建和运行应当全部完成。</p>
 
