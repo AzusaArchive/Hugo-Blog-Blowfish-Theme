@@ -112,10 +112,10 @@ EFCore的项目，定义了`DbContext`类，并对领域层中声明的仓储类
 `Azusa.AbpBlog.AuthServer`的连接字符串，该数据库负责认证服务。  
 `Azusa.AbpBlog.HttpApi.Host`的连接字符串，主要的数据库。  
 `Azusa.AbpBlog.DbMigrator`的连接字符串，该项目用于生成数据库迁移。  
-项目使用的是SQL Server数据库。  
+项目使用的是SQL Server Express数据库。  
 ``` json
 "ConnectionStrings": {
-    "Default": "Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True"
+    "Default": "Server=ALICIA\\SQLEXPRESS;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True"
 },
 ```
 
