@@ -104,7 +104,7 @@
     "keywords": ["Abp框架"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2242"
+    "wordCount": "2244"
   }]
   </script>
 
@@ -675,7 +675,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-13 18:24:04 &#43;0800 CST">2023年4月13日</time><span class="px-2 text-primary-500">&middot;</span><span>2242 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+  <time datetime="2023-04-13 18:24:04 &#43;0800 CST">2023年4月13日</time><span class="px-2 text-primary-500">&middot;</span><span>2244 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
   
 
   
@@ -1023,9 +1023,9 @@ EFCore的项目，定义了<code>DbContext</code>类，并对领域层中声明�
 <code>Azusa.AbpBlog.AuthServer</code>的连接字符串，该数据库负责认证服务。<br>
 <code>Azusa.AbpBlog.HttpApi.Host</code>的连接字符串，主要的数据库。<br>
 <code>Azusa.AbpBlog.DbMigrator</code>的连接字符串，该项目用于生成数据库迁移。<br>
-项目使用的是SQL Server数据库。</p>
+项目使用的是SQL Server Express数据库。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;ConnectionStrings&#34;</span><span class="err">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Default&#34;</span><span class="p">:</span> <span class="s2">&#34;Server=(LocalDb)\\MSSQLLocalDB;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Default&#34;</span><span class="p">:</span> <span class="s2">&#34;Server=ALICIA\\SQLEXPRESS;User Id=Azusa;Password=12345678;Database=db_AbpBlog;Trusted_Connection=True;TrustServerCertificate=True&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
 </span></span></code></pre></div><p>分层项目使用 Redis 作为缓存服务器，首先需要安装Redis客户端。</p>
 <p>在<code>Azusa.AbpBlog.HttpApi.Host</code>项目<br>
