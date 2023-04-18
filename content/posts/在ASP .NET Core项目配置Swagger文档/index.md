@@ -12,7 +12,7 @@ categories: [".NET"]
 
 [微软官方文档](https://learn.microsoft.com/zh-cn/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio)
 
-> **先决条件：** 项目需要在Nuget中安装Swashbuckle.AspNetCore包（Visual Studio中一般会在ASP .NET Core项目中自动安装）
+> **先决条件：** 项目需要在Nuget中安装Swashbuckle.AspNetCore包（一般会在ASP .NET Core项目创建时自动安装）
 
 1. ## 生成并导出XML文档
     首先需要生成项目的XML文档。以 Visual Studio 为例，在项目属性-输出中勾选“生成包含API文档的文件”，并指定输出目录：  
@@ -22,10 +22,10 @@ categories: [".NET"]
     !["输出的XML文件"](./%E6%89%B9%E6%B3%A8%202023-03-15%20114559.png "输出的XML文档")
 
 2. ## 配置Swagger服务
-    在ASP .NET Core入口函数中配置服务
-    ```cs
+    在 StartUp 中配置服务
+    
     program.cs
-
+    ```cs
     //安装Nuget包后即可使用AddSwaggerGen方法添加Swagger服务
     services.AddSwaggerGen(options =>
     {
@@ -46,9 +46,9 @@ categories: [".NET"]
 
 3. ## 配置Swagger中间件
     在ASP .NET Core入口函数中配置中间件
-    ```cs
+    
     program.cs 
-
+    ```cs
     ...
 
     var app = builder.Build();
@@ -63,7 +63,7 @@ categories: [".NET"]
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gehenna.WebAPI v1"));
     }
     ```
-    > 如果使用目录及 IIS 或反向代理，请使用 `./` 前缀将 Swagger 终结点设置为相对路径。 例如 `./swagger/v1/swagger.json`。   
+    > 如果使用IIS 或反向代理的路径，请使用 `./` 前缀将 Swagger 终结点设置为相对路径。 例如 `./swagger/v1/swagger.json`。   
     使用 `/swagger/v1/swagger.json` 指示应用在 URL 的真实根目录中查找 JSON 文件（如果使用，加上路由前缀）。例如，请使用 `https://localhost:<port>/<route_prefix>/swagger/v1/swagger.json` 而不是 `https://localhost:<port>/<virtual_directory>/<route_prefix>/swagger/v1/swagger.json`。
 
 4. ## 配置完成
