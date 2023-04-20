@@ -1,7 +1,7 @@
 ﻿---
 title: "基于Abp框架的博客项目：使用Abp框架创建解决方案"
 date: 2023-04-13T18:24:04+08:00
-tags: ["Abp框架"]
+tags: ["Abp框架","CSharp"]
 categories: [".NET"]
 series: ["基于Abp框架的博客项目"]
 series_order: 1

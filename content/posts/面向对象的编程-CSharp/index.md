@@ -1,7 +1,7 @@
 ﻿---
 title: "面向对象的编程（C#）"
 date: 2023-03-17T15:31:41+08:00
-tags: ["OOP","CSharp基础"]
+tags: ["OOP","CSharp"]
 categories: [".NET"]
 ---
 

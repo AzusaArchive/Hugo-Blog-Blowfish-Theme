@@ -1,7 +1,7 @@
 ﻿---
 title: "基于Abp框架的博客项目：实体和数据库迁移"
 date: 2023-04-14T20:56:41+08:00
-tags: [Abp框架]
+tags: [Abp框架,"CSharp"]
 categories: [".NET"]
 series: ["基于Abp框架的博客项目"]
 series_order: 2
@@ -89,7 +89,7 @@ Abp框架提供了许多实体基类和接口，这里实现了：
 #### 关于Guid类型主键
 Guid类型很好地避免了主键重复的情况，但因为Guid的无序性，数据库根据Guid主键创建的索引会在插入时带来严重的性能影响(因为插入新记录可能需要对现有记录进行重新排序)。  
 Abp框架提供了解决方案：[Guid生成器](https://docs.abp.io/zh-Hans/abp/latest/Guid-Generation)，框架提供了`IGuidGenerator`接口，它可以生成连续的Guid值，这对数据库的聚集索引非常重要，所以不要用`Guid.NewGuid`方法生成Guid值，而是用Abp框架的Guid生成器。  
-使用Abp的应用服务基类(`ApplicationService`)时无需注入`IGuidGenerator`，Abp框架已经将其定义在`ApplicationService`的`GuidGenerator`属性中，调用它的`Create`方法即可。
+> 使用Abp的应用服务基类(`ApplicationService`)时无需注入`IGuidGenerator`，Abp框架已经将其定义在`ApplicationService`的`GuidGenerator`属性中，调用它的`Create`方法即可。
 
 关于更多实体信息以及基类和接口参考[基类和接口的审计属性](https://docs.abp.io/zh-Hans/abp/latest/Entities#%E5%9F%BA%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%A1%E8%AE%A1%E5%B1%9E%E6%80%A7)  
 
@@ -336,7 +336,7 @@ public class AbpBlogDataSeedContributor: IDataSeedContributor,ITransientDependen
     {
         if (await _postRepos.GetCountAsync() <= 0)
         {
-            if (_userRepos.GetAsync(user => user.UserName == "AzusaAdmin") == null)
+            if (await _userRepos.FindAsync(user => user.UserName == "AzusaAdmin") == null)
             {
                 var user = new BlogUser(_guidGenerator.Create(), "AzusaAdmin", "VanitasVanitatum",
                     "2817212736@qq.com");
@@ -350,8 +350,9 @@ public class AbpBlogDataSeedContributor: IDataSeedContributor,ITransientDependen
 
 Abp框架提供了[种子数据系统](https://docs.abp.io/zh-Hans/abp/latest/Data-Seeding)用来创建数据库的**初始数据**，创建一个`IDataSeedContributor`接口的实现类来配置种子数据，Abp框架将会自动将程序集中实现`IDataSeedContributor`接口的实现类加入依赖注入并在`.DbMigrator`项目运行并应用数据库迁移时执行，由此来创建数据库的初始数据。
 
-上面的类在`SeedAsync`方法中配置了种子数据的生成，在没有任何文章存在且名为 *"AzusaAdmin"* 的用户不存在时，自动创建并插入数据表。类中使用了`Microsoft.DependencyInjection`注入了响应表的**仓储**以及上述的`IGuidGenerator`接口，Abp自动将常用的服务加入了依赖注入容器，并且，在DbContext中配置的`DataSet`对应实体的仓储也将默认被加入依赖注入容器：  
-在`.EntityFrameworkCore`项目中的`AbpBlogEntityFrameworkCoreModule`类，配置了该Abp模块的服务，可以看到在`ConfigureServices`方法中加入了DbContext依赖：
+上面的类在`SeedAsync`方法中配置了种子数据的生成，在没有任何文章存在且名为 *"AzusaAdmin"* 的用户不存在时，自动创建并插入数据表。类中使用了`Microsoft.DependencyInjection`注入了相应表的**仓储**以及上述的`IGuidGenerator`接口，Abp自动将常用的服务加入了依赖注入容器，并且，在DbContext中配置的`DataSet`对应实体的**仓储**也将默认被加入依赖注入容器。  
+
+在`.EntityFrameworkCore`项目中的`AbpBlogEntityFrameworkCoreModule`类中，配置了该Abp模块的服务，可以看到在`ConfigureServices`方法中加入了DbContext依赖：
 ```cs
 public override void ConfigureServices(ServiceConfigurationContext context)
 {
@@ -382,6 +383,8 @@ public override void ConfigureServices(ServiceConfigurationContext context)
 add-migration Add_Post_Category_Tag -Context AbpBlogDbContext
 ```
 使用Visual Studio包管理器命令行或是其他工具进行EFCore数据库迁移。
+
+> 注意，使用包管理器命令行生成EFCore迁移需要先安装 `Microsoft.EntityFrameworkCore.Tools` 包，Abp框架默认会在创建项目的时候预安装。
 
 然后运行`.DbMigrator`项目，Abp框架自动将DbContext加入了依赖，该项目会自动应用存在的数据迁移脚本，并且根据刚才的配置创建***种子数据***，不建议使用`Update-Database`或是其他迁移工具进行迁移。
 
