@@ -14,7 +14,7 @@
   <meta name="title" content="基于Abp框架的博客项目：实体和数据库迁移 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  <meta name="keywords" content="Abp框架, " />
+  <meta name="keywords" content="Abp框架, CSharp, " />
   
   
   <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/" />
@@ -101,10 +101,10 @@
     
     "dateModified": "2023-04-14T20:56:41\u002b08:00",
     
-    "keywords": ["Abp框架"],
+    "keywords": ["Abp框架","CSharp"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3545"
+    "wordCount": "3597"
   }]
   </script>
 
@@ -675,7 +675,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-14 20:56:41 &#43;0800 CST">2023年4月14日</time><span class="px-2 text-primary-500">&middot;</span><span>3545 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
+  <time datetime="2023-04-14 20:56:41 &#43;0800 CST">2023年4月14日</time><span class="px-2 text-primary-500">&middot;</span><span>3597 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
   
 
   
@@ -718,6 +718,17 @@
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
   >
     Abp框架
+  </span>
+</span>
+
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/csharp/&#34;,'_self');">
+    <span class="flex">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+  >
+    CSharp
   </span>
 </span>
 
@@ -861,7 +872,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
             Part 1: 基于Abp框架的博客项目：使用Abp框架创建解决方案
         </a>
     </div>
@@ -871,6 +882,15 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         Part 2: This Article
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E5%9F%BA%E6%9C%AC%E7%9A%84crud/">
+            Part 3: 基于Abp框架的博客项目：基本的CRUD
+        </a>
     </div>
     
     
@@ -998,8 +1018,10 @@
 </h4>
 <p>Guid类型很好地避免了主键重复的情况，但因为Guid的无序性，数据库根据Guid主键创建的索引会在插入时带来严重的性能影响(因为插入新记录可能需要对现有记录进行重新排序)。<br>
 Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest/Guid-Generation"   target="_blank">
-    Guid生成器</a>，框架提供了<code>IGuidGenerator</code>接口，它可以生成连续的Guid值，这对数据库的聚集索引非常重要，所以不要用<code>Guid.NewGuid</code>方法生成Guid值，而是用Abp框架的Guid生成器。<br>
-使用Abp的应用服务基类(<code>ApplicationService</code>)时无需注入<code>IGuidGenerator</code>，Abp框架已经将其定义在<code>ApplicationService</code>的<code>GuidGenerator</code>属性中，调用它的<code>Create</code>方法即可。</p>
+    Guid生成器</a>，框架提供了<code>IGuidGenerator</code>接口，它可以生成连续的Guid值，这对数据库的聚集索引非常重要，所以不要用<code>Guid.NewGuid</code>方法生成Guid值，而是用Abp框架的Guid生成器。</p>
+<blockquote>
+<p>使用Abp的应用服务基类(<code>ApplicationService</code>)时无需注入<code>IGuidGenerator</code>，Abp框架已经将其定义在<code>ApplicationService</code>的<code>GuidGenerator</code>属性中，调用它的<code>Create</code>方法即可。</p>
+</blockquote>
 <p>关于更多实体信息以及基类和接口参考<a href="https://docs.abp.io/zh-Hans/abp/latest/Entities#%E5%9F%BA%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%A1%E8%AE%A1%E5%B1%9E%E6%80%A7"   target="_blank">
     基类和接口的审计属性</a></p>
 <hr>
@@ -1247,7 +1269,7 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_postRepos</span><span class="p">.</span><span class="n">GetCountAsync</span><span class="p">()</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">_userRepos</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">)</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">)</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="kt">var</span> <span class="n">user</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BlogUser</span><span class="p">(</span><span class="n">_guidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">(),</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">,</span> <span class="s">&#34;VanitasVanitatum&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                    <span class="s">&#34;2817212736@qq.com&#34;</span><span class="p">);</span>
@@ -1259,8 +1281,8 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Abp框架提供了<a href="https://docs.abp.io/zh-Hans/abp/latest/Data-Seeding"   target="_blank">
     种子数据系统</a>用来创建数据库的<strong>初始数据</strong>，创建一个<code>IDataSeedContributor</code>接口的实现类来配置种子数据，Abp框架将会自动将程序集中实现<code>IDataSeedContributor</code>接口的实现类加入依赖注入并在<code>.DbMigrator</code>项目运行并应用数据库迁移时执行，由此来创建数据库的初始数据。</p>
-<p>上面的类在<code>SeedAsync</code>方法中配置了种子数据的生成，在没有任何文章存在且名为 <em>&ldquo;AzusaAdmin&rdquo;</em> 的用户不存在时，自动创建并插入数据表。类中使用了<code>Microsoft.DependencyInjection</code>注入了响应表的<strong>仓储</strong>以及上述的<code>IGuidGenerator</code>接口，Abp自动将常用的服务加入了依赖注入容器，并且，在DbContext中配置的<code>DataSet</code>对应实体的仓储也将默认被加入依赖注入容器：<br>
-在<code>.EntityFrameworkCore</code>项目中的<code>AbpBlogEntityFrameworkCoreModule</code>类，配置了该Abp模块的服务，可以看到在<code>ConfigureServices</code>方法中加入了DbContext依赖：</p>
+<p>上面的类在<code>SeedAsync</code>方法中配置了种子数据的生成，在没有任何文章存在且名为 <em>&ldquo;AzusaAdmin&rdquo;</em> 的用户不存在时，自动创建并插入数据表。类中使用了<code>Microsoft.DependencyInjection</code>注入了相应表的<strong>仓储</strong>以及上述的<code>IGuidGenerator</code>接口，Abp自动将常用的服务加入了依赖注入容器，并且，在DbContext中配置的<code>DataSet</code>对应实体的<strong>仓储</strong>也将默认被加入依赖注入容器。</p>
+<p>在<code>.EntityFrameworkCore</code>项目中的<code>AbpBlogEntityFrameworkCoreModule</code>类中，配置了该Abp模块的服务，可以看到在<code>ConfigureServices</code>方法中加入了DbContext依赖：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="n">ConfigureServices</span><span class="p">(</span><span class="n">ServiceConfigurationContext</span> <span class="n">context</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">context</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAbpDbContext</span><span class="p">&lt;</span><span class="n">AbpBlogDbContext</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
@@ -1296,6 +1318,9 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 <p>配置完后，生成<code>AbpBlogDbContext</code>的数据库迁移。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">add-migration Add_Post_Category_Tag -Context AbpBlogDbContext
 </span></span></code></pre></div><p>使用Visual Studio包管理器命令行或是其他工具进行EFCore数据库迁移。</p>
+<blockquote>
+<p>注意，使用包管理器命令行生成EFCore迁移需要先安装 <code>Microsoft.EntityFrameworkCore.Tools</code> 包，Abp框架默认会在创建项目的时候预安装。</p>
+</blockquote>
 <p>然后运行<code>.DbMigrator</code>项目，Abp框架自动将DbContext加入了依赖，该项目会自动应用存在的数据迁移脚本，并且根据刚才的配置创建<em><strong>种子数据</strong></em>，不建议使用<code>Update-Database</code>或是其他迁移工具进行迁移。</p>
 <p>
 
@@ -1334,7 +1359,7 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
             Part 1: 基于Abp框架的博客项目：使用Abp框架创建解决方案
         </a>
     </div>
@@ -1344,6 +1369,15 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         Part 2: This Article
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E5%9F%BA%E6%9C%AC%E7%9A%84crud/">
+            Part 3: 基于Abp框架的博客项目：基本的CRUD
+        </a>
     </div>
     
     
@@ -1537,7 +1571,7 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8abp%E6%A1%86%E6%9E%B6%E5%88%9B%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1561,6 +1595,28 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E5%9F%BA%E4%BA%8Eabp%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE%E5%9F%BA%E6%9C%AC%E7%9A%84crud/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >基于Abp框架的博客项目：基本的CRUD</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-04-18 14:31:42 &#43;0800 CST">2023年4月18日</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>
