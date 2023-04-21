@@ -104,7 +104,7 @@
     "keywords": ["Abp框架","CSharp"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4692"
+    "wordCount": "6016"
   }]
   </script>
 
@@ -675,7 +675,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-18 14:31:42 &#43;0800 CST">2023年4月18日</time><span class="px-2 text-primary-500">&middot;</span><span>4692 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">10 分钟</span>
+  <time datetime="2023-04-18 14:31:42 &#43;0800 CST">2023年4月18日</time><span class="px-2 text-primary-500">&middot;</span><span>6016 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span>
   
 
   
@@ -915,7 +915,25 @@
 </h2>
 <p>关于<a href="https://docs.abp.io/zh-Hans/abp/latest/Repositories"   target="_blank">
     Abp中的仓储</a> 在上一节（生成种子数据那会儿）已经有所介绍。在使用EFCore时，Abp框架会自动地为实现<code>IAggregateRoot(聚合根)</code>接口的实体以及 <code>AbpDbContext</code> 中的 <code>DbSet&lt;&gt;</code> 对应的实体生成仓储并添加到依赖注入容器中。在类中注入 <code>IRepository&lt;&gt;</code> 接口即可访问对应实体类的<strong>默认仓储</strong>。</p>
-<p>Abp框架也支持自定义仓储，或是在默认仓储接口上扩展，下面将介绍如何创建自定义仓储接口并提供实现类：</p>
+<p>在<code>.EntityFrameworkCore</code>项目中的<code>AbpBlogEntityFrameworkCoreModule</code>类中，配置了该Abp模块的服务，可以看到在<code>ConfigureServices</code>方法中加入了DbContext依赖：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="n">ConfigureServices</span><span class="p">(</span><span class="n">ServiceConfigurationContext</span> <span class="n">context</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">context</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAbpDbContext</span><span class="p">&lt;</span><span class="n">AbpBlogDbContext</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 该方法会将所有聚合根对应的仓储加入依赖注入，
+</span></span></span><span class="line"><span class="cl"><span class="cm">        如果方法的includeAllEntities参数设为true，
+</span></span></span><span class="line"><span class="cl"><span class="cm">        则为所有DbSet中配置实体创建仓储并加入依赖注入 */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">AddDefaultRepositories</span><span class="p">(</span><span class="n">includeAllEntities</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Configure</span><span class="p">&lt;</span><span class="n">AbpDbContextOptions</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* The main point to change your DBMS.
+</span></span></span><span class="line"><span class="cl"><span class="cm">        * See also AbpBlogMigrationsDbContextFactory for EF Core tooling. */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Abp框架也支持自定义仓储，或是在默认仓储接口上扩展，下面将介绍如何创建自定义仓储接口并提供实现类：</p>
 <div id="自定义仓储接口" class="anchor"></div>
 <h3 class="relative group">自定义仓储接口 
     <span
@@ -1013,7 +1031,8 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">//将Book实体的默认仓储实现类替换为BookRepository</span>
 </span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="p">.</span><span class="n">AddRepository</span><span class="p">&lt;</span><span class="n">Book</span><span class="p">,</span> <span class="n">BookRepository</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><p>访问<a href="https://docs.abp.io/zh-Hans/abp/latest/Entity-Framework-Core#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%93%E5%82%A8"   target="_blank">
+</span></span></code></pre></div><p>访问<a href="https://docs.abp.io/zh-Hans/abp/latest/Repositories"   target="_blank">
+    Abp中的仓储</a>和<a href="https://docs.abp.io/zh-Hans/abp/latest/Entity-Framework-Core#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%93%E5%82%A8"   target="_blank">
     Abp中的EFCore集成</a>来了解更多关于自定义仓储的信息。</p>
 </blockquote>
 <hr>
@@ -1028,10 +1047,12 @@
 <p>定义供表示层使用的<a href="https://docs.abp.io/zh-Hans/abp/latest/Data-Transfer-Objects"   target="_blank">
     数据传输对象(DTO)</a>。</p>
 <blockquote>
-<p>数据传输对象(DTO)应用在<em>应用层</em>和<em>表示层</em>并用来与客户端进行数据传输。它起到隔离<em>领域层</em>和<em>表示层</em>以及隐藏重要数据的作用。DTO也对传输数据的序列化起到优化作用，避免了对某些实体的嵌套关系进行重复地序列化。<br>
-将客户端对某个实体<strong>有需要</strong>的属性放入DTO，而对于客户端不需要或者是隐私的数据则不放入DTO。<br>
-对于数据传输对象的更多信息，参阅<a href="https://docs.abp.io/zh-Hans/abp/latest/Data-Transfer-Objects"   target="_blank">
-    Abp框架中的DTO</a>。</p>
+<ul>
+<li>数据传输对象(DTO)应用在<em>应用层</em>和<em>表示层</em>并用来与客户端进行数据传输。它起到隔离<em>领域层</em>和<em>表示层</em>以及隐藏重要数据的作用。DTO也对传输数据的序列化起到优化，避免了对某些实体的嵌套关系进行重复地序列化。</li>
+<li>将客户端对某个实体<strong>有需要</strong>的属性放入DTO，而对于客户端不需要或者是隐私的数据则不放入DTO。</li>
+<li>对于数据传输对象的更多信息，参阅<a href="https://docs.abp.io/zh-Hans/abp/latest/Data-Transfer-Objects"   target="_blank">
+    Abp框架中的DTO</a>。</li>
+</ul>
 </blockquote>
 <div id="创建响应数据传输对象" class="anchor"></div>
 <h3 class="relative group">创建响应数据传输对象 
@@ -1064,7 +1085,11 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><blockquote>
-<p>Abp框架定义好了一些数据传输对象使用的基类/接口以减少重复工作，上面的 <code>PostDto</code> 类就继承自了 <code>EntityDto&lt;Guid&gt;</code> 类，它提前定义好了主键 <code>Id</code> 属性。</p>
+<ul>
+<li>Abp框架定义好了一些数据传输对象使用的基类/接口以减少重复工作，上面的 <code>PostDto</code> 类就继承自了 <code>EntityDto&lt;Guid&gt;</code> 类，它提前定义好了主键 <code>Id</code> 属性。</li>
+<li>和实体类一样，Abp也提供了一些审计DTO基类，参考<a href="https://docs.abp.io/zh-Hans/abp/latest/Data-Transfer-Objects#%E5%AE%A1%E8%AE%A1dto"   target="_blank">
+    审计DTO</a>。</li>
+</ul>
 </blockquote>
 <p>为其余的实体定义响应DTO：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CategoryDto</span> <span class="p">:</span> <span class="n">EntityDto</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
@@ -1108,16 +1133,16 @@
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Markdown</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span><span class="p">?</span> <span class="n">CategoryId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="n">TagIds</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span><span class="p">?</span> <span class="n">CreatorId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string?</span> <span class="n">CategoryName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">TagNames</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">CreatorId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">CreatePostDto</span><span class="p">(</span><span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="kt">string</span> <span class="n">markdown</span><span class="p">,</span> <span class="n">Guid</span><span class="p">?</span> <span class="n">categoryId</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span> <span class="n">tagIds</span><span class="p">,</span> <span class="n">Guid</span><span class="p">?</span> <span class="n">creatorId</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">CreatePostDto</span><span class="p">(</span><span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="kt">string</span> <span class="n">markdown</span><span class="p">,</span> <span class="kt">string?</span> <span class="n">categoryName</span><span class="p">,</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">tagNames</span><span class="p">,</span> <span class="n">Guid</span> <span class="n">creatorId</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Title</span> <span class="p">=</span> <span class="n">title</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Markdown</span> <span class="p">=</span> <span class="n">markdown</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">CategoryId</span> <span class="p">=</span> <span class="n">categoryId</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">TagIds</span> <span class="p">=</span> <span class="n">tagIds</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CategoryName</span> <span class="p">=</span> <span class="n">categoryName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TagNames</span> <span class="p">=</span> <span class="n">tagNames</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">CreatorId</span> <span class="p">=</span> <span class="n">creatorId</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1288,16 +1313,16 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">interface</span> <span class="nc">IPostAppService</span> <span class="p">:</span> <span class="n">ICrudAppService</span><span class="p">&lt;</span><span class="n">PostDto</span><span class="p">,</span><span class="n">Guid</span><span class="p">,</span><span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span><span class="n">CreatePostDto</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{}</span>
 </span></span></code></pre></div><p>上述的代码创建了一个<code>Post</code>实体的应用服务接口，并扩展了Abp框架提供的<code>ICrudAppService&lt;&gt;</code>接口，该接口定义了常用的CRUD方法，在类型参数中填上实体对应的DTO，该接口就能提供该DTO对应的CRUD方法。<br>
-例如上面的代码在<code>ICrudAppService</code>接口中提供了<code>PostDto</code>、<code>Guid</code>类型主键、*<code>PagedAndSortedResultRequestDto</code>*和<code>CreatePostDto</code>，该接口提供了<code>GetAsync</code>,<code>GetListAsync</code>,<code>CreateAsync</code>,<code>UpdateAsync</code>和<code>DeleteAsync</code>方法。</p>
+例如上面的代码在<code>ICrudAppService</code>接口中提供了<code>PostDto</code>、<code>Guid</code>类型主键、<code>PagedAndSortedResultRequestDto</code>和<code>CreatePostDto</code>，该接口提供了<code>GetAsync</code>,<code>GetListAsync</code>,<code>CreateAsync</code>,<code>UpdateAsync</code>和<code>DeleteAsync</code>方法。</p>
 <blockquote>
 <ul>
 <li><code>ICrudAppService</code>接口有多个泛型变体，提供不同种类的DTO，它定义的方法就不一样。</li>
-<li><code>PagedAndSortedResultRequestDto</code>是Abp提供的DTO，它提供了用于分页查询和排序的属性。</li>
-<li><code>ICrudAppService</code>接口实现了<code>IApplicationService</code>接口，Abp将会识别实现该接口的接口并根据<strong>接口定义的方法名</strong>和相应的<a href="https://docs.abp.io/zh-Hans/abp/latest/API/Auto-API-Controllers#%E4%BE%8B%E5%AD%90"   target="_blank">
-    <strong>约定</strong></a> 生成对应的 API 控制器。</li>
+<li><code>PagedAndSortedResultRequestDto</code>是Abp提供的DTO，它提供了用于分页查询和排序的属性，这个DTO是通用的。</li>
+<li><code>ICrudAppService</code>接口实现了<code>IApplicationService</code>接口，Abp将会识别继承<code>IApplicationService</code>的接口并根据<strong>接口定义的方法名</strong>和相应的<a href="https://docs.abp.io/zh-Hans/abp/latest/API/Auto-API-Controllers#%E4%BE%8B%E5%AD%90"   target="_blank">
+    <strong>约定</strong></a>生成对应的 API 控制器。</li>
 <li>开发者也可以不使用<code>ICrudAppService</code>接口，而是自己定义接口以及方法，只要接口实现了<code>IApplicationService</code>接口并且方法的名字符合<a href="https://docs.abp.io/zh-Hans/abp/latest/API/Auto-API-Controllers#%E4%BE%8B%E5%AD%90"   target="_blank">
-    <strong>约定</strong></a> ，Abp框架就可以自动生成API控制器。<br>
-Abp框架生成API的配置是可以自定义的，在<code>.HttpApi.Host</code>项目的<code>AbpBlogHttpApiHostModule</code>类中定义了Abp根据应用服务生成API控制器的方法：
+    <strong>约定</strong></a> ，Abp框架就可以自动生成API控制器。</li>
+<li>Abp框架生成API的配置是可以自定义的，在<code>.HttpApi.Host</code>项目的<code>AbpBlogHttpApiHostModule</code>类中定义了Abp根据应用服务生成API控制器的方法：
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">ConfigureConventionalControllers</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Configure</span><span class="p">&lt;</span><span class="n">AbpAspNetCoreMvcOptions</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
@@ -1329,36 +1354,132 @@ Abp框架生成API的配置是可以自定义的，在<code>.HttpApi.Host</code>
     
 </h3>
 <p>在应用层<code>.Application</code>项目中对上述接口进行实现，创建<code>AppServices</code>文件夹，然后编写实现类：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostAppServices</span> <span class="p">:</span> <span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span><span class="n">PostDto</span><span class="p">,</span><span class="n">Guid</span><span class="p">,</span><span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span><span class="n">CreatePostDto</span><span class="p">&gt;</span> <span class="p">,</span><span class="n">IPostAppService</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUserAppService</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">BlogUserDto</span><span class="p">,</span> <span class="n">Guid</span><span class="p">,</span> <span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span> <span class="n">CreateBlogUserDto</span><span class="p">&gt;,</span> <span class="n">IBlogUserAppService</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">PostAppServices</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUserAppService</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">userRepos</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_userRepos</span> <span class="p">=</span> <span class="n">userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">BlogUserDto</span><span class="p">&gt;</span> <span class="n">CreateAsync</span><span class="p">(</span><span class="n">CreateBlogUserDto</span> <span class="n">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="n">input</span><span class="p">.</span><span class="n">UserName</span><span class="p">)</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">AbpValidationException</span><span class="p">(</span><span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValidationResult</span><span class="p">&gt;</span> <span class="p">{</span> <span class="k">new</span><span class="p">(</span><span class="s">&#34;用户名重复&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="p">[]{</span><span class="s">&#34;Name&#34;</span><span class="p">})});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">await</span> <span class="k">base</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Abp也提供了<code>ICrudAppService</code>接口对应的实现类，它会自动注入相应实体的<a href="https://docs.abp.io/zh-Hans/abp/latest/Repositories"   target="_blank">
-    <em><strong>默认仓储</strong></em></a>，以及<a href="https://docs.abp.io/zh-Hans/abp/latest/Object-To-Object-Mapping#iobjectmapper"   target="_blank">
-    <code>IObjectMapper</code></a>对对象进行映射，然后实现<code>ICrudAppService</code>接口中对应的CRUD方法。</p>
-<blockquote>
+</span></span></code></pre></div><blockquote>
 <ul>
+<li>Abp也提供了<code>ICrudAppService</code>接口对应的实现类，它会自动注入相应实体的<a href="https://docs.abp.io/zh-Hans/abp/latest/Repositories"   target="_blank">
+    <em><strong>默认仓储</strong></em></a>，以及<a href="https://docs.abp.io/zh-Hans/abp/latest/Object-To-Object-Mapping#iobjectmapper"   target="_blank">
+    <code>IObjectMapper</code></a>对对象进行映射，然后实现<code>ICrudAppService</code>接口中对应的CRUD方法。</li>
 <li><code>CrudAppService</code>类与<code>ICrudAppService</code>类似，都拥有不同的泛型版本，确保他们俩类型参数中的DTO一致。</li>
 <li><a href="https://docs.abp.io/zh-Hans/abp/latest/Object-To-Object-Mapping#iobjectmapper"   target="_blank">
     <code>IObjectMapper</code></a> 是Abp定义的一个可重用的对象映射接口，如果之前配置好了<em>AutoMapper</em>，那么Abp框架就会自动将该接口添加到依赖注入并且使用<em>AutoMapper</em>进行对象映射。</li>
+<li><code>CrudAppService</code>类定义了虚方法，如果有需要修改的逻辑，可以重写类中的方法。上述代码中的<code>Category</code>实体在数据库中具有唯一约束，在插入数据库之前需要校验，因此重写了基类的<code>CreateAsync</code>方法，并添加了校验过程。</li>
+<li>代码中抛出的<code>AbpValidationException</code>将被Abp框架进行<a href="https://docs.abp.io/zh-Hans/abp/7.1/Exception-Handling#%E9%AA%8C%E8%AF%81%E9%94%99%E8%AF%AF"   target="_blank">
+    异常处理</a>，对客户端响应<em><strong>数据校验</strong></em> 相关的信息。</li>
 </ul>
 </blockquote>
 <p>实现其他实体的应用服务接口：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CategoryAppService</span><span class="p">:</span><span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">,</span><span class="n">CategoryDto</span><span class="p">,</span><span class="n">Guid</span><span class="p">,</span><span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span><span class="n">CreateCategoryDto</span><span class="p">&gt;</span> <span class="p">,</span><span class="n">ICategoryAppService</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">TagAppService</span> <span class="p">:</span> <span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">TagDto</span><span class="p">,</span> <span class="n">Guid</span><span class="p">,</span> <span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span> <span class="n">CreateTagDto</span><span class="p">&gt;,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ITagAppService</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">CategoryAppService</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_tagRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">TagAppService</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">tagRepos</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_tagRepos</span> <span class="p">=</span> <span class="n">tagRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">TagDto</span><span class="p">&gt;</span> <span class="n">CreateAsync</span><span class="p">(</span><span class="n">CreateTagDto</span> <span class="n">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_tagRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">tag</span> <span class="p">=&gt;</span> <span class="n">tag</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">input</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">AbpValidationException</span><span class="p">(</span><span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValidationResult</span><span class="p">&gt;</span> <span class="p">{</span> <span class="k">new</span><span class="p">(</span><span class="s">&#34;标签名重复&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="p">[]{</span><span class="s">&#34;Name&#34;</span><span class="p">})});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">await</span> <span class="k">base</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">TagAppService</span><span class="p">:</span><span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span><span class="n">TagDto</span><span class="p">,</span><span class="n">Guid</span><span class="p">,</span><span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span><span class="n">CreateTagDto</span><span class="p">&gt;</span> <span class="p">,</span><span class="n">ITagAppService</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUserAppService</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">BlogUserDto</span><span class="p">,</span> <span class="n">Guid</span><span class="p">,</span> <span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span> <span class="n">CreateBlogUserDto</span><span class="p">&gt;,</span> <span class="n">IBlogUserAppService</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">TagAppService</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUserAppService</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">userRepos</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_userRepos</span> <span class="p">=</span> <span class="n">userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">BlogUserDto</span><span class="p">&gt;</span> <span class="n">CreateAsync</span><span class="p">(</span><span class="n">CreateBlogUserDto</span> <span class="n">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="n">input</span><span class="p">.</span><span class="n">UserName</span><span class="p">)</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">AbpValidationException</span><span class="p">(</span><span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValidationResult</span><span class="p">&gt;</span> <span class="p">{</span> <span class="k">new</span><span class="p">(</span><span class="s">&#34;用户名重复&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="p">[]{</span><span class="s">&#34;Name&#34;</span><span class="p">})});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">await</span> <span class="k">base</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUserAppService</span> <span class="p">:</span> <span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">BlogUserDto</span><span class="p">,</span> <span class="n">Guid</span><span class="p">,</span> <span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span> <span class="n">CreateBlogUserDto</span><span class="p">&gt;,</span> <span class="n">IBlogUserAppService</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostAppServices</span> <span class="p">:</span> <span class="n">CrudAppService</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span><span class="n">PostDto</span><span class="p">,</span><span class="n">Guid</span><span class="p">,</span><span class="n">PagedAndSortedResultRequestDto</span><span class="p">,</span><span class="n">CreatePostDto</span><span class="p">&gt;</span> <span class="p">,</span><span class="n">IPostAppService</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUserAppService</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_categoryRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_tagRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_postRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">PostAppServices</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">repository</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">userRepos</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">categoryRepos</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">tagRepos</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">postRepos</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_userRepos</span> <span class="p">=</span> <span class="n">userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_categoryRepos</span> <span class="p">=</span> <span class="n">categoryRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_tagRepos</span> <span class="p">=</span> <span class="n">tagRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_postRepos</span> <span class="p">=</span> <span class="n">postRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">PostDto</span><span class="p">&gt;</span> <span class="n">CreateAsync</span><span class="p">(</span><span class="n">CreatePostDto</span> <span class="n">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">validationErrors</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValidationResult</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取对应的用户，分类和标签实体</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">creator</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">Id</span> <span class="p">==</span> <span class="n">input</span><span class="p">.</span><span class="n">CreatorId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">category</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_categoryRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">category</span> <span class="p">=&gt;</span> <span class="n">category</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">input</span><span class="p">.</span><span class="n">CategoryName</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">tags</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">name</span> <span class="k">in</span> <span class="n">input</span><span class="p">.</span><span class="n">TagNames</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">tag</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_tagRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">tag</span> <span class="p">=&gt;</span> <span class="n">tag</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">tag</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">validationErrors</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValidationResult</span><span class="p">(</span><span class="s">$&#34;标签[{name}]不存在&#34;</span><span class="p">,</span><span class="k">new</span> <span class="p">[]{</span><span class="n">nameof</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">TagNames</span><span class="p">)}));</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tags</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">tag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">//校验</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">creator</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">validationErrors</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValidationResult</span><span class="p">(</span><span class="s">&#34;用户不存在&#34;</span><span class="p">,</span><span class="k">new</span> <span class="p">[]{</span><span class="n">nameof</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">CreatorId</span><span class="p">)}));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">category</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">validationErrors</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValidationResult</span><span class="p">(</span><span class="s">$&#34;类型[{input.CategoryName}]不存在&#34;</span><span class="p">,</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="n">nameof</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">CategoryName</span><span class="p">)</span> <span class="p">}));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//不通过，则抛出异常</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(!</span><span class="n">validationErrors</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">AbpValidationException</span><span class="p">(</span><span class="n">validationErrors</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//映射对应实体，并使用获取到的实体进行赋值</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">post</span> <span class="p">=</span> <span class="n">ObjectMapper</span><span class="p">.</span><span class="n">Map</span><span class="p">&lt;</span><span class="n">CreatePostDto</span><span class="p">,</span> <span class="n">Post</span><span class="p">&gt;(</span><span class="n">input</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">post</span><span class="p">.</span><span class="n">Category</span> <span class="p">=</span> <span class="n">category</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">post</span><span class="p">.</span><span class="n">Creator</span> <span class="p">=</span> <span class="n">creator</span><span class="p">!;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">post</span><span class="p">.</span><span class="n">Tags</span> <span class="p">=</span> <span class="n">tags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//插入表，返回Dto</span>
+</span></span><span class="line"><span class="cl">        <span class="k">await</span> <span class="n">_postRepos</span><span class="p">.</span><span class="n">InsertAsync</span><span class="p">(</span><span class="n">post</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ObjectMapper</span><span class="p">.</span><span class="n">Map</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span><span class="n">PostDto</span><span class="p">&gt;(</span><span class="n">post</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
+</span></span></code></pre></div><blockquote>
+<ul>
+<li><code>Post</code>实体的校验比较复杂，实现类重写了<code>CreateAsync</code>方法，并且手动对对象进行映射，校验，并且插入数据库。</li>
+</ul>
+</blockquote>
+<hr>
 <div id="swagger-ui" class="anchor"></div>
 <h2 class="relative group">Swagger UI 
     <span
@@ -1378,11 +1499,80 @@ Abp框架生成API的配置是可以自定义的，在<code>.HttpApi.Host</code>
   
     <figure>
       <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-20%20234155.png" alt="Swagger" />
-      
+      <figcaption>Swagger UI</figcaption>
     </figure>
   
 
 </p>
+<p>测试一下API接口，应用服务，对象映射，数据校验以及仓储是否正常运作：<br>
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-22%20020124.png" alt="测试接口" />
+      <figcaption>测试新增</figcaption>
+    </figure>
+  
+
+<br>
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-22%20020320.png" alt="测试接口" />
+      <figcaption>AutoMapper以及FluentValidation正常地工作了</figcaption>
+    </figure>
+  
+
+
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-22%20022858.png" alt="测试接口" />
+      <figcaption>测试正确的数据</figcaption>
+    </figure>
+  
+
+
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-04-22%20022817.png" alt="测试接口" />
+      <figcaption>成功地添加了实体</figcaption>
+    </figure>
+  
+
+</p>
+<p>其他接口还需自行测试</p>
+<hr>
+<blockquote>
+<ul>
+<li>如果开发者按照Abp框架的<strong>约定</strong>来编写代码，大部分基本的业务逻辑Abp框架都会<strong>自动</strong>实现。但遵守Abp的约定<strong>并不是强制</strong>的，开发者可以<strong>重写</strong>Abp的虚方法，<strong>自主实现</strong>Abp提供的接口，或是<strong>自定义并手动注册服务</strong>。但越是按照Abp框架的约定来编写代码，框架就越是<strong>自动化</strong>，提供更高的开发效率。</li>
+</ul>
+</blockquote>
+<p>至此，项目已经可以使用Abp框架进行基本的增删改查。</p>
 
         </br></br>
         
