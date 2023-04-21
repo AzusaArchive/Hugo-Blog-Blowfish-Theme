@@ -104,7 +104,7 @@
     "keywords": ["Abp框架","CSharp"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3597"
+    "wordCount": "3425"
   }]
   </script>
 
@@ -675,7 +675,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-14 20:56:41 &#43;0800 CST">2023年4月14日</time><span class="px-2 text-primary-500">&middot;</span><span>3597 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
+  <time datetime="2023-04-14 20:56:41 &#43;0800 CST">2023年4月14日</time><span class="px-2 text-primary-500">&middot;</span><span>3425 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
   
 
   
@@ -935,39 +935,25 @@
     
 </h3>
 <p>以 <code>文章(Post)</code> 为例，创建一个Abp框架实体：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Identity</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Auditing</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Domain.Entities</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Post</span> <span class="p">:</span> <span class="n">IEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;,</span><span class="n">IHasCreationTime</span><span class="p">,</span><span class="n">IMustHaveCreator</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">&gt;,</span><span class="n">IHasModificationTime</span><span class="p">,</span><span class="n">IHasDeletionTime</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Post</span> <span class="p">:</span> <span class="n">Entity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;,</span><span class="n">IHasCreationTime</span><span class="p">,</span><span class="n">IMustHaveCreator</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">&gt;,</span><span class="n">IHasModificationTime</span><span class="p">,</span><span class="n">IHasDeletionTime</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Markdown</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span><span class="p">?</span> <span class="n">CategoryId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Category</span><span class="p">?</span> <span class="n">Category</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span> <span class="n">Tags</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">CreatorId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUser</span> <span class="n">Creator</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">LastModificationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDeleted</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">DeletionTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">CreatorId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUser</span> <span class="n">Creator</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">LastModificationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDeleted</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">DeletionTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">object</span><span class="p">[]</span> <span class="n">GetKeys</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]{</span><span class="n">Id</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="n">Post</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span><span class="c1">//EFCore</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="n">Post</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span><span class="c1">//无参构造函数供EFCore使用</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Post</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="n">BlogUser</span> <span class="n">creator</span><span class="p">,</span> <span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="kt">string</span> <span class="n">markdown</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">Category</span><span class="p">?</span> <span class="n">category</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;?</span> <span class="n">tags</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Post</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="n">BlogUser</span> <span class="n">creator</span><span class="p">,</span> <span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="kt">string</span> <span class="n">markdown</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">Category</span><span class="p">?</span> <span class="n">category</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;?</span> <span class="n">tags</span> <span class="p">=</span> <span class="k">null</span><span class="p">):</span><span class="k">base</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Title</span> <span class="p">=</span> <span class="n">title</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Markdown</span> <span class="p">=</span> <span class="n">markdown</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Category</span> <span class="p">=</span> <span class="n">category</span><span class="p">;</span>
@@ -977,13 +963,17 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Abp框架提供了许多实体基类和接口，这里实现了：</p>
 <ul>
-<li><code>IEntity</code>: 实现<code>Id</code>属性和<code>GetKeys</code>方法并使用<code>Guid</code>作为主键类型，<code>GetKeys</code>方法返回一个主键数组用于排列（Abp考虑到复合主键所以返回数组）。</li>
+<li><code>Entity&lt;Guid&gt;</code>: 实体基类，实现了<code>Id</code>属性和<code>GetKeys</code>方法并使用<code>Guid</code>作为主键类型，<code>GetKeys</code>方法返回一个主键数组用于排列（Abp考虑到复合主键所以返回数组）。</li>
 <li><code>IHasCreationTime</code>: 实现<code>创建时间(CreationTime)</code>属性。</li>
 <li><code>IMustHaveCreator&lt;BlogUser&gt;</code>: 实现创建者<code>Id(CreatorId)</code>以及其实体类导航属性<code>Creator</code>（适用于EFCore），创建者的实体类型为<code>BlogUser</code>。</li>
 <li><code>IHasModificationTime</code>: 实现<code>最近修改时间(LastModificationTime)</code>属性。</li>
-<li><code>IHasDeletionTime</code>: 实现<strong>软删除</strong>，<code>IsDeleted</code>属性以及<code>DeletionTime</code>属性。
-如果实体继承或是实现了这些Abp框架提供的基类或是接口，Abp框架就会尽可能的自动管理这些属性。</li>
+<li><code>IHasDeletionTime</code>: 实现<strong>软删除</strong>，<code>IsDeleted</code>属性以及<code>DeletionTime</code>属性。</li>
 </ul>
+<blockquote>
+<ul>
+<li>如果实体继承或是实现了这些Abp框架提供的基类或是接口，并且后续的仓储以及业务逻辑的编写都<em><strong>按照Abp框架的约定的话</strong></em> ，Abp框架就会尽可能的自动管理这些属性。</li>
+</ul>
+</blockquote>
 <div id="关于软删除" class="anchor"></div>
 <h4 class="relative group">关于软删除 
     <span
@@ -1020,10 +1010,14 @@
 Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest/Guid-Generation"   target="_blank">
     Guid生成器</a>，框架提供了<code>IGuidGenerator</code>接口，它可以生成连续的Guid值，这对数据库的聚集索引非常重要，所以不要用<code>Guid.NewGuid</code>方法生成Guid值，而是用Abp框架的Guid生成器。</p>
 <blockquote>
-<p>使用Abp的应用服务基类(<code>ApplicationService</code>)时无需注入<code>IGuidGenerator</code>，Abp框架已经将其定义在<code>ApplicationService</code>的<code>GuidGenerator</code>属性中，调用它的<code>Create</code>方法即可。</p>
+<ul>
+<li><code>IGuidGenerator</code>接口默认会被Abp框架注册到依赖注入，它的实现类是<code>SequentialGuidGenerator</code>。</li>
+<li>使用Abp的应用服务基类(<code>ApplicationService</code>)时无需注入<code>IGuidGenerator</code>，Abp框架已经将其定义在<code>ApplicationService</code>的<code>GuidGenerator</code>属性中，调用它的<code>Create</code>方法即可。</li>
+<li>后续如果使用了Abp的应用服务基类（比如<code>CrudAppService</code>)，继承自<code>Entity&lt;&gt;</code>基类的实体Id将会自动被Abp框架生成，但如果实体仅只是实现了<code>IEntity&lt;&gt;</code>则需要开发者手动在应用服务中生成Guid。</li>
+<li>关于更多实体信息以及基类和接口参考<a href="https://docs.abp.io/zh-Hans/abp/latest/Entities#%E5%9F%BA%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%A1%E8%AE%A1%E5%B1%9E%E6%80%A7"   target="_blank">
+    基类和接口的审计属性</a></li>
+</ul>
 </blockquote>
-<p>关于更多实体信息以及基类和接口参考<a href="https://docs.abp.io/zh-Hans/abp/latest/Entities#%E5%9F%BA%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%A1%E8%AE%A1%E5%B1%9E%E6%80%A7"   target="_blank">
-    基类和接口的审计属性</a></p>
 <hr>
 <div id="编写实体类" class="anchor"></div>
 <h3 class="relative group">编写实体类 
@@ -1034,70 +1028,36 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
     
 </h3>
 <p>按照Abp框架实体类的规则，编写其他实体类：</p>
-<p>Category.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Domain.Entities</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Category</span> <span class="p">:</span> <span class="n">IEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Category</span> <span class="p">:</span> <span class="n">Entity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span> <span class="n">Posts</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="n">Category</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span><span class="c1">//EFCore</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Category</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Category</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">Posts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">object</span><span class="p">[]</span> <span class="n">GetKeys</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Tag.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Domain.Entities</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Tag</span> <span class="p">:</span> <span class="n">IEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Tag</span> <span class="p">:</span> <span class="n">Entity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span> <span class="n">Posts</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="n">Tag</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span><span class="c1">//EFCore</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Tag</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Tag</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">):</span><span class="k">base</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="n">Posts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">object</span><span class="p">[]</span> <span class="n">GetKeys</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>BlogUser.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Domain.Entities.Auditing</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.Identity</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUser</span> <span class="p">:</span> <span class="n">FullAuditedEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUser</span> <span class="p">:</span> <span class="n">FullAuditedEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">UserName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">PasswordHash</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
@@ -1105,11 +1065,10 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string?</span> <span class="n">Avatar</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="n">BlogUser</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span><span class="c1">//EFCore</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUser</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">userName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">password</span><span class="p">,</span> <span class="kt">string</span> <span class="n">email</span><span class="p">,</span> <span class="kt">string</span> <span class="n">avatar</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">BlogUser</span><span class="p">(</span><span class="n">Guid</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">userName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">password</span><span class="p">,</span> <span class="kt">string</span> <span class="n">email</span><span class="p">,</span> <span class="kt">string?</span> <span class="n">avatar</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">UserName</span> <span class="p">=</span> <span class="n">userName</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">PasswordHash</span> <span class="p">=</span> <span class="n">SecurePasswordHasher</span><span class="p">.</span><span class="n">Hash</span><span class="p">(</span><span class="n">password</span><span class="p">);</span><span class="c1">//哈希加密密码</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PasswordHash</span> <span class="p">=</span> <span class="n">SecurePasswordHasher</span><span class="p">.</span><span class="n">Hash</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Email</span> <span class="p">=</span> <span class="n">email</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Avatar</span> <span class="p">=</span> <span class="n">avatar</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -1158,17 +1117,13 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>项目将实体的配置单独写在类中，在<code>Azusa.AbpBlog.EntityFrameworkCore</code>项目中创建<code>EntityConiguration</code>文件夹，用于存放配置EFCore的实体映射配置。</p>
 <blockquote>
-<p><a href="https://learn.microsoft.com/zh-cn/ef/core/modeling/"   target="_blank">
-    EFCore配置实体</a></p>
+<ul>
+<li><a href="https://learn.microsoft.com/zh-cn/ef/core/modeling/"   target="_blank">
+    EFCore配置实体</a></li>
+</ul>
 </blockquote>
 <p>PostConfig.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore.Metadata.Builders</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.EntityConfigurations.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
@@ -1183,50 +1138,35 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>CategoryEntityConfig.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore.Metadata.Builders</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.EntityConfigurations.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CategoryEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CategoryEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">ToTable</span><span class="p">(</span><span class="s">&#34;T_Categories&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="m">64</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasIndex</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">IsUnique</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasMany</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Posts</span><span class="p">).</span><span class="n">WithOne</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Category</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>TagEntityConfig.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore.Metadata.Builders</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.EntityConfigurations.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">TagEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">TagEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">ToTable</span><span class="p">(</span><span class="s">&#34;T_Tags&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">t</span> <span class="p">=&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="m">64</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasIndex</span><span class="p">(</span><span class="n">t</span> <span class="p">=&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">IsUnique</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasMany</span><span class="p">(</span><span class="n">t</span> <span class="p">=&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">Posts</span><span class="p">).</span><span class="n">WithMany</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Tags</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>BlogUserEntityConfig.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Entities.Identity</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore.Metadata.Builders</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog.EntityConfigurations.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUserEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">BlogUserEntityConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">ToTable</span><span class="p">(</span><span class="s">&#34;T_BlogUsers&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span><span class="p">).</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="m">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasIndex</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span><span class="p">).</span><span class="n">IsUnique</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">PasswordHash</span><span class="p">).</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="m">200</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">Email</span><span class="p">).</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="m">200</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -1241,71 +1181,46 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
     
 </h3>
 <p>在<code>.Domain</code>项目中创建<code>AbpBlogDataSeedContributor</code>类。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Entities.Blog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Azusa.AbpBlog.Entities.Identity</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Data</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.DependencyInjection</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Domain.Repositories</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Volo.Abp.Guids</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.AbpBlog</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">AbpBlogDataSeedContributor</span><span class="p">:</span> <span class="n">IDataSeedContributor</span><span class="p">,</span><span class="n">ITransientDependency</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">AbpBlogDataSeedContributor</span><span class="p">:</span> <span class="n">IDataSeedContributor</span><span class="p">,</span><span class="n">ITransientDependency</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_postRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IPostRepository</span> <span class="n">_postRepos</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_userRepos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">_categoryRepos</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IGuidGenerator</span> <span class="n">_guidGenerator</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">AbpBlogDataSeedContributor</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">postRepos</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">userRepos</span><span class="p">,</span> <span class="n">IGuidGenerator</span> <span class="n">guidGenerator</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">AbpBlogDataSeedContributor</span><span class="p">(</span><span class="n">IPostRepository</span> <span class="n">postRepos</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">BlogUser</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">userRepos</span><span class="p">,</span> <span class="n">IGuidGenerator</span> <span class="n">guidGenerator</span><span class="p">,</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">,</span> <span class="n">Guid</span><span class="p">&gt;</span> <span class="n">categoryRepos</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">_postRepos</span> <span class="p">=</span> <span class="n">postRepos</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">_userRepos</span> <span class="p">=</span> <span class="n">userRepos</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">_guidGenerator</span> <span class="p">=</span> <span class="n">guidGenerator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_categoryRepos</span> <span class="p">=</span> <span class="n">categoryRepos</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">SeedAsync</span><span class="p">(</span><span class="n">DataSeedContext</span> <span class="n">context</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_postRepos</span><span class="p">.</span><span class="n">GetCountAsync</span><span class="p">()</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">)</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">user</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">UserName</span> <span class="p">==</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">user</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="kt">var</span> <span class="n">user</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BlogUser</span><span class="p">(</span><span class="n">_guidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">(),</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">,</span> <span class="s">&#34;VanitasVanitatum&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">user</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BlogUser</span><span class="p">(</span><span class="n">_guidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">(),</span> <span class="s">&#34;AzusaAdmin&#34;</span><span class="p">,</span> <span class="s">&#34;VanitasVanitatum&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                    <span class="s">&#34;2817212736@qq.com&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">                <span class="k">await</span> <span class="n">_userRepos</span><span class="p">.</span><span class="n">InsertAsync</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">autoSave</span><span class="p">:</span><span class="k">true</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">                <span class="k">await</span> <span class="n">_postRepos</span><span class="p">.</span><span class="n">InsertAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">Post</span><span class="p">(</span><span class="n">_guidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">(),</span> <span class="n">user</span><span class="p">,</span> <span class="s">&#34;Hello World&#34;</span><span class="p">,</span> <span class="s">&#34;初始化数据&#34;</span><span class="p">),</span><span class="n">autoSave</span><span class="p">:</span><span class="k">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">await</span> <span class="n">_postRepos</span><span class="p">.</span><span class="n">InsertAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">Post</span><span class="p">(</span><span class="n">_guidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">(),</span> <span class="n">user</span><span class="p">,</span> <span class="s">&#34;Hello World&#34;</span><span class="p">,</span> <span class="s">&#34;初始化数据&#34;</span><span class="p">),</span><span class="n">autoSave</span><span class="p">:</span><span class="k">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="n">_categoryRepos</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">category</span> <span class="p">=&gt;</span> <span class="n">category</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">&#34;其他&#34;</span><span class="p">)</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">await</span> <span class="n">_categoryRepos</span><span class="p">.</span><span class="n">InsertAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">Category</span><span class="p">(</span><span class="n">_guidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">(),</span> <span class="s">&#34;其他&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Abp框架提供了<a href="https://docs.abp.io/zh-Hans/abp/latest/Data-Seeding"   target="_blank">
-    种子数据系统</a>用来创建数据库的<strong>初始数据</strong>，创建一个<code>IDataSeedContributor</code>接口的实现类来配置种子数据，Abp框架将会自动将程序集中实现<code>IDataSeedContributor</code>接口的实现类加入依赖注入并在<code>.DbMigrator</code>项目运行并应用数据库迁移时执行，由此来创建数据库的初始数据。</p>
-<p>上面的类在<code>SeedAsync</code>方法中配置了种子数据的生成，在没有任何文章存在且名为 <em>&ldquo;AzusaAdmin&rdquo;</em> 的用户不存在时，自动创建并插入数据表。类中使用了<code>Microsoft.DependencyInjection</code>注入了相应表的<strong>仓储</strong>以及上述的<code>IGuidGenerator</code>接口，Abp自动将常用的服务加入了依赖注入容器，并且，在DbContext中配置的<code>DataSet</code>对应实体的<strong>仓储</strong>也将默认被加入依赖注入容器。</p>
-<p>在<code>.EntityFrameworkCore</code>项目中的<code>AbpBlogEntityFrameworkCoreModule</code>类中，配置了该Abp模块的服务，可以看到在<code>ConfigureServices</code>方法中加入了DbContext依赖：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="n">ConfigureServices</span><span class="p">(</span><span class="n">ServiceConfigurationContext</span> <span class="n">context</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">context</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAbpDbContext</span><span class="p">&lt;</span><span class="n">AbpBlogDbContext</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="cm">/* 该方法会将所有聚合根对应的仓储加入依赖注入，
-</span></span></span><span class="line"><span class="cl"><span class="cm">        如果方法的includeAllEntities参数设为true，
-</span></span></span><span class="line"><span class="cl"><span class="cm">        则为所有DbSet中配置实体创建仓储并加入依赖注入 */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">AddDefaultRepositories</span><span class="p">(</span><span class="n">includeAllEntities</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Configure</span><span class="p">&lt;</span><span class="n">AbpDbContextOptions</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="cm">/* The main point to change your DBMS.
-</span></span></span><span class="line"><span class="cl"><span class="cm">        * See also AbpBlogMigrationsDbContextFactory for EF Core tooling. */</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><blockquote>
-<p><a href="https://docs.abp.io/zh-Hans/abp/latest/Repositories"   target="_blank">
-    Abp中的仓储</a><br>
-<a href="https://docs.abp.io/zh-Hans/abp/latest/Entity-Framework-Core"   target="_blank">
-    Abp中的EFCore集成</a></p>
-</blockquote>
+    种子数据系统</a>用来创建数据库的<strong>初始数据</strong>，创建一个<code>IDataSeedContributor</code>接口的实现类来配置种子数据，框架将会自动将其加入依赖注入并在<code>.DbMigrator</code>项目运行并应用数据库迁移时执行，由此来创建数据库的初始数据。</p>
+<p>上面的类在<code>SeedAsync</code>方法中配置了种子数据的生成，在名为 <em>&ldquo;AzusaAdmin&rdquo;</em> 的用户不存在时自动创建，并且创建一个初始化文章(<code>Post</code>)实体和初始化类型(<code>Category</code>)实体。类中注入了相应表的<strong>仓储</strong>以及上述的<code>IGuidGenerator</code>接口，Abp已经自动将常用的服务和默认<strong>仓储</strong>加入了依赖注入容器。</p>
 <hr>
 <div id="生成数据库迁移" class="anchor"></div>
 <h3 class="relative group">生成数据库迁移 
@@ -1319,9 +1234,17 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">add-migration Add_Post_Category_Tag -Context AbpBlogDbContext
 </span></span></code></pre></div><p>使用Visual Studio包管理器命令行或是其他工具进行EFCore数据库迁移。</p>
 <blockquote>
-<p>注意，使用包管理器命令行生成EFCore迁移需要先安装 <code>Microsoft.EntityFrameworkCore.Tools</code> 包，Abp框架默认会在创建项目的时候预安装。</p>
+<ul>
+<li>注意，使用包管理器命令行生成EFCore迁移需要先安装 <code>Microsoft.EntityFrameworkCore.Tools</code> 包，Abp框架默认会在创建项目的时候预安装。</li>
+</ul>
 </blockquote>
-<p>然后运行<code>.DbMigrator</code>项目，Abp框架自动将DbContext加入了依赖，该项目会自动应用存在的数据迁移脚本，并且根据刚才的配置创建<em><strong>种子数据</strong></em>，不建议使用<code>Update-Database</code>或是其他迁移工具进行迁移。</p>
+<p>然后运行<code>.DbMigrator</code>项目，Abp框架自动将DbContext加入了依赖，并且通过<a href="https://learn.microsoft.com/zh-cn/ef/core/cli/dbcontext-creation?tabs=dotnet-core-cli"   target="_blank">
+    设计时工厂</a>根据<code>.DbMigrator</code>项目下的<code>appsettings.json</code>配置文件对DbContext进行配置。该项目会<strong>自动应用存在的数据迁移脚本</strong>，并且根据刚才的配置创建<strong>种子数据</strong>。</p>
+<blockquote>
+<ul>
+<li>如果使用<code>Update-Database</code>或是其他迁移工具进行迁移，并不会产生<strong>种子数据</strong>。</li>
+</ul>
+</blockquote>
 <p>
 
 
@@ -1337,11 +1260,13 @@ Abp框架提供了解决方案：<a href="https://docs.abp.io/zh-Hans/abp/latest
   
 
 <br>
-执行完后生成了一堆表，大部分是Abp框架的配置，日志，Identity框架，Tenant框架所用的表，其实用不上。
+执行完后生成了一堆表，大部分是Abp框架的配置，日志，Identity框架，多租户所用的表，其实用不上。
 (在之后可能会对项目和表进行简化吧&hellip;</p>
 <blockquote>
-<p><a href="https://learn.microsoft.com/zh-cn/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli"   target="_blank">
-    EFCore迁移文档</a></p>
+<ul>
+<li><a href="https://learn.microsoft.com/zh-cn/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli"   target="_blank">
+    EFCore迁移文档</a></li>
+</ul>
 </blockquote>
 <hr>
 <p>至此，项目基本实体以及数据库迁移应当创建完毕。</p>
