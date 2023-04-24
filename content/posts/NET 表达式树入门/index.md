@@ -7,9 +7,6 @@ series: []
 ---
 
 ## .NET 表达式树
-https://zhuanlan.zhihu.com/p/247937380
-https://cloud.tencent.com/developer/article/1817790  
-
 .NET Expression表达式树将代码抽象成了一颗对象树，树上的每一个节点都是一个代码表达式，它的构造类似编译原理中的抽象语法树（AST）。
 
 可以使用lambda表达式进行声明表达式树，编译器将会自动转换，但是该lambda表达式不能是语句（即表达式只能有一句，不能用{}组成多句）。  
@@ -86,7 +83,7 @@ public static void Example2()
 ```
 
 ### 方法调用表达式
-`(str,value) => !str.IsNullOrWhiteSpace(str) && str.Contains(value)`
+`(str,value) => !string.IsNullOrWhiteSpace(str) && str.Contains(value)`
 ```cs
 public static void Example3()
 {
@@ -103,4 +100,105 @@ public static void Example3()
 }
 ```
 
-> 未完待续。。。
+## 一些实际的应用
+```cs
+/// <summary>
+/// 推断实体属性的特性和名称，并根据搜索关键字构建过滤器表达式树
+/// 注意，反射推断比较消耗性能
+/// </summary>
+/// <param name="keyword"></param>
+/// <returns></returns>
+private static Expression<Func<TEntity, bool>> BuildKeywordSearchExpression(string keyword)
+{
+    //获取实体类所有公用|实例属性
+    var propInfos = typeof(TEntity).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty);
+    //获取所有具有SearchKeywordAttribute特性的属性，作为目标属性
+    var targetProps = propInfos.Where(info => info.GetCustomAttribute<SearchKeywordAttribute>() is not null);
+    //如果没有任何属性带SearchKeywordAttribute则按照属性名匹配，如果符合"name"或是"title"或是"content"，那就作为目标属性
+    if (!targetProps.Any())
+        targetProps = propInfos.Where(info => info.Name.ToUpper() is "NAME" or "TITLE" or "CONTENT");
+    //没有任何属性能够匹配则异常
+    if (!targetProps.Any())
+        throw new ServerErrorException("没有任何能够进行过滤查询的属性，请在属性上添加[SearchKeywordAttribute]启用过滤");
+    //检查属性是否为字符串类型
+    if (!targetProps.All(info => info.PropertyType == typeof(string)))
+        throw new ServerErrorException("过滤属性必须是字符串");
+    
+    //构建 e => (e.Name || Title || Content || [property with attribute]).Contain(keyword) 表达式树
+    //参数e表达式
+    var entityExpr = Expression.Parameter(typeof(TEntity),"entity");
+    //常量关键词表达式
+    var keywordExpr = Expression.Constant(keyword);
+    //所有目标属性的表达式
+    var propExprs = targetProps.Select(info => Expression.Property(entityExpr,info)).ToArray();
+    //所有的属性调用.Contain(keyword)并且进行或运算
+    var firstProp = propExprs.First();
+    Expression resultExpr = Expression.Call(firstProp,
+        typeof(string).GetMethod(nameof(string.Contains), new[] { typeof(string) })!, keywordExpr);
+    for (int i = 1; i < propExprs.Length; i++)
+    {
+        var containsExpr = Expression.Call(propExprs[i],
+            typeof(string).GetMethod(nameof(string.Contains), new[] { typeof(string) })!, keywordExpr);
+        resultExpr = Expression.Or(resultExpr,containsExpr);
+    }
+    //构造成委托
+    var lambda = Expression.Lambda<Func<TEntity, bool>>(resultExpr, entityExpr);
+    Console.WriteLine(lambda.ToString());
+    return lambda;
+}
+```
+上述代码根据所给的关键词，使用反射搜索类型参数中的`TEntity`类型的属性，探测带有`SearchKeywordAttribute`特性或是名为"*Name*","*Title*"或是"*Content*"的属性，并使用它们构造一个用于多个属性模糊查询的表达式树，返回一个`Expression<Func<TEntity,bool>>`表达式委托。
+
+这样的一个表达式可以自动地识别某个实体类的属性，并且根据这些属性通过Linq对IQuerable进行模糊查询，例如：
+```cs
+public class Post : IEntity<Guid>,IHasCreationTime,IHasModificationTime
+{
+    public Guid Id { get; set; }
+    [SearchKeyword]
+    public string Title { get; set; }
+    [SearchKeyword]
+    public string Markdown { get; set; }
+    public Guid? CategoryId { get; set; }
+    public Category? Category { get; set; }
+    public ICollection<Tag> Tags { get; set; }
+    
+    public DateTime CreationTime { get; set; }
+    public DateTime? LastModificationTime { get; set; }
+    
+    private Post() { }//EFCore
+
+    public Post(string title, string markdown = "", Category? category = null, ICollection<Tag>? tags = null)
+    {
+        Id = SequentialGuidGenerator.Create();
+        Title = title;
+        Markdown = markdown;
+        Category = category;
+        Tags = tags ?? new List<Tag>();
+    }
+}
+
+public Task<List<Post>> SearchAsync(string keyword)
+{
+    return dbContext.Posts.Where(BuildKeywordSearchExpression(keyword)).ToListAsync();
+}
+```
+方法中将根据实体属性上的特性自动生成 `post => post.Title.Contains(keyword) || post.Markdown.Contains(keyword)` 表达式，并通过`IQuerable`和EFCore生成SQL语句对实体进行查询。
+```sql
+info: 2023/4/24 23:30:37.812 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[CreationTime], [t].[LastModificationTime], [t].[Markdown], [t].[Title]
+FROM [T_Posts] AS [t]
+WHERE (CASE
+    WHEN [t].[Title] LIKE N'%net%' THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END | CASE
+    WHEN [t].[Markdown] LIKE N'%net%' THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END) = CAST(1 AS bit)
+
+```
+
+
+参考文章
+> - https://masuit.com/1795?t=vou0ts7ora4g#%CE%BB%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
+> - https://cloud.tencent.com/developer/article/1817790  
