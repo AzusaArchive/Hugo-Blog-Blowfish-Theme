@@ -103,7 +103,7 @@
     "keywords": ["CSharp","Linq"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1200"
+    "wordCount": "2274"
   }]
   </script>
 
@@ -674,7 +674,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-03-15 15:44:03 &#43;0800 CST">2023年3月15日</time><span class="px-2 text-primary-500">&middot;</span><span>1200 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-03-15 15:44:03 &#43;0800 CST">2023年3月15日</time><span class="px-2 text-primary-500">&middot;</span><span>2274 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
   
 
   
@@ -763,6 +763,7 @@
         <li><a href="#方法调用表达式">方法调用表达式</a></li>
       </ul>
     </li>
+    <li><a href="#一些实际的应用">一些实际的应用</a></li>
   </ul>
 </nav>
   </div>
@@ -784,6 +785,7 @@
         <li><a href="#方法调用表达式">方法调用表达式</a></li>
       </ul>
     </li>
+    <li><a href="#一些实际的应用">一些实际的应用</a></li>
   </ul>
 </nav>
   </div>
@@ -845,10 +847,6 @@
             style="text-decoration-line: none !important;" href="#net-%e8%a1%a8%e8%be%be%e5%bc%8f%e6%a0%91" aria-label="锚点">#</a></span>        
     
 </h2>
-<p><a href="https://zhuanlan.zhihu.com/p/247937380"   target="_blank">
-    https://zhuanlan.zhihu.com/p/247937380</a>
-<a href="https://cloud.tencent.com/developer/article/1817790"   target="_blank">
-    https://cloud.tencent.com/developer/article/1817790</a></p>
 <p>.NET Expression表达式树将代码抽象成了一颗对象树，树上的每一个节点都是一个代码表达式，它的构造类似编译原理中的抽象语法树（AST）。</p>
 <p>可以使用lambda表达式进行声明表达式树，编译器将会自动转换，但是该lambda表达式不能是语句（即表达式只能有一句，不能用{}组成多句）。</p>
 <p>表达式树可以转换为委托，在一些linq场景可以通过构建表达式树来动态拼接一些linq查询条件。</p>
@@ -939,7 +937,7 @@
             style="text-decoration-line: none !important;" href="#%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="锚点">#</a></span>        
     
 </h3>
-<p><code>(str,value) =&gt; !str.IsNullOrWhiteSpace(str) &amp;&amp; str.Contains(value)</code></p>
+<p><code>(str,value) =&gt; !string.IsNullOrWhiteSpace(str) &amp;&amp; str.Contains(value)</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Example3</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">param1</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span> <span class="s">&#34;str&#34;</span><span class="p">);</span>
@@ -953,8 +951,110 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">func</span> <span class="p">=</span> <span class="n">lambdaExpr</span><span class="p">.</span><span class="n">Compile</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="s">&#34;Azusa&#34;</span><span class="p">,</span> <span class="s">&#34;s&#34;</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><blockquote>
-<p>未完待续。。。</p>
+</span></span></code></pre></div><div id="一些实际的应用" class="anchor"></div>
+<h2 class="relative group">一些实际的应用 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%b8%80%e4%ba%9b%e5%ae%9e%e9%99%85%e7%9a%84%e5%ba%94%e7%94%a8" aria-label="锚点">#</a></span>        
+    
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// 推断实体属性的特性和名称，并根据搜索关键字构建过滤器表达式树</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// 注意，反射推断比较消耗性能</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;param name=&#34;keyword&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;returns&gt;&lt;/returns&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="k">static</span> <span class="n">Expression</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TEntity</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;&gt;</span> <span class="n">BuildKeywordSearchExpression</span><span class="p">(</span><span class="kt">string</span> <span class="n">keyword</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取实体类所有公用|实例属性</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">propInfos</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">TEntity</span><span class="p">).</span><span class="n">GetProperties</span><span class="p">(</span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">Public</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">Instance</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">GetProperty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//获取所有具有SearchKeywordAttribute特性的属性，作为目标属性</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">targetProps</span> <span class="p">=</span> <span class="n">propInfos</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">info</span> <span class="p">=&gt;</span> <span class="n">info</span><span class="p">.</span><span class="n">GetCustomAttribute</span><span class="p">&lt;</span><span class="n">SearchKeywordAttribute</span><span class="p">&gt;()</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//如果没有任何属性带SearchKeywordAttribute则按照属性名匹配，如果符合&#34;name&#34;或是&#34;title&#34;或是&#34;content&#34;，那就作为目标属性</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">targetProps</span><span class="p">.</span><span class="n">Any</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="n">targetProps</span> <span class="p">=</span> <span class="n">propInfos</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">info</span> <span class="p">=&gt;</span> <span class="n">info</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">ToUpper</span><span class="p">()</span> <span class="k">is</span> <span class="s">&#34;NAME&#34;</span> <span class="n">or</span> <span class="s">&#34;TITLE&#34;</span> <span class="n">or</span> <span class="s">&#34;CONTENT&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//没有任何属性能够匹配则异常</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">targetProps</span><span class="p">.</span><span class="n">Any</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">ServerErrorException</span><span class="p">(</span><span class="s">&#34;没有任何能够进行过滤查询的属性，请在属性上添加[SearchKeywordAttribute]启用过滤&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//检查属性是否为字符串类型</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">targetProps</span><span class="p">.</span><span class="n">All</span><span class="p">(</span><span class="n">info</span> <span class="p">=&gt;</span> <span class="n">info</span><span class="p">.</span><span class="n">PropertyType</span> <span class="p">==</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">ServerErrorException</span><span class="p">(</span><span class="s">&#34;过滤属性必须是字符串&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">//构建 e =&gt; (e.Name || Title || Content || [property with attribute]).Contain(keyword) 表达式树</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//参数e表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">entityExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Parameter</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">TEntity</span><span class="p">),</span><span class="s">&#34;entity&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//常量关键词表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">keywordExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Constant</span><span class="p">(</span><span class="n">keyword</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//所有目标属性的表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">propExprs</span> <span class="p">=</span> <span class="n">targetProps</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">info</span> <span class="p">=&gt;</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">entityExpr</span><span class="p">,</span><span class="n">info</span><span class="p">)).</span><span class="n">ToArray</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//所有的属性调用.Contain(keyword)并且进行或运算</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">firstProp</span> <span class="p">=</span> <span class="n">propExprs</span><span class="p">.</span><span class="n">First</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Expression</span> <span class="n">resultExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="n">firstProp</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">).</span><span class="n">GetMethod</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Contains</span><span class="p">),</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="p">})!,</span> <span class="n">keywordExpr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">propExprs</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">containsExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="n">propExprs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">).</span><span class="n">GetMethod</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Contains</span><span class="p">),</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="p">})!,</span> <span class="n">keywordExpr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">resultExpr</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">resultExpr</span><span class="p">,</span><span class="n">containsExpr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//构造成委托</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">lambda</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Lambda</span><span class="p">&lt;</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">TEntity</span><span class="p">,</span> <span class="kt">bool</span><span class="p">&gt;&gt;(</span><span class="n">resultExpr</span><span class="p">,</span> <span class="n">entityExpr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">lambda</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">lambda</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>上述代码根据所给的关键词，使用反射搜索类型参数中的<code>TEntity</code>类型的属性，探测带有<code>SearchKeywordAttribute</code>特性或是名为&quot;<em>Name</em>&quot;,&quot;<em>Title</em>&ldquo;或是&rdquo;<em>Content</em>&ldquo;的属性，并使用它们构造一个用于多个属性模糊查询的表达式树，返回一个<code>Expression&lt;Func&lt;TEntity,bool&gt;&gt;</code>表达式委托。</p>
+<p>这样的一个表达式可以自动地识别某个实体类的属性，并且根据这些属性通过Linq对IQuerable进行模糊查询，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Post</span> <span class="p">:</span> <span class="n">IEntity</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;,</span><span class="n">IHasCreationTime</span><span class="p">,</span><span class="n">IHasModificationTime</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SearchKeyword]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SearchKeyword]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Markdown</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Guid</span><span class="p">?</span> <span class="n">CategoryId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Category</span><span class="p">?</span> <span class="n">Category</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span> <span class="n">Tags</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">LastModificationTime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="n">Post</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span><span class="c1">//EFCore</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Post</span><span class="p">(</span><span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="kt">string</span> <span class="n">markdown</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">Category</span><span class="p">?</span> <span class="n">category</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;?</span> <span class="n">tags</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Id</span> <span class="p">=</span> <span class="n">SequentialGuidGenerator</span><span class="p">.</span><span class="n">Create</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Title</span> <span class="p">=</span> <span class="n">title</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Markdown</span> <span class="p">=</span> <span class="n">markdown</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Category</span> <span class="p">=</span> <span class="n">category</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Tags</span> <span class="p">=</span> <span class="n">tags</span> <span class="p">??</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;&gt;</span> <span class="n">SearchAsync</span><span class="p">(</span><span class="kt">string</span> <span class="n">keyword</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dbContext</span><span class="p">.</span><span class="n">Posts</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">BuildKeywordSearchExpression</span><span class="p">(</span><span class="n">keyword</span><span class="p">)).</span><span class="n">ToListAsync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>方法中将根据实体属性上的特性自动生成 <code>post =&gt; post.Title.Contains(keyword) || post.Markdown.Contains(keyword)</code> 表达式，并通过<code>IQuerable</code>和EFCore生成SQL语句对实体进行查询。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">info</span><span class="p">:</span><span class="w"> </span><span class="mi">2023</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">24</span><span class="w"> </span><span class="mi">23</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">37</span><span class="p">.</span><span class="mi">812</span><span class="w"> </span><span class="n">RelationalEventId</span><span class="p">.</span><span class="n">CommandExecuted</span><span class="p">[</span><span class="mi">20101</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">EntityFrameworkCore</span><span class="p">.</span><span class="k">Database</span><span class="p">.</span><span class="n">Command</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Executed</span><span class="w"> </span><span class="n">DbCommand</span><span class="w"> </span><span class="p">(</span><span class="mi">22</span><span class="n">ms</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="k">Parameters</span><span class="o">=</span><span class="p">[],</span><span class="w"> </span><span class="n">CommandType</span><span class="o">=</span><span class="s1">&#39;Text&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">CommandTimeout</span><span class="o">=</span><span class="s1">&#39;30&#39;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">Id</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">CategoryId</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">CreationTime</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">LastModificationTime</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">Markdown</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">Title</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">T_Posts</span><span class="p">]</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">Title</span><span class="p">]</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;%net%&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">bit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ELSE</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">bit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">END</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="p">[</span><span class="n">t</span><span class="p">].[</span><span class="n">Markdown</span><span class="p">]</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;%net%&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">bit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ELSE</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">bit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">bit</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></div><p>参考文章</p>
+<blockquote>
+<ul>
+<li><a href="https://masuit.com/1795?t=vou0ts7ora4g#%CE%BB%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95"   target="_blank">
+    https://masuit.com/1795?t=vou0ts7ora4g#%CE%BB%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1817790"   target="_blank">
+    https://cloud.tencent.com/developer/article/1817790</a></li>
+</ul>
 </blockquote>
 
         </br></br>
