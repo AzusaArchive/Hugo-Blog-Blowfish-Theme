@@ -1,7 +1,7 @@
 ﻿---
 title: "C#模式匹配概述"
 date: 2023-06-13T00:55:21+08:00
-tags: ["CSharp基础","CSharp"]
+tags: ["C#基础","C#"]
 categories: [".NET"]
 series: []
 ---
@@ -60,6 +60,8 @@ if (str is not null)
     Console.WriteLine(str);
 }
 ```
+使用模式匹配来进行null检查可以有效避免`==`和`!=`运算符被对象的类型重载而返回不正确值的情况
+
 
 加上与或表达式：
 ```cs

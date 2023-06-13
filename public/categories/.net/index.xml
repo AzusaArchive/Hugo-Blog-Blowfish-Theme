@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Tue, 13 Jun 2023 00:55:21 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jun 2023 03:17:52 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSharp正确的null检查</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/</link>
+      <pubDate>Wed, 14 Jun 2023 03:17:52 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C#模式匹配概述</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/</link>

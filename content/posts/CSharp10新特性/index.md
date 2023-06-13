@@ -1,7 +1,7 @@
 ﻿---
 title: "C#10新增功能"
 date: 2023-04-12T16:55:10+08:00
-tags: ["CSharp基础"]
+tags: ["C#基础"]
 categories: [".NET"]
 series: []
 ---

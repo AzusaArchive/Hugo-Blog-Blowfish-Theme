@@ -10,14 +10,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>C#10新增功能 &middot; AzusaArchive</title>
-  <meta name="title" content="C#10新增功能 &middot; AzusaArchive" />
+  <title>CSharp正确的null检查 &middot; AzusaArchive</title>
+  <meta name="title" content="CSharp正确的null检查 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  <meta name="keywords" content="C#基础, " />
+  <meta name="keywords" content="C#, C#基础, " />
   
   
-  <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/" />
+  <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/" />
   
   
   
@@ -65,16 +65,16 @@
   
   
   
-  <meta property="og:title" content="C#10新增功能" />
+  <meta property="og:title" content="CSharp正确的null检查" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/featured.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-04-12T16:55:10+08:00" />
-<meta property="article:modified_time" content="2023-04-12T16:55:10+08:00" /><meta property="og:site_name" content="AzusaArchive" />
+<meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/featured.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-14T03:17:52+08:00" />
+<meta property="article:modified_time" content="2023-06-14T03:17:52+08:00" /><meta property="og:site_name" content="AzusaArchive" />
 
   <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/featured.jpg"/>
-<meta name="twitter:title" content="C#10新增功能"/>
+<meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/featured.jpg"/>
+<meta name="twitter:title" content="CSharp正确的null检查"/>
 <meta name="twitter:description" content=""/>
 
   
@@ -83,26 +83,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "C#10新增功能",
-    "headline": "C#10新增功能",
+    "name": "CSharp正确的null检查",
+    "headline": "CSharp正确的null检查",
     
     
     "inLanguage": "zh-Hans",
-    "url" : "https:\/\/azusaarchive.github.io\/Hugo-Blog-Blowfish-Theme\/posts\/csharp10%E6%96%B0%E7%89%B9%E6%80%A7\/",
+    "url" : "https:\/\/azusaarchive.github.io\/Hugo-Blog-Blowfish-Theme\/posts\/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5\/",
     "author" : {
       "@type": "Person",
       "name": "梓"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-04-12T16:55:10\u002b08:00",
-    "datePublished": "2023-04-12T16:55:10\u002b08:00",
+    "dateCreated": "2023-06-14T03:17:52\u002b08:00",
+    "datePublished": "2023-06-14T03:17:52\u002b08:00",
     
-    "dateModified": "2023-04-12T16:55:10\u002b08:00",
+    "dateModified": "2023-06-14T03:17:52\u002b08:00",
     
-    "keywords": ["C#基础"],
+    "keywords": ["C#","C#基础"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1283"
+    "wordCount": "1042"
   }]
   </script>
 
@@ -604,7 +604,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/featured.jpg);">
+    style="background-image:url(/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/featured.jpg);">
     
 
 
@@ -630,7 +630,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      C#10新增功能
+      CSharp正确的null检查
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -673,7 +673,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-04-12 16:55:10 &#43;0800 CST">2023年4月12日</time><span class="px-2 text-primary-500">&middot;</span><span>1283 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-06-14 03:17:52 &#43;0800 CST">2023年6月14日</time><span class="px-2 text-primary-500">&middot;</span><span>1042 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -710,6 +710,17 @@
   
   
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/c#/&#34;,'_self');">
+    <span class="flex">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+  >
+    C#
+  </span>
+</span>
+
+  </span>
+  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/&#34;,'_self');">
     <span class="flex">
   <span
@@ -743,15 +754,11 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#全局using">全局Using</a></li>
-    <li><a href="#文件范围的命名空间">文件范围的命名空间</a></li>
-    <li><a href="#常量内插字符串">常量内插字符串</a></li>
-    <li><a href="#泛型特性注解">泛型特性（注解）</a></li>
-    <li><a href="#lambda表达式改进">Lambda表达式改进</a></li>
-    <li><a href="#模式匹配属性扩展">模式匹配属性扩展</a></li>
-    <li><a href="#记录record结构体">记录(record)结构体</a></li>
-    <li><a href="#结构体的优化">结构体的优化</a></li>
-    <li><a href="#在同一析构中进行赋值和声明">在同一析构中进行赋值和声明</a></li>
+    <li><a href="#null检查">null检查</a></li>
+    <li><a href="#被重载的运算符">被重载的<code>==</code>运算符</a></li>
+    <li><a href="#referenceequals">ReferenceEquals</a></li>
+    <li><a href="#模式匹配">模式匹配</a></li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
   </div>
@@ -765,15 +772,11 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#全局using">全局Using</a></li>
-    <li><a href="#文件范围的命名空间">文件范围的命名空间</a></li>
-    <li><a href="#常量内插字符串">常量内插字符串</a></li>
-    <li><a href="#泛型特性注解">泛型特性（注解）</a></li>
-    <li><a href="#lambda表达式改进">Lambda表达式改进</a></li>
-    <li><a href="#模式匹配属性扩展">模式匹配属性扩展</a></li>
-    <li><a href="#记录record结构体">记录(record)结构体</a></li>
-    <li><a href="#结构体的优化">结构体的优化</a></li>
-    <li><a href="#在同一析构中进行赋值和声明">在同一析构中进行赋值和声明</a></li>
+    <li><a href="#null检查">null检查</a></li>
+    <li><a href="#被重载的运算符">被重载的<code>==</code>运算符</a></li>
+    <li><a href="#referenceequals">ReferenceEquals</a></li>
+    <li><a href="#模式匹配">模式匹配</a></li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
   </div>
@@ -827,224 +830,106 @@
       <div class="min-w-0 min-h-0 max-w-prose">
         
 
-        <blockquote>
-<p>本文章将举例介绍绝大多数C# 10的新特性，在.NET 6以上的项目支持这些特性。<br>
-有些预览特性需要在项目配置文件(.csproj)中配置<code>&lt;LangVersion&gt;preview&lt;LangVersion/&gt;</code>才可生效<br>
-<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/whats-new/csharp-10"   target="_blank">
-    C#10新增功能</a></p>
-</blockquote>
-<hr>
-<ul>
-<li>
-<div id="全局using" class="anchor"></div>
-<h2 class="relative group">全局Using 
+        <div id="null检查" class="anchor"></div>
+<h2 class="relative group">null检查 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%85%a8%e5%b1%80using" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#null%e6%a3%80%e6%9f%a5" aria-label="锚点">#</a></span>        
     
 </h2>
-</li>
-</ul>
-<p>在任何一个C#类中使用global关键字修饰using指令，该using指令将会应用于整个项目</p>
-<p>globalUsing.cs</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">//这些using将会应用到整个项目</span>
-</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="k">using</span> <span class="nn">System.Collection.Generic</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="k">using</span> <span class="nn">Newtonsoft.Json</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="文件范围的命名空间" class="anchor"></div>
-<h2 class="relative group">文件范围的命名空间 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e6%96%87%e4%bb%b6%e8%8c%83%e5%9b%b4%e7%9a%84%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" aria-label="锚点">#</a></span>        
-    
-</h2>
-</li>
-</ul>
-<p>在C#文件中指定命名空间时可以不用花括号{}了，该命名空间将会应用于整个文件范围。但相反的，你无法在一个cs中定义多个命名空间中的内容（一般来说也不会这样做）。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.IdentityModel.Tokens.Jwt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Security.Claims</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.IdentityModel.Tokens</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Azusa.Shared.Security</span><span class="p">;</span><span class="c1">//不使用{}指定范围，整个文件都将被定义到该命名空间中。</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">JwtTokenGenerator</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">object?</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is null&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>上述的代码是C#最基本，也是最常用的null检查，但在.NET更新了这么多版本之后，这种做法并不是最好的。</p>
+<div id="被重载的运算符" class="anchor"></div>
+<h2 class="relative group">被重载的<code>==</code>运算符 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e8%a2%ab%e9%87%8d%e8%bd%bd%e7%9a%84%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>使用<code>==</code>或是<code>!=</code>运算符进行null检查时，如果遇到对象类型的<code>==</code>和<code>!=</code>运算符被重载的情况，可能得到意料之外的结果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="k">operator</span> <span class="p">==(</span><span class="n">User</span> <span class="n">left</span><span class="p">,</span> <span class="n">User</span> <span class="n">right</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">left</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">right</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="k">operator</span> <span class="p">!=(</span><span class="n">User</span> <span class="n">left</span><span class="p">,</span> <span class="n">User</span> <span class="n">right</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">!(</span><span class="n">left</span> <span class="p">==</span> <span class="n">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">user1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">User</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Azusa&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">user2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">User</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Hina&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">user1</span> <span class="p">!=</span> <span class="k">null</span><span class="p">);</span> <span class="c1">//此时会抛出空引用异常，因为在 != 运算符中引用了 null 的 Name 属性</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这样的行为可能会导致程序中隐藏的漏洞，比如上述的情况只有在运行时抛出异常才能察觉。（如果使用了C# 8.0的空引用类型，则会有编译器警告。实际上在主流的IDE中，重载前后的==运算符显示在编辑器中的颜色是不一致的，不过这不是很容易察觉到）</p>
+<div id="referenceequals" class="anchor"></div>
+<h2 class="relative group">ReferenceEquals 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#referenceequals" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>如果要确保我们的意图是“检查对象的引用是否为空”，而不是通过<code>==</code>或<code>!=</code>运算符来检查，则需要使用<code>Object.ReferenceEquals()</code>函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">ReferenceEquals</span><span class="p">(</span><span class="n">user1</span><span class="p">,</span><span class="k">null</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="常量内插字符串" class="anchor"></div>
-<h2 class="relative group">常量内插字符串 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%b8%b8%e9%87%8f%e5%86%85%e6%8f%92%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="锚点">#</a></span>        
-    
-</h2>
-</li>
-</ul>
-<p>你可以在const string中使用内插字符串了，你可以将用在某些只接受常量字符串的地方。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">BaseUrl</span> <span class="p">=</span> <span class="s">&#34;localhost:7890&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">SignInUrl</span> <span class="p">=</span> <span class="s">$&#34;{BaseUrl}/SignIn&#34;</span><span class="p">;</span><span class="c1">//你可以使用$内插常量字符串了</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="na">
-</span></span></span><span class="line"><span class="cl"><span class="na">[HttpGet(SignInUrl)]</span><span class="c1">//在这种地方适合使用常量字符串！</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="泛型特性注解" class="anchor"></div>
-<h2 class="relative group">泛型特性（注解） 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e6%b3%9b%e5%9e%8b%e7%89%b9%e6%80%a7%e6%b3%a8%e8%a7%a3" aria-label="锚点">#</a></span>        
-    
-</h2>
-</li>
-</ul>
-<p>C#特性也支持泛型了，传递类型参数更加方便，不需要typeof了。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">UnitOfWorkAttribute</span><span class="p">&lt;</span><span class="n">TDbContext</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">Attribute</span> <span class="k">where</span> <span class="n">TDbContext</span> <span class="p">:</span> <span class="n">DbContext</span>
+</span></span></code></pre></div><p>使用<code>ReferenceEquals</code>函数保证了null检查不会被影响，因为这个函数真的就是检查两参数的引用是否相等，且不会被重载。</p>
+<p>有趣的是，当转到<code>Object.ReferenceEquals()</code>函数的实现时，发现内部还是调用了<code>==</code>运算符：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[NonVersionable]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">ReferenceEquals</span><span class="p">(</span><span class="kt">object?</span> <span class="n">objA</span><span class="p">,</span> <span class="kt">object?</span> <span class="n">objB</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">objA</span> <span class="p">==</span> <span class="n">objB</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="lambda表达式改进" class="anchor"></div>
-<h2 class="relative group">Lambda表达式改进 
+</span></span></code></pre></div><p>但因为接受的两个参数都被转换为了可空的<code>object</code>类型，所以调用的<code>==</code>运算符依然是没被重载的，<code>object</code>类型中定义的<code>==</code>运算符。<br>
+既然如此，在使用<code>==</code>进行null检查时，可以加一步转换，来防止运算符被重载的情况。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">object?</span><span class="p">)</span><span class="n">user1</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is null&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>但这样的代码不够美观。</p>
+<div id="模式匹配" class="anchor"></div>
+<h2 class="relative group">模式匹配 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#lambda%e8%a1%a8%e8%be%be%e5%bc%8f%e6%94%b9%e8%bf%9b" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e6%a8%a1%e5%bc%8f%e5%8c%b9%e9%85%8d" aria-label="锚点">#</a></span>        
     
 </h2>
-</li>
-</ul>
-<p><code>var</code>关键字可以推断lambda表达式的返回值了</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="s">&#34;Nice&#34;</span><span class="p">;</span><span class="c1">//现在编译器可以推断出这个lambda是Func&lt;string&gt;了</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func1</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span><span class="c1">//不过这样是不行的，因为null没有类型</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func2</span> <span class="p">=</span> <span class="kt">string?</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span><span class="c1">//但是可以显式指定一下</span>
-</span></span></code></pre></div><p><strong>特性</strong>也可以支持在lambda上标注了</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">func3</span> <span class="p">=</span> <span class="p">[</span><span class="n">UnitOfWorkAttribute</span><span class="p">&lt;</span><span class="n">MyDbContext</span><span class="p">&gt;()](</span><span class="kt">long</span> <span class="n">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">myDbCtx</span><span class="p">.</span><span class="n">Books</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="模式匹配属性扩展" class="anchor"></div>
-<h2 class="relative group">模式匹配属性扩展 
+<p>C# 7.0出现了模式匹配后，null检查出现了新的方法。使用<code>is</code>运算符进行<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/patterns#constant-pattern"   target="_blank">
+    常量模式</a>匹配时可以接收null值，所以null检查变成了这样：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">user1</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is null&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>如果使用的C#是9.0版本之后，则可以加上<code>not</code>运算符来实现非null检查：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">user1</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is not null&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这样的代码看起来更直观了。实际上，这也是微软官方推荐的做法：<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/pattern-matching#null-checks"   target="_blank">
+    null检查</a></p>
+<p>在C#内部，实际上使用<code>is</code>进行null检查时，也是先把对象转换为了<code>object</code>类型。</p>
+<div id="总结" class="anchor"></div>
+<h2 class="relative group">总结 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e6%a8%a1%e5%bc%8f%e5%8c%b9%e9%85%8d%e5%b1%9e%e6%80%a7%e6%89%a9%e5%b1%95" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#</a></span>        
     
 </h2>
-</li>
-</ul>
-<p>在模式匹配的时候可以匹配对象的属性，并且用成员运算符<code>.</code>来匹配属性对象的属性</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">book</span> <span class="k">is</span> <span class="n">Book</span><span class="p">{</span><span class="n">PubTime</span><span class="p">.</span><span class="n">Month</span><span class="p">:</span><span class="m">12</span><span class="p">})</span><span class="c1">//用成员运算符来读取对象属性的属性</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//以前得这样</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">book</span> <span class="k">is</span> <span class="n">Book</span> <span class="p">{</span> <span class="n">PubTime</span><span class="p">:</span> <span class="p">{</span> <span class="n">Month</span><span class="p">:</span> <span class="m">12</span> <span class="p">}</span> <span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="记录record结构体" class="anchor"></div>
-<h2 class="relative group">记录(record)结构体 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e8%ae%b0%e5%bd%95record%e7%bb%93%e6%9e%84%e4%bd%93" aria-label="锚点">#</a></span>        
-    
-</h2>
-</li>
-</ul>
-<p><code>record</code>类型也可以声明为结构体了，也是值类型。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">record</span> <span class="nc">struct</span> <span class="n">Color</span><span class="p">(</span><span class="kt">short</span> <span class="n">Red</span><span class="p">,</span> <span class="kt">short</span> <span class="n">Green</span><span class="p">,</span> <span class="kt">short</span> <span class="n">Blue</span><span class="p">);</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="结构体的优化" class="anchor"></div>
-<h2 class="relative group">结构体的优化 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e4%bc%98%e5%8c%96" aria-label="锚点">#</a></span>        
-    
-</h2>
-</li>
-</ul>
-<p>在C#10以前，结构体的显式构造函数必须得给所有字段和自动属性赋值
-比如这样一个结构体</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">struct</span> <span class="nc">Color</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">short</span> <span class="n">Red</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">short</span> <span class="n">Green</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">short</span> <span class="n">Blue</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>构造函数要么不写（隐式无参），要么写全（显式，并且所有自动属性和字段都得赋值）<br>
-（很迷惑的操作，不知为何要这样设定）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="n">Color</span><span class="p">(</span><span class="kt">short</span> <span class="n">red</span><span class="p">,</span> <span class="kt">short</span> <span class="n">green</span><span class="p">,</span> <span class="kt">short</span> <span class="n">blue</span><span class="p">)</span><span class="c1">//字段和自动属性都得赋值</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Red</span> <span class="p">=</span> <span class="n">red</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Green</span> <span class="p">=</span> <span class="n">green</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Blue</span> <span class="p">=</span> <span class="n">blue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div><p>C#10以后，将接受赋值不完全的显式构造函数</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="n">Color</span><span class="p">(</span><span class="kt">short</span> <span class="n">red</span><span class="p">,</span> <span class="kt">short</span> <span class="n">green</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Red</span> <span class="p">=</span> <span class="n">red</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Green</span> <span class="p">=</span> <span class="n">green</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>并且，C#10的结构体也支持with关键字</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">color</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="m">122</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">color1</span> <span class="p">=</span> <span class="n">color</span> <span class="n">with</span> <span class="p">{</span> <span class="n">Green</span> <span class="p">=</span> <span class="m">12</span> <span class="p">};</span>
-</span></span></code></pre></div><hr>
-<ul>
-<li>
-<div id="在同一析构中进行赋值和声明" class="anchor"></div>
-<h2 class="relative group">在同一析构中进行赋值和声明 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%9c%a8%e5%90%8c%e4%b8%80%e6%9e%90%e6%9e%84%e4%b8%ad%e8%bf%9b%e8%a1%8c%e8%b5%8b%e5%80%bc%e5%92%8c%e5%a3%b0%e6%98%8e" aria-label="锚点">#</a></span>        
-    
-</h2>
-</li>
-</ul>
-<p>可以通过析构对象来给变量赋值，或是</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span><span class="c1">//析构对象来初始化两个变量，注意这不是元组</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span><span class="c1">//析构对象给现有变量赋值</span>
-</span></span></code></pre></div><p>在C#10以前初始化和赋值不能同时进行</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span><span class="c1">//C#10以前会错误</span>
-</span></span></code></pre></div><p>但现在不会</p>
+<p>所以，在进行null检查时，模式匹配<code>obj is null</code>是最推荐的做法，但如果语言版本不满足(&lt;7.0)，进行null检查则要更加谨慎，<code>object.ReferenceEquals()</code>函数是最安全的做法，而使用<code>==</code>运算符进行检查是比较危险的，因为运算符可能被重载，得到意料之外的结果。</p>
 
         </br></br>
         
 
       </div>
       <script>
-        var oid = "views_posts\\CSharp10新特性\\index.md"
-        var oid_likes = "likes_posts\\CSharp10新特性\\index.md"
+        var oid = "views_posts\\CSharp正确的null检查\\index.md"
+        var oid_likes = "likes_posts\\CSharp正确的null检查\\index.md"
       </script>
       
       
@@ -1142,7 +1027,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/&amp;text=C#10%e6%96%b0%e5%a2%9e%e5%8a%9f%e8%83%bd"
+      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;text=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -1161,7 +1046,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/&amp;resubmit=true&amp;title=C#10%e6%96%b0%e5%a2%9e%e5%8a%9f%e8%83%bd"
+      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;resubmit=true&amp;title=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -1180,7 +1065,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/&amp;quote=C#10%e6%96%b0%e5%a2%9e%e5%8a%9f%e8%83%bd"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;quote=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1199,7 +1084,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/&amp;subject=C#10%e6%96%b0%e5%a2%9e%e5%8a%9f%e8%83%bd"
+      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;subject=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -1227,7 +1112,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/">
+            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1239,11 +1124,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >科目一关键词记录</span
+                  >复习 计算机图形学基础</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-03-19 20:10:48 &#43;0800 CST">2023年3月19日</time>
+                    <time datetime="2023-06-13 16:25:26 &#43;0800 CST">2023年6月13日</time>
                   
                 </span>
               </span>
@@ -1251,28 +1136,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >C#模式匹配概述</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-06-13 00:55:21 &#43;0800 CST">2023年6月13日</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

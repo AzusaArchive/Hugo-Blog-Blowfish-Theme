@@ -14,7 +14,7 @@
   <meta name="title" content="C#模式匹配概述 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  <meta name="keywords" content="CSharp基础, CSharp, " />
+  <meta name="keywords" content="C#基础, C#, " />
   
   
   <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/" />
@@ -99,10 +99,10 @@
     
     "dateModified": "2023-06-13T00:55:21\u002b08:00",
     
-    "keywords": ["CSharp基础","CSharp"],
+    "keywords": ["C#基础","C#"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2892"
+    "wordCount": "2939"
   }]
   </script>
 
@@ -673,7 +673,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-13 00:55:21 &#43;0800 CST">2023年6月13日</time><span class="px-2 text-primary-500">&middot;</span><span>2892 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
+  <time datetime="2023-06-13 00:55:21 &#43;0800 CST">2023年6月13日</time><span class="px-2 text-primary-500">&middot;</span><span>2939 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
   
 
   
@@ -710,23 +710,23 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/csharp%E5%9F%BA%E7%A1%80/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/&#34;,'_self');">
     <span class="flex">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
   >
-    CSharp基础
+    C#基础
   </span>
 </span>
 
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/csharp/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/c#/&#34;,'_self');">
     <span class="flex">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
   >
-    CSharp
+    C#
   </span>
 </span>
 
@@ -916,7 +916,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>加上与或表达式：</p>
+</span></span></code></pre></div><p>使用模式匹配来进行null检查可以有效避免<code>==</code>和<code>!=</code>运算符被对象的类型重载而返回不正确值的情况</p>
+<p>加上与或表达式：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">a</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">b</span> <span class="p">=</span> <span class="m">1.22f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="k">is</span> <span class="kt">int</span> <span class="n">and</span> <span class="n">b</span> <span class="k">is</span> <span class="kt">float</span><span class="p">)</span>

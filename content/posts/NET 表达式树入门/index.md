@@ -1,7 +1,7 @@
 ﻿---
 title: ".NET 表达式树入门"
 date: 2023-03-15T15:44:03+08:00
-tags: ["CSharp","Linq"]
+tags: ["C#","Linq"]
 categories: [".NET"]
 series: []
 ---
