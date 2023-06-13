@@ -1,7 +1,7 @@
 ---
 title: "为SignalR的连接配置用户认证"
 date: 2023-03-11T02:47:26+08:00
-tags: ["CSharp","ASP .NET Core","SignalR","Javascript","Websocket"]
+tags: ["C#","ASP .NET Core","SignalR","Javascript","Websocket"]
 categories: [".NET"]
 ---
 

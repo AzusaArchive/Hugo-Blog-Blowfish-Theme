@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on AzusaArchive</title>
-    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/</link>
-    <description>Recent content in Posts on AzusaArchive</description>
+    <title>C# on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#/</link>
+    <description>Recent content in C# on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 14 Jun 2023 03:17:52 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jun 2023 03:17:52 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSharp正确的null检查</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/</link>
@@ -18,38 +18,11 @@
     </item>
     
     <item>
-      <title>复习 计算机图形学基础</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Tue, 13 Jun 2023 16:25:26 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>C#模式匹配概述</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/</link>
       <pubDate>Tue, 13 Jun 2023 00:55:21 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C#10新增功能</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</link>
-      <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>科目一关键词记录</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Sun, 19 Mar 2023 20:10:48 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E7%A7%91%E7%9B%AE%E4%B8%80%E5%85%B3%E9%94%AE%E8%AF%8D%E8%AE%B0%E5%BD%95/</guid>
       <description></description>
     </item>
     
@@ -86,15 +59,6 @@
       <pubDate>Sat, 11 Mar 2023 02:47:26 +0800</pubDate>
       
       <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</link>
-      <pubDate>Fri, 10 Mar 2023 19:01:26 +0800</pubDate>
-      
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/hellow-world/hello-world/</guid>
       <description></description>
     </item>
     

@@ -5,16 +5,34 @@
     <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in C#基础 on AzusaArchive</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Fri, 17 Mar 2023 15:31:41 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jun 2023 03:17:52 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/c#%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>面向对象的编程（C#）</title>
-      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</link>
-      <pubDate>Fri, 17 Mar 2023 15:31:41 +0800</pubDate>
+      <title>CSharp正确的null检查</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/</link>
+      <pubDate>Wed, 14 Jun 2023 03:17:52 +0800</pubDate>
       
-      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B-csharp/</guid>
-      <description>在阅读前你需要先掌握C#类的语法并了解类与对象的基本概念。</description>
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#模式匹配概述</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Tue, 13 Jun 2023 00:55:21 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A6%82%E8%BF%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#10新增功能</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</link>
+      <pubDate>Wed, 12 Apr 2023 16:55:10 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp10%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
+      <description></description>
     </item>
     
   </channel>
