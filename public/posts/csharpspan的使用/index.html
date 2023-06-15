@@ -10,8 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>C#Span&lt;T&gt;的使用 &middot; AzusaArchive</title>
-  <meta name="title" content="C#Span的使用 &middot; AzusaArchive" />
+  <title>C# Span&lt;T&gt;的使用 &middot; AzusaArchive</title>
+  <meta name="title" content="C# Span的使用 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
   <meta name="keywords" content="C#, C#基础, " />
@@ -65,7 +65,7 @@
   
   
   
-  <meta property="og:title" content="C#Span&lt;T&gt;的使用" />
+  <meta property="og:title" content="C# Span&lt;T&gt;的使用" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/featured.jpg"/><meta property="article:section" content="posts" />
@@ -74,7 +74,7 @@
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/featured.jpg"/>
-<meta name="twitter:title" content="C#Span&lt;T&gt;的使用"/>
+<meta name="twitter:title" content="C# Span&lt;T&gt;的使用"/>
 <meta name="twitter:description" content=""/>
 
   
@@ -83,8 +83,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "C#Span\u003cT\u003e的使用",
-    "headline": "C#Span\u003cT\u003e的使用",
+    "name": "C# Span\u003cT\u003e的使用",
+    "headline": "C# Span\u003cT\u003e的使用",
     
     
     "inLanguage": "zh-Hans",
@@ -102,7 +102,7 @@
     "keywords": ["C#","C#基础"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1643"
+    "wordCount": "1942"
   }]
   </script>
 
@@ -630,7 +630,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      C#Span<T>的使用
+      C# Span<T>的使用
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -673,7 +673,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-15 00:29:38 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>1643 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+  <time datetime="2023-06-15 00:29:38 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>1942 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
   
 
   
@@ -757,6 +757,7 @@
     <li><a href="#spant">Span&lt;T&gt;</a></li>
     <li><a href="#spant和内存">Span&lt;T&gt;和内存</a></li>
     <li><a href="#spant和切片">Span&lt;T&gt;和切片</a></li>
+    <li><a href="#缺陷">缺陷</a></li>
   </ul>
 </nav>
   </div>
@@ -773,6 +774,7 @@
     <li><a href="#spant">Span&lt;T&gt;</a></li>
     <li><a href="#spant和内存">Span&lt;T&gt;和内存</a></li>
     <li><a href="#spant和切片">Span&lt;T&gt;和切片</a></li>
+    <li><a href="#缺陷">缺陷</a></li>
   </ul>
 </nav>
   </div>
@@ -968,6 +970,27 @@
 
 </p>
 <p>直接对对象的内存进行操作避免产生垃圾，这对大量的字符串处理操作有非常可观的性能优化。</p>
+<div id="缺陷" class="anchor"></div>
+<h2 class="relative group">缺陷 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bc%ba%e9%99%b7" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>虽然使用<code>Span&lt;T&gt;</code>可以对性能有很大的提升，但因为它是<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/ref-struct"   target="_blank">
+    引用结构体</a>类型，所以使用起来有较多的限制，比如：</p>
+<ol>
+<li>ref struct 不能是数组的元素类型。</li>
+<li>ref struct 不能是类或非 ref struct 的字段的声明类型。</li>
+<li>ref struct 不能实现接口。</li>
+<li>ref struct 不能被装箱为 System.ValueType 或 System.Object。</li>
+<li>ref struct 不能是类型参数。</li>
+<li>ref struct 变量不能由 Lambda 表达式或本地函数捕获。</li>
+<li>ref struct 变量不能在 async 方法中使用。 但是，可以在同步方法中使用 ref struct 变量，例如，在返回 Task 或 Task<TResult> 的方法中。</li>
+<li>ref struct 变量不能在迭代器中使用。</li>
+</ol>
+<p>这些限制决定了<code>Span&lt;T&gt;</code>不能在大多数场景中使用，但如果在编写某些方法时，对性能或是内存要求十分苛刻，那么使用<code>Span&lt;T&gt;</code>是个很不错的选择。</p>
 
         </br></br>
         
@@ -1073,7 +1096,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;text=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
+      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;text=C#%20Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -1092,7 +1115,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;resubmit=true&amp;title=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
+      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;resubmit=true&amp;title=C#%20Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -1111,7 +1134,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;quote=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;quote=C#%20Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1130,7 +1153,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;subject=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
+      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;subject=C#%20Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
