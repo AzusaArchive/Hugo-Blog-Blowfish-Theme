@@ -1,5 +1,5 @@
 ﻿---
-title: "C#Span<T>的使用"
+title: "C# Span<T>的使用"
 date: 2023-06-15T00:29:38+08:00
 tags: ["C#","C#基础"]
 categories: [".NET"]
@@ -119,3 +119,17 @@ public static (int year, int month, int day) StringToDate(ReadOnlySpan<char> str
 ![Slice](./%E6%89%B9%E6%B3%A8%202023-06-15%20182459.png "Slice方法并不会产生新的字符串")  
 
 直接对对象的内存进行操作避免产生垃圾，这对大量的字符串处理操作有非常可观的性能优化。  
+
+## 缺陷
+虽然使用`Span<T>`可以对性能有很大的提升，但因为它是[引用结构体](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/ref-struct)类型，所以使用起来有较多的限制，比如：
+
+1. ref struct 不能是数组的元素类型。
+2. ref struct 不能是类或非 ref struct 的字段的声明类型。
+3. ref struct 不能实现接口。
+4. ref struct 不能被装箱为 System.ValueType 或 System.Object。
+5. ref struct 不能是类型参数。
+6. ref struct 变量不能由 Lambda 表达式或本地函数捕获。
+7. ref struct 变量不能在 async 方法中使用。 但是，可以在同步方法中使用 ref struct 变量，例如，在返回 Task 或 Task<TResult> 的方法中。
+8. ref struct 变量不能在迭代器中使用。
+
+这些限制决定了`Span<T>`不能在大多数场景中使用，但如果在编写某些方法时，对性能或是内存要求十分苛刻，那么使用`Span<T>`是个很不错的选择。
