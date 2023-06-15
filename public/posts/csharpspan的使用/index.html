@@ -10,14 +10,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>CSharp正确的null检查 &middot; AzusaArchive</title>
-  <meta name="title" content="CSharp正确的null检查 &middot; AzusaArchive" />
+  <title>C#Span&lt;T&gt;的使用 &middot; AzusaArchive</title>
+  <meta name="title" content="C#Span的使用 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
   <meta name="keywords" content="C#, C#基础, " />
   
   
-  <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/" />
+  <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/" />
   
   
   
@@ -65,16 +65,16 @@
   
   
   
-  <meta property="og:title" content="CSharp正确的null检查" />
+  <meta property="og:title" content="C#Span&lt;T&gt;的使用" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/featured.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-06-14T03:17:52+08:00" />
-<meta property="article:modified_time" content="2023-06-14T03:17:52+08:00" /><meta property="og:site_name" content="AzusaArchive" />
+<meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/featured.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-15T00:29:38+08:00" />
+<meta property="article:modified_time" content="2023-06-15T00:29:38+08:00" /><meta property="og:site_name" content="AzusaArchive" />
 
   <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/featured.jpg"/>
-<meta name="twitter:title" content="CSharp正确的null检查"/>
+<meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/featured.jpg"/>
+<meta name="twitter:title" content="C#Span&lt;T&gt;的使用"/>
 <meta name="twitter:description" content=""/>
 
   
@@ -83,26 +83,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "CSharp正确的null检查",
-    "headline": "CSharp正确的null检查",
+    "name": "C#Span\u003cT\u003e的使用",
+    "headline": "C#Span\u003cT\u003e的使用",
     
     
     "inLanguage": "zh-Hans",
-    "url" : "https:\/\/azusaarchive.github.io\/Hugo-Blog-Blowfish-Theme\/posts\/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5\/",
+    "url" : "https:\/\/azusaarchive.github.io\/Hugo-Blog-Blowfish-Theme\/posts\/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8\/",
     "author" : {
       "@type": "Person",
       "name": "梓"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-06-14T03:17:52\u002b08:00",
-    "datePublished": "2023-06-14T03:17:52\u002b08:00",
+    "dateCreated": "2023-06-15T00:29:38\u002b08:00",
+    "datePublished": "2023-06-15T00:29:38\u002b08:00",
     
-    "dateModified": "2023-06-14T03:17:52\u002b08:00",
+    "dateModified": "2023-06-15T00:29:38\u002b08:00",
     
     "keywords": ["C#","C#基础"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1042"
+    "wordCount": "1643"
   }]
   </script>
 
@@ -604,7 +604,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/featured.jpg);">
+    style="background-image:url(/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/featured.jpg);">
     
 
 
@@ -630,7 +630,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      CSharp正确的null检查
+      C#Span<T>的使用
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -673,7 +673,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-14 03:17:52 &#43;0800 CST">2023年6月14日</time><span class="px-2 text-primary-500">&middot;</span><span>1042 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-06-15 00:29:38 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>1643 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
   
 
   
@@ -754,11 +754,9 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#null检查">null检查</a></li>
-    <li><a href="#被重载的运算符">被重载的<code>==</code>运算符</a></li>
-    <li><a href="#referenceequals">ReferenceEquals</a></li>
-    <li><a href="#模式匹配">模式匹配</a></li>
-    <li><a href="#总结">总结</a></li>
+    <li><a href="#spant">Span&lt;T&gt;</a></li>
+    <li><a href="#spant和内存">Span&lt;T&gt;和内存</a></li>
+    <li><a href="#spant和切片">Span&lt;T&gt;和切片</a></li>
   </ul>
 </nav>
   </div>
@@ -772,11 +770,9 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#null检查">null检查</a></li>
-    <li><a href="#被重载的运算符">被重载的<code>==</code>运算符</a></li>
-    <li><a href="#referenceequals">ReferenceEquals</a></li>
-    <li><a href="#模式匹配">模式匹配</a></li>
-    <li><a href="#总结">总结</a></li>
+    <li><a href="#spant">Span&lt;T&gt;</a></li>
+    <li><a href="#spant和内存">Span&lt;T&gt;和内存</a></li>
+    <li><a href="#spant和切片">Span&lt;T&gt;和切片</a></li>
   </ul>
 </nav>
   </div>
@@ -830,106 +826,156 @@
       <div class="min-w-0 min-h-0 max-w-prose">
         
 
-        <div id="null检查" class="anchor"></div>
-<h2 class="relative group">null检查 
+        <p>详见 <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.span-1?view=net-7.0"   target="_blank">
+    官方文档</a></p>
+<hr>
+<div id="spant" class="anchor"></div>
+<h2 class="relative group">Span&lt;T&gt; 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#null%e6%a3%80%e6%9f%a5" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#spant" aria-label="锚点">#</a></span>        
     
 </h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">object?</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is null&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>上述的代码是C#最基本，也是最常用的null检查，但在.NET更新了这么多版本之后，这种做法并不是最好的。</p>
-<div id="被重载的运算符" class="anchor"></div>
-<h2 class="relative group">被重载的<code>==</code>运算符 
+<p>Span<T>是一种<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/ref-struct"   target="_blank">
+    引用结构体(ref struct)</a>，它提供任意内存的连续区域的类型安全和内存安全表示形式。Span<T>通常用于充当数组，但与数组不同的是，Span<T> 实例可以指向堆栈上托管的内存、本机内存或托管的内存。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// 创建一个数组，并用Span指向这个数组。</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 注意这里的Span仅是指向了array的地址，并没有在堆上创建内存。</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">var</span> <span class="n">array</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">arraySpan</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Span</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(</span><span class="n">array</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">ctr</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">ctr</span> <span class="p">&lt;</span> <span class="n">arraySpan</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">ctr</span><span class="p">++)</span><span class="c1">//使用Length获取这串内存的长度，单位是int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arraySpan</span><span class="p">[</span><span class="n">ctr</span><span class="p">]</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="c1">//使用[]运算符对特定位置的内存进行访问</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">num</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 输出：00000</span>
+</span></span></code></pre></div><p>上面的例子声明了一个内容为 {1,2,3,4,5} 的int数组，并定义了一个<code>Span&lt;int&gt;</code>指向该数组。此时<code>Span</code>起到了类似于指针的作用，对一段连续的内存进行直接访问。</p>
+<div id="spant和内存" class="anchor"></div>
+<h2 class="relative group">Span&lt;T&gt;和内存 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e8%a2%ab%e9%87%8d%e8%bd%bd%e7%9a%84%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#spant%e5%92%8c%e5%86%85%e5%ad%98" aria-label="锚点">#</a></span>        
     
 </h2>
-<p>使用<code>==</code>或是<code>!=</code>运算符进行null检查时，如果遇到对象类型的<code>==</code>和<code>!=</code>运算符被重载的情况，可能得到意料之外的结果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span>
+<p><code>Span&lt;T&gt;</code>不仅可以指向某个数组（即.NET运行时托管的内存），还可以指向本地内存或是堆栈，如以下代码所示：</p>
+<p>使用Marshal类分配一块本地内存（并非.NET运行时中的内存），并使用<code>Span&lt;byte&gt;</code>指向它：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">// 创建一块本机内存，并用Span指向它，对非.NET运行时托管内存进行操作是不安全代码，使用unsafe块</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">native</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">AllocHGlobal</span><span class="p">(</span><span class="m">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Span</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;</span> <span class="n">nativeSpan</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">unsafe</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="k">operator</span> <span class="p">==(</span><span class="n">User</span> <span class="n">left</span><span class="p">,</span> <span class="n">User</span> <span class="n">right</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">left</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="n">right</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="k">operator</span> <span class="p">!=(</span><span class="n">User</span> <span class="n">left</span><span class="p">,</span> <span class="n">User</span> <span class="n">right</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">!(</span><span class="n">left</span> <span class="p">==</span> <span class="n">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nativeSpan</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Span</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">native</span><span class="p">.</span><span class="n">ToPointer</span><span class="p">(),</span> <span class="m">100</span><span class="p">);</span> <span class="c1">//将Span指向分配的本机内存</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">user1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">User</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Azusa&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">user2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">User</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Hina&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">user1</span> <span class="p">!=</span> <span class="k">null</span><span class="p">);</span> <span class="c1">//此时会抛出空引用异常，因为在 != 运算符中引用了 null 的 Name 属性</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>这样的行为可能会导致程序中隐藏的漏洞，比如上述的情况只有在运行时抛出异常才能察觉。（如果使用了C# 8.0的空引用类型，则会有编译器警告。实际上在主流的IDE中，重载前后的==运算符显示在编辑器中的颜色是不一致的，不过这不是很容易察觉到）</p>
-<div id="referenceequals" class="anchor"></div>
-<h2 class="relative group">ReferenceEquals 
+</span></span><span class="line"><span class="cl"><span class="kt">byte</span> <span class="n">data</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">ctr</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">ctr</span> <span class="p">&lt;</span> <span class="n">nativeSpan</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">ctr</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nativeSpan</span><span class="p">[</span><span class="n">ctr</span><span class="p">]</span> <span class="p">=</span> <span class="n">data</span><span class="p">++;</span> <span class="c1">// 直接对内存进行操作</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">nativeSum</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="k">value</span> <span class="k">in</span> <span class="n">nativeSpan</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nativeSum</span> <span class="p">+=</span> <span class="k">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;The sum is {nativeSum}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Marshal</span><span class="p">.</span><span class="n">FreeHGlobal</span><span class="p">(</span><span class="n">native</span><span class="p">);</span> <span class="c1">//释放内存</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output:  The sum is 4950</span>
+</span></span></code></pre></div><p>使用<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/stackalloc"   target="_blank">
+    <code>stackalloc</code></a>关键字在堆栈上分配一块内存，并用<code>Span</code>指向它：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">Span</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">arraySpan</span> <span class="p">=</span> <span class="k">stackalloc</span> <span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span> <span class="c1">// 使用stackalloc关键字在堆栈上分配一个int数组</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">n</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">ctr</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">ctr</span> <span class="p">&lt;</span> <span class="n">arraySpan</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">ctr</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arraySpan</span><span class="p">[</span><span class="n">ctr</span><span class="p">]</span> <span class="p">=</span> <span class="n">n</span><span class="p">++;</span> <span class="c1">// 访问数组内的元素</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">num</span> <span class="k">in</span> <span class="n">arraySpan</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 输出：01234</span>
+</span></span></code></pre></div><hr>
+<div id="spant和切片" class="anchor"></div>
+<h2 class="relative group">Span&lt;T&gt;和切片 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#referenceequals" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#spant%e5%92%8c%e5%88%87%e7%89%87" aria-label="锚点">#</a></span>        
     
 </h2>
-<p>如果要确保我们的意图是“检查对象的引用是否为空”，而不是通过<code>==</code>或<code>!=</code>运算符来检查，则需要使用<code>Object.ReferenceEquals()</code>函数：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">ReferenceEquals</span><span class="p">(</span><span class="n">user1</span><span class="p">,</span><span class="k">null</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">...</span>
-</span></span></code></pre></div><p>使用<code>ReferenceEquals</code>函数保证了null检查不会被影响，因为这个函数真的就是检查两参数的引用是否相等，且不会被重载。</p>
-<p>有趣的是，当转到<code>Object.ReferenceEquals()</code>函数的实现时，发现内部还是调用了<code>==</code>运算符：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[NonVersionable]</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">ReferenceEquals</span><span class="p">(</span><span class="kt">object?</span> <span class="n">objA</span><span class="p">,</span> <span class="kt">object?</span> <span class="n">objB</span><span class="p">)</span>
+<p>使用<code>Span&lt;T&gt;</code>的构造函数，或是<code>Span&lt;T&gt;</code>对象的<code>Slice</code>方法，可以对连续内存的中的一部分区域进行操作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">array</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">arraySpan</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Span</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(</span><span class="n">array</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">);</span> <span class="c1">//指向 array[1]~array[3]的内存</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">ctr</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">ctr</span> <span class="p">&lt;</span> <span class="n">arraySpan</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">ctr</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arraySpan</span><span class="p">[</span><span class="n">ctr</span><span class="p">]</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">num</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 输出：10005</span>
+</span></span></code></pre></div><p><code>Span&lt;T&gt;</code>的切片操作常用于字符串，因为C#字符串的<a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.string?view=net-7.0#immutability-and-the-stringbuilder-class"   target="_blank">
+    不可变性</a>，对字符串的修改操作（如分割、拼接、修改内容、提取子串）并不是直接在原有字符串上进行操作，而是会返回新的字符串对象。因此频繁对字符串的修改操作会产生大量冗余内存给<a href="https://learn.microsoft.com/zh-cn/dotnet/standard/garbage-collection/"   target="_blank">
+    垃圾回收期(GC)</a>增加压力，从而对性能产生影响。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="kt">int</span> <span class="n">month</span><span class="p">,</span> <span class="kt">int</span> <span class="n">day</span><span class="p">)</span> <span class="n">StringToDate</span><span class="p">(</span><span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">objA</span> <span class="p">==</span> <span class="n">objB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">year</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">month</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">day</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">month</span><span class="p">),</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">day</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>但因为接受的两个参数都被转换为了可空的<code>object</code>类型，所以调用的<code>==</code>运算符依然是没被重载的，<code>object</code>类型中定义的<code>==</code>运算符。<br>
-既然如此，在使用<code>==</code>进行null检查时，可以加一步转换，来防止运算符被重载的情况。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="kt">object?</span><span class="p">)</span><span class="n">user1</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+</span></span></code></pre></div><p>上述的代码对一段 <code>yyyyMMdd</code> 格式的日期字符串进行分割处理，并返回包含整型 (年，月，日) 的元组。<br>
+通过<code>SubString</code>方法分割字符串，并用<code>int.Parse</code>方法转换为整形。<br>
+这个方法多次对字符串进行提取子串的操作，由于字符串不可变的特性，每次提取子串时都会产生新的字符串实例，在内存分析器中可以看出产生了三个新的字符串：</p>
+<p>
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./1.png" alt="SubString" />
+      <figcaption>SubString产生的新字符串对象</figcaption>
+    </figure>
+  
+
+</p>
+<p>所以，如果有大量与上述类似的字符串处理操作被执行，将会产生非常多的无用内存，而GC回收这些内存时会对性能产生大幅影响。所以对于大量的字符串处理操作，往往会选择使用<a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=net-7.0"   target="_blank">
+    <code>StringBuilder</code></a>类来避免产生过多垃圾。</p>
+<p>但因为string对象也是一段连续的内存，此时也可以使用<code>Span&lt;char&gt;</code>来对直接对字符串进行操作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="kt">int</span> <span class="n">month</span><span class="p">,</span> <span class="kt">int</span> <span class="n">day</span><span class="p">)</span> <span class="n">StringToDate</span><span class="p">(</span><span class="n">ReadOnlySpan</span><span class="p">&lt;</span><span class="kt">char</span><span class="p">&gt;</span> <span class="n">str</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is null&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">year</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="n">Slice</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">month</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="n">Slice</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">day</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="n">Slice</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">month</span><span class="p">),</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">day</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>但这样的代码不够美观。</p>
-<div id="模式匹配" class="anchor"></div>
-<h2 class="relative group">模式匹配 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e6%a8%a1%e5%bc%8f%e5%8c%b9%e9%85%8d" aria-label="锚点">#</a></span>        
-    
-</h2>
-<p>C# 7.0出现了模式匹配后，null检查出现了新的方法。使用<code>is</code>运算符进行<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/patterns#constant-pattern"   target="_blank">
-    常量模式</a>匹配时可以接收null值，所以null检查变成了这样：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">user1</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is null&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>如果使用的C#是9.0版本之后，则可以加上<code>not</code>运算符来实现非null检查：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">user1</span> <span class="k">is</span> <span class="n">not</span> <span class="k">null</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;object is not null&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>这样的代码看起来更直观了。实际上，这也是微软官方推荐的做法：<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/pattern-matching#null-checks"   target="_blank">
-    null检查</a></p>
-<p>在C#内部，实际上使用<code>is</code>进行null检查时，也是先把对象转换为了<code>object</code>类型。</p>
-<div id="总结" class="anchor"></div>
-<h2 class="relative group">总结 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#</a></span>        
-    
-</h2>
-<p>所以，在进行null检查时，模式匹配<code>obj is null</code>是最推荐的做法，但如果语言版本不满足(&lt;7.0)，进行null检查则要更加谨慎，<code>object.ReferenceEquals()</code>函数是最安全的做法，而使用<code>==</code>运算符进行检查是比较危险的，因为运算符可能被重载，得到意料之外的结果。</p>
+</span></span></code></pre></div><p>方法将输入的字符串隐式转换为<code>ReadOnlySpan&lt;char&gt;</code>，并用<code>Slice</code>方法对这段内存进行切片，将切片的结果转换为<code>int</code>类型。<br>
+<code>Span&lt;T&gt;</code>的是对该段内存的直接操作，所以不像<code>SubString</code>，<code>Slice</code>方法并不会在堆上分配任何的内存，仅仅是返回一个指向了该段内存的<code>Span&lt;T&gt;</code>对象而已。<br>
+可以看到内存中没有产生多余的字符串对象：</p>
+<p>
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./%E6%89%B9%E6%B3%A8%202023-06-15%20182459.png" alt="Slice" />
+      <figcaption>Slice方法并不会产生新的字符串</figcaption>
+    </figure>
+  
+
+</p>
+<p>直接对对象的内存进行操作避免产生垃圾，这对大量的字符串处理操作有非常可观的性能优化。</p>
 
         </br></br>
         
 
       </div>
       <script>
-        var oid = "views_posts\\CSharp正确的null检查\\index.md"
-        var oid_likes = "likes_posts\\CSharp正确的null检查\\index.md"
+        var oid = "views_posts\\CSharpSpan的使用\\index.md"
+        var oid_likes = "likes_posts\\CSharpSpan的使用\\index.md"
       </script>
       
       
@@ -1027,7 +1073,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;text=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
+      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;text=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -1046,7 +1092,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;resubmit=true&amp;title=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
+      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;resubmit=true&amp;title=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -1065,7 +1111,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;quote=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;quote=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1084,7 +1130,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/&amp;subject=CSharp%e6%ad%a3%e7%a1%ae%e7%9a%84null%e6%a3%80%e6%9f%a5"
+      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/&amp;subject=C#Span%3cT%3e%e7%9a%84%e4%bd%bf%e7%94%a8"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -1112,7 +1158,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/csharp%E6%AD%A3%E7%A1%AE%E7%9A%84null%E6%A3%80%E6%9F%A5/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1124,11 +1170,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >复习 计算机图形学基础</span
+                  >CSharp正确的null检查</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-06-13 16:25:26 &#43;0800 CST">2023年6月13日</time>
+                    <time datetime="2023-06-14 03:17:52 &#43;0800 CST">2023年6月14日</time>
                   
                 </span>
               </span>
@@ -1136,28 +1182,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/Hugo-Blog-Blowfish-Theme/posts/csharpspan%E7%9A%84%E4%BD%BF%E7%94%A8/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >C#Span<T>的使用</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-06-15 00:29:38 &#43;0800 CST">2023年6月15日</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
