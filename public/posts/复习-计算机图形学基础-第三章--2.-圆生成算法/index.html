@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "317"
+    "wordCount": "1115"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-16 18:12:19 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>317 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+  <time datetime="2023-06-16 18:12:19 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>1115 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -875,15 +875,8 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#圆的生成算法">圆的生成算法</a>
-          <ul>
-            <li><a href="#bresenham画圆算法">Bresenham画圆算法</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#bresenham画圆算法">Bresenham画圆算法</a></li>
+    <li><a href="#中点画圆算法">中点画圆算法</a></li>
   </ul>
 </nav>
   </div>
@@ -897,15 +890,8 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#圆的生成算法">圆的生成算法</a>
-          <ul>
-            <li><a href="#bresenham画圆算法">Bresenham画圆算法</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#bresenham画圆算法">Bresenham画圆算法</a></li>
+    <li><a href="#中点画圆算法">中点画圆算法</a></li>
   </ul>
 </nav>
   </div>
@@ -1005,23 +991,14 @@
 
         
 
-<div id="圆的生成算法" class="anchor"></div>
-<h3 class="relative group">圆的生成算法 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%9c%86%e7%9a%84%e7%94%9f%e6%88%90%e7%ae%97%e6%b3%95" aria-label="锚点">#</a></span>        
-    
-</h3>
 <div id="bresenham画圆算法" class="anchor"></div>
-<h4 class="relative group">Bresenham画圆算法 
+<h2 class="relative group">Bresenham画圆算法 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#bresenham%e7%94%bb%e5%9c%86%e7%ae%97%e6%b3%95" aria-label="锚点">#</a></span>        
     
-</h4>
-<p><strong>基本原理</strong></p>
+</h2>
 <p>
 
 
@@ -1037,33 +1014,39 @@
   
 
 </p>
-<p>设与当前圆周最近的像素点是 $P_{i-1}(x_i-1,y_i-1)$<br>
-下一个与圆周最近的像素点只能是正右方的点 $H_i(xi_-1+1,y_i-1)$ 或者是右下方的点 $L_i(x_i-1+1,y_i-1-1)$</p>
-<p>做判别式 $d_i$ 的增量计算：<br>
-$d_i$ 的初值为
+<p>设与当前圆周最近的像素点是 \(P_{i-1}(x_i-1,y_i-1)\)<br>
+下一个与圆周最近的像素点只能是正右方的点 \(H_i(xi_-1+1,y_i-1)\) 或者是右下方的点 \(L_i(x_i-1+1,y_i-1-1)\)</p>
+<p>做判别式 \(d_i\) 的增量计算：<br>
+\(d_i\) 的初值为
 $$
+Δ重点 \ \
 d_1 = 3 - 2R
 $$</p>
-<p>若 $d_i&lt;0$ ，表示 $H_i$ 点更接近圆周，点亮 $H_i$ ，并递推出 $d_{i+1}$：
+<p>若 \(d_i&lt;0\) ，选择 \(H_i\) 点为下一个绘制的像素（X轴+1，Y轴不变），并递推出 \(d_{i+1}\)：
 $$
-d_{i+1} = d_i+4x_{i-1}+6
+Δ重点 \ \
+d_{i+1} = d_i+4x_i+6
 $$</p>
-<p>若 $d_i\geq0$ ，表示 $L_i$ 点更接近圆周，点亮 $L_i$ ，并递推出 $d_{i+1}$：
+<p>若 \(d_i\geq0\) ，选择 \(L_i\) 点为下一个绘制的像素（X轴+1，Y轴-1），并递推出 \(d_{i+1}\)：
 $$
-d_{i+1} = = d_i+4(x_{i-1}-y_{i-1})+10
+Δ重点 \ \
+d_{i+1} = d_i+4(x_i-y_i)+10
 $$</p>
 <p>递推出1/8圆弧后，即可利用圆的对称性获得整个圆的点。</p>
 <blockquote>
+<p>注意，当绘制的圆圆心不为(0,0)时，先设圆心为(0,0)，然后将计算出的绘制点的坐标加上原来的圆心位置即可。</p>
+</blockquote>
+<blockquote>
 <p>例：
 使用Bresenham算法画圆心(0,0)，半径R=5的圆，写出1/8圆弧的判定过程：<br>
-根据圆心和半径可知，第一个点为 $(0,5)$<br>
-$d_1 = 3 - 2R = -7$</p>
+根据圆心和半径可知，第一个点为 \((0,5)\)<br>
+\(d_1 = 3 - 2R = -7\)</p>
 <table>
 <thead>
 <tr>
 <th>X</th>
 <th>Y</th>
-<th>$d_i$</th>
+<th>\(d_i\)</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -1072,24 +1055,132 @@ $d_1 = 3 - 2R = -7$</p>
 <td>0</td>
 <td>5</td>
 <td>-7</td>
-<td>$d_i &lt; 0$，y不变</td>
+<td>\(d_i &lt; 0\)，y不变</td>
 </tr>
 <tr>
 <td>1</td>
 <td>5</td>
 <td>-1</td>
-<td>$d_i &lt; 0$，y不变</td>
+<td>\(d_i &lt; 0\)，y不变</td>
 </tr>
 <tr>
 <td>2</td>
 <td>5</td>
 <td>9</td>
-<td>$d_i \geq 0$，y值-1</td>
+<td>\(d_i \geq 0\)，y值-1</td>
 </tr>
 <tr>
 <td>3</td>
 <td>4</td>
 <td>7</td>
+<td>完成</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<div id="中点画圆算法" class="anchor"></div>
+<h2 class="relative group">中点画圆算法 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%b8%ad%e7%82%b9%e7%94%bb%e5%9c%86%e7%ae%97%e6%b3%95" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>中点画圆算法与Bresenham画圆算法类似，利用圆的对称性，只需要讨论1/8圆弧。</p>
+<p>
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./MiddleCircle.png" alt="中点画圆算法" />
+      <figcaption>中点画圆算法</figcaption>
+    </figure>
+  
+
+</p>
+<p>假设P为当前点亮象素，那么下一个点亮的象素可能是 \(T(x_p+1, y_p)\) 或 \(S(x_p+1, y_p - 1)\)<br>
+如果忽略圆心位置，那么根据圆的方程，可以构造一个函数\(F(x,y)\)：
+$$
+F(x,y)=x^2+y^2-r^2
+$$</p>
+<p>将重点M的代入函数F，可推断出：</p>
+<ul>
+<li>若F(M)&lt;0，M在圆内，此时下一个点取T；</li>
+<li>若F(M)≥0，M在圆上或圆外，此时下一个点取S。</li>
+</ul>
+<p>那么可以通过计算判别式 \(d_i=F(M)\) 来对下一个绘制像素进行选择<br>
+d的初值为：
+$$
+\begin{split}
+Δ重点\ \
+d_0&amp;=F(0+1,r-0.5) \\
+&amp;=1+(r-0.5)^2-r^2 \\
+&amp;=1.25-r
+\end{split}
+$$</p>
+<p>如果 \(d_i&lt;0\)，则选择T为下一个绘制的像素（X轴+1，Y轴不变），并递推出 \(d_{i+1}\):
+$$
+\begin{split}
+Δ重点\ \
+𝑑_{i+1}=𝐹(𝑀)&amp;=𝐹(𝑥_i+2,𝑦_i−0.5) \\
+&amp;=(𝑥_i+2)^2+(𝑦_i−0.5)^2−𝑟^2 \\
+&amp;=𝑑+2𝑥_i+3
+\end{split}
+$$</p>
+<p>如果 \(d_i \geq 0\)，则选择S为下一个绘制的像素（X轴+1，Y轴-1），并递推出 \(d_{i+1}\):
+$$
+\begin{split}
+Δ重点\ \
+𝑑_{i+1}&amp;=𝐹(𝑥_i+2,𝑦_i−1.5) \\
+&amp;=(𝑥_i+2)^2+(𝑦_i−1.5)^2−𝑟^2 \\
+&amp;=𝑑+(2𝑥_i+3)+(−2𝑦_i+2)\\
+&amp;=𝑑+(2𝑥_i−2𝑦_i+5)
+\end{split}
+$$</p>
+<p>递推出1/8圆弧后，即可利用圆的对称性获得整个圆的点。</p>
+<blockquote>
+<p>注意，当绘制的圆圆心不为(0,0)时，先设圆心为(0,0)，然后将计算出的绘制点的坐标加上原来的圆心位置即可。</p>
+</blockquote>
+<blockquote>
+<p>例：使用中点画圆算法画圆心(1,2)，半径R=5的圆：<br>
+设圆心为(0,0)<br>
+根据圆心和半径可知，第一个点为 \((0,5)\)</p>
+<table>
+<thead>
+<tr>
+<th>X</th>
+<th>Y</th>
+<th>\(d_i\)</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>5</td>
+<td>-4.25</td>
+<td>\(d_i &lt; 0\)，y不变</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>-1.25</td>
+<td>\(d_i &lt; 0\)，y不变</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>3.75</td>
+<td>\(d_i \geq 0\)，y值-1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>4.75</td>
 <td>完成</td>
 </tr>
 </tbody>
