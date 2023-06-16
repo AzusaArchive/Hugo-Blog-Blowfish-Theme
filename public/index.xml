@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Fri, 16 Jun 2023 18:12:19 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jun 2023 21:44:58 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>复习 计算机图形学基础 第三章 -- 3. 区域填充</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--3.-%E5%8C%BA%E5%9F%9F%E5%A1%AB%E5%85%85/</link>
+      <pubDate>Fri, 16 Jun 2023 21:44:58 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--3.-%E5%8C%BA%E5%9F%9F%E5%A1%AB%E5%85%85/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--3.-%E5%8C%BA%E5%9F%9F%E5%A1%AB%E5%85%85/featured.jpg" />
+    </item>
+    
     <item>
       <title>复习 计算机图形学基础 第三章 -- 2. 圆生成算法</title>
       <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--2.-%E5%9C%86%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95/</link>
