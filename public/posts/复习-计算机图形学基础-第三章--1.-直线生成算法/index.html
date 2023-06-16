@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3526"
+    "wordCount": "3528"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-15 16:25:26 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>3526 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
+  <time datetime="2023-06-15 16:25:26 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>3528 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
   
 
   
@@ -951,6 +951,15 @@
         复习 计算机图形学基础 - This article is part of a series.
     </summary>
     
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--3.-%E5%8C%BA%E5%9F%9F%E5%A1%AB%E5%85%85/">
+            Part : 复习 计算机图形学基础 第三章 -- 3. 区域填充
+        </a>
+    </div>
     
     
     
@@ -1332,7 +1341,7 @@ $$</p>
 $$
 \begin{split}
 Δ重点 \ \
-d_1&amp;=F(x_0+1,y_0+0.5) \\
+d_0&amp;=F(x_0+1,y_0+0.5) \\
 &amp;=a(x_0+1)+b(y_0+0.5)+c \\
 &amp;=F(x_0,y_0)+a+0.5b \\
 &amp;=a+0.5b
@@ -1347,8 +1356,8 @@ $$</p>
 <blockquote>
 <p><strong>总结</strong></p>
 <ol>
-<li>根据起点和终点的坐标，可以使用两点式 \((y-y_1)/(x-x_1)=(y_2-y_1)/(x_2-x_1)\) 求出其直线方程 \(ax + by + c\)</li>
-<li>计算 \(d_i\) 初值 \(d_1 = a + 0.5b\)，设当前直线斜率 0 &lt; k &lt; 1，开始在X正方向步进，每次1个像素点</li>
+<li>根据起点和终点的坐标，可以使用两点式 \((y-y_1)/(x-x_1)=(y_2-y_1)/(x_2-x_1)\) 求出其直线方程 \(ax + by + c = 0\)</li>
+<li>计算 \(d_i\) 初值 \(d_0 = a + 0.5b\)，设当前直线斜率 0 &lt; k &lt; 1，开始在X正方向步进，每次1个像素点</li>
 <li>根据 \(d_i\) 的值判断 y 的变化
 <ul>
 <li>若 \(d_i &lt; 0\)，y的值+1</li>
@@ -1357,14 +1366,14 @@ $$</p>
 </li>
 <li>计算 \(d_{i+1}\)：
 <ul>
-<li>若 \(d_i &lt; 0\)，\(d_{i+1} = d+a\)</li>
-<li>若 \(d_i \geq 0\)，\(d_{i+1} = d+a+b\)</li>
+<li>若 \(d_i &lt; 0\)，\(d_{i+1} = d_i+a\)</li>
+<li>若 \(d_i \geq 0\)，\(d_{i+1} = d_i+a+b\)</li>
 </ul>
 </li>
 <li>如果直线斜率-1&lt;k&lt;0，将\(d_{i+1}\)的判别式更改为：
 <ul>
-<li>若 \(d_i &lt; 0\)，\(d_{i+1} = d-a\)</li>
-<li>若 \(d_i \geq 0\)，\(d_{i+1} = d-a+b\)</li>
+<li>若 \(d_i &lt; 0\)，\(d_{i+1} = d_i-a\)</li>
+<li>若 \(d_i \geq 0\)，\(d_{i+1} = d_i-a+b\)</li>
 </ul>
 </li>
 <li>如果直线斜率|k|&gt;1，将x,y坐标互换以完成递推过程。在画点时再将x,y坐标互换。</li>
@@ -1461,6 +1470,15 @@ a = 4, b = -5<br>
         复习 计算机图形学基础 - This article is part of a series.
     </summary>
     
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--3.-%E5%8C%BA%E5%9F%9F%E5%A1%AB%E5%85%85/">
+            Part : 复习 计算机图形学基础 第三章 -- 3. 区域填充
+        </a>
+    </div>
     
     
     
