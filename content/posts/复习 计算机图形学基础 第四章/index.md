@@ -228,6 +228,8 @@ x \\\
 \end{bmatrix}
 $$
 
+---
+
 ## 齐次坐标
 根据上面的二维几何变换，可以得出，每个基本变换（平移、旋转、缩放等）都可以表示为下列形式：
 $$
@@ -252,7 +254,11 @@ y \\\
 1
 \end{bmatrix}
 $$
-其中第三个值 `1` 称为哑坐标，决定了坐标的缩放比，一个点的齐次坐标是不唯一的，例如，普通坐标系下的点 `(2,3)` 变换为齐次坐标可以是 `(2,3,1)、(1,1.5,0.5)、(4,6,2)` 等。如果坐标是无穷大，哑坐标可以表示为`0`。  
+其中第三个值 `1` 称为哑坐标，决定了坐标的缩放比，一个点的齐次坐标是不唯一的，例如，普通坐标系下的点 `(2,3)` 变换为齐次坐标是 `(2,3,1)`：
+- 如果哑坐标是2，就可以变成 `(4,6,2)`
+- 如果哑坐标是0.5，就可以变成 `(1,1.5,0.5)`
+
+如果坐标的值是无穷大，哑坐标可以表示为`0`。  
 
 然后，利用齐次坐标，可以得到二维图形变换矩阵的通式：
 ![齐次坐标](./Homogeneous%20coordinates.png "齐次坐标")  
@@ -326,13 +332,13 @@ y' \\\
 1
 \end{bmatrix}=
 \begin{bmatrix}
-1 & 0 & 0 \\\
-0 & 1 & 0 \\\
-0 & 0 & s
+s_x & 0 & 0 \\\
+0 & s_y & 0 \\\
+0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x/s \\\
-y/s \\\
+x \\\
+y \\\
 1
 \end{bmatrix}
 $$
@@ -427,3 +433,183 @@ y \\\
 1
 \end{bmatrix}
 $$
+
+---
+
+## 使用齐次坐标的三维几何变换
+使用齐次坐标时，可将图形顶点的向量矩阵转换为 `4*4` 的齐次矩阵
+$$
+P=
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+### 平移变换
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 & 0 & 0 & t_x \\\
+0 & 1 & 0 & t_y \\\
+0 & 0 & 1 & t_z \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+### 旋转变换
+#### 绕Z轴的旋转变换
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+cosθ & -sinθ & 0 & 0 \\\
+sinθ & cosθ & 0 & 0 \\\
+0 & 0 & 1 & 0 \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+#### 绕X轴的旋转变换
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\\
+0 & cosθ & -sinθ & 0 \\\
+0 & sinθ & cosθ & 0 \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+#### 绕Y轴的旋转变换
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+cosθ & 0 & sinθ & 0 \\\
+0 & 1 & 0 & 0 \\\
+-sinθ & 0 & cosθ & 0 \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+### 缩放变换
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+s_x & 0 & 0 & 0 \\\
+0 & s_y & 0 & 0 \\\
+0 & 0 & s_z & 0 \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+### 对称变换
+#### 关于坐标轴对称变换
+关于X轴的对称可表示为：
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\\
+0 & -1 & 0 & 0 \\\
+0 & 0 & -1 & 0 \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+关于Y轴和Z轴的变换变换可类似推导
+
+#### 关于平面对称
+关于xOy平面的对称可表示为：
+$$
+\begin{bmatrix}
+x' \\\
+y' \\\
+z' \\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\\
+0 & 1 & 0 & 0 \\\
+0 & 0 & -1 & 0 \\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y \\\
+z \\\
+1
+\end{bmatrix}
+$$
+
+关于yOz轴和xOz轴的变换变换可类似推导
+
+---
+
+## 复合变换
+TODO...

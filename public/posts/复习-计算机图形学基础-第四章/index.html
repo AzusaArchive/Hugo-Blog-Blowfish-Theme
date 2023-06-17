@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1850"
+    "wordCount": "2458"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-17 22:14:39 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>1850 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+  <time datetime="2023-06-17 22:14:39 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>2458 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
   
 
   
@@ -909,6 +909,26 @@
         </li>
       </ul>
     </li>
+    <li><a href="#使用齐次坐标的三维几何变换">使用齐次坐标的三维几何变换</a>
+      <ul>
+        <li><a href="#平移变换-2">平移变换</a></li>
+        <li><a href="#旋转变换-2">旋转变换</a>
+          <ul>
+            <li><a href="#绕z轴的旋转变换">绕Z轴的旋转变换</a></li>
+            <li><a href="#绕x轴的旋转变换">绕X轴的旋转变换</a></li>
+            <li><a href="#绕y轴的旋转变换">绕Y轴的旋转变换</a></li>
+          </ul>
+        </li>
+        <li><a href="#缩放变换-2">缩放变换</a></li>
+        <li><a href="#对称变换-2">对称变换</a>
+          <ul>
+            <li><a href="#关于坐标轴对称变换">关于坐标轴对称变换</a></li>
+            <li><a href="#关于平面对称">关于平面对称</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#复合变换">复合变换</a></li>
   </ul>
 </nav>
   </div>
@@ -956,6 +976,26 @@
         </li>
       </ul>
     </li>
+    <li><a href="#使用齐次坐标的三维几何变换">使用齐次坐标的三维几何变换</a>
+      <ul>
+        <li><a href="#平移变换-2">平移变换</a></li>
+        <li><a href="#旋转变换-2">旋转变换</a>
+          <ul>
+            <li><a href="#绕z轴的旋转变换">绕Z轴的旋转变换</a></li>
+            <li><a href="#绕x轴的旋转变换">绕X轴的旋转变换</a></li>
+            <li><a href="#绕y轴的旋转变换">绕Y轴的旋转变换</a></li>
+          </ul>
+        </li>
+        <li><a href="#缩放变换-2">缩放变换</a></li>
+        <li><a href="#对称变换-2">对称变换</a>
+          <ul>
+            <li><a href="#关于坐标轴对称变换">关于坐标轴对称变换</a></li>
+            <li><a href="#关于平面对称">关于平面对称</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#复合变换">复合变换</a></li>
   </ul>
 </nav>
   </div>
@@ -1427,6 +1467,7 @@ x \\
 -y
 \end{bmatrix}
 $$</p>
+<hr>
 <div id="齐次坐标" class="anchor"></div>
 <h2 class="relative group">齐次坐标 
     <span
@@ -1457,7 +1498,12 @@ y \\
 1
 \end{bmatrix}
 $$
-其中第三个值 <code>1</code> 称为哑坐标，决定了坐标的缩放比，一个点的齐次坐标是不唯一的，例如，普通坐标系下的点 <code>(2,3)</code> 变换为齐次坐标可以是 <code>(2,3,1)、(1,1.5,0.5)、(4,6,2)</code> 等。如果坐标是无穷大，哑坐标可以表示为<code>0</code>。</p>
+其中第三个值 <code>1</code> 称为哑坐标，决定了坐标的缩放比，一个点的齐次坐标是不唯一的，例如，普通坐标系下的点 <code>(2,3)</code> 变换为齐次坐标是 <code>(2,3,1)</code>：</p>
+<ul>
+<li>如果哑坐标是2，就可以变成 <code>(4,6,2)</code></li>
+<li>如果哑坐标是0.5，就可以变成 <code>(1,1.5,0.5)</code></li>
+</ul>
+<p>如果坐标的值是无穷大，哑坐标可以表示为<code>0</code>。</p>
 <p>然后，利用齐次坐标，可以得到二维图形变换矩阵的通式：
 
 
@@ -1569,13 +1615,13 @@ y&rsquo; \\
 1
 \end{bmatrix}=
 \begin{bmatrix}
-1 &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; s
+s_x &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 \\
+0 &amp; 0 &amp; 1
 \end{bmatrix}
 \begin{bmatrix}
-x/s \\
-y/s \\
+x \\
+y \\
 1
 \end{bmatrix}
 $$</p>
@@ -1712,6 +1758,251 @@ y \\
 1
 \end{bmatrix}
 $$</p>
+<hr>
+<div id="使用齐次坐标的三维几何变换" class="anchor"></div>
+<h2 class="relative group">使用齐次坐标的三维几何变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%bd%bf%e7%94%a8%e9%bd%90%e6%ac%a1%e5%9d%90%e6%a0%87%e7%9a%84%e4%b8%89%e7%bb%b4%e5%87%a0%e4%bd%95%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>使用齐次坐标时，可将图形顶点的向量矩阵转换为 <code>4*4</code> 的齐次矩阵
+$$
+P=
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<div id="平移变换-2" class="anchor"></div>
+<h3 class="relative group">平移变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%b9%b3%e7%a7%bb%e5%8f%98%e6%8d%a2-2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; 0 &amp; t_y \\
+0 &amp; 0 &amp; 1 &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<div id="旋转变换-2" class="anchor"></div>
+<h3 class="relative group">旋转变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%97%8b%e8%bd%ac%e5%8f%98%e6%8d%a2-2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div id="绕z轴的旋转变换" class="anchor"></div>
+<h4 class="relative group">绕Z轴的旋转变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bb%95z%e8%bd%b4%e7%9a%84%e6%97%8b%e8%bd%ac%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+cosθ &amp; -sinθ &amp; 0 &amp; 0 \\
+sinθ &amp; cosθ &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<div id="绕x轴的旋转变换" class="anchor"></div>
+<h4 class="relative group">绕X轴的旋转变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bb%95x%e8%bd%b4%e7%9a%84%e6%97%8b%e8%bd%ac%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; cosθ &amp; -sinθ &amp; 0 \\
+0 &amp; sinθ &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<div id="绕y轴的旋转变换" class="anchor"></div>
+<h4 class="relative group">绕Y轴的旋转变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bb%95y%e8%bd%b4%e7%9a%84%e6%97%8b%e8%bd%ac%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+cosθ &amp; 0 &amp; sinθ &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+-sinθ &amp; 0 &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<div id="缩放变换-2" class="anchor"></div>
+<h3 class="relative group">缩放变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bc%a9%e6%94%be%e5%8f%98%e6%8d%a2-2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+s_x &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; s_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<div id="对称变换-2" class="anchor"></div>
+<h3 class="relative group">对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2-2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div id="关于坐标轴对称变换" class="anchor"></div>
+<h4 class="relative group">关于坐标轴对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%9d%90%e6%a0%87%e8%bd%b4%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>关于X轴的对称可表示为：
+$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<p>关于Y轴和Z轴的变换变换可类似推导</p>
+<div id="关于平面对称" class="anchor"></div>
+<h4 class="relative group">关于平面对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%b9%b3%e9%9d%a2%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>关于xOy平面的对称可表示为：
+$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+z&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+$$</p>
+<p>关于yOz轴和xOz轴的变换变换可类似推导</p>
+<hr>
+<div id="复合变换" class="anchor"></div>
+<h2 class="relative group">复合变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%a4%8d%e5%90%88%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>TODO&hellip;</p>
 
         </br></br>
         
