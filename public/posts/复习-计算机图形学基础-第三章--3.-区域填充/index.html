@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2278"
+    "wordCount": "2299"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-16 21:44:58 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>2278 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+  <time datetime="2023-06-16 21:44:58 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>2299 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
   
 
   
@@ -1476,11 +1476,11 @@
 实现步骤为：</p>
 <ol>
 <li>初始化栈并将种子点入栈</li>
-<li>栈顶点出栈，以该点y值作为当前的扫描线</li>
+<li>栈顶点出栈，以该点的水平线作为当前的扫描线</li>
 <li>从该点出发，沿着当前扫描线左右两方向填充，直到填充到边界。最左端的填充像素和最右端的分别记为 \(X_l\)和 \(X_r\)</li>
-<li>在区间[\(X_l,X_r\)]范围内，搜索每个像素点的上方像素（一般是从左到右）是否为未填充且不是边界。如果发现，则将上方每个未填充像素区间（可能有多个非连通的未填充区间）的最左边的（或是最右，依题意）像素入栈</li>
+<li>在区间[\(X_l,X_r\)]范围内，搜索每个像素点的上方像素（一般是从左到右）是否未填充且不是边界。如果发现，则将上方每个未填充像素区间（可能有多个非连通的未填充区间）的最左边的（或是最右，依题意）像素入栈</li>
 <li>和第4步一致，只不过搜索的是下方的像素点</li>
-<li>重复2-5，直到栈空</li>
+<li>重复2-5，直到栈空（依题意，第4步和第5步的顺序可能调换）</li>
 </ol>
 <p>
 
