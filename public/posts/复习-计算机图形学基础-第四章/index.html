@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "573"
+    "wordCount": "1850"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-17 22:14:39 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>573 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+  <time datetime="2023-06-17 22:14:39 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>1850 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
   
 
   
@@ -881,6 +881,32 @@
         <li><a href="#平移变换">平移变换</a></li>
         <li><a href="#旋转变换">旋转变换</a></li>
         <li><a href="#缩放变换">缩放变换</a></li>
+        <li><a href="#对称变换">对称变换</a>
+          <ul>
+            <li><a href="#关于x轴的对称变换">关于X轴的对称变换</a></li>
+            <li><a href="#关于y轴的对称变换">关于Y轴的对称变换</a></li>
+            <li><a href="#关于对角线yx对称变换">关于对角线y=x对称变换</a></li>
+            <li><a href="#关于对角线y-x对称变换">关于对角线y=-x对称变换</a></li>
+            <li><a href="#关于原点对称">关于原点对称</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#齐次坐标">齐次坐标</a></li>
+    <li><a href="#使用齐次坐标的二维几何变换">使用齐次坐标的二维几何变换</a>
+      <ul>
+        <li><a href="#平移变换-1">平移变换</a></li>
+        <li><a href="#旋转变换-1">旋转变换</a></li>
+        <li><a href="#缩放变换-1">缩放变换</a></li>
+        <li><a href="#对称变换-1">对称变换</a>
+          <ul>
+            <li><a href="#关于x轴对称">关于x轴对称</a></li>
+            <li><a href="#关于y轴对称">关于y轴对称</a></li>
+            <li><a href="#关于对角线yx的对称">关于对角线y=x的对称</a></li>
+            <li><a href="#关于对角线y-x的对称">关于对角线y=-x的对称</a></li>
+            <li><a href="#关于原点的对称">关于原点的对称</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -902,6 +928,32 @@
         <li><a href="#平移变换">平移变换</a></li>
         <li><a href="#旋转变换">旋转变换</a></li>
         <li><a href="#缩放变换">缩放变换</a></li>
+        <li><a href="#对称变换">对称变换</a>
+          <ul>
+            <li><a href="#关于x轴的对称变换">关于X轴的对称变换</a></li>
+            <li><a href="#关于y轴的对称变换">关于Y轴的对称变换</a></li>
+            <li><a href="#关于对角线yx对称变换">关于对角线y=x对称变换</a></li>
+            <li><a href="#关于对角线y-x对称变换">关于对角线y=-x对称变换</a></li>
+            <li><a href="#关于原点对称">关于原点对称</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#齐次坐标">齐次坐标</a></li>
+    <li><a href="#使用齐次坐标的二维几何变换">使用齐次坐标的二维几何变换</a>
+      <ul>
+        <li><a href="#平移变换-1">平移变换</a></li>
+        <li><a href="#旋转变换-1">旋转变换</a></li>
+        <li><a href="#缩放变换-1">缩放变换</a></li>
+        <li><a href="#对称变换-1">对称变换</a>
+          <ul>
+            <li><a href="#关于x轴对称">关于x轴对称</a></li>
+            <li><a href="#关于y轴对称">关于y轴对称</a></li>
+            <li><a href="#关于对角线yx的对称">关于对角线y=x的对称</a></li>
+            <li><a href="#关于对角线y-x的对称">关于对角线y=-x的对称</a></li>
+            <li><a href="#关于原点的对称">关于原点的对称</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1228,6 +1280,438 @@ $$</p>
 这样的缩放变换以坐标原点为放缩参照点<br>
 它不仅改变了物体的大小和形状，也改变了它离原点的距离</p>
 </blockquote>
+<div id="对称变换" class="anchor"></div>
+<h3 class="relative group">对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div id="关于x轴的对称变换" class="anchor"></div>
+<h4 class="relative group">关于X轴的对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8ex%e8%bd%b4%e7%9a%84%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo;
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}=
+\begin{bmatrix}
+x \\
+-y
+\end{bmatrix}
+$$</p>
+<div id="关于y轴的对称变换" class="anchor"></div>
+<h4 class="relative group">关于Y轴的对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8ey%e8%bd%b4%e7%9a%84%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo;
+\end{bmatrix}=
+\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}=
+\begin{bmatrix}
+x \\
+-y
+\end{bmatrix}
+$$</p>
+<div id="关于对角线yx对称变换" class="anchor"></div>
+<h4 class="relative group">关于对角线y=x对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%af%b9%e8%a7%92%e7%ba%bfyx%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo;
+\end{bmatrix}=
+\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}=
+\begin{bmatrix}
+x \\
+-y
+\end{bmatrix}
+$$</p>
+<div id="关于对角线y-x对称变换" class="anchor"></div>
+<h4 class="relative group">关于对角线y=-x对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%af%b9%e8%a7%92%e7%ba%bfy-x%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo;
+\end{bmatrix}=
+\begin{bmatrix}
+0 &amp; -1 \\
+-1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}=
+\begin{bmatrix}
+x \\
+-y
+\end{bmatrix}
+$$</p>
+<div id="关于原点对称" class="anchor"></div>
+<h4 class="relative group">关于原点对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%8e%9f%e7%82%b9%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>即先对对角线y=x对称，再对对角线y=-x对称
+$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo;
+\end{bmatrix}=
+\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; -1 \\
+-1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}=
+\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}=
+\begin{bmatrix}
+x \\
+-y
+\end{bmatrix}
+$$</p>
+<div id="齐次坐标" class="anchor"></div>
+<h2 class="relative group">齐次坐标 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e9%bd%90%e6%ac%a1%e5%9d%90%e6%a0%87" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>根据上面的二维几何变换，可以得出，每个基本变换（平移、旋转、缩放等）都可以表示为下列形式：
+$$
+P&rsquo; = M_1P+M_2
+$$
+其中P&rsquo;和P表示为坐标的向量矩阵，\(M_1\) 是一个包含乘法系数的 <code>2*2</code> 的矩阵， \(M_2\) 是包含加法系数的 <code>2*1</code> 的矩阵。</p>
+<ul>
+<li>对于平移变换， \(M_1\) 是一个单位矩阵，只需要对 \(M_2\) 进行加法运算即可。</li>
+<li>对于旋转，缩放或是对称变换，对 \(M_1\) 进行乘法运算。</li>
+</ul>
+<p>如果要对图形进行复合变换，必须一步一步地计算图形顶点的向量矩阵的每一次变换。并且为了防止图形产生畸变，还要遵守<a href="https://blog.csdn.net/zsq306650083/article/details/50561857"   target="_blank">
+    <strong>“先缩放，再旋转，后平移”</strong></a>的原则。</p>
+<p>因此，更有效的方法是将不同类型的变换组合，从而直接从初始坐标得到最后的坐标位置，消除中间坐标值的计算，因此引入了<strong>齐次坐标</strong>。</p>
+<p>齐次坐标就是由 n+1 维向量表示一个 n 维向量。如果是2维几何变换，那就是用一个 <code>3*3</code> 的矩阵来表示原本 <code>2*2</code> 的矩阵。然后将所有的变换公式表达为矩阵乘法。</p>
+<p>将一个顶点的向量矩阵转换为齐次矩阵：
+$$
+P =
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$
+其中第三个值 <code>1</code> 称为哑坐标，决定了坐标的缩放比，一个点的齐次坐标是不唯一的，例如，普通坐标系下的点 <code>(2,3)</code> 变换为齐次坐标可以是 <code>(2,3,1)、(1,1.5,0.5)、(4,6,2)</code> 等。如果坐标是无穷大，哑坐标可以表示为<code>0</code>。</p>
+<p>然后，利用齐次坐标，可以得到二维图形变换矩阵的通式：
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./Homogeneous%20coordinates.png" alt="齐次坐标" />
+      <figcaption>齐次坐标</figcaption>
+    </figure>
+  
+
+<br>
+由上图所示，将比例、反射、旋转和错切变换整合到 <code>a,b,c,d</code> 四个值中，将平移变换整合到 <code>m,n</code> 中，将投影变换转换到 <code>p,q</code> 中，将缩放变换转换到哑坐标 <code>s</code> 中。</p>
+<p>如果要对一个顶点进行几何变换，将该通式 T 与顶点的齐次坐标相乘即可：
+$$
+\begin{split}
+P&rsquo; &amp;= TP \\
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+H
+\end{bmatrix}&amp;=
+\begin{bmatrix}
+a &amp; c &amp; m \\
+b &amp; d &amp; n \\
+p &amp; q &amp; s
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+\end{split}
+$$</p>
+<div id="使用齐次坐标的二维几何变换" class="anchor"></div>
+<h2 class="relative group">使用齐次坐标的二维几何变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%bd%bf%e7%94%a8%e9%bd%90%e6%ac%a1%e5%9d%90%e6%a0%87%e7%9a%84%e4%ba%8c%e7%bb%b4%e5%87%a0%e4%bd%95%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h2>
+<div id="平移变换-1" class="anchor"></div>
+<h3 class="relative group">平移变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%b9%b3%e7%a7%bb%e5%8f%98%e6%8d%a2-1" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; t_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
+<div id="旋转变换-1" class="anchor"></div>
+<h3 class="relative group">旋转变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%97%8b%e8%bd%ac%e5%8f%98%e6%8d%a2-1" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+cosθ &amp; -sinθ &amp; 0 \\
+sinθ &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
+<div id="缩放变换-1" class="anchor"></div>
+<h3 class="relative group">缩放变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bc%a9%e6%94%be%e5%8f%98%e6%8d%a2-1" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; s
+\end{bmatrix}
+\begin{bmatrix}
+x/s \\
+y/s \\
+1
+\end{bmatrix}
+$$</p>
+<div id="对称变换-1" class="anchor"></div>
+<h3 class="relative group">对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2-1" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div id="关于x轴对称" class="anchor"></div>
+<h4 class="relative group">关于x轴对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8ex%e8%bd%b4%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
+<div id="关于y轴对称" class="anchor"></div>
+<h4 class="relative group">关于y轴对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8ey%e8%bd%b4%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+-1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
+<div id="关于对角线yx的对称" class="anchor"></div>
+<h4 class="relative group">关于对角线y=x的对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%af%b9%e8%a7%92%e7%ba%bfyx%e7%9a%84%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
+<div id="关于对角线y-x的对称" class="anchor"></div>
+<h4 class="relative group">关于对角线y=-x的对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%af%b9%e8%a7%92%e7%ba%bfy-x%e7%9a%84%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+0 &amp; -1 &amp; 0 \\
+-1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
+<div id="关于原点的对称" class="anchor"></div>
+<h4 class="relative group">关于原点的对称 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%b3%e4%ba%8e%e5%8e%9f%e7%82%b9%e7%9a%84%e5%af%b9%e7%a7%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>$$
+\begin{bmatrix}
+x&rsquo; \\
+y&rsquo; \\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+-1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+$$</p>
 
         </br></br>
         
