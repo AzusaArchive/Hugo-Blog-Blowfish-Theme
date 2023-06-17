@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1035"
+    "wordCount": "2278"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-16 21:44:58 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>1035 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-06-16 21:44:58 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>2278 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
   
 
   
@@ -877,8 +877,12 @@
   <ul>
     <li><a href="#多边形填充算法">多边形填充算法</a>
       <ul>
-        <li><a href="#多边形扫描转换算法">多边形扫描转换算法</a></li>
-        <li><a href="#todo">TODO&hellip;</a></li>
+        <li><a href="#多边形扫描转换算法">多边形扫描转换算法</a>
+          <ul>
+            <li><a href="#概述">概述</a></li>
+            <li><a href="#具体算法实现步骤">具体算法实现步骤</a></li>
+          </ul>
+        </li>
         <li><a href="#种子填充算法">种子填充算法</a></li>
         <li><a href="#基于扫描线的种子填充算法">基于扫描线的种子填充算法</a></li>
       </ul>
@@ -898,8 +902,12 @@
   <ul>
     <li><a href="#多边形填充算法">多边形填充算法</a>
       <ul>
-        <li><a href="#多边形扫描转换算法">多边形扫描转换算法</a></li>
-        <li><a href="#todo">TODO&hellip;</a></li>
+        <li><a href="#多边形扫描转换算法">多边形扫描转换算法</a>
+          <ul>
+            <li><a href="#概述">概述</a></li>
+            <li><a href="#具体算法实现步骤">具体算法实现步骤</a></li>
+          </ul>
+        </li>
         <li><a href="#种子填充算法">种子填充算法</a></li>
         <li><a href="#基于扫描线的种子填充算法">基于扫描线的种子填充算法</a></li>
       </ul>
@@ -961,6 +969,33 @@
         复习 计算机图形学基础 - This article is part of a series.
     </summary>
     
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+            Part : 复习 计算机图形学基础 第四章
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--5.-%E5%9B%BE%E5%83%8F%E8%A3%81%E5%89%AA/">
+            Part : 复习 计算机图形学基础 第三章 -- 5. 图像裁剪
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--4.-%E5%8F%8D%E8%B5%B0%E6%A0%B7/">
+            Part : 复习 计算机图形学基础 第三章 -- 4. 反走样
+        </a>
+    </div>
     
     
     
@@ -1028,6 +1063,14 @@
             style="text-decoration-line: none !important;" href="#%e5%a4%9a%e8%be%b9%e5%bd%a2%e6%89%ab%e6%8f%8f%e8%bd%ac%e6%8d%a2%e7%ae%97%e6%b3%95" aria-label="锚点">#</a></span>        
     
 </h3>
+<div id="概述" class="anchor"></div>
+<h4 class="relative group">概述 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%a6%82%e8%bf%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
 <p>扫描线算法是确定水平扫描线与多边形的相交区间，把该区间内的所有像素一次性赋以新的颜色值。<br>
 算法分为4个步骤：</p>
 <ol>
@@ -1059,14 +1102,306 @@
 <li>把每个区域中的像素填充</li>
 </ol>
 <p>按照上面的步骤，在Y轴上遍历扫描线，直到整个图形被填充</p>
-<div id="todo" class="anchor"></div>
-<h3 class="relative group">TODO&hellip; 
+<hr>
+<div id="具体算法实现步骤" class="anchor"></div>
+<h4 class="relative group">具体算法实现步骤 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#todo" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e5%85%b7%e4%bd%93%e7%ae%97%e6%b3%95%e5%ae%9e%e7%8e%b0%e6%ad%a5%e9%aa%a4" aria-label="锚点">#</a></span>        
     
-</h3>
+</h4>
+<ul>
+<li>
+<p><strong>构造边表（ET）</strong></p>
+<ol>
+<li>构造一个列表，该列表称为<strong>边表</strong>，长度为该多边形的扫描线的数量（即多边形在y轴上的跨度），表中的每一个元素都是一个链表，代表着每一条扫描线（方程\(y=n\，n为扫描线所在y轴上的位置)，每条扫描线称为<strong>桶</strong></li>
+<li>将多边形中每条边的信息链入与该边最小y坐标(\(y_{low}\))相对应的桶中。也就是说，<strong>若某边的较低端点为(x,\(y_{low}\))，则该边就放在 \(y=y_{low}\) 这条扫描线对应的桶中</strong></li>
+<li>每条边的数据为链表的一个节点，内容包含三个值：
+<ol>
+<li>该边和对应扫描的初始交点（即<strong>较低端点</strong>）的x值 \(x_{low}\)</li>
+<li>该边最大y坐标（即<strong>较高端点</strong>）的y值 \(y_{high}\)</li>
+<li>该边的斜率的倒数 \(\frac{1}{k}\)</li>
+</ol>
+</li>
+<li>同一个桶中的节点按照 \(x_{low}\) 从小到大排序，如果 \(x_{low}\) 相等，则按照 \(\frac 1 k\)来排序</li>
+</ol>
+<p>下面的例子构造了一个边表：</p>
+<p>
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan2.png" alt="多边形示例" />
+      <figcaption>多边形示例</figcaption>
+    </figure>
+  
+
+</p>
+<table>
+<thead>
+<tr>
+<th>边</th>
+<th>\(y_{low}\)</th>
+<th>\(x_{low}\)</th>
+<th>\(y_{high}\)</th>
+<th>\(\frac 1 k\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0p1</td>
+<td>8</td>
+<td>7</td>
+<td>12</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>p1p2</td>
+<td>7</td>
+<td>1</td>
+<td>12</td>
+<td>2/5</td>
+</tr>
+<tr>
+<td>p2p3</td>
+<td>1</td>
+<td>3</td>
+<td>7</td>
+<td>-1/3</td>
+</tr>
+<tr>
+<td>p3p4</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>3/4</td>
+</tr>
+<tr>
+<td>p4p5</td>
+<td>1</td>
+<td>8</td>
+<td>5</td>
+<td>-1/2</td>
+</tr>
+<tr>
+<td>p5p6</td>
+<td>1</td>
+<td>8</td>
+<td>9</td>
+<td>1/2</td>
+</tr>
+<tr>
+<td>p6p0</td>
+<td>8</td>
+<td>7</td>
+<td>9</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan3.png" alt="最终构造的边表" />
+      <figcaption>最终构造的边表</figcaption>
+    </figure>
+  
+
+</p>
+</li>
+<li>
+<p><strong>构造活动边表（AET）</strong>
+根据构造的<strong>边表（ET）</strong>，进行扫描转换。对于不同的扫描线，与其相交的边线也是不同的，当对某一条扫描线进行扫描转换时，我们只需要考虑与它相交的那些边线<br>
+因此，需要建立一个只与当前扫描线相交的边记录链表，称之为<strong>活动边表（AET）</strong></p>
+<ol>
+<li>构造一个链表，作为<strong>活动边表</strong></li>
+<li>按照y轴遍历每条扫描线，取出该扫描线在<strong>边表</strong>中对应的<strong>桶</strong>，放入<strong>活动边表</strong>，同时在边表中删除该桶，<strong>然后将活动边表中的每个节点按照 \(x_{low}\) 排序</strong></li>
+<li>如果桶中节点的 \(y_{max}\) 值<strong>小于或等于</strong>当前扫描线的y值，那么移除该节点</li>
+<li>在当前活动边表中，取两两节点的 \(x_{low}\) 值，作为该扫描线的填充区域并填充多边形</li>
+<li>将桶中每个节点的 \(x_{min}\) 值加上其 \(\frac 1 k\)的值</li>
+<li>重复2-5，遍历下一条扫描线，直到边表和活动边表都为空</li>
+</ol>
+<p>对上述的多边形构造活动边表并填充：</p>
+<ul>
+<li>从 y=1 开始遍历扫描线，将边表中下标为1的桶加入活动边表并排序，取两两节点进行填充，最终填充范围是3-3和8-8：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan4.png" alt="活动边表y=1" />
+      <figcaption>活动边表y=1</figcaption>
+    </figure>
+  
+
+</li>
+<li>将活动边表中所有节点的\(x_{low}\)加上\(\frac 1 k\)的值。然后切换到下一条扫描线 y=2，边表中对应的桶为空，对AET排序并继续填充，此时填充范围为 3-4和8-9（如果\(x_{low}\)有小数则四舍五入）：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan5.png" alt="活动边表y=2" />
+      <figcaption>活动边表y=2</figcaption>
+    </figure>
+  
+
+</li>
+<li>与上一步操作相同，此时扫描线 y=3 的填充范围为 2-5和7-9：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan6.png" alt="活动边表y=3" />
+      <figcaption>活动边表y=3</figcaption>
+    </figure>
+  
+
+</li>
+<li>y=4，填充范围为 2-5和7-10：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan7.png" alt="活动边表y=4" />
+      <figcaption>活动边表y=4</figcaption>
+    </figure>
+  
+
+</li>
+<li>y=5，此时要AET中的边 p2p4和p4p5 的 \(y_{max}\) 值等于扫描线的 y 值，将这两个节点移除。然后排序，继续填充，范围为 2-10：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan8.png" alt="活动边表y=5" />
+      <figcaption>活动边表y=5</figcaption>
+    </figure>
+  
+
+</li>
+<li>y=6，填充范围 1-11：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan9.png" alt="活动边表y=6" />
+      <figcaption>活动边表y=6</figcaption>
+    </figure>
+  
+
+</li>
+<li>y=7，AET中的 p2p3 节点的 \(y_{max}\) 等于7，将其移除，加入ET中的 p2p1 节点然后排序，计算填充范围 1-11：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan10.png" alt="活动边表y=7" />
+      <figcaption>活动边表y=7</figcaption>
+    </figure>
+  
+
+</li>
+<li>y=8，加入ET中的 p0p1和p0p6 节点，排序，然后计算填充范围为：1-7和7-12：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan11.png" alt="活动边表y=8" />
+      <figcaption>活动边表y=8</figcaption>
+    </figure>
+  
+
+</li>
+<li>y=9，移除AET中的 p0p6和p5p6 节点，排序，然后计算填充范围：2-6：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan12.png" alt="活动边表y=9" />
+      <figcaption>活动边表y=9</figcaption>
+    </figure>
+  
+
+</li>
+<li>不断填充，最后在 扫描线 y=12时，AET和ET中的节点全部被移除，填充完毕：
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan14.png" alt="活动边表y=10-12" />
+      <figcaption>活动边表y=10-12</figcaption>
+    </figure>
+  
+
+
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./X-Scan13.png" alt="填充完毕" />
+      <figcaption>填充完毕</figcaption>
+    </figure>
+  
+
+</li>
+</ul>
+</li>
+</ul>
 <div id="种子填充算法" class="anchor"></div>
 <h3 class="relative group">种子填充算法 
     <span
@@ -1171,6 +1506,33 @@
         复习 计算机图形学基础 - This article is part of a series.
     </summary>
     
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+            Part : 复习 计算机图形学基础 第四章
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--5.-%E5%9B%BE%E5%83%8F%E8%A3%81%E5%89%AA/">
+            Part : 复习 计算机图形学基础 第三章 -- 5. 图像裁剪
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--4.-%E5%8F%8D%E8%B5%B0%E6%A0%B7/">
+            Part : 复习 计算机图形学基础 第三章 -- 4. 反走样
+        </a>
+    </div>
     
     
     
@@ -1435,6 +1797,28 @@
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E5%A4%8D%E4%B9%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E7%AC%AC%E4%B8%89%E7%AB%A0--4.-%E5%8F%8D%E8%B5%B0%E6%A0%B7/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >复习 计算机图形学基础 第三章 -- 4. 反走样</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-06-17 16:53:05 &#43;0800 CST">2023年6月17日</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>
