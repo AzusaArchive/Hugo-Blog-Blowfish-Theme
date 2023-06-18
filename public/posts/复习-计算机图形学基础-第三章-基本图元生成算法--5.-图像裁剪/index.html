@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1014"
+    "wordCount": "1556"
   }]
   </script>
 
@@ -123,6 +123,139 @@
   
 
 <script src="/Hugo-Blog-Blowfish-Theme/lib/jquery/jquery.slim.min.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/Hugo-Blog-Blowfish-Theme/lib/katex/katex.min.19a79cb941dfc5371ad92239864c30f6113911e6e6fa2f3dd562258790f36858d710da3372ebe67e48814c0e55339067a3559ca45ebe17f56c6f6179ea6d9fa9.css" integrity="sha512-GaecuUHfxTca2SI5hkww9hE5Eebm&#43;i891WIlh5DzaFjXENozcuvmfkiBTA5VM5Bno1WcpF6&#43;F/Vsb2F56m2fqQ==" />
+
+
+<script defer src="/Hugo-Blog-Blowfish-Theme/lib/katex/katex.min.10a5b962f294de1a72c8e70dea34270313bf2fc82db3e61d615e98ca6b65f2993d625605b6a2608a1391b91a015caf3f70e2256a9a5d53a32cf0a74aeb204280.js" integrity="sha512-EKW5YvKU3hpyyOcN6jQnAxO/L8gts&#43;YdYV6Yymtl8pk9YlYFtqJgihORuRoBXK8/cOIlappdU6Ms8KdK6yBCgA=="></script>
+
+
+<script defer src="/Hugo-Blog-Blowfish-Theme/lib/katex/auto-render.min.8968ae052e67b7aafad1f0b3dba35dd19a9ed276e4d594c841b9772afee462c5fec8a314147ce3687dbe02733abe9d97b3e80d99a0405562634a6b8fc3be847e.js" integrity="sha512-iWiuBS5nt6r60fCz26Nd0Zqe0nbk1ZTIQbl3Kv7kYsX&#43;yKMUFHzjaH2&#43;AnM6vp2Xs&#43;gNmaBAVWJjSmuPw76Efg=="
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -671,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-17 20:20:26 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>1014 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-06-17 20:20:26 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>1556 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
   
 
   
@@ -746,7 +879,6 @@
       <ul>
         <li><a href="#cohen-sutherland裁剪算法">Cohen-Sutherland裁剪算法</a></li>
         <li><a href="#liang-barsky算法">Liang-Barsky算法</a></li>
-        <li><a href="#todo">TODO</a></li>
       </ul>
     </li>
   </ul>
@@ -766,7 +898,6 @@
       <ul>
         <li><a href="#cohen-sutherland裁剪算法">Cohen-Sutherland裁剪算法</a></li>
         <li><a href="#liang-barsky算法">Liang-Barsky算法</a></li>
-        <li><a href="#todo">TODO</a></li>
       </ul>
     </li>
   </ul>
@@ -920,7 +1051,9 @@
 </details>
 
 
-        <div id="直线裁剪" class="anchor"></div>
+        
+
+<div id="直线裁剪" class="anchor"></div>
 <h2 class="relative group">直线裁剪 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -1087,14 +1220,51 @@
             style="text-decoration-line: none !important;" href="#liang-barsky%e7%ae%97%e6%b3%95" aria-label="锚点">#</a></span>        
     
 </h3>
-<div id="todo" class="anchor"></div>
-<h3 class="relative group">TODO 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#todo" aria-label="锚点">#</a></span>        
-    
-</h3>
+<p>Liang-Barsky算法的基本思路：<br>
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./Liang-Barsky.png" alt="Liang-Barsky" />
+      <figcaption>Liang-Barsky</figcaption>
+    </figure>
+  
+
+<br>
+如图所示，设要裁剪的线段是 \(P_0P_1\) ，点\(P_0和P_1\) 已确定。<br>
+设直线 \(P_0P_1\) 的延长线和窗口边界的延长线交于 <code>L、R、B、T</code> 四点。此时需要确定直线的裁剪点。<br>
+观察上图可以发现，通过<strong>求 [B,L,\(P_0\)] 中最靠近\(P_1\)点的</strong>，可以确定直线的一个裁剪点。而相对的，<strong>求 [T,R,\(P_1\)] 中最靠近\(P_0\)点的</strong>，可以确定直线的另一个裁剪点。</p>
+<p>比如图中的直线，[B,L,\(P_0\)] 中最靠近\(P_1\)点的为\(P_0\)点，[T,R,\(P_1\)]点中最靠近\(P_0\)点的为T点。因此，可知要对该直线裁剪，只需要取\(P_0\)点和T点即可。</p>
+<p>现在的问题是，如何确定 <code>L,R,B,T</code> 四个点？</p>
+<p>Liang-Barsky算法使用参数方程来表示一条直线：
+$$
+\begin{split}
+x &amp;= x_0 + Δx \centerdot t \\
+y &amp;= y_0 + Δy \centerdot t\ \ \ (0 \leq t \leq 1) \\
+Δx &amp;= x_1 - x_0 \ \ Δy = y_1 - y_0
+\end{split}
+$$</p>
+<p>将窗口边界的四条边分为两类：始边和终边<br>
+设\(x_L,x_R,y_T,y_B\)分别为窗口的左，右，上，下边界</p>
+<ul>
+<li>
+<p>若\(Δx \geq 0\)，\(x_L\)为始边，\(x_R\)为终边。</p>
+</li>
+<li>
+<p>若\(Δx &lt; 0\)，\(x_R\)为始边，\(x_L\)为终边。</p>
+</li>
+<li>
+<p>若\(Δy \geq 0\)，\(y_B\)为始边，\(y_Y\)为终边。</p>
+</li>
+<li>
+<p>若\(Δy &lt; 0\)，\(y_T\)为始边，\(y_B\)为终边。</p>
+</li>
+</ul>
 
         </br></br>
         
