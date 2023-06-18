@@ -133,6 +133,10 @@ y'
 \begin{bmatrix}
 1 & 0 \\\
 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+x \\\
+y
 \end{bmatrix}=
 \begin{bmatrix}
 x \\\
@@ -154,8 +158,8 @@ x \\\
 y
 \end{bmatrix}=
 \begin{bmatrix}
-x \\\
--y
+-x \\\
+y
 \end{bmatrix}
 $$
 #### 关于对角线y=x对称变换
@@ -173,8 +177,8 @@ x \\\
 y
 \end{bmatrix}=
 \begin{bmatrix}
-x \\\
--y
+y \\\
+x
 \end{bmatrix}
 $$
 #### 关于对角线y=-x对称变换
@@ -192,8 +196,8 @@ x \\\
 y
 \end{bmatrix}=
 \begin{bmatrix}
-x \\\
--y
+-y \\\
+-x
 \end{bmatrix}
 $$
 #### 关于原点对称
@@ -224,7 +228,7 @@ x \\\
 y
 \end{bmatrix}=
 \begin{bmatrix}
-x \\\
+-x \\\
 -y
 \end{bmatrix}
 $$
