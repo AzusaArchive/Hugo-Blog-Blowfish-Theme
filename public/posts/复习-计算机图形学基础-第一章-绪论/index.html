@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1269"
+    "wordCount": "1268"
   }]
   </script>
 
@@ -671,7 +671,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-13 16:25:26 &#43;0800 CST">2023年6月13日</time><span class="px-2 text-primary-500">&middot;</span><span>1269 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-06-13 16:25:26 &#43;0800 CST">2023年6月13日</time><span class="px-2 text-primary-500">&middot;</span><span>1268 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -1034,9 +1034,9 @@
             style="text-decoration-line: none !important;" href="#%e8%be%93%e5%85%a5%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%90%86" aria-label="锚点">#</a></span>        
     
 </h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glutReshapeFunc</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)</span><span class="kt">int</span> <span class="n">w</span><span class="p">,</span><span class="kt">int</span> <span class="n">h</span><span class="p">)</span> <span class="c1">//注册当前窗口大小变化时的回调函数
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glutReshapeFunc</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)(</span><span class="kt">int</span> <span class="n">w</span><span class="p">,</span><span class="kt">int</span> <span class="n">h</span><span class="p">))</span> <span class="c1">//注册当前窗口大小变化时的回调函数
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span><span class="p">))</span> <span class="c1">//注册当前窗口的键盘回调函数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glutMouseFunc</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">state</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">));</span> 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glutMouseFunc</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)(</span><span class="kt">int</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">state</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">));</span> 
 </span></span></code></pre></div><p><code>glutMouseFunc</code>为注册当前窗口的鼠标回调函数，func为注册的鼠标回调函数,这个函数完成鼠标事件的处理，<code>button</code>为鼠标的按键,为以下定义的常量：</p>
 <table>
 <thead>
@@ -1099,10 +1099,12 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glFlush</span><span class="p">()</span>
 </span></span></code></pre></div><p>如果使用双缓冲区模式，则需要交换缓冲区</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glutSwapBuffers</span><span class="p">()</span>
-</span></span></code></pre></div><p><strong>绘制</strong><br>
-使用<code>glBegin(unsigned int mode)</code>函数指定图元并开始绘制<br>
-使用<code>glVertex..函数绘制顶点</code>，满足了顶点的数量则会自动根据顶点生成图元对应的图形<br>
-使用<code>glEnd()</code>函数结束绘制</p>
+</span></span></code></pre></div><p><strong>绘制</strong></p>
+<ul>
+<li>使用<code>glBegin(unsigned int mode)</code>函数指定图元并开始绘制</li>
+<li>使用<code>glVertex..函数绘制顶点</code>，满足了顶点的数量则会自动根据顶点生成图元对应的图形</li>
+<li>使用<code>glEnd()</code>函数结束绘制</li>
+</ul>
 <p>OpenGL几何图元</p>
 <table>
 <thead>
