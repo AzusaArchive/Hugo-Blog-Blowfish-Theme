@@ -129,7 +129,7 @@ Line Cohen_Sutherland(const Line& line, Rect& rect)
 ```
 
 ### Liang-Barsky算法
-Liang-Barsky算法的基本思路：  
+<!-- Liang-Barsky算法的基本思路：  
 ![Liang-Barsky](./Liang-Barsky.png "Liang-Barsky")  
 如图所示，设要裁剪的线段是 \\(P_0P_1\\) ，点\\(P_0和P_1\\) 已确定。  
 设直线 \\(P_0P_1\\) 的延长线和窗口边界的延长线交于 `L、R、B、T` 四点。此时需要确定直线的裁剪点。  
@@ -156,4 +156,4 @@ $$
 
 - 若\\(Δy \geq 0\\)，\\(y_B\\)为始边，\\(y_Y\\)为终边。  
 - 若\\(Δy < 0\\)，\\(y_T\\)为始边，\\(y_B\\)为终边。  
-
+ -->

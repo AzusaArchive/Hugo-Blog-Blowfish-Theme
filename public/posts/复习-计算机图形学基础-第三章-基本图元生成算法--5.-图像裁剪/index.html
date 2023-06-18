@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1556"
+    "wordCount": "1012"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-17 20:20:26 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>1556 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+  <time datetime="2023-06-17 20:20:26 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>1012 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -1220,51 +1220,34 @@
             style="text-decoration-line: none !important;" href="#liang-barsky%e7%ae%97%e6%b3%95" aria-label="锚点">#</a></span>        
     
 </h3>
-<p>Liang-Barsky算法的基本思路：<br>
+<!-- Liang-Barsky算法的基本思路：  
+![Liang-Barsky](./Liang-Barsky.png "Liang-Barsky")  
+如图所示，设要裁剪的线段是 \\(P_0P_1\\) ，点\\(P_0和P_1\\) 已确定。  
+设直线 \\(P_0P_1\\) 的延长线和窗口边界的延长线交于 `L、R、B、T` 四点。此时需要确定直线的裁剪点。  
+观察上图可以发现，通过**求 [B,L,\\(P_0\\)] 中最靠近\\(P_1\\)点的**，可以确定直线的一个裁剪点。而相对的，**求 [T,R,\\(P_1\\)] 中最靠近\\(P_0\\)点的**，可以确定直线的另一个裁剪点。  
 
+比如图中的直线，[B,L,\\(P_0\\)] 中最靠近\\(P_1\\)点的为\\(P_0\\)点，[T,R,\\(P_1\\)]点中最靠近\\(P_0\\)点的为T点。因此，可知要对该直线裁剪，只需要取\\(P_0\\)点和T点即可。
 
+现在的问题是，如何确定 `L,R,B,T` 四个点？
 
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="./Liang-Barsky.png" alt="Liang-Barsky" />
-      <figcaption>Liang-Barsky</figcaption>
-    </figure>
-  
-
-<br>
-如图所示，设要裁剪的线段是 \(P_0P_1\) ，点\(P_0和P_1\) 已确定。<br>
-设直线 \(P_0P_1\) 的延长线和窗口边界的延长线交于 <code>L、R、B、T</code> 四点。此时需要确定直线的裁剪点。<br>
-观察上图可以发现，通过<strong>求 [B,L,\(P_0\)] 中最靠近\(P_1\)点的</strong>，可以确定直线的一个裁剪点。而相对的，<strong>求 [T,R,\(P_1\)] 中最靠近\(P_0\)点的</strong>，可以确定直线的另一个裁剪点。</p>
-<p>比如图中的直线，[B,L,\(P_0\)] 中最靠近\(P_1\)点的为\(P_0\)点，[T,R,\(P_1\)]点中最靠近\(P_0\)点的为T点。因此，可知要对该直线裁剪，只需要取\(P_0\)点和T点即可。</p>
-<p>现在的问题是，如何确定 <code>L,R,B,T</code> 四个点？</p>
-<p>Liang-Barsky算法使用参数方程来表示一条直线：
+Liang-Barsky算法使用参数方程来表示一条直线：
 $$
 \begin{split}
-x &amp;= x_0 + Δx \centerdot t \\
-y &amp;= y_0 + Δy \centerdot t\ \ \ (0 \leq t \leq 1) \\
-Δx &amp;= x_1 - x_0 \ \ Δy = y_1 - y_0
+x &= x_0 + Δx \centerdot t \\\
+y &= y_0 + Δy \centerdot t\ \ \ (0 \leq t \leq 1) \\\
+Δx &= x_1 - x_0 \ \ Δy = y_1 - y_0
 \end{split}
-$$</p>
-<p>将窗口边界的四条边分为两类：始边和终边<br>
-设\(x_L,x_R,y_T,y_B\)分别为窗口的左，右，上，下边界</p>
-<ul>
-<li>
-<p>若\(Δx \geq 0\)，\(x_L\)为始边，\(x_R\)为终边。</p>
-</li>
-<li>
-<p>若\(Δx &lt; 0\)，\(x_R\)为始边，\(x_L\)为终边。</p>
-</li>
-<li>
-<p>若\(Δy \geq 0\)，\(y_B\)为始边，\(y_Y\)为终边。</p>
-</li>
-<li>
-<p>若\(Δy &lt; 0\)，\(y_T\)为始边，\(y_B\)为终边。</p>
-</li>
-</ul>
+$$
+
+将窗口边界的四条边分为两类：始边和终边  
+设\\(x_L,x_R,y_T,y_B\\)分别为窗口的左，右，上，下边界  
+
+- 若\\(Δx \geq 0\\)，\\(x_L\\)为始边，\\(x_R\\)为终边。  
+- 若\\(Δx < 0\\)，\\(x_R\\)为始边，\\(x_L\\)为终边。  
+
+- 若\\(Δy \geq 0\\)，\\(y_B\\)为始边，\\(y_Y\\)为终边。  
+- 若\\(Δy < 0\\)，\\(y_T\\)为始边，\\(y_B\\)为终边。  
+ -->
 
         </br></br>
         
