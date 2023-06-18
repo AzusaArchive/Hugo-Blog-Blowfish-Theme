@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2458"
+    "wordCount": "3278"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-17 22:14:39 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>2458 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+  <time datetime="2023-06-17 22:14:39 &#43;0800 CST">2023年6月17日</time><span class="px-2 text-primary-500">&middot;</span><span>3278 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
   
 
   
@@ -928,7 +928,12 @@
         </li>
       </ul>
     </li>
-    <li><a href="#复合变换">复合变换</a></li>
+    <li><a href="#二维复合变换">二维复合变换</a>
+      <ul>
+        <li><a href="#绕平面任意点pmn的二维旋转变换">绕平面任意点P(m,n)的二维旋转变换</a></li>
+        <li><a href="#对任意直线的对称变换">对任意直线的对称变换</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -995,7 +1000,12 @@
         </li>
       </ul>
     </li>
-    <li><a href="#复合变换">复合变换</a></li>
+    <li><a href="#二维复合变换">二维复合变换</a>
+      <ul>
+        <li><a href="#绕平面任意点pmn的二维旋转变换">绕平面任意点P(m,n)的二维旋转变换</a></li>
+        <li><a href="#对任意直线的对称变换">对任意直线的对称变换</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1994,15 +2004,174 @@ z \\
 $$</p>
 <p>关于yOz轴和xOz轴的变换变换可类似推导</p>
 <hr>
-<div id="复合变换" class="anchor"></div>
-<h2 class="relative group">复合变换 
+<div id="二维复合变换" class="anchor"></div>
+<h2 class="relative group">二维复合变换 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%a4%8d%e5%90%88%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e4%ba%8c%e7%bb%b4%e5%a4%8d%e5%90%88%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
     
 </h2>
-<p>TODO&hellip;</p>
+<div id="绕平面任意点pmn的二维旋转变换" class="anchor"></div>
+<h3 class="relative group">绕平面任意点P(m,n)的二维旋转变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bb%95%e5%b9%b3%e9%9d%a2%e4%bb%bb%e6%84%8f%e7%82%b9pmn%e7%9a%84%e4%ba%8c%e7%bb%b4%e6%97%8b%e8%bd%ac%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<ol>
+<li>
+<p>将图形从点p(m,n)平移到原点O
+$$
+T_1 =
+\begin{bmatrix}
+1 &amp; 0 &amp; -m \\
+0 &amp; 1 &amp; -n \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p>绕原点旋转
+$$
+T_2 =
+\begin{bmatrix}
+cosθ &amp; -sinθ &amp; 0 \\
+sinθ &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p>从原点平移回点P
+$$
+T_3 =
+\begin{bmatrix}
+1 &amp; 0 &amp; m \\
+0 &amp; 1 &amp; n \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+</li>
+</ol>
+<p>总变换矩阵为：
+$$
+T = T_3 \times T_2 \times T_1 =
+\begin{bmatrix}
+1 &amp; 0 &amp; m \\
+0 &amp; 1 &amp; n \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+cosθ &amp; -sinθ &amp; 0 \\
+sinθ &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; -m \\
+0 &amp; 1 &amp; -n \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+<div id="对任意直线的对称变换" class="anchor"></div>
+<h3 class="relative group">对任意直线的对称变换 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%af%b9%e4%bb%bb%e6%84%8f%e7%9b%b4%e7%ba%bf%e7%9a%84%e5%af%b9%e7%a7%b0%e5%8f%98%e6%8d%a2" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>设直线方程为 y = kx + b</p>
+<ol>
+<li>
+<p>将直线沿着X轴平移b个单位
+$$
+T_1 =
+\begin{bmatrix}
+1 &amp; 0 &amp; b \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$
+此时，直线应当过原点</p>
+</li>
+<li>
+<p>检查当前直线是否与 <code>[X轴，Y轴，直线y=x，直线y=-x]</code> 中的任何直线（或轴）重合，如果有，则使用其对称变换公式进行变换即可。<br>
+如果没有，选择其中列表中的任意的一条直线，计算出其与当前直线的相对角度<code>θ</code>，然后对当前直线进行旋转变换，旋转 <code>-θ</code> 度：
+$$
+T_2 =
+\begin{bmatrix}
+cos(-θ) &amp; -sin(-θ) &amp; 0 \\
+sin(-θ) &amp; cos(-θ) &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$
+此时，直线应当与选择的那一条直线重合。</p>
+</li>
+<li>
+<p>如果上一步进行了旋转，则对于选择的那一条直线，使用其对应的对称变换公式进行变换，这里设直线与X轴重合，对其做对称变换：
+$$
+T_3 =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p>如果第2步进行了旋转，则要将直线旋转回来，对其进行旋转变换，旋转 <code>θ</code> 度：
+$$
+T_4 =
+\begin{bmatrix}
+cosθ &amp; -sinθ &amp; 0 \\
+sinθ &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p>最后，将直线平移回起始的位置：
+$$
+T_5 =
+\begin{bmatrix}
+1 &amp; 0 &amp; -b \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+</li>
+</ol>
+<p>总变换矩阵为：
+$$
+T = T_5 \times T_4 \times T_3 \times T_2 \times T_1  \\
+=\begin{bmatrix}
+1 &amp; 0 &amp; -b \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+cosθ &amp; -sinθ &amp; 0 \\
+sinθ &amp; cosθ &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+cos(-θ) &amp; -sin(-θ) &amp; 0 \\
+sin(-θ) &amp; cos(-θ) &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; b \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
 
         </br></br>
         

@@ -611,5 +611,140 @@ $$
 
 ---
 
-## 复合变换
-TODO...
+## 二维复合变换
+
+### 绕平面任意点P(m,n)的二维旋转变换
+1. 将图形从点p(m,n)平移到原点O
+    $$
+    T_1 =
+    \begin{bmatrix}
+    1 & 0 & -m \\\
+    0 & 1 & -n \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+2. 绕原点旋转
+    $$
+    T_2 =
+    \begin{bmatrix}
+    cosθ & -sinθ & 0 \\\
+    sinθ & cosθ & 0 \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+3. 从原点平移回点P
+    $$
+    T_3 =
+    \begin{bmatrix}
+    1 & 0 & m \\\
+    0 & 1 & n \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+总变换矩阵为：
+$$
+T = T_3 \times T_2 \times T_1 = 
+\begin{bmatrix}
+1 & 0 & m \\\
+0 & 1 & n \\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+cosθ & -sinθ & 0 \\\
+sinθ & cosθ & 0 \\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & -m \\\
+0 & 1 & -n \\\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
+### 对任意直线的对称变换
+设直线方程为 y = kx + b
+1. 将直线沿着X轴平移b个单位
+    $$
+    T_1 =
+    \begin{bmatrix}
+    1 & 0 & b \\\
+    0 & 1 & 0 \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+    此时，直线应当过原点
+
+2. 检查当前直线是否与 `[X轴，Y轴，直线y=x，直线y=-x]` 中的任何直线（或轴）重合，如果有，则使用其对称变换公式进行变换即可。  
+    如果没有，选择其中列表中的任意的一条直线，计算出其与当前直线的相对角度`θ`，然后对当前直线进行旋转变换，旋转 `-θ` 度：
+    $$
+    T_2 =
+    \begin{bmatrix}
+    cos(-θ) & -sin(-θ) & 0 \\\
+    sin(-θ) & cos(-θ) & 0 \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+    此时，直线应当与选择的那一条直线重合。
+
+3. 如果上一步进行了旋转，则对于选择的那一条直线，使用其对应的对称变换公式进行变换，这里设直线与X轴重合，对其做对称变换：
+    $$
+    T_3 =
+    \begin{bmatrix}
+    1 & 0 & 0 \\\
+    0 & -1 & 0 \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+4. 如果第2步进行了旋转，则要将直线旋转回来，对其进行旋转变换，旋转 `θ` 度：
+    $$
+    T_4 =
+    \begin{bmatrix}
+    cosθ & -sinθ & 0 \\\
+    sinθ & cosθ & 0 \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+5. 最后，将直线平移回起始的位置：
+    $$
+    T_5 =
+    \begin{bmatrix}
+    1 & 0 & -b \\\
+    0 & 1 & 0 \\\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+总变换矩阵为：
+$$
+T = T_5 \times T_4 \times T_3 \times T_2 \times T_1  \\\
+=\begin{bmatrix}
+1 & 0 & -b \\\
+0 & 1 & 0 \\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+cosθ & -sinθ & 0 \\\
+sinθ & cosθ & 0 \\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 \\\
+0 & -1 & 0 \\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+cos(-θ) & -sin(-θ) & 0 \\\
+sin(-θ) & cos(-θ) & 0 \\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & b \\\
+0 & 1 & 0 \\\
+0 & 0 & 1
+\end{bmatrix}
+$$
