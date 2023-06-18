@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3528"
+    "wordCount": "3772"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-15 16:25:26 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>3528 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
+  <time datetime="2023-06-15 16:25:26 &#43;0800 CST">2023年6月15日</time><span class="px-2 text-primary-500">&middot;</span><span>3772 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
   
 
   
@@ -878,6 +878,7 @@
     <li><a href="#数值微分法dda">数值微分法(DDA)</a></li>
     <li><a href="#bresenham算法">Bresenham算法</a></li>
     <li><a href="#中点画线算法">中点画线算法</a></li>
+    <li><a href="#公式总结">公式总结</a></li>
   </ul>
 </nav>
   </div>
@@ -894,6 +895,7 @@
     <li><a href="#数值微分法dda">数值微分法(DDA)</a></li>
     <li><a href="#bresenham算法">Bresenham算法</a></li>
     <li><a href="#中点画线算法">中点画线算法</a></li>
+    <li><a href="#公式总结">公式总结</a></li>
   </ul>
 </nav>
   </div>
@@ -1110,7 +1112,7 @@ $$</p>
     
 </h2>
 <p>在将直线光栅化时，假设直线的斜率 \(k \geq 0\)，起点为 \(P_0 (x_0,y_0)\)，终点为 \(P_n (x_n,y_n)\)。<br>
-从起点\(P_0\)开始，每次在水平方向上朝着终点\(P_n\)移动一个像素，由于受到斜率 k 的影响，直线每个像素的下一个要绘制的像素点要么是右边的点S，要么是右上的点T：</p>
+从起点\(P_0\)开始，每次在水平方向上朝着终点\(P_n\)移动一个像素，由于受到斜率 k 的影响，<strong>直线每个像素的下一个要绘制的像素点要么是右边的点S，要么是右上的点T</strong>：</p>
 <p>
 
 
@@ -1139,9 +1141,9 @@ s &amp;= y-y_i=k(x_i+1)+b-y_i \\
 t &amp;= y_i+1-y=Y_i+1-k(x_i+1)-b
 \end{cases}
 $$</p>
-<p>如果 \(t \leq s\)，则代表直线靠上方的点近一点，则下一个绘制的像素点应当选择右上方的，<br>
-如果 \(t &gt; s\)，则代表直线靠下方的点近一点，则下一个绘制的像素点应当选择右方的。<br>
-注意这只适用于直线的斜率\(k \geq 0\)的情况</p>
+<p><strong>如果 \(t \leq s\)，则代表直线靠上方的点近一点，则下一个绘制的像素点应当选择右上方的，<br>
+如果 \(t &gt; s\)，则代表直线靠下方的点近一点，则下一个绘制的像素点应当选择右方的。</strong><br>
+注意，这只适用于直线的斜率 \(k \geq 0\) 的情况</p>
 <p>然后代入 \(k = \frac{dy}{dx}\)，有</p>
 <p>$$
 \begin{split}
@@ -1149,7 +1151,7 @@ dx(s-t)&amp;=2dy(x_i+1)+2bdx-2y_idx-dx \\
 &amp;=2(x_idy-y_idx)+(2dy+2bdx-dx)
 \end{split}
 $$</p>
-<p>因为 dx &gt; 0，所以可以以 dx(s-t) 的正负作为选择S或T的依据，所以设 \(d_i=dx(s-t)\)<br>
+<p>因为 dx &gt; 0，所以可以<strong>以 dx(s-t) 的正负作为选择S或T的依据</strong>，所以设 \(d_i=dx(s-t)\)<br>
 将下标加一，有</p>
 <p>$$
 \begin{split}
@@ -1161,14 +1163,14 @@ $$</p>
 $$
 d_{i+1}=d_i+2dy-2dx(y_{i+1}-y_i)
 $$
-这样就获得了一个递推公式，下一个\(d_{i+1}\)可以由前一个\(d_i\)递推得到<br>
-通过计算当前点的$d_i$，可以判断向终点\(P_n\)移动时，下一个绘制的像素点应当选择右上方还是右方的。</p>
-<p>如果 \(d_i \geq 0\) ，即 \(t \leq s\)，下一个点选择右上方的，选择右上方的点满足了 \(y_{i+1}-y_i=1\)，所以将 \(d_i\) 改为
+这样就获得了一个递推公式，<strong>下一个\(d_{i+1}\)可以由前一个\(d_i\)递推得到</strong><br>
+**通过计算当前点的\(d_i\)，可以判断向终点\(P_n\)移动时，下一个绘制的像素点应当选择右上方还是右方的。 **</p>
+<p><strong>如果 \(d_i \geq 0\) ，即 \(t \leq s\)，下一个点选择右上方的</strong>，选择右上方的点满足了 \(y_{i+1}-y_i=1\)，所以将 \(d_i\) 改为
 $$
 Δ重点\ \
 d_{i+1}=d_i+2(dy-dx)
 $$</p>
-<p>如果 \(d_i&lt;0\) ，即 \(s&lt;t\) 下一个点应当选择右方的，此时满足了 \(y_{i+1}=y_i\)，则有
+<p><strong>如果 \(d_i&lt;0\) ，即 \(s&lt;t\) 下一个点应当选择右方的</strong>，此时满足了 \(y_{i+1}=y_i\)，则有
 $$
 Δ重点\ \
 d_{i+1}=d_i+2dy
@@ -1206,8 +1208,11 @@ $$
 </li>
 <li>
 <p>设当前直线斜率 \(|k| \leq 1\)，并且 dx,dy 均大于0。<br>
-开始绘制直线，从原点开始 求判别式 \(d_i\) 的值，初值 \(d_1\) 为 \(2dy-dx\)，<br>
-每次朝步进方向轴移动，此时是X轴，则x值+1<br>
+开始绘制直线，从原点开始 求判别式 \(d_i\) 的值</p>
+<ul>
+<li>初值 \(d_0\) 为 \(2dy-dx\)</li>
+</ul>
+<p>每次朝步进方向轴移动，此时是X轴，则x值+1<br>
 根据 \(d_i\) 的值判断另一个轴（此时是Y轴）的状态：</p>
 <ul>
 <li>如果 \(d_i \geq 0\) ，则y的值+1</li>
@@ -1369,7 +1374,7 @@ $$
 d_{i+1}&amp;=F(x_p+2, y_p+0.5) \\
 &amp;=a(x_p+2)+b(y_p+0.5)+c \\
 &amp;=a(x_p+1)+b(y_p+0.5)+c+a \\
-&amp;= d+a
+&amp;= d_i+a
 \end{split}
 $$</p>
 <p>而当 \(d_i &lt; 0\) 时，即M点在Q点下方，则应当取P2点，计算\(d_{i+1}\) 的值：
@@ -1379,7 +1384,7 @@ $$
 d_{i+1}&amp;=F(x_p+2, y_p+1.5) \\
 &amp;=a(x_p+2)+ b(y_p+1.5)+c \\
 &amp;=a(x_p+1)+b(y_p+0.5)+c+a+b \\
-&amp;=d+a+b
+&amp;=d_i+a+b
 \end{split}
 $$</p>
 <p>画线从(x0, y0)开始，所以 \(d_i\) 的初值应该是：
@@ -1506,7 +1511,45 @@ a = 4, b = -5<br>
 </span></span><span class="line"><span class="cl">	        <span class="n">setpixel</span><span class="p">(</span><span class="n">curx</span><span class="p">,</span> <span class="n">cury</span><span class="p">);</span> 
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><div id="公式总结" class="anchor"></div>
+<h2 class="relative group">公式总结 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%ac%e5%bc%8f%e6%80%bb%e7%bb%93" aria-label="锚点">#</a></span>        
+    
+</h2>
+<ul>
+<li>
+<p>DDA算法：根据斜率k画线</p>
+<ul>
+<li>当 \(|k| \leq 1\) 时，X每次步进1，Y每次步进 k</li>
+<li>当 \(|k| &lt; 1\) 时，Y每次步进1，X每次步进 \(\frac 1 k\)</li>
+</ul>
+</li>
+<li>
+<p>Bresenham算法：根据斜率确定步进坐标轴，每次步进根据判别式 \(d_i\) 来判断另一个轴是步进还是不变</p>
+<ul>
+<li>\(d_0 = 2dy - dx\)</li>
+<li>如果 \(d_i \geq 0\) ，另一轴步进， \(d_{i+1} = d_i + 2(dy-dx)\)</li>
+<li>如果 \(d_i &lt; 0\) ，另一轴不变， \(d_{i+1} = d_i + 2dy\)</li>
+</ul>
+</li>
+<li>
+<p>中点画线算法：类似Bresenham算法</p>
+<ul>
+<li>\(d_0 = a + 0.5b\)</li>
+<li>如果 \(d_i \geq 0\) ，另一轴不变， \(d_{i+1} = d_i + a\)</li>
+<li>如果 \(d_i &lt; 0\) ，另一轴步进， \(d_{i+1} = d_i + a + b\)</li>
+</ul>
+<p>当直线斜率 -1 &lt; k &lt; 0 时</p>
+<ul>
+<li>如果 \(d_i \geq 0\) ，另一轴不变， \(d_{i+1} = d_i - a\)</li>
+<li>如果 \(d_i &lt; 0\) ，另一轴步进， \(d_{i+1} = d_i - a + b\)</li>
+</ul>
+</li>
+</ul>
+
         </br></br>
         
 <details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">

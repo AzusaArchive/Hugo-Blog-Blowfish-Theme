@@ -102,7 +102,7 @@
     "keywords": ["计算机图形学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1121"
+    "wordCount": "1352"
   }]
   </script>
 
@@ -804,7 +804,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-16 18:12:19 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>1121 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-06-16 18:12:19 &#43;0800 CST">2023年6月16日</time><span class="px-2 text-primary-500">&middot;</span><span>1352 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -877,6 +877,7 @@
   <ul>
     <li><a href="#bresenham画圆算法">Bresenham画圆算法</a></li>
     <li><a href="#中点画圆算法">中点画圆算法</a></li>
+    <li><a href="#公式总结">公式总结</a></li>
   </ul>
 </nav>
   </div>
@@ -892,6 +893,7 @@
   <ul>
     <li><a href="#bresenham画圆算法">Bresenham画圆算法</a></li>
     <li><a href="#中点画圆算法">中点画圆算法</a></li>
+    <li><a href="#公式总结">公式总结</a></li>
   </ul>
 </nav>
   </div>
@@ -1170,11 +1172,15 @@ $$</p>
 d的初值为：
 $$
 \begin{split}
-Δ重点\ \
 d_0&amp;=F(0+1,r-0.5) \\
 &amp;=1+(r-0.5)^2-r^2 \\
 &amp;=1.25-r
 \end{split}
+$$
+由于h的初值为1-R整数，变化量也是整数，所以，h&lt;-0.25等价于h&lt;0， hi&gt;=-0.25等价于h&gt;=0，公式可以改为：
+$$
+Δ重点\ \
+d_0 = 1 - r
 $$</p>
 <p>如果 \(d_i&lt;0\)，则选择T为下一个绘制的像素（X轴+1，Y轴不变），并递推出 \(d_{i+1}\):
 $$
@@ -1240,6 +1246,30 @@ $$</p>
 </tbody>
 </table>
 </blockquote>
+<div id="公式总结" class="anchor"></div>
+<h2 class="relative group">公式总结 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%85%ac%e5%bc%8f%e6%80%bb%e7%bb%93" aria-label="锚点">#</a></span>        
+    
+</h2>
+<ul>
+<li>Bresenham画圆算法
+<ul>
+<li>\(d_0 = 3 - 2R\)</li>
+<li>若\(d_i \geq 0\)，另一轴步进， \(d_{i+1} = d_i + 4(x_i - y_i) + 10\)</li>
+<li>若\(d_i &lt; 0\)，另一轴不变，\(d_{i+1} = d_i + 4x_i + 6\)</li>
+</ul>
+</li>
+<li>中点画圆算法
+<ul>
+<li>\(d_0 = 1 - R\)</li>
+<li>若\(d_i \geq 0\)，另一轴步进， \(d_{i+1} = d_i + (2x_i - 2y_i + 5)\)</li>
+<li>若\(d_i &lt; 0\)，另一轴不变，\(d_{i+1} = d_i + 2x_i + 3\)</li>
+</ul>
+</li>
+</ul>
 
         </br></br>
         

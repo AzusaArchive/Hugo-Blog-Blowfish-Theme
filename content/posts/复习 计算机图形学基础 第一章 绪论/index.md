@@ -37,9 +37,9 @@ glutMainLoop(void) //开始OpenGL绘制循环
 
 #### 输入事件处理
 ```cpp
-glutReshapeFunc(void(*func)int w,int h) //注册当前窗口大小变化时的回调函数
+glutReshapeFunc(void(*func)(int w,int h)) //注册当前窗口大小变化时的回调函数
 glutKeyboardFunc(void(*func)(unsigned char key,int x,int y)) //注册当前窗口的键盘回调函数
-glutMouseFunc(void (*func) (int button, int state, int x, int y)); 
+glutMouseFunc(void (*func)(int button, int state, int x, int y)); 
 ```
 `glutMouseFunc`为注册当前窗口的鼠标回调函数，func为注册的鼠标回调函数,这个函数完成鼠标事件的处理，`button`为鼠标的按键,为以下定义的常量：  
 | | |
@@ -79,9 +79,9 @@ glutSwapBuffers()
 ```
 
 **绘制**  
-使用`glBegin(unsigned int mode)`函数指定图元并开始绘制  
-使用`glVertex..函数绘制顶点`，满足了顶点的数量则会自动根据顶点生成图元对应的图形  
-使用`glEnd()`函数结束绘制
+- 使用`glBegin(unsigned int mode)`函数指定图元并开始绘制  
+- 使用`glVertex..函数绘制顶点`，满足了顶点的数量则会自动根据顶点生成图元对应的图形  
+- 使用`glEnd()`函数结束绘制
 
 OpenGL几何图元
 |模式|图元类型|
