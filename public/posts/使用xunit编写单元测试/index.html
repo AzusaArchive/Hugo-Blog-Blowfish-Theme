@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>为SignalR的连接配置用户认证 &middot; AzusaArchive</title>
-  <meta name="title" content="为SignalR的连接配置用户认证 &middot; AzusaArchive" />
+  <title>使用xUnit编写单元测试 &middot; AzusaArchive</title>
+  <meta name="title" content="使用xUnit编写单元测试 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  <meta name="keywords" content="C#, ASP .NET Core, SignalR, Javascript, Websocket, " />
+  <meta name="keywords" content="单元测试, C#, " />
   
   
-  <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" />
+  <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" />
   
   
   
@@ -63,17 +63,17 @@
   
   
   
-  <meta property="og:title" content="为SignalR的连接配置用户认证" />
+  <meta property="og:title" content="使用xUnit编写单元测试" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/featured.jpeg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-11T02:47:26+08:00" />
-<meta property="article:modified_time" content="2023-03-11T02:47:26+08:00" /><meta property="og:site_name" content="AzusaArchive" />
+<meta property="og:url" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" /><meta property="og:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/featured.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-12T11:28:47+08:00" />
+<meta property="article:modified_time" content="2023-07-12T11:28:47+08:00" /><meta property="og:site_name" content="AzusaArchive" />
 
 
   <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/featured.jpeg"/>
-<meta name="twitter:title" content="为SignalR的连接配置用户认证"/>
+<meta name="twitter:image" content="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/featured.jpg"/>
+<meta name="twitter:title" content="使用xUnit编写单元测试"/>
 <meta name="twitter:description" content=""/>
 
   
@@ -82,26 +82,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "为SignalR的连接配置用户认证",
-    "headline": "为SignalR的连接配置用户认证",
+    "name": "使用xUnit编写单元测试",
+    "headline": "使用xUnit编写单元测试",
     
     
     "inLanguage": "zh-Hans",
-    "url" : "https:\/\/azusaarchive.github.io\/Hugo-Blog-Blowfish-Theme\/posts\/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81\/",
+    "url" : "https:\/\/azusaarchive.github.io\/Hugo-Blog-Blowfish-Theme\/posts\/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95\/",
     "author" : {
       "@type": "Person",
       "name": "梓"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-03-11T02:47:26\u002b08:00",
-    "datePublished": "2023-03-11T02:47:26\u002b08:00",
+    "dateCreated": "2023-07-12T11:28:47\u002b08:00",
+    "datePublished": "2023-07-12T11:28:47\u002b08:00",
     
-    "dateModified": "2023-03-11T02:47:26\u002b08:00",
+    "dateModified": "2023-07-12T11:28:47\u002b08:00",
     
-    "keywords": ["C#","ASP .NET Core","SignalR","Javascript","Websocket"],
+    "keywords": ["单元测试","C#"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1450"
+    "wordCount": "2543"
   }]
   </script>
 
@@ -601,7 +601,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/featured.jpeg);">
+    style="background-image:url(/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/featured.jpg);">
     
 
 
@@ -627,7 +627,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      为SignalR的连接配置用户认证
+      使用xUnit编写单元测试
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -670,7 +670,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-03-11 02:47:26 &#43;0800 CST">2023年3月11日</time><span class="px-2 text-primary-500">&middot;</span><span>1450 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2023-07-12 11:28:47 &#43;0800 CST">2023年7月12日</time><span class="px-2 text-primary-500">&middot;</span><span>2543 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
   
 
   
@@ -707,56 +707,23 @@
   
   
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/&#34;,'_self');">
+    <span class="flex">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+  >
+    单元测试
+  </span>
+</span>
+
+  </span>
+  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/c#/&#34;,'_self');">
     <span class="flex">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
   >
     C#
-  </span>
-</span>
-
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/asp-.net-core/&#34;,'_self');">
-    <span class="flex">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-  >
-    ASP .NET Core
-  </span>
-</span>
-
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/signalr/&#34;,'_self');">
-    <span class="flex">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-  >
-    SignalR
-  </span>
-</span>
-
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/javascript/&#34;,'_self');">
-    <span class="flex">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-  >
-    Javascript
-  </span>
-</span>
-
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/websocket/&#34;,'_self');">
-    <span class="flex">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-  >
-    Websocket
   </span>
 </span>
 
@@ -785,23 +752,24 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#后端用户授权服务">后端用户授权服务</a>
+    <li><a href="#先决条件">先决条件</a></li>
+    <li><a href="#编写单元测试类">编写单元测试类</a>
       <ul>
-        <li><a href="#在-aspnet-core-中添加授权机制">在 ASP.NET Core 中添加授权机制：</a></li>
-        <li><a href="#在signalr集线器类上添加authorize特性">在SignalR集线器类上添加Authorize特性</a></li>
+        <li><a href="#编写测试函数">编写测试函数</a></li>
+        <li><a href="#忽略测试">忽略测试</a></li>
+        <li><a href="#添加参数">添加参数</a>
+          <ul>
+            <li><a href="#内联参数">内联参数</a></li>
+            <li><a href="#成员参数">成员参数</a></li>
+            <li><a href="#类参数">类参数</a></li>
+            <li><a href="#结果输出">结果输出</a></li>
+            <li><a href="#共享上下文的单元测试">共享上下文的单元测试</a></li>
+            <li><a href="#共享上下文的单元测试类">共享上下文的单元测试类</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#在客户端配置signalr连接的访问令牌">在客户端配置SignalR连接的访问令牌</a>
-      <ul>
-        <li><a href="#c客户端">C#客户端</a></li>
-        <li><a href="#javascript客户端">Javascript客户端</a></li>
-      </ul>
-    </li>
-    <li><a href="#踩坑注意">踩坑注意</a>
-      <ul>
-        <li><a href="#解决方法">解决方法：</a></li>
-      </ul>
-    </li>
+    <li><a href="#heading"></a></li>
   </ul>
 </nav>
   </div>
@@ -815,23 +783,24 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#后端用户授权服务">后端用户授权服务</a>
+    <li><a href="#先决条件">先决条件</a></li>
+    <li><a href="#编写单元测试类">编写单元测试类</a>
       <ul>
-        <li><a href="#在-aspnet-core-中添加授权机制">在 ASP.NET Core 中添加授权机制：</a></li>
-        <li><a href="#在signalr集线器类上添加authorize特性">在SignalR集线器类上添加Authorize特性</a></li>
+        <li><a href="#编写测试函数">编写测试函数</a></li>
+        <li><a href="#忽略测试">忽略测试</a></li>
+        <li><a href="#添加参数">添加参数</a>
+          <ul>
+            <li><a href="#内联参数">内联参数</a></li>
+            <li><a href="#成员参数">成员参数</a></li>
+            <li><a href="#类参数">类参数</a></li>
+            <li><a href="#结果输出">结果输出</a></li>
+            <li><a href="#共享上下文的单元测试">共享上下文的单元测试</a></li>
+            <li><a href="#共享上下文的单元测试类">共享上下文的单元测试类</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#在客户端配置signalr连接的访问令牌">在客户端配置SignalR连接的访问令牌</a>
-      <ul>
-        <li><a href="#c客户端">C#客户端</a></li>
-        <li><a href="#javascript客户端">Javascript客户端</a></li>
-      </ul>
-    </li>
-    <li><a href="#踩坑注意">踩坑注意</a>
-      <ul>
-        <li><a href="#解决方法">解决方法：</a></li>
-      </ul>
-    </li>
+    <li><a href="#heading"></a></li>
   </ul>
 </nav>
   </div>
@@ -884,234 +853,366 @@
       <div class="min-w-0 min-h-0 max-w-prose">
         
 
-        <p>在使用SignalR向.NET后端进行实时通信时，时常会使用 AccessToken 进行用户授权。提供用户认证可以提高后端接口的安全性，并且可以利用SignalR的用户认证机制来向指定用户的所有SignalR连接发送消息。</p>
-<div id="后端用户授权服务" class="anchor"></div>
-<h2 class="relative group">后端用户授权服务 
+        <div id="先决条件" class="anchor"></div>
+<h2 class="relative group">先决条件 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%90%8e%e7%ab%af%e7%94%a8%e6%88%b7%e6%8e%88%e6%9d%83%e6%9c%8d%e5%8a%a1" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e5%85%88%e5%86%b3%e6%9d%a1%e4%bb%b6" aria-label="锚点">#</a></span>        
     
 </h2>
+<blockquote>
+<p>安装Nuget包</p>
 <ul>
-<li>
-<div id="在-aspnet-core-中添加授权机制" class="anchor"></div>
-<h3 class="relative group">在 ASP.NET Core 中添加授权机制： 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%9c%a8-aspnet-core-%e4%b8%ad%e6%b7%bb%e5%8a%a0%e6%8e%88%e6%9d%83%e6%9c%ba%e5%88%b6" aria-label="锚点">#</a></span>        
-    
-</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">Program</span><span class="p">.</span><span class="n">cs</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//此处使用JWTBearer进行授权验证</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">secretKey</span> <span class="p">=</span> <span class="n">configurations</span><span class="p">.</span><span class="n">GetRequiredSection</span><span class="p">(</span><span class="s">&#34;Jwt&#34;</span><span class="p">).</span><span class="n">Get</span><span class="p">&lt;</span><span class="n">JwtOption</span><span class="p">&gt;().</span><span class="n">SecretKey</span><span class="p">??</span><span class="k">throw</span> <span class="k">new</span> <span class="n">ConfigurationErrorsException</span><span class="p">(</span><span class="s">&#34;Jwt密钥未配置&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuer</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateAudience</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateLifetime</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuerSigningKey</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">IssuerSigningKey</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SymmetricSecurityKey</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">secretKey</span><span class="p">)),</span>
-</span></span><span class="line"><span class="cl">        <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//添加认证机制需要引用Authentication与Authorization两个中间件</span>
-</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">UseAuthentication</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="p">.</span><span class="n">UseAuthorization</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div></li>
-<li>
-<div id="在signalr集线器类上添加authorize特性" class="anchor"></div>
-<h3 class="relative group">在SignalR集线器类上添加Authorize特性 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%9c%a8signalr%e9%9b%86%e7%ba%bf%e5%99%a8%e7%b1%bb%e4%b8%8a%e6%b7%bb%e5%8a%a0authorize%e7%89%b9%e6%80%a7" aria-label="锚点">#</a></span>        
-    
-</h3>
-<p>详细的授权信息与不同的授权规则参考<a href="https://learn.microsoft.com/zh-cn/aspnet/core/security/authorization/introduction?view=aspnetcore-6.0"   target="_blank">
-    ASP.NET Core授权</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="c1">//添加授权</span>
-</span></span><span class="line"><span class="cl"><span class="na">[Authorize]</span>
-</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">ChatHub</span> <span class="p">:</span> <span class="n">Hub</span>
+<li>Microsoft.Net.Test.Sdk</li>
+<li>xunit</li>
+<li>xunit.runner.visualstudio</li>
+</ul>
+</blockquote>
+<p>假设现在有一个Calculator类需要测试：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Calculator</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">OnConnectedAsync</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">await</span> <span class="k">base</span><span class="p">.</span><span class="n">OnConnectedAsync</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">double</span> <span class="n">Curr</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">//在Hub类的Context.User属性中可以获取到SignalR通过websocket握手获取到的用户授权信息</span>
-</span></span><span class="line"><span class="cl">        <span class="k">await</span> <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">.</span><span class="n">WriteLineAsync</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Identity</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="kt">double</span> <span class="n">Add</span><span class="p">(</span><span class="kt">double</span> <span class="k">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Curr</span> <span class="p">+=</span> <span class="k">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Curr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
+<div id="编写单元测试类" class="anchor"></div>
+<h2 class="relative group">编写单元测试类 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bc%96%e5%86%99%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e7%b1%bb" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>编写一个类进行单元测试，名为<code>CalculatorTests</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorTests</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Calculator</span> <span class="n">_sut</span><span class="p">;</span> <span class="c1">//_sut意思为system under test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">CalculatorTests</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Calculator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div id="编写测试函数" class="anchor"></div>
+<h3 class="relative group">编写测试函数 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e5%87%bd%e6%95%b0" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>编写函数进行测试，测试函数的命名应当明确地表达了测试的意图。<br>
+比如函数需要对Add函数进行测试，推荐详细命名<code>AddTwoNumbersShouldReturnTheirSum</code>，而不是简单的<code>Test_Add</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Fact]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">void</span> <span class="n">AddTwoNumbersShouldReturnTheirSum</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="n">_sut</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>XUnit.Assert类提供了许多静态方法对结果进行验证</li>
+<li>为测试函数添加<code>[Fact]</code>特性来标记其为一个单元测试函数，被标记的单元测试会被IDE识别</li>
+</ul>
+</blockquote>
+<p>
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./unitTestInIDE.png" alt="IDE识别的单元测试" />
+      <figcaption>IDE识别的单元测试</figcaption>
+    </figure>
+  
+
+</p>
+<p>点击IDE的&quot;<em>执行单元测试</em>&ldquo;按钮，可以一键执行项目中的单元测试。</p>
+<blockquote>
+<p><strong>Δ注意，IDE在进行单元测试时，每个单元测试函数是并行执行的，并且每个函数将创建单独的实例，并且互不影响</strong></p>
+</blockquote>
+<div id="忽略测试" class="anchor"></div>
+<h3 class="relative group">忽略测试 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%bf%bd%e7%95%a5%e6%b5%8b%e8%af%95" aria-label="锚点">#</a></span>        
+    
+</h3>
+<p>如果暂时不想测试某个函数，为其<code>[Fact]或[Theory]</code>特性加上<code>Skip</code>属性即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Fact(Skip = &#34;Ignore this test&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">void</span> <span class="n">IgnoreThis</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>Skip属性为字符串类型，解释忽略此测试的理由</li>
+<li>在IDE上运行单元测试时将忽略带有Skip属性的函数</li>
+</ul>
+</blockquote>
+<div id="添加参数" class="anchor"></div>
+<h3 class="relative group">添加参数 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%b7%bb%e5%8a%a0%e5%8f%82%e6%95%b0" aria-label="锚点">#</a></span>        
+    
+</h3>
+<div id="内联参数" class="anchor"></div>
+<h4 class="relative group">内联参数 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%86%85%e8%81%94%e5%8f%82%e6%95%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>函数可接收参数作为测试数据，为函数标注<code>[Theory]</code>特性，并用<code>[InlineData]</code>特性注入参数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Theory]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[InlineData(13,5,8)]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[InlineData(0,-3,3)]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[InlineData(0,0,0)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">void</span> <span class="n">AddTwoNumbersShouldReturnTheory</span><span class="p">(</span><span class="kt">double</span> <span class="n">expected</span><span class="p">,</span> <span class="kt">double</span> <span class="n">firstToAdd</span><span class="p">,</span> <span class="kt">double</span> <span class="n">secondToAdd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">firstToAdd</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">secondToAdd</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">_sut</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>InlineData中的参数必须和函数声明的参数数量和类型一致</li>
+<li>标注多个InlineData可以提供多项测试数据</li>
+</ul>
+</blockquote>
+<div id="成员参数" class="anchor"></div>
+<h4 class="relative group">成员参数 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%88%90%e5%91%98%e5%8f%82%e6%95%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>如果测试数据较为复杂，推荐使用<code>[MemberData]</code>来为其注入一个静态成员作为参数，这个成员可以是:</p>
+<ol>
+<li>静态字段</li>
+<li>静态属性</li>
+<li>静态函数（在MemberData的参数列表中提供参数）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">[]&gt;</span> <span class="n">TestData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">15d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="p">-</span><span class="m">10d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="p">-</span><span class="m">30</span><span class="p">,</span> <span class="m">10</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">2d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="p">-</span><span class="m">2</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[Theory]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[MemberData(nameof(TestData))]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">void</span> <span class="n">AddMultipleNumberShouldReturnTheory</span><span class="p">(</span><span class="kt">double</span> <span class="n">expected</span><span class="p">,</span> <span class="k">params</span> <span class="kt">double</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="k">value</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">_sut</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>或者，使用<code>yield return</code>来获得更优雅的写法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">[]&gt;</span> <span class="n">TestData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">15d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="p">-</span><span class="m">10d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="p">-</span><span class="m">30</span><span class="p">,</span> <span class="m">10</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">2d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="p">-</span><span class="m">2</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>MemberData的构造函数填写作为参数的类成员的名字</li>
+<li>成员的类型/返回值必须实现<code>IEnumerable&lt;object[]&gt;</code>接口</li>
+<li>类型中的<code>object[]</code>即为测试函数的参数，其数量和类型必须于函数的参数一致，而<code>IEnumerable</code>接口则允许提供多组数据</li>
+<li>执行单元测试时将会把该成员提供的数据全部测试一遍</li>
+</ul>
+</blockquote>
+<div id="类参数" class="anchor"></div>
+<h4 class="relative group">类参数 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%b1%bb%e5%8f%82%e6%95%b0" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>和成员参数类似，可以将测试内容放在另一个类而不是成员中，通过标注<code>[ClassData]</code>特性来指定测试类。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">AddData</span> <span class="p">:</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">[]&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">IEnumerator</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">[]&gt;</span> <span class="n">GetEnumerator</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">15d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">5</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="p">-</span><span class="m">10d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="p">-</span><span class="m">30</span><span class="p">,</span> <span class="m">10</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">2d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0d</span><span class="p">,</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="p">-</span><span class="m">2</span> <span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">IEnumerator</span> <span class="n">IEnumerable</span><span class="p">.</span><span class="n">GetEnumerator</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">GetEnumerator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[Theory]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[ClassData(typeof(AddData))]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">void</span> <span class="n">AddMultipleNumberShouldReturnTheory2</span><span class="p">(</span><span class="kt">double</span> <span class="n">expected</span><span class="p">,</span> <span class="k">params</span> <span class="kt">double</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="k">value</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">_sut</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>ClassData的参数填写测试类的类型</li>
+<li>与成员参数类似，测试类必须实现<code>IEnumerable&lt;object[]&gt;</code>接口，并在<code>GetEnumerator</code>函数中返回测试内容</li>
+</ul>
+</blockquote>
+<div id="结果输出" class="anchor"></div>
+<h4 class="relative group">结果输出 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%bb%93%e6%9e%9c%e8%be%93%e5%87%ba" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>有时想要在控制台上看到单元测试的输出内容，但在单元测试中使用Console.WriteLine是无效的。若要输出内容需要在测试的类中通过构造函数注入<code>ITestOutputHelper</code>类型的字段（XUnit自动注入），并用其进行输出。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorTests</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Calculator</span> <span class="n">_sut</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ITestOutputHelper</span> <span class="n">_output</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">CalculatorTests</span><span class="p">(</span><span class="n">ITestOutputHelper</span> <span class="n">output</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_output</span> <span class="p">=</span> <span class="n">output</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Calculator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">    [Fact]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">AddTwoNumbersShouldReturnTheirSum</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;this output is &#34;</span><span class="p">+</span> <span class="n">_sut</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="n">_sut</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>这样就为ASP .NET Core提供了基本的用户授权机制，在应用的终结点(endPoints)上添加[Autorize]特性来对此终结点进行用户授权。</p>
-</li>
-</ul>
-<br>
-<div id="在客户端配置signalr连接的访问令牌" class="anchor"></div>
-<h2 class="relative group">在客户端配置SignalR连接的访问令牌 
+</span></span></code></pre></div><p>输出的结果将在IDE的单元测试上显示，并且会区分每个单元测试的每组测试的输出内容：
+
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="./unitTestOutput.png" alt="单元测试输出" />
+      <figcaption>单元测试输出</figcaption>
+    </figure>
+  
+
+</p>
+<div id="共享上下文的单元测试" class="anchor"></div>
+<h4 class="relative group">共享上下文的单元测试 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e5%9c%a8%e5%ae%a2%e6%88%b7%e7%ab%af%e9%85%8d%e7%bd%aesignalr%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%ae%bf%e9%97%ae%e4%bb%a4%e7%89%8c" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e5%85%b1%e4%ba%ab%e4%b8%8a%e4%b8%8b%e6%96%87%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95" aria-label="锚点">#</a></span>        
     
-</h2>
+</h4>
+<p>在<a href="./#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e5%87%bd%e6%95%b0"  >
+    编写测试函数</a>时提到过在进行单元测试时，每个测试函数将会在不同的实例中运行。但在某些情况下会希望不同的单元测试使用同一个字段（比如<code>dbContext</code>），xUnit也提供了这样的配置。</p>
+<p>令当前单元测试类实现<code>IClassFixture&lt;&gt;</code>接口，并使用需要单元测试共享的字段类型作为泛型参数，同时从构造函数中注入该字段。这样该类中所有的单元测试都将共享该字段实例。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorTests</span> <span class="p">:</span> <span class="n">IClassFixture</span><span class="p">&lt;</span><span class="n">Calculator</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Calculator</span> <span class="n">_sut</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ITestOutputHelper</span> <span class="n">_output</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">CalculatorTests</span><span class="p">(</span><span class="n">ITestOutputHelper</span> <span class="n">output</span><span class="p">,</span> <span class="n">Calculator</span> <span class="n">sut</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_output</span> <span class="p">=</span> <span class="n">output</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sut</span> <span class="p">=</span> <span class="n">sut</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
 <ul>
-<li>
-<div id="c客户端" class="anchor"></div>
-<h3 class="relative group">C#客户端 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#c%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="锚点">#</a></span>        
-    
-</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">_connection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HubConnectionBuilder</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">WithAutomaticReconnect</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//在WithUrl方法的configureHttpConnection参数中配置</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">WithUrl</span><span class="p">(</span><span class="n">HubUrl</span><span class="p">,</span> <span class="n">options</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">//为AccessTokenProvider提供获取访问令牌的委托</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">//此处为应当查找并获取用户访问令牌的逻辑</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">AccessTokenProvider</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="n">authorizationToken</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">ConfigureLogging</span><span class="p">(</span><span class="n">builder</span> <span class="p">=&gt;</span> <span class="n">builder</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">Build</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">await</span> <span class="n">_connection</span><span class="p">.</span><span class="n">StartAsync</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div></li>
-<li>
-<div id="javascript客户端" class="anchor"></div>
-<h3 class="relative group">Javascript客户端 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#javascript%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="锚点">#</a></span>        
-    
-</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">hubConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">signalR</span><span class="p">.</span><span class="nx">HubConnectionBuilder</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">withUrl</span><span class="p">(</span><span class="s2">&#34;this.hubUrl&#34;</span><span class="p">,{</span> <span class="c1">//为withUrl方法参数2的accessTokenFactory属性提供获取访问令牌的方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">accessTokenFactory</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAccessToken</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">skipNegotiation</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">transport</span><span class="o">:</span> <span class="nx">signalR</span><span class="p">.</span><span class="nx">HttpTransportType</span><span class="p">.</span><span class="nx">WebSockets</span>
-</span></span><span class="line"><span class="cl">    <span class="p">})</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">hubConnection</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div></li>
+<li>实现多个<code>IClassFixture</code>接口来共享多个不同的类型字段</li>
+<li>如果测试类中的字段实现了<code>IDisposable</code>接口并且希望执行完单元测试后被关闭，让测试类也实现<code>IDisposable</code>并在<code>Dispose</code>函数中关闭即可，xUnit执行完每一个单元测试以后将会自动运行<code>Dispose</code>函数。</li>
 </ul>
-<br>
-<div id="踩坑注意" class="anchor"></div>
-<h2 class="relative group">踩坑注意 
+</blockquote>
+<div id="共享上下文的单元测试类" class="anchor"></div>
+<h4 class="relative group">共享上下文的单元测试类 
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e8%b8%a9%e5%9d%91%e6%b3%a8%e6%84%8f" aria-label="锚点">#</a></span>        
+            style="text-decoration-line: none !important;" href="#%e5%85%b1%e4%ba%ab%e4%b8%8a%e4%b8%8b%e6%96%87%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e7%b1%bb" aria-label="锚点">#</a></span>        
+    
+</h4>
+<p>类似于<a href="./%e5%85%b1%e4%ba%ab%e4%b8%8a%e4%b8%8b%e6%96%87%e7%9a%84%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95"  >
+    共享上下文的单元测试</a>，xUnit还可以让多个单元测试类共享上下文，首先需要定义一个&rdquo;<em>集合(collection)</em>&quot;：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[CollectionDefinition(&#34;Database collection&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">DatabaseCollection</span> <span class="p">:</span> <span class="n">ICollectionFixture</span><span class="p">&lt;</span><span class="n">DatabaseFixture</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这个类不需要任何成员，只需要声明即可。令其实现<code>ICollectionFixture&lt;&gt;</code>并在泛型参数中填入想要共享的字段类型，然后添加<code>[CollectionDefinition(&quot;Database collection&quot;)]</code>特性声明一个名为&quot;<em><strong>Database collection</strong></em>&ldquo;的上下文集合。</p>
+<blockquote>
+<ul>
+<li>和<code>IClassFixture</code>相同，<code>ICollectionFixture&lt;&gt;</code>也可以实现多个</li>
+<li><code>CollectionDefinition</code>特性的构造函数接收一个字符串&rdquo;<strong>name</strong>&ldquo;作为&quot;集合名&rdquo;，作为一个上下文集合的名字</li>
+<li>同一个上下文集合中的所有类都可以注入<code>ICollectionFixture</code>接口指定的字段类型，注入的字段均为同一个实例</li>
+</ul>
+</blockquote>
+<p>然后，在每个需要共享上下文的单元测试类上标注<code>[Collection(&quot;Database collection&quot;)]</code>特性，使其加入名为&quot;<em><strong>Database collection</strong></em>&ldquo;的上下文集合。xUnit将向他们注入<code>DatabaseFixture</code>类型的对象，并且均为同一个实例。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Collection(&#34;Database collection&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">DatabaseTestClass1</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DatabaseFixture</span> <span class="n">fixture</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">DatabaseTestClass1</span><span class="p">(</span><span class="n">DatabaseFixture</span> <span class="n">fixture</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="n">fixture</span> <span class="p">=</span> <span class="n">fixture</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[Collection(&#34;Database collection&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">DatabaseTestClass2</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div id="heading" class="anchor"></div>
+<h2 class="relative group"> 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#heading" aria-label="锚点">#</a></span>        
     
 </h2>
-<p>在Javascript客户端，即使配置了访问令牌，在对后端SignalR集线器进行访问时服务器仍然会响应 <strong>401 Unauthorized</strong> 或是客户端抛出 <strong>SignalR Error: Failed to complete negotiation with the server</strong> 异常，若排除了Javascript客户端配置问题或是CORS跨域访问问题，则有可能是因为Javascript websocket API不支持设置请求报文头的原因。</p>
-<p>客户端使用HTTP协议向服务器进行访问令牌验证常用的方式是在报文头中添加 <em>Authorization</em> 标头，并提供访问令牌字符串。
-
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="./httpAuthorization.png" alt="Authorization" />
-      <figcaption>请求标头中的Authorization项</figcaption>
-    </figure>
-  
-
-</p>
-<p>在SignalR进行Websocket连接前会进行协商(negotiation)，若客户端在建立SignalR连接时配置了访问令牌，则会在请求时附带上访问令牌。</p>
-<p>但在SignalR Javascript客户端进行协商时，访问令牌并不是添加在报文头中，而是以查询字符串的形式发送请求。
-
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="./JSSignalRRequst.png" alt="JSAuthorization" />
-      <figcaption>访问令牌放在了查询字符串中</figcaption>
-    </figure>
-  
-
-</p>
-<p>ASP.NET Core并不会自动对查询字符串中的访问令牌进行授权，所以此时服务器将会返回 <strong>401 Unauthorized</strong> ，而Javascript客户端会抛出 <strong>SignalR Error: Failed to complete negotiation with the server (无法完成与服务器的协商）</strong> 异常。</p>
-<div id="解决方法" class="anchor"></div>
-<h3 class="relative group">解决方法： 
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" aria-label="锚点">#</a></span>        
-    
-</h3>
-<p>在服务器端配置授权机制，在收到请求消息时手动进行授权处理。配置的方式有多种，较为简单的方式是直接在Authorization服务中添加事件：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">program</span><span class="p">.</span><span class="n">cs</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//使用JwtBearer作为认证令牌</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">secretKey</span> <span class="p">=</span> <span class="n">configurations</span><span class="p">.</span><span class="n">GetRequiredSection</span><span class="p">(</span><span class="s">&#34;Jwt&#34;</span><span class="p">).</span><span class="n">Get</span><span class="p">&lt;</span><span class="n">JwtOption</span><span class="p">&gt;().</span><span class="n">SecretKey</span><span class="p">??</span><span class="k">throw</span> <span class="k">new</span> <span class="n">ConfigurationErrorsException</span><span class="p">(</span><span class="s">&#34;Jwt密钥未配置&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuer</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateAudience</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateLifetime</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ValidateIssuerSigningKey</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="n">IssuerSigningKey</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SymmetricSecurityKey</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">secretKey</span><span class="p">)),</span>
-</span></span><span class="line"><span class="cl">        <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">//添加授权事件，在收到请求消息时进行处理</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="p">.</span><span class="n">Events</span> <span class="p">=</span> <span class="k">new</span> <span class="n">JwtBearerEvents</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">OnMessageReceived</span> <span class="p">=</span>  <span class="n">context</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="c1">//从请求查询字符串中取出访问令牌</span>
-</span></span><span class="line"><span class="cl">                <span class="kt">var</span> <span class="n">accessToken</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Query</span><span class="p">[</span><span class="s">&#34;access_token&#34;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">                <span class="c1">//请求条件不符合则返回</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">accessToken</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Headers</span><span class="p">[</span><span class="s">&#34;Upgrade&#34;</span><span class="p">]</span> <span class="p">==</span> <span class="s">&#34;websocket&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="c1">//手动对上下文中的令牌属性赋值，剩下的授权由.NET自动完成</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">context</span><span class="p">.</span><span class="n">Token</span> <span class="p">=</span> <span class="n">accessToken</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">}</span>
-</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">...</span>
-</span></span></code></pre></div><br>
-<p>参考文章</p>
 <blockquote>
-<p><a href="https://stackoverflow.com/questions/21260384/signalr-authenticating-with-access-token#comment32085907_21260384"   target="_blank">
-    https://stackoverflow.com/questions/21260384/signalr-authenticating-with-access-token#comment32085907_21260384</a></p>
+<p>详情参考<a href="https://xunit.net/docs/shared-context"   target="_blank">
+    官方文档</a></p>
 </blockquote>
 
         </br></br>
@@ -1120,8 +1221,8 @@
       </div>
      
      <script>
-        var oid = "views_posts\\为SignalR的连接配置用户认证\\index.md"
-        var oid_likes = "likes_posts\\为SignalR的连接配置用户认证\\index.md"
+        var oid = "views_posts\\使用xUnit编写单元测试\\index.md"
+        var oid_likes = "likes_posts\\使用xUnit编写单元测试\\index.md"
       </script>
       
       
@@ -1220,7 +1321,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/&amp;text=%e4%b8%baSignalR%e7%9a%84%e8%bf%9e%e6%8e%a5%e9%85%8d%e7%bd%ae%e7%94%a8%e6%88%b7%e8%ae%a4%e8%af%81"
+      href="https://twitter.com/intent/tweet/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/&amp;text=%e4%bd%bf%e7%94%a8xUnit%e7%bc%96%e5%86%99%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -1239,7 +1340,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/&amp;resubmit=true&amp;title=%e4%b8%baSignalR%e7%9a%84%e8%bf%9e%e6%8e%a5%e9%85%8d%e7%bd%ae%e7%94%a8%e6%88%b7%e8%ae%a4%e8%af%81"
+      href="https://reddit.com/submit/?url=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/&amp;resubmit=true&amp;title=%e4%bd%bf%e7%94%a8xUnit%e7%bc%96%e5%86%99%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -1258,7 +1359,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/&amp;quote=%e4%b8%baSignalR%e7%9a%84%e8%bf%9e%e6%8e%a5%e9%85%8d%e7%bd%ae%e7%94%a8%e6%88%b7%e8%ae%a4%e8%af%81"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/&amp;quote=%e4%bd%bf%e7%94%a8xUnit%e7%bc%96%e5%86%99%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1277,7 +1378,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%B8%BAsignalr%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/&amp;subject=%e4%b8%baSignalR%e7%9a%84%e8%bf%9e%e6%8e%a5%e9%85%8d%e7%bd%ae%e7%94%a8%e6%88%b7%e8%ae%a4%e8%af%81"
+      href="mailto:?body=https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/&amp;subject=%e4%bd%bf%e7%94%a8xUnit%e7%bc%96%e5%86%99%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -1308,7 +1409,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/hello-world/">
+            <a class="flex group mr-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1efcore%E5%BC%82%E5%B8%B8%E5%B0%86-foreign-key-%E7%BA%A6%E6%9D%9F-xxx-%E5%BC%95%E5%85%A5%E8%A1%A8-t-%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%BE%AA%E7%8E%AF%E6%88%96%E5%A4%9A%E9%87%8D%E7%BA%A7%E8%81%94%E8%B7%AF%E5%BE%84/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1320,11 +1421,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Hello World</span
+                  >记一次EFCore异常：将 FOREIGN KEY 约束 XXX 引入表 T 可能会导致循环或多重级联路径</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-03-10 19:01:26 &#43;0800 CST">2023年3月10日</time>
+                    <time datetime="2023-07-04 10:07:32 &#43;0800 CST">2023年7月 4日</time>
                   
                 </span>
               </span>
@@ -1332,28 +1433,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/Hugo-Blog-Blowfish-Theme/posts/%E5%9C%A8asp-.net-core%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEswagger%E6%96%87%E6%A1%A3/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >在ASP .NET Core项目配置Swagger文档</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-03-15 10:15:26 &#43;0800 CST">2023年3月15日</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

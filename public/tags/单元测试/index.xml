@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>单元测试 on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 单元测试 on AzusaArchive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Wed, 12 Jul 2023 11:28:47 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用xUnit编写单元测试</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 12 Jul 2023 11:28:47 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E4%BD%BF%E7%94%A8xunit%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
