@@ -101,7 +101,7 @@
     "keywords": ["MariaDb","MySQL","Docker","数据库优化"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4058"
+    "wordCount": "4102"
   }]
   </script>
 
@@ -670,7 +670,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-07-25 15:15:26 &#43;0800 CST">2023年7月25日</time><span class="px-2 text-primary-500">&middot;</span><span>4058 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span>
+  <time datetime="2023-07-25 15:15:26 &#43;0800 CST">2023年7月25日</time><span class="px-2 text-primary-500">&middot;</span><span>4102 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span>
   
 
   
@@ -1459,6 +1459,7 @@ MaxScale为应用程序提供负载均衡以及各种高可用性功能，通过
 </span></span><span class="line"><span class="cl"><span class="na">router_options</span><span class="o">=</span><span class="s">slave</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 读写分离服务</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https://mariadb.com/kb/en/mariadb-maxscale-2302-readwritesplit/</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># MaxScale通过监控模块获取服务器主从信息，自动把读取类语句转发给从库，写入类语句转发给主库。</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 修改变量类的操作将发送到所有服务器。</span>
 </span></span><span class="line"><span class="cl"><span class="k">[Read-Write-Service]</span>
@@ -1496,7 +1497,9 @@ MaxScale为应用程序提供负载均衡以及各种高可用性功能，通过
 </span></span></code></pre></div><blockquote>
 <p><strong>MaxScale读写分离</strong><br>
 数据库管理工具可通过暴露的读写分离端口（4006）来连接到MaxScale服务（连接方式和MariaDb一样）<br>
-MaxScale通过读取 <em>&ldquo;mysql&rdquo;</em> 数据库中的信息来自动判断定义的数据库后端服务的主从状态，接着把读取类型的语句转发给从库，而写入类型的语句转发给主库，从而实现读写分离。</p>
+MaxScale通过读取 <em>&ldquo;mysql&rdquo;</em> 数据库中的信息来自动判断定义的数据库后端服务的主从状态，接着把读取类型的语句转发给从库，而写入类型的语句转发给主库，从而实现读写分离。
+关于更多MaxScale读写分离服务的配置参考：<a href="https://mariadb.com/kb/en/mariadb-maxscale-2302-readwritesplit/"   target="_blank">
+    ReadWriteSplit</a></p>
 </blockquote>
 <blockquote>
 <p><strong>关于MaxScale自动故障转移</strong> <br>
@@ -1561,18 +1564,18 @@ MaxCtrl: <a href="https://mariadb.com/kb/en/mariadb-maxscale-2302-maxctrl/"   ta
             style="text-decoration-line: none !important;" href="#%e6%b5%8b%e8%af%95%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb" aria-label="锚点">#</a></span>        
     
 </h3>
-<p>因为此时开启了主从复制，所以两个数据库的数据都是同步的，没法从数据层面直接看出读写分离，但可以通过开启日志的形式查看主库和从库执行的语句。<br>
+<p>因为此时开启了主从复制，所以两个数据库的数据都是同步的，没法从数据层面直接看出读写分离，但可以通过开启MariaDb全局日志的形式查看主库和从库执行的语句。<br>
 对所有的数据库执行下面的语句：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span><span class="c1">-- 开启日志功能
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span><span class="c1">-- 开启全局日志日志
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/tmp/general.log&#39;</span><span class="p">;</span><span class="c1">-- 设置日志文件保存位置
 </span></span></span></code></pre></div><blockquote>
 <p>容器重启后General Log会自动关闭</p>
 </blockquote>
 <p>其他General Log常用的语句：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;general_log&#39;</span><span class="p">;</span><span class="c1">-- 查看日志是否开启
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span><span class="c1">-- 开启日志功能
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;general_log_file&#39;</span><span class="p">;</span><span class="c1">-- 看看日志文件保存位置
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/tmp/general.log&#39;</span><span class="p">;</span><span class="c1">-- 设置日志文件保存位置
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;general_log&#39;</span><span class="p">;</span><span class="c1">-- 查看全局日志是否开启
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span><span class="c1">-- 开启全局日志
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;general_log_file&#39;</span><span class="p">;</span><span class="c1">-- 查看全局日志文件保存位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">general_log_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/tmp/general.log&#39;</span><span class="p">;</span><span class="c1">-- 设置全局日志文件保存位置
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;log_output&#39;</span><span class="p">;</span><span class="c1">-- 查看日志输出类型 table或file
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">log_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table&#39;</span><span class="p">;</span><span class="c1">-- 设置输出类型为 table
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">log_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;file&#39;</span><span class="p">;</span><span class="c1">-- 设置输出类型为file

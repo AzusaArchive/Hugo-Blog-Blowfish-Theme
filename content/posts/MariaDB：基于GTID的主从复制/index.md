@@ -344,6 +344,7 @@ password=123456
 router_options=slave
 
 # 读写分离服务
+# https://mariadb.com/kb/en/mariadb-maxscale-2302-readwritesplit/
 # MaxScale通过监控模块获取服务器主从信息，自动把读取类语句转发给从库，写入类语句转发给主库。
 # 修改变量类的操作将发送到所有服务器。
 [Read-Write-Service]
@@ -382,6 +383,7 @@ port=4006
 > **MaxScale读写分离**  
 > 数据库管理工具可通过暴露的读写分离端口（4006）来连接到MaxScale服务（连接方式和MariaDb一样）  
 > MaxScale通过读取 *"mysql"* 数据库中的信息来自动判断定义的数据库后端服务的主从状态，接着把读取类型的语句转发给从库，而写入类型的语句转发给主库，从而实现读写分离。
+> 关于更多MaxScale读写分离服务的配置参考：[ReadWriteSplit](https://mariadb.com/kb/en/mariadb-maxscale-2302-readwritesplit/)
 
 > **关于MaxScale自动故障转移**    
 > 假设当前有三台服务器：A(主，写)，B(从，读)，C(从，读)，若A服务器崩溃时，会立刻将一个从库服务器提升为新的主库。  
@@ -392,7 +394,7 @@ port=4006
 ### MaxScale管理页面
 MaxScale 2.5 版本后，即可通过访问容器的8989端口进入MaxScale的GUI管理页面，其内部使用MaxCtrl命令行对MaxScale进行实时监控和配置。
 
-在Docker Compose中已经暴露了容器的8989端口，所以直接访问[localhost:8989](localhost:8989)进入MaxScale GUI页面：
+在Docker Compose中已经暴露了容器的8989端口，所以直接访问<localhost:8989>进入MaxScale GUI页面：
 
 ![MaxScale GUI](./maxscale%20gui.png "MaxScale GUI")
 
@@ -405,20 +407,20 @@ MaxGUI可实时监控并管理MaxScale的状态：
 
 
 ### 测试读写分离
-因为此时开启了主从复制，所以两个数据库的数据都是同步的，没法从数据层面直接看出读写分离，但可以通过开启日志的形式查看主库和从库执行的语句。  
+因为此时开启了主从复制，所以两个数据库的数据都是同步的，没法从数据层面直接看出读写分离，但可以通过开启MariaDb全局日志的形式查看主库和从库执行的语句。  
 对所有的数据库执行下面的语句：  
 ```sql
-SET GLOBAL general_log = ON;-- 开启日志功能
+SET GLOBAL general_log = ON;-- 开启全局日志日志
 SET GLOBAL general_log_file = '/tmp/general.log';-- 设置日志文件保存位置
 ```
 > 容器重启后General Log会自动关闭
 
 其他General Log常用的语句：
 ```sql
-SHOW VARIABLES LIKE 'general_log';-- 查看日志是否开启
-SET GLOBAL general_log = ON;-- 开启日志功能
-SHOW VARIABLES LIKE 'general_log_file';-- 看看日志文件保存位置
-SET GLOBAL general_log_file = '/tmp/general.log';-- 设置日志文件保存位置
+SHOW VARIABLES LIKE 'general_log';-- 查看全局日志是否开启
+SET GLOBAL general_log = ON;-- 开启全局日志
+SHOW VARIABLES LIKE 'general_log_file';-- 查看全局日志文件保存位置
+SET GLOBAL general_log_file = '/tmp/general.log';-- 设置全局日志文件保存位置
 SHOW VARIABLES LIKE 'log_output';-- 查看日志输出类型 table或file
 SET GLOBAL log_output = 'table';-- 设置输出类型为 table
 SET GLOBAL log_output = 'file';-- 设置输出类型为file
