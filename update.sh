@@ -1,4 +1,4 @@
 hugo --gc
 git add .
 git commit -m 更新部署
-git push origin deploy -d
+git push origin master
