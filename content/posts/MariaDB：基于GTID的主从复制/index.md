@@ -1,7 +1,7 @@
 ﻿---
 title: "MariaDb：基于GTID的主从复制以及基于MaxScale的读写分离"
 date: 2023-07-25T15:15:26+08:00
-tags: ["MariaDb", "MySQL", "Docker", "数据库优化"]
+tags: ["MySQL/MariaDb", "Docker", "数据库优化"]
 categories: ["数据库"]
 ---
 

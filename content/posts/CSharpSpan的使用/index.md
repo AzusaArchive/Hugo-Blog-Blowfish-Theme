@@ -1,5 +1,5 @@
 ﻿---
-title: "C# Span< T >的使用"
+title: "C# Span&lt;T&gt;的使用"
 date: 2023-06-15T00:29:38+08:00
 tags: ["C#","C#基础"]
 categories: [".NET"]

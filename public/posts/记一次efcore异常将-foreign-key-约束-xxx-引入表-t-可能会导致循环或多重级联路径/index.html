@@ -12,7 +12,7 @@
   <meta name="title" content="记一次EFCore异常：将 FOREIGN KEY 约束 XXX 引入表 T 可能会导致循环或多重级联路径 &middot; AzusaArchive" />
   
   <meta name="description" content="梓的个人档案" />
-  <meta name="keywords" content="EFCore, C#, SQLServer, " />
+  <meta name="keywords" content="EFCore, C#, Bug修复, " />
   
   
   <link rel="canonical" href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1efcore%E5%BC%82%E5%B8%B8%E5%B0%86-foreign-key-%E7%BA%A6%E6%9D%9F-xxx-%E5%BC%95%E5%85%A5%E8%A1%A8-t-%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%BE%AA%E7%8E%AF%E6%88%96%E5%A4%9A%E9%87%8D%E7%BA%A7%E8%81%94%E8%B7%AF%E5%BE%84/" />
@@ -98,10 +98,10 @@
     
     "dateModified": "2023-07-04T10:07:32\u002b08:00",
     
-    "keywords": ["EFCore","C#","SQLServer"],
+    "keywords": ["EFCore","C#","Bug修复"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "0"
+    "wordCount": "1061"
   }]
   </script>
 
@@ -663,10 +663,14 @@
 
 
 
+
+
+
+
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-07-04 10:07:32 &#43;0800 CST">2023年7月 4日</time>
+  <time datetime="2023-07-04 10:07:32 &#43;0800 CST">2023年7月 4日</time><span class="px-2 text-primary-500">&middot;</span><span>1061 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -725,12 +729,12 @@
 
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/sqlserver/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/Hugo-Blog-Blowfish-Theme/tags/bug%E4%BF%AE%E5%A4%8D/&#34;,'_self');">
     <span class="flex">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
   >
-    SQLServer
+    Bug修复
   </span>
 </span>
 
@@ -746,11 +750,189 @@
     </div>
   </header>
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
+     <div
+      class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky  lg:top-10 ">
+
+         <details open class="mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#原因">原因</a></li>
+    <li><a href="#解决方法">解决方法</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#原因">原因</a></li>
+    <li><a href="#解决方法">解决方法</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+ 
+<script>
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = e.attr('id');
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+           
+            $(e).removeClass('active').siblings('ul').hide();
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+         
+          $toc.find('a').parent('li').find('ul').hide();
+        
+        onScroll();
+      });
+    }
+  })();
+</script>
+   </div>
+      </div>
+      
       <div class="min-w-0 min-h-0 max-w-prose">
         
 
-        
+        <div id="概述" class="anchor"></div>
+<h2 class="relative group">概述 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%a6%82%e8%bf%b0" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>在EFCore应用迁移(<code>Update Database</code>)时，由于实体配置有误而出现异常：<br>
+<em><strong>Introducing FOREIGN KEY constraint may cause cycles or multiple cascade paths</strong></em><br>
+<em><strong>(将FOREIGN KEY约束XXX引入表T可能会导致循环或多重级联路径)</strong></em></p>
+<div id="原因" class="anchor"></div>
+<h2 class="relative group">原因 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%8e%9f%e5%9b%a0" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>在配置EFCore实体时，某个实体同时外键依赖了多个实体并配置了级联关系，而依赖的实体直接也有同样的级联关系。这样将会在根实体被删除时导致多重级联路径。以下面的代码为例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">User</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Post</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">User</span> <span class="n">User</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">Post</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">User</span><span class="p">).</span><span class="n">WithMany</span><span class="p">().</span><span class="n">OnDelete</span><span class="p">(</span><span class="n">DeleteBehavior</span><span class="p">.</span><span class="n">Cascade</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostReply</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">User</span> <span class="n">User</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="n">Post</span> <span class="n">Post</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostReplyConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">PostReply</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">PostReply</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Post</span><span class="p">).</span><span class="n">WithMany</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Replies</span><span class="p">).</span><span class="n">OnDelete</span><span class="p">(</span><span class="n">DeleteBehavior</span><span class="p">.</span><span class="n">Cascade</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">User</span><span class="p">).</span><span class="n">WithMany</span><span class="p">().</span><span class="n">OnDelete</span><span class="p">(</span><span class="n">DeleteBehavior</span><span class="p">.</span><span class="n">Cascade</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></div><p>PostReply实体配置了两个一对多外键依赖<code>User</code>和<code>Post</code>，并将删除模式改为了级联删除。<br>
+而<code>Post</code>实体同时也配置了与<code>User</code>实体的一对多关系，删除模式也是级联删除。</p>
+<p>此时，如果删除了一个<code>User</code>实体，数据库将会：</p>
+<ul>
+<li>直接级联删除其对应的<code>Post</code>实体，然后间接地删除<code>Post</code>实体对应的<code>PostReply</code>实体。 <code>User -&gt; Post -&gt; PostReply</code></li>
+<li>直接级联删除其对应的<code>PostReply</code>实体。 <code>User -&gt; PostReply</code>。</li>
+</ul>
+<p>可以发现，此时对<code>PostReply</code>实体的级联删除路径有两条，这将会触发异常。</p>
+<blockquote>
+<p>将 FOREIGN KEY 约束 &lsquo;FK_PostReply_User_UserId&rsquo; 引入表 &lsquo;PostReply&rsquo; 可能会导致循环或多重级联路径。请指定 ON DELETE NO ACTION 或 ON UPDATE NO ACTION，或修改其他 FOREIGN KEY 约束。</p>
+</blockquote>
+<div id="解决方法" class="anchor"></div>
+<h2 class="relative group">解决方法 
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" aria-label="锚点">#</a></span>        
+    
+</h2>
+<p>比较好的解决方法是将<code>PostReply</code>实体配置中的任意一个一对多关系的删除模式改为非级联的，比如<code>SetNull</code>。<br>
+这里推荐修改对<code>User</code>实体的一对多关系，这样当外键<code>Post</code>被删除时，实体也能正确的被级联删除。<br>
+修改后的配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">PostReplyConfig</span> <span class="p">:</span> <span class="n">IEntityTypeConfiguration</span><span class="p">&lt;</span><span class="n">PostReply</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">EntityTypeBuilder</span><span class="p">&lt;</span><span class="n">PostReply</span><span class="p">&gt;</span> <span class="n">builder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Post</span><span class="p">).</span><span class="n">WithMany</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Replies</span><span class="p">).</span><span class="n">OnDelete</span><span class="p">(</span><span class="n">DeleteBehavior</span><span class="p">.</span><span class="n">Cascade</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">builder</span><span class="p">.</span><span class="n">HasOne</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">User</span><span class="p">).</span><span class="n">WithMany</span><span class="p">().</span><span class="n">OnDelete</span><span class="p">(</span><span class="n">DeleteBehavior</span><span class="p">.</span><span class="n">SetNull</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></div><p>遇到异常的开发者可能在配置<code>PostReply</code>实体时会这样想：“当<code>User</code>实体被删除时，我想要其对应的<code>Post</code>和<code>PostReply</code>都被级联删除。所以应当在配置一对多关系时为<code>Post</code>外键和<code>PostReply</code>外键都指定级联删除行为。”</p>
+<p>但此时，<code>User</code>实体和<code>Post</code>实体已经含有一对多关系，并且配置了级联删除。对于<code>PostReply</code>实体，只需要配置其<code>Post</code>外键的级联关系即可。<code>User</code>外键的级联关系是多余的。</p>
+<p>所以当遇到此类异常时，只需要把出现异常实体的外键关系链上“<strong>距离较远</strong>”的实体的级联关系都删除，只保留“<strong>最近</strong>”的那一个即可。
+如上面的例子中，<code>PostReply</code>实体的外键关系链为<code>User -&gt; Post -&gt; PostReply</code>，其中<code>User</code>和<code>Post</code>的级联路径发生了冲突，此时需要删除<strong>较远端</strong>的实体<code>User</code>，保留<strong>最近</strong>的实体<code>Post</code>。</p>
+<blockquote>
+<ul>
+<li>StackOverFlow例子:<a href="https://stackoverflow.com/questions/17127351/introducing-foreign-key-constraint-may-cause-cycles-or-multiple-cascade-paths"   target="_blank">
+    https://stackoverflow.com/questions/17127351/introducing-foreign-key-constraint-may-cause-cycles-or-multiple-cascade-paths</a></li>
+<li>官方文档-级联删除:<a href="https://learn.microsoft.com/zh-cn/ef/core/saving/cascade-delete"   target="_blank">
+    https://learn.microsoft.com/zh-cn/ef/core/saving/cascade-delete</a></li>
+</ul>
+</blockquote>
+
         </br></br>
         
 
@@ -1002,7 +1184,13 @@
   </footer>
 </article>
 
-      
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
     </main><footer id="site-footer" class="py-10 print:hidden">
   
   

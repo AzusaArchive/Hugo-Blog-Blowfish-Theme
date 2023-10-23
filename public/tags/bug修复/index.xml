@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bug修复 on AzusaArchive</title>
+    <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/bug%E4%BF%AE%E5%A4%8D/</link>
+    <description>Recent content in Bug修复 on AzusaArchive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Sat, 21 Oct 2023 15:26:23 +0800</lastBuildDate><atom:link href="https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/tags/bug%E4%BF%AE%E5%A4%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#lambda表达式：for循环中的lambda表达式以及lambda的变量捕获</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8Ffor%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A5%E5%8F%8Alambda%E7%9A%84%E5%8F%98%E9%87%8F%E6%8D%95%E8%8E%B7/</link>
+      <pubDate>Sat, 21 Oct 2023 15:26:23 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/c#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8Ffor%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A5%E5%8F%8Alambda%E7%9A%84%E5%8F%98%E9%87%8F%E6%8D%95%E8%8E%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#lambda表达式：for循环中的lambda表达式以及lambda的变量捕获</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharplambda%E8%A1%A8%E8%BE%BE%E5%BC%8Ffor%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A5%E5%8F%8Alambda%E7%9A%84%E5%8F%98%E9%87%8F%E6%8D%95%E8%8E%B7/</link>
+      <pubDate>Sat, 21 Oct 2023 15:26:23 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/csharplambda%E8%A1%A8%E8%BE%BE%E5%BC%8Ffor%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A5%E5%8F%8Alambda%E7%9A%84%E5%8F%98%E9%87%8F%E6%8D%95%E8%8E%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>记一次EFCore异常：将 FOREIGN KEY 约束 XXX 引入表 T 可能会导致循环或多重级联路径</title>
+      <link>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1efcore%E5%BC%82%E5%B8%B8%E5%B0%86-foreign-key-%E7%BA%A6%E6%9D%9F-xxx-%E5%BC%95%E5%85%A5%E8%A1%A8-t-%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%BE%AA%E7%8E%AF%E6%88%96%E5%A4%9A%E9%87%8D%E7%BA%A7%E8%81%94%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Tue, 04 Jul 2023 10:07:32 +0800</pubDate>
+      
+      <guid>https://azusaarchive.github.io/Hugo-Blog-Blowfish-Theme/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1efcore%E5%BC%82%E5%B8%B8%E5%B0%86-foreign-key-%E7%BA%A6%E6%9D%9F-xxx-%E5%BC%95%E5%85%A5%E8%A1%A8-t-%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%BE%AA%E7%8E%AF%E6%88%96%E5%A4%9A%E9%87%8D%E7%BA%A7%E8%81%94%E8%B7%AF%E5%BE%84/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
